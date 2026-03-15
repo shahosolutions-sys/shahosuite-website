@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite — Everything your business needs, in one place</title>
+<meta name="description" content="ShahoSuite is the all-in-one business management platform for growing teams." />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #0a0a0a; color: #f1f5f9; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,10,0.9); backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1f2937;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+}
+.logo { font-size: 22px; font-weight: 800; color: #10b981; text-decoration: none; }
+.nav-btns { display: flex; gap: 10px; }
+.btn-outline {
+  padding: 8px 18px; border: 1.5px solid #374151; border-radius: 8px;
+  color: #f1f5f9; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.2s;
+}
+.btn-outline:hover { border-color: #10b981; color: #10b981; }
+.btn-green {
+  padding: 8px 18px; border: none; border-radius: 8px;
+  background: #10b981; color: white; text-decoration: none;
+  font-size: 14px; font-weight: 700; transition: all 0.2s;
+}
+.btn-green:hover { background: #059669; }
+
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; text-align: center; padding: 120px 24px 80px;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(16,185,129,0.12) 0%, transparent 70%);
+}
+.hero-inner { max-width: 760px; }
+.badge {
+  display: inline-block; padding: 6px 16px;
+  background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 20px; font-size: 13px; color: #10b981; font-weight: 600; margin-bottom: 28px;
+}
+h1 { font-size: clamp(38px, 7vw, 72px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 24px; }
+h1 em { color: #10b981; font-style: normal; }
+.hero p { font-size: 18px; color: #94a3b8; margin-bottom: 40px; line-height: 1.7; }
+.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-big { padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: inline-block; }
+.btn-big-green { background: #10b981; color: white; box-shadow: 0 4px 20px rgba(16,185,129,0.3); }
+.btn-big-green:hover { background: #059669; transform: translateY(-2px); }
+.btn-big-dark { background: #1f2937; color: #f1f5f9; border: 1.5px solid #374151; }
+.btn-big-dark:hover { border-color: #6b7280; transform: translateY(-2px); }
+.stats { display: flex; gap: 48px; justify-content: center; margin-top: 64px; flex-wrap: wrap; }
+.stat-num { font-size: 32px; font-weight: 800; color: #10b981; text-align: center; }
+.stat-label { font-size: 13px; color: #6b7280; margin-top: 2px; text-align: center; }
+
+.features { padding: 96px 24px; background: #0d0d0d; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 12px; font-weight: 700; color: #10b981; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
+.section-sub { font-size: 16px; color: #6b7280; max-width: 520px; line-height: 1.7; margin-bottom: 56px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.card { background: #111827; border: 1px solid #1f2937; border-radius: 14px; padding: 24px; transition: all 0.2s; }
+.card:hover { border-color: #10b981; transform: translateY(-3px); box-shadow: 0 8px 32px rgba(16,185,129,0.08); }
+.card-icon { font-size: 28px; margin-bottom: 12px; }
+.card-title { font-size: 15px; font-weight: 700; color: #f1f5f9; margin-bottom: 6px; }
+.card-desc { font-size: 13px; color: #6b7280; line-height: 1.6; }
+
+.pricing { padding: 96px 24px; background: #0a0a0a; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 700px; margin-top: 56px; }
+.price-card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 32px; position: relative; }
+.price-card.featured { border-color: #10b981; box-shadow: 0 0 40px rgba(16,185,129,0.12); }
+.popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
+.price-name { font-size: 13px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.price-amount { font-size: 52px; font-weight: 800; color: #f1f5f9; letter-spacing: -2px; line-height: 1; }
+.price-amount sup { font-size: 24px; vertical-align: top; margin-top: 8px; display: inline-block; }
+.price-amount sub { font-size: 16px; color: #6b7280; font-weight: 500; }
+.price-note { font-size: 13px; color: #6b7280; margin: 10px 0 24px; }
+.price-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.price-list li { font-size: 14px; color: #94a3b8; display: flex; align-items: flex-start; gap: 8px; }
+.price-list li::before { content: '✓'; color: #10b981; font-weight: 800; flex-shrink: 0; }
+.price-btn { width: 100%; padding: 12px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: block; text-align: center; transition: all 0.2s; }
+.price-btn-green { background: #10b981; color: white; border: none; }
+.price-btn-green:hover { background: #059669; }
+.price-btn-outline { background: transparent; color: #f1f5f9; border: 1.5px solid #374151; }
+.price-btn-outline:hover { border-color: #10b981; color: #10b981; }
+
+.cta-section { padding: 96px 24px; text-align: center; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(16,185,129,0.08) 0%, transparent 70%); }
+.cta-section h2 { margin-bottom: 16px; }
+.cta-section p { font-size: 17px; color: #6b7280; margin-bottom: 36px; }
+
+footer { padding: 40px 24px; border-top: 1px solid #1f2937; text-align: center; font-size: 13px; color: #374151; }
+footer a { color: #6b7280; text-decoration: none; margin: 0 12px; }
+footer a:hover { color: #10b981; }
+
+@media (max-width: 600px) {
+  .nav-btns .btn-outline { display: none; }
+  .stats { gap: 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">ShahoSuite</a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-outline">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-green">Start free trial</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge">🚀 Now in beta — limited spots available</div>
+    <h1>Everything your business<br/>needs, <em>in one place</em></h1>
+    <p>ShahoSuite brings invoices, bookings, staff, accounting, customers and more into one clean platform. Built for growing businesses.</p>
+    <div class="hero-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-big btn-big-green">Start free trial →</a>
+      <a href="#features" class="btn-big btn-big-dark">See all features</a>
+    </div>
+    <div class="stats">
+      <div><div class="stat-num">16</div><div class="stat-label">Modules included</div></div>
+      <div><div class="stat-num">£50</div><div class="stat-label">Per month flat rate</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Cloud based</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">Always available</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Features</div>
+    <h2>Everything you need to run your business</h2>
+    <p class="section-sub">16 modules built to work together — no integrations, no plugins, no extra costs.</p>
+    <div class="grid">
+      <div class="card"><div class="card-icon">🧾</div><div class="card-title">Invoices</div><div class="card-desc">Create, send and track professional invoices with automatic payment reminders.</div></div>
+      <div class="card"><div class="card-icon">📅</div><div class="card-title">Bookings</div><div class="card-desc">Online booking system with staff scheduling, availability and confirmations.</div></div>
+      <div class="card"><div class="card-icon">👥</div><div class="card-title">Customers</div><div class="card-desc">Full customer database with history, notes and communication tracking.</div></div>
+      <div class="card"><div class="card-icon">🛒</div><div class="card-title">Orders</div><div class="card-desc">Manage orders from creation to fulfilment with real-time status updates.</div></div>
+      <div class="card"><div class="card-icon">📦</div><div class="card-title">Products</div><div class="card-desc">Product catalogue with stock tracking, low stock alerts and categories.</div></div>
+      <div class="card"><div class="card-icon">📕</div><div class="card-title">Accounting</div><div class="card-desc">General ledger, bills, expenses and accounts receivable in one place.</div></div>
+      <div class="card"><div class="card-icon">📊</div><div class="card-title">Analytics</div><div class="card-desc">Revenue charts, top customers, daily orders and business performance data.</div></div>
+      <div class="card"><div class="card-icon">🧑‍💼</div><div class="card-title">Staff Management</div><div class="card-desc">Add team members, set roles, working hours and booking availability.</div></div>
+      <div class="card"><div class="card-icon">📨</div><div class="card-title">Send Message</div><div class="card-desc">Email your customers directly from the platform with templates and history.</div></div>
+      <div class="card"><div class="card-icon">🆘</div><div class="card-title">Support</div><div class="card-desc">Built-in support ticket system for your customers and your team.</div></div>
+      <div class="card"><div class="card-icon">🏭</div><div class="card-title">Suppliers</div><div class="card-desc">Manage supplier relationships, purchase history and contact details.</div></div>
+      <div class="card"><div class="card-icon">⚙️</div><div class="card-title">Settings</div><div class="card-desc">Full business profile, working hours, invoice defaults and billing management.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="section-inner">
+    <div class="section-tag">Pricing</div>
+    <h2>Simple, honest pricing</h2>
+    <p class="section-sub">One flat rate. All 16 modules included. No hidden fees.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div class="price-amount"><sup>£</sup>50<sub>/mo</sub></div>
+        <div class="price-note">Includes 1 Admin seat</div>
+        <ul class="price-list">
+          <li>All 16 modules</li>
+          <li>Unlimited customers</li>
+          <li>Unlimited invoices</li>
+          <li>Online booking page</li>
+          <li>369 emails/month</li>
+          <li>Azure cloud hosting</li>
+        </ul>
+        <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="price-btn price-btn-outline">Get started</a>
+      </div>
+      <div class="price-card featured">
+        <div class="popular-badge">Most popular</div>
+        <div class="price-name">Team</div>
+        <div class="price-amount"><sup>£</sup>50<sub>/mo</sub></div>
+        <div class="price-note">+ £15/month per staff seat</div>
+        <ul class="price-list">
+          <li>Everything in Starter</li>
+          <li>Unlimited staff members</li>
+          <li>Role-based permissions</li>
+          <li>Staff working hours</li>
+          <li>Per-staff booking slots</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="price-btn price-btn-green">Start free trial →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-inner">
+    <h2>Ready to run your business smarter?</h2>
+    <p>Join businesses already using ShahoSuite. Start your free trial today.</p>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-big btn-big-green">Start free trial →</a>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:16px;">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </p>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales</p>
+</footer>
+
+</body>
+</html>
