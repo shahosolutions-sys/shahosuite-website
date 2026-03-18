@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Customers — CRM Software for UK Small Businesses</title>
+<meta name="description" content="Manage all your customers in one place. Full CRM with contact info, notes, invoice history, order history and booking — built for UK small businesses. £50/month all-in-one." />
+<meta name="keywords" content="CRM software UK small business, customer management software UK, small business CRM UK, customer database software UK, CRM for freelancers UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/customers.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Customers — CRM Software for UK Small Businesses" />
+<meta property="og:description" content="Full CRM — customer profiles, invoice history, orders, bookings and notes. £50/month all-in-one." />
+<meta property="og:url" content="https://www.shahosuite.com/customers.html" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "ShahoSuite — Customers Module",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "CRMSoftware",
+      "operatingSystem": "Web",
+      "url": "https://www.shahosuite.com/customers.html",
+      "description": "CRM software for UK small businesses. Customer profiles, invoice history, orders, bookings and notes.",
+      "featureList": ["Customer profiles","Invoice history","Order history","Book from customer","Notes and tags","Archive","Export","Search and filter"],
+      "offers": {"@type":"Offer","price":"50","priceCurrency":"GBP"},
+      "provider": {"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What customer information does ShahoSuite store?","acceptedAnswer":{"@type":"Answer","text":"ShahoSuite stores name, photo, email, phone, address, notes, tags, status, last order date and links to all invoices, orders and bookings."}},
+        {"@type":"Question","name":"Can I view a customer's invoice and order history?","acceptedAnswer":{"@type":"Answer","text":"Yes. From any customer record you can instantly view all their invoices and orders with one click."}},
+        {"@type":"Question","name":"Can I book an appointment from a customer record?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each customer row has a Book button that opens the booking form with the customer pre-filled."}},
+        {"@type":"Question","name":"Can I archive customers I no longer work with?","acceptedAnswer":{"@type":"Answer","text":"Yes. Archive moves inactive customers out of view while keeping all their history intact."}},
+        {"@type":"Question","name":"How much does ShahoSuite cost?","acceptedAnswer":{"@type":"Answer","text":"£50/month for the Director account with all 16 modules. Staff accounts are £15/month each."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
+  border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05);
+}
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; user-select: none; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover  { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo:active { transform: translateY(3px);  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.18)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover  { border-color: #9ca3af; color: #111827; box-shadow: 0 3px 0 #9ca3af; transform: translateY(-1px); }
+.btn-login:active { transform: translateY(2px); box-shadow: 0 0 0 #d1d5db; }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover  { background: #1e293b; box-shadow: 0 4px 0 #374151; transform: translateY(-1px); }
+.btn-signup:active { transform: translateY(3px); box-shadow: 0 0 0 #374151; }
+/* rest of the page styles are intentionally minimal here since this is a single module page */
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo">
+      <span class="logo-left">Shaho</span><span class="logo-right">Suite</span>
+    </a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/index.html">Home</a><span class="bc-sep">›</span>
+    <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
+    <span>Customers</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="module-badge"><span class="badge-dot"></span>👤 Customers Module</div>
+    <h1>Customer <em>Management</em><br/>Built for UK Business</h1>
+    <p class="hero-sub">Every customer. Every invoice. Every order. Every booking. One profile — minimum clicks, complete picture.</p>
+
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#10b981;"></span>Full CRM built-in</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Invoice &amp; order history</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>GDPR-ready</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#8b5cf6;"></span>100% cloud</span>
+    </div>
+
+    <!-- GLOSSY BLURRED MOCKUP -->
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+
+        <!-- Sharp browser chrome -->
+        <div class="mockup-chrome">
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <div class="chrome-url">shahosuitefrontstorage.z33.web.core.windows.net/customers</div>
+        </div>
+
+        <!-- App body with frosted glass overlay -->
+        <div class="app-body-wrap">
+          <div class="app-layout">
+
+            <!-- Sidebar — slightly visible through blur -->
+            <div class="app-sidebar">
+              <div class="sb-brand"><div class="sb-brand-dot"></div>ShahoSuite</div>
+              <div class="sb-item">🏠 Dashboard</div>
+              <div class="sb-item active">👤 Customers</div>
+              <div class="sb-item">📦 Products</div>
+              <div class="sb-item">🧾 Invoices</div>
+              <div class="sb-item">💰 Credit Notes</div>
+              <div class="sb-item">🛒 Orders</div>
+              <div class="sb-item">🏭 Suppliers</div>
+              <div class="sb-item">📕 Accounting</div>
+              <div class="sb-item">📊 Analytics</div>
+              <div class="sb-item">📅 Booking</div>
+              <div class="sb-item">🧑‍💼 Staff</div>
+            </div>
+
+            <!-- Main — blurred impressionistic content -->
+            <div class="app-main-blur">
+
+              <!-- Blurred toolbar -->
+              <div class="blur-toolbar">
+                <div class="blur-pill wide"></div>
+                <div class="blur-pill med"></div>
+                <div class="blur-pill sm"></div>
+                <div style="flex:1;"></div>
+                <div class="blur-pill med"></div>
+                <div class="blur-pill green"></div>
+              </div>
+
+              <!-- Blurred table -->
+              <div class="blur-thead">
+                <div class="blur-th" style="width:20px;"></div>
+                <div class="blur-th" style="width:70px;"></div>
+                <div class="blur-th" style="width:100%;"></div>
+                <div class="blur-th" style="width:50px;"></div>
+                <div class="blur-th" style="width:40px;"></div>
+                <div class="blur-th" style="width:60px;"></div>
+                <div class="blur-th" style="width:110px;"></div>
+              </div>
+
+              <!-- Row 1 -->
+              <div class="blur-row">
+                <div class="blur-av bav-1"></div>
+                <div><div class="blur-line dark" style="width:80px;"></div><div class="blur-line tiny" style="width:26px;margin-top:5px;"></div></div>
+                <div><div class="blur-line" style="width:90%;"></div><div class="blur-line tiny" style="width:70%;margin-top:5px;"></div></div>
+                <div class="blur-line" style="width:80%;height:8px;"></div>
+                <div class="blur-badge"></div>
+                <div class="blur-never"></div>
+                <div class="blur-actions">
+                  <div class="blur-btn-row"><div class="blur-btn bb-g"></div><div class="blur-btn bb-w"></div><div class="blur-btn bb-w"></div></div>
+                  <div class="blur-btn-row"><div class="blur-btn bb-b"></div><div class="blur-btn bb-p"></div><div class="blur-btn bb-o"></div></div>
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="blur-row">
+                <div class="blur-av bav-2"></div>
+                <div><div class="blur-line dark" style="width:90px;"></div><div class="blur-line tiny" style="width:26px;margin-top:5px;"></div></div>
+                <div><div class="blur-line" style="width:85%;"></div><div class="blur-line tiny" style="width:65%;margin-top:5px;"></div></div>
+                <div class="blur-line" style="width:70%;height:8px;"></div>
+                <div class="blur-badge"></div>
+                <div class="blur-date"></div>
+                <div class="blur-actions">
+                  <div class="blur-btn-row"><div class="blur-btn bb-g"></div><div class="blur-btn bb-w"></div><div class="blur-btn bb-w"></div></div>
+                  <div class="blur-btn-row"><div class="blur-btn bb-b"></div><div class="blur-btn bb-p"></div><div class="blur-btn bb-o"></div></div>
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div class="blur-row">
+                <div class="blur-av bav-3"></div>
+                <div><div class="blur-line dark" style="width:55px;"></div><div class="blur-line tiny" style="width:26px;margin-top:5px;"></div></div>
+                <div><div class="blur-line" style="width:88%;"></div><div class="blur-line tiny" style="width:60%;margin-top:5px;"></div></div>
+                <div class="blur-line" style="width:90%;height:8px;"></div>
+                <div class="blur-badge"></div>
+                <div class="blur-never"></div>
+                <div class="blur-actions">
+                  <div class="blur-btn-row"><div class="blur-btn bb-g"></div><div class="blur-btn bb-w"></div><div class="blur-btn bb-w"></div></div>
+                  <div class="blur-btn-row"><div class="blur-btn bb-b"></div><div class="blur-btn bb-p"></div><div class="blur-btn bb-o"></div></div>
+                </div>
+              </div>
+
+              <!-- Row 4 -->
+              <div class="blur-row">
+                <div class="blur-av bav-4"></div>
+                <div><div class="blur-line dark" style="width:65px;"></div><div class="blur-line tiny" style="width:26px;margin-top:5px;"></div></div>
+                <div><div class="blur-line" style="width:75%;"></div><div class="blur-line tiny" style="width:50%;margin-top:5px;"></div></div>
+                <div class="blur-line" style="width:20%;height:8px;"></div>
+                <div class="blur-badge"></div>
+                <div class="blur-never"></div>
+                <div class="blur-actions">
+                  <div class="blur-btn-row"><div class="blur-btn bb-g"></div><div class="blur-btn bb-w"></div><div class="blur-btn bb-w"></div></div>
+                  <div class="blur-btn-row"><div class="blur-btn bb-b"></div><div class="blur-btn bb-p"></div><div class="blur-btn bb-o"></div></div>
+                </div>
+              </div>
+
+              <!-- Row 5 -->
+              <div class="blur-row">
+                <div class="blur-av bav-5"></div>
+                <div><div class="blur-line dark" style="width:72px;"></div><div class="blur-line tiny" style="width:26px;margin-top:5px;"></div></div>
+                <div><div class="blur-line" style="width:82%;"></div><div class="blur-line tiny" style="width:55%;margin-top:5px;"></div></div>
+                <div class="blur-line" style="width:85%;height:8px;"></div>
+                <div class="blur-badge"></div>
+                <div class="blur-date"></div>
+                <div class="blur-actions">
+                  <div class="blur-btn-row"><div class="blur-btn bb-g"></div><div class="blur-btn bb-w"></div><div class="blur-btn bb-w"></div></div>
+                  <div class="blur-btn-row"><div class="blur-btn bb-b"></div><div class="blur-btn bb-p"></div><div class="blur-btn bb-o"></div></div>
+                </div>
+              </div>
+
+              <!-- Pagination -->
+              <div class="blur-pagination">
+                <div class="blur-pg-text"></div>
+                <div class="blur-pg-arr"></div>
+                <div class="blur-pg-num"></div>
+                <div class="blur-pg-arr"></div>
+              </div>
+
+            </div><!-- /app-main-blur -->
+          </div><!-- /app-layout -->
+        </div><!-- /app-body-wrap -->
+      </div><!-- /mockup-frame -->
+
+      <!-- Floating stat — SHARP, readable -->
+      <div class="mockup-float">
+        <div class="mf-label">Total customers</div>
+        <div class="mf-val">5 Active</div>
+        <div class="mf-sub">↑ Export anytime</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACTIONS EXPLAINED -->
+<section class="actions-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">What You Can Do</div>
+    <h2>Six actions. One customer row.</h2>
+    <p class="section-sub">Every customer has six instant actions — no navigating, no searching. Everything is right there.</p>
+    <div class="actions-grid">
+      <div class="action-card ac-view"><span class="action-icon">👁</span><div class="action-title">View</div><div class="action-desc">Full customer profile — contact info, all history, notes and tags in one screen.</div></div>
+*** End of File
