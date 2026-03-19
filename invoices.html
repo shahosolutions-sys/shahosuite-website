@@ -47,99 +47,811 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <style>
-/* ...styles omitted for brevity, see user input for full CSS... */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
+  border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  display: inline-flex; align-items: center; text-decoration: none;
+  font-size: 22px; font-weight: 800; letter-spacing: -0.5px; user-select: none;
+  filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s;
+}
+.logo:hover  { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo:active { transform: translateY(3px);  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.18)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0;  background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login {
+  padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 600; text-decoration: none; color: #374151;
+  background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s;
+}
+.btn-login:hover  { border-color: #9ca3af; color: #111827; box-shadow: 0 3px 0 #9ca3af; transform: translateY(-1px); }
+.btn-login:active { transform: translateY(2px); box-shadow: 0 0 0 #d1d5db; }
+.btn-signup {
+  padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 700; text-decoration: none; color: #fff;
+  background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s;
+}
+.btn-signup:hover  { background: #1e293b; box-shadow: 0 4px 0 #374151; transform: translateY(-1px); }
+.btn-signup:active { transform: translateY(3px); box-shadow: 0 0 0 #374151; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 28px;
+  font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px;
+}
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.breadcrumb a:hover { color: #8b5cf6; }
+.bc-sep { color: #cbd5e1; }
+
+/* ── HERO ── */
+.hero {
+  padding: 72px 28px 80px;
+  background: linear-gradient(160deg, #f5f3ff 0%, #faf5ff 40%, #f0fdf4 100%);
+  text-align: center; overflow: hidden; position: relative;
+}
+/* subtle noise texture */
+.hero::before {
+  content: ''; position: absolute; inset: 0; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+.module-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px;
+  background: rgba(255,255,255,0.9); border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600;
+  margin-bottom: 22px; box-shadow: 0 2px 8px rgba(139,92,246,0.08);
+  backdrop-filter: blur(8px);
+}
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #8b5cf6; flex-shrink: 0; }
+h1 {
+  font-size: clamp(34px, 5.5vw, 58px); font-weight: 800;
+  line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; color: #0f172a;
+}
+h1 em { color: #8b5cf6; font-style: normal; }
+.hero-sub {
+  font-size: 17px; color: #475569; margin-bottom: 14px;
+  max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.75;
+}
+
+/* trust pills row */
+.trust-row {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+.trust-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 50px;
+  background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.07);
+  font-size: 12px; font-weight: 600; color: #374151;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.trust-pill-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── REAL APP MOCKUP ── */
+.mockup-outer {
+  max-width: 720px; margin: 0 auto; position: relative;
+}
+
+/* frosted glass card wrapping the whole thing */
+.mockup-frame {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 20px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 12px 0 rgba(139,92,246,0.12),
+    0 24px 60px rgba(139,92,246,0.14),
+    0 0 0 1px rgba(139,92,246,0.08);
+  overflow: hidden;
+}
+
+/* browser chrome */
+.mockup-chrome {
+  background: #1e293b; padding: 10px 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.chrome-dot { width: 9px; height: 9px; border-radius: 50%; }
+.chrome-dot.r { background: #ef4444; } .chrome-dot.y { background: #f59e0b; } .chrome-dot.g { background: #22c55e; }
+.chrome-url {
+  flex: 1; text-align: center; background: rgba(255,255,255,0.07); border-radius: 5px;
+  padding: 3px 12px; color: rgba(255,255,255,0.35); font-size: 11px;
+}
+
+/* app layout inside */
+.app-layout { display: grid; grid-template-columns: 170px 1fr; min-height: 440px; }
+
+/* sidebar */
+.app-sidebar {
+  background: rgba(15,23,42,0.95);
+  padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.05);
+}
+.sb-brand {
+  padding: 0 14px 12px; font-size: 13px; font-weight: 800;
+  color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 7px;
+  border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;
+}
+.sb-brand-dot { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item {
+  padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.38);
+  display: flex; align-items: center; gap: 8px; border-radius: 6px; margin: 1px 8px;
+}
+.sb-item.active { background: rgba(139,92,246,0.15); color: #c4b5fd; font-weight: 600; border-left: 2px solid #8b5cf6; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+.sb-item:hover:not(.active) { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.6); }
+.sb-icon { font-size: 13px; }
+
+/* main content */
+.app-main { background: #f8f9fc; padding: 18px; overflow: hidden; }
+
+/* page header */
+.app-page-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+}
+.app-page-title { font-size: 14px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px; }
+.app-draft-badge {
+  font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 30px;
+  background: #fef3c7; color: #92400e; border: 1px solid #fde68a;
+}
+.app-inv-id {
+  font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 6px;
+  background: #3b82f6; color: #fff;
+}
+
+/* form progress bar */
+.progress-bar { height: 3px; background: #e2e8f0; border-radius: 2px; margin-bottom: 14px; overflow: hidden; }
+.progress-fill { height: 100%; width: 45%; background: linear-gradient(90deg, #8b5cf6, #10b981); border-radius: 2px; }
+
+/* customer section */
+.form-section { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px; margin-bottom: 10px; }
+.form-section-title { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
+.tab-row { display: flex; gap: 6px; margin-bottom: 10px; }
+.tab { padding: 6px 14px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: default; border: 1px solid #e2e8f0; color: #64748b; background: #fff; display: flex; align-items: center; gap: 5px; }
+.tab.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+.form-input {
+  width: 100%; border: 1px solid #e2e8f0; border-radius: 7px; padding: 7px 10px;
+  font-size: 11px; color: #94a3b8; font-family: 'DM Sans', sans-serif;
+  background: #f8fafc; margin-bottom: 6px;
+}
+.form-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+.form-field-label { font-size: 10px; color: #94a3b8; margin-bottom: 3px; font-weight: 500; }
+.form-field-val { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; font-size: 11px; color: #0f172a; font-weight: 600; }
+.form-field-val.purple { color: #8b5cf6; }
+.form-field-val.green  { color: #16a34a; }
+.form-applied { font-size: 10px; color: #10b981; margin-top: 2px; }
+
+/* invoice items table */
+.items-section { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+.items-header {
+  display: grid; grid-template-columns: 1.8fr 1.2fr 0.6fr 0.8fr 0.6fr 0.6fr 0.7fr;
+  gap: 4px; padding: 8px 12px; background: #f8fafc;
+  font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.items-row {
+  display: grid; grid-template-columns: 1.8fr 1.2fr 0.6fr 0.8fr 0.6fr 0.6fr 0.7fr;
+  gap: 4px; padding: 8px 12px; border-bottom: 1px solid #f1f5f9; align-items: center;
+}
+.items-row:last-child { border-bottom: none; }
+.item-select {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px;
+  padding: 5px 7px; font-size: 10px; color: #64748b; font-family: 'DM Sans', sans-serif; width: 100%;
+}
+.item-input {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px;
+  padding: 5px 7px; font-size: 10px; color: #0f172a; font-family: 'DM Sans', sans-serif;
+  width: 100%; text-align: center;
+}
+.item-total { font-size: 11px; font-weight: 700; color: #16a34a; text-align: right; }
+
+/* floating stat */
+.mockup-float {
+  position: absolute; bottom: -18px; right: -20px; z-index: 5;
+  background: rgba(255,255,255,0.92); border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 14px; padding: 12px 16px;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 28px rgba(139,92,246,0.18), 0 2px 0 rgba(255,255,255,0.9) inset;
+  min-width: 155px;
+}
+.mf-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.mf-val { font-size: 20px; font-weight: 800; color: #16a34a; letter-spacing: -0.5px; }
+.mf-sub { font-size: 11px; color: #64748b; margin-top: 1px; }
+
+/* ── STATUS LIFECYCLE ── */
+.status-section { padding: 72px 28px; background: #fff; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #8b5cf6; }
+h2 { font-size: clamp(24px, 3.8vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+.lifecycle-track {
+  display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto;
+  padding-bottom: 8px;
+}
+.lifecycle-step {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  min-width: 120px; flex: 1;
+  position: relative;
+}
+/* connector line */
+.lifecycle-step:not(:last-child)::after {
+  content: ''; position: absolute; top: 20px; right: -50%;
+  width: 100%; height: 2px; background: var(--lc, #e2e8f0); z-index: 0;
+}
+.ls-dot {
+  width: 40px; height: 40px; border-radius: 50%; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 800; margin-bottom: 10px;
+  border: 2px solid var(--lc, #e2e8f0);
+  background: var(--lbg, #f8fafc); color: var(--ltx, #94a3b8);
+  box-shadow: 0 3px 0 var(--lsh, #e2e8f0);
+}
+.ls-label { font-size: 12px; font-weight: 700; color: var(--ltx, #64748b); margin-bottom: 3px; }
+.ls-desc  { font-size: 11px; color: #94a3b8; line-height: 1.4; max-width: 100px; }
+
+.ls-draft      { --lc:#94a3b8; --lbg:#f8fafc;        --ltx:#475569; --lsh:#e2e8f0; }
+.ls-sent       { --lc:#3b82f6; --lbg:#eff6ff;        --ltx:#1d4ed8; --lsh:#bfdbfe; }
+.ls-partial    { --lc:#f59e0b; --lbg:#fffbeb;        --ltx:#b45309; --lsh:#fde68a; }
+.ls-paid       { --lc:#10b981; --lbg:#f0fdf4;        --ltx:#065f46; --lsh:#bbf7d0; }
+.ls-overdue    { --lc:#ef4444; --lbg:#fff1f2;        --ltx:#b91c1c; --lsh:#fecaca; }
+.ls-cancelled  { --lc:#64748b; --lbg:#f8fafc;        --ltx:#334155; --lsh:#cbd5e1; }
+
+/* ── BENEFITS ── */
+.benefits-section { padding: 72px 28px; background: #f8fafc; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.benefit-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px;
+  border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 16px rgba(0,0,0,0.03);
+  transition: all 0.2s;
+}
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#8b5cf6;--bs:#ede9fe;} .bc2{--bc:#10b981;--bs:#d1fae5;} .bc3{--bc:#3b82f6;--bs:#dbeafe;}
+.bc4{--bc:#f59e0b;--bs:#fef3c7;} .bc5{--bc:#f43f5e;--bs:#ffe4e6;} .bc6{--bc:#06b6d4;--bs:#cffafe;}
+.bc7{--bc:#6366f1;--bs:#e0e7ff;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon  { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: #0f172a; }
+.benefit-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── SIMPLICITY ── */
+.simple-section { padding: 72px 28px; background: #fff; }
+.simple-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.simple-card {
+  background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 16px;
+  padding: 28px 22px; text-align: center;
+  box-shadow: 0 4px 0 #e5e7eb;
+  transition: all 0.2s;
+}
+.simple-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 #e5e7eb; background: #fff; }
+.simple-num { font-size: 36px; font-weight: 800; color: #8b5cf6; letter-spacing: -2px; margin-bottom: 6px; }
+.simple-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+.simple-desc { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* azure trust */
+.azure-bar {
+  background: #0f172a; padding: 28px;
+  display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+}
+.azure-bar-inner { max-width: 900px; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.azure-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px; padding: 7px 16px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8);
+}
+.azure-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azpulse 2s infinite; }
+@keyframes azpulse { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* ── COMPARE ── */
+.compare-section { padding: 72px 28px; background: #f8fafc; }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 840px; }
+.compare-card { border-radius: 18px; padding: 28px 26px; border: 2px solid transparent; }
+.compare-old { background: #fff5f5; border-color: #fecaca; box-shadow: 0 4px 0 #fecaca; }
+.compare-new { background: #f0fdf4; border-color: #bbf7d0; box-shadow: 0 4px 0 #bbf7d0; }
+.compare-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 14px; display: flex; align-items: center; gap: 6px;
+}
+.compare-old .compare-label { color: #ef4444; }
+.compare-new .compare-label { color: #10b981; }
+.compare-items { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.compare-items li { font-size: 13.5px; display: flex; align-items: center; gap: 9px; color: #374151; }
+.compare-old .compare-items li::before { content: '✗'; color: #ef4444; font-weight: 800; flex-shrink: 0; }
+.compare-new .compare-items li::before { content: '✓'; color: #10b981; font-weight: 800; flex-shrink: 0; }
+
+/* ── VAT ── */
+.vat-section { padding: 72px 28px; background: #fff; }
+.vat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; max-width: 940px; }
+.vat-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.vat-list li {
+  display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #334155;
+  padding: 11px 14px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;
+}
+.vat-list li::before {
+  content: '✓'; color: #10b981; font-weight: 800; font-size: 11px;
+  width: 18px; height: 18px; border-radius: 50%; background: rgba(16,185,129,0.12);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+.vat-visual { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 0 #e2e8f0; }
+.vat-visual-hdr { background: #f8fafc; padding: 12px 16px; border-bottom: 1px solid #e2e8f0; font-size: 11px; font-weight: 700; color: #374151; display: flex; align-items: center; gap: 6px; }
+.vat-dot { width: 6px; height: 6px; border-radius: 50%; background: #8b5cf6; }
+.vat-row { padding: 11px 16px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; }
+.vat-row:last-child { border-bottom: none; }
+.vl { font-size: 12px; color: #94a3b8; font-weight: 500; }
+.vv { font-size: 12px; font-weight: 700; color: #0f172a; }
+.vv.p { color: #8b5cf6; } .vv.g { color: #16a34a; }
+
+/* ── FAQ ── */
+.faq-section { padding: 72px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #c4b5fd; box-shadow: 0 4px 0 #ede9fe; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #8b5cf6; font-weight: 400; flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* ── RELATED ── */
+.related-section { padding: 64px 28px; background: #fff; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.related-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+  padding: 20px 16px; text-align: center; text-decoration: none; color: inherit;
+  box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s;
+}
+.related-card:hover { border-color: #8b5cf6; box-shadow: 0 4px 0 #ede9fe; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name  { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+.related-link  { font-size: 11px; color: #8b5cf6; }
+
+/* ── CTA ── */
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg, #faf5ff 0%, #f0fdf4 100%); }
+.cta-inner { max-width: 540px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 12px; }
+.cta-section p  { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.btn-cta-main {
+  display: inline-block; padding: 14px 36px; border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700;
+  text-decoration: none; color: #fff; background: #8b5cf6;
+  box-shadow: 0 5px 0 #6d28d9, 0 10px 24px rgba(139,92,246,0.28); transition: all 0.15s;
+}
+.btn-cta-main:hover  { transform: translateY(-2px); box-shadow: 0 7px 0 #6d28d9, 0 14px 30px rgba(139,92,246,0.36); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #6d28d9; }
+
+/* ── FOOTER ── */
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #8b5cf6; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 760px) {
+  .app-layout { grid-template-columns: 1fr; }
+  .app-sidebar { display: none; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .vat-grid { grid-template-columns: 1fr; }
+  .items-header,.items-row { grid-template-columns: 2fr 0.6fr 0.7fr 0.7fr; }
+  .items-header > *:nth-child(2),.items-header > *:nth-child(3),
+  .items-row > *:nth-child(2),.items-row > *:nth-child(3) { display: none; }
+  .mockup-float { display: none; }
+  .lifecycle-track { gap: 4px; }
+  .lifecycle-step { min-width: 90px; }
+}
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo">
+    <a href="/index.html" class="logo">
       <span class="logo-left">Shaho</span><span class="logo-right">Suite</span>
     </a>
     <div class="nav-btns">
       <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
       <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
-      <a href="/invoices.html" class="btn-login" style="font-weight:700;">🧾 Invoices</a>
-      <a href="/booking.html" class="btn-login" style="font-weight:700;">📅 Booking</a>
-      <a href="/customers.html" class="btn-login" style="font-weight:700;">👤 Customers</a>
     </div>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/index.html">Home</a><span class="bc-sep">›</span>
+    <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
+    <span>Invoices</span>
+  </div>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="badge">🧾 Invoicing Module</div>
-    <h1>Professional Invoicing<br/>for UK Businesses</h1>
-    <div class="slogan-wrap" aria-label="VAT-compliant, fast, easy invoices">
-      <span class="slogan-word">VAT-compliant</span>
-      <span class="slogan-word">Invoices</span>
-      <span class="slogan-word">in</span>
-      <span class="slogan-word">Seconds</span>
+
+    <div class="module-badge">
+      <span class="badge-dot"></span>
+      🧾 Invoices Module
     </div>
-    <p class="hero-sub">Create, send and track invoices and credit notes with ease. Built for UK small businesses — automatic VAT, payment tracking, PDF export and more.</p>
-    <div class="stats">
-      <div class="stat-item"><div class="stat-num sn-a">100%</div><div class="stat-label">HMRC Compliant</div></div>
-      <div class="stat-item"><div class="stat-num sn-b">1-click</div><div class="stat-label">PDF Export</div></div>
-      <div class="stat-item"><div class="stat-num sn-c">24/7</div><div class="stat-label">Cloud Access</div></div>
-      <div class="stat-item"><div class="stat-num sn-d">£50/mo</div><div class="stat-label">All modules</div></div>
+
+    <h1>Professional <em>Invoicing</em><br/>Built for UK Business</h1>
+
+    <p class="hero-sub">
+      VAT-compliant invoices in seconds. Auto due dates, one-click send,
+      payment tracking and credit notes — minimum clicks, maximum control.
+    </p>
+
+    <!-- Trust pills — no CTA buttons here -->
+    <div class="trust-row">
+      <span class="trust-pill"><span class="trust-pill-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="trust-pill-dot" style="background:#3b82f6;"></span>GDPR-ready</span>
+      <span class="trust-pill"><span class="trust-pill-dot" style="background:#8b5cf6;"></span>Minimum clicks</span>
+      <span class="trust-pill"><span class="trust-pill-dot" style="background:#f59e0b;"></span>VAT-compliant</span>
+      <span class="trust-pill"><span class="trust-pill-dot" style="background:#f43f5e;"></span>100% cloud</span>
     </div>
+
+    <!-- REAL APP MOCKUP — based on actual ShahoSuite screenshot -->
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+
+        <!-- browser chrome -->
+        <div class="mockup-chrome">
+          <div class="chrome-dot r"></div>
+          <div class="chrome-dot y"></div>
+          <div class="chrome-dot g"></div>
+          <div class="chrome-url">shahosuitefrontstorage.z33.web.core.windows.net/invoices/create</div>
+        </div>
+
+        <!-- app layout -->
+        <div class="app-layout">
+
+          <!-- sidebar (matches real app) -->
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-brand-dot"></div>ShahoSuite</div>
+            <div class="sb-item"><span class="sb-icon">🏠</span>Dashboard</div>
+            <div class="sb-item"><span class="sb-icon">👤</span>Customers</div>
+            <div class="sb-item"><span class="sb-icon">📦</span>Products</div>
+            <div class="sb-item active"><span class="sb-icon">🧾</span>Invoices</div>
+            <div class="sb-item"><span class="sb-icon">💰</span>Credit Notes</div>
+            <div class="sb-item"><span class="sb-icon">🛒</span>Orders</div>
+            <div class="sb-item"><span class="sb-icon">🏭</span>Suppliers</div>
+            <div class="sb-item"><span class="sb-icon">📕</span>Accounting</div>
+            <div class="sb-item"><span class="sb-icon">📊</span>Analytics</div>
+            <div class="sb-item"><span class="sb-icon">📅</span>Booking</div>
+            <div class="sb-item"><span class="sb-icon">🧑‍💼</span>Staff</div>
+          </div>
+
+          <!-- main content -->
+          <div class="app-main">
+            <div class="app-page-header">
+              <div class="app-page-title">🧾 Create Invoice <span class="app-draft-badge">Draft</span></div>
+              <div class="app-inv-id">INV-20260318-8706</div>
+            </div>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+
+            <!-- Customer Information -->
+            <div class="form-section">
+              <div class="form-section-title">Customer Information</div>
+              <div class="tab-row">
+                <div class="tab active">🗂️ Existing Customer</div>
+                <div class="tab">👤 Guest Customer</div>
+              </div>
+              <input class="form-input" placeholder="Search Customer..." readonly />
+              <input class="form-input" placeholder="Customer Address" readonly style="height:44px;" />
+            </div>
+
+            <!-- Invoice fields (matches real app: Number, Date, Payment Terms, Due Date) -->
+            <div class="form-section">
+              <div class="form-grid-4">
+                <div>
+                  <div class="form-field-label">Invoice Number *</div>
+                  <div class="form-field-val purple">INV-20260318-8706</div>
+                </div>
+                <div>
+                  <div class="form-field-label">Invoice Date *</div>
+                  <div class="form-field-val">18/03/2026</div>
+                </div>
+                <div>
+                  <div class="form-field-label">Payment Terms</div>
+                  <div class="form-field-val">Net 30</div>
+                  <div class="form-applied">Net 30 applied</div>
+                </div>
+                <div>
+                  <div class="form-field-label">Due Date *</div>
+                  <div class="form-field-val green">17/04/2026</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Invoice Items (matches real app columns) -->
+            <div class="items-section">
+              <div class="items-header">
+                <span>Product</span>
+                <span>Description</span>
+                <span>QTY</span>
+                <span>Unit Price (£)</span>
+                <span>Disc %</span>
+                <span>VAT %</span>
+                <span>Line Total</span>
+              </div>
+              <div class="items-row">
+                <select class="item-select"><option>Platform Licence</option></select>
+                <input class="item-input" value="Monthly subscription" readonly />
+                <input class="item-input" value="1" readonly />
+                <input class="item-input" value="50.00" readonly />
+                <input class="item-input" value="0" readonly />
+                <input class="item-input" value="20" readonly />
+                <div class="item-total">£60.00</div>
+              </div>
+              <div class="items-row">
+                <select class="item-select"><option>Staff Seat</option></select>
+                <input class="item-input" value="Additional staff" readonly />
+                <input class="item-input" value="2" readonly />
+                <input class="item-input" value="15.00" readonly />
+                <input class="item-input" value="0" readonly />
+                <input class="item-input" value="20" readonly />
+                <div class="item-total">£36.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating paid card -->
+      <div class="mockup-float">
+        <div class="mf-label">Paid this month</div>
+        <div class="mf-val">£4,820</div>
+        <div class="mf-sub">↑ 14% vs last month</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ── FEATURES ── -->
-<section class="features" id="features">
+<!-- STATUS LIFECYCLE -->
+<section class="status-section">
   <div class="section-inner">
-    <div class="section-tag" style="color:#6366f1;">Why ShahoSuite Invoicing?</div>
-    <h2>Everything you need for invoicing</h2>
-    <p class="section-sub">From invoice creation to payment tracking, ShahoSuite covers every step — no plugins, no hidden fees.</p>
-    <div class="modules-grid">
-      <div class="mod-card m4"> <span class="mod-emoji">🧾</span><div class="mod-name">Create VAT-compliant invoices</div></div>
-      <div class="mod-card m5"> <span class="mod-emoji">💰</span><div class="mod-name">Credit Notes</div></div>
-      <div class="mod-card m6"> <span class="mod-emoji">📤</span><div class="mod-name">Send &amp; track payments</div></div>
-      <div class="mod-card m7"> <span class="mod-emoji">📄</span><div class="mod-name">PDF Export</div></div>
-      <div class="mod-card m8"> <span class="mod-emoji">🔔</span><div class="mod-name">Automatic reminders</div></div>
-      <div class="mod-card m9"> <span class="mod-emoji">📊</span><div class="mod-name">Payment dashboard</div></div>
-      <div class="mod-card m10"><span class="mod-emoji">🔒</span><div class="mod-name">Secure &amp; GDPR-ready</div></div>
+    <div class="section-tag">Invoice Status</div>
+    <h2>Full lifecycle — every step tracked</h2>
+    <p class="section-sub">Every invoice moves through a clear status trail. You always know exactly where every payment stands.</p>
+
+    <div class="lifecycle-track" role="list">
+      <div class="lifecycle-step ls-draft" role="listitem">
+        <div class="ls-dot">📝</div>
+        <div class="ls-label">Draft</div>
+        <div class="ls-desc">Created, not yet sent</div>
+      </div>
+      <div class="lifecycle-step ls-sent">
+        <div class="ls-dot">📤</div>
+        <div class="ls-label">Sent</div>
+        <div class="ls-desc">Emailed to customer</div>
+      </div>
+      <div class="lifecycle-step ls-partial">
+        <div class="ls-dot">💛</div>
+        <div class="ls-label">Partially Paid</div>
+        <div class="ls-desc">Part payment received</div>
+      </div>
+      <div class="lifecycle-step ls-paid">
+        <div class="ls-dot">✓</div>
+        <div class="ls-label">Paid</div>
+        <div class="ls-desc">Fully settled</div>
+      </div>
+      <div class="lifecycle-step ls-overdue">
+        <div class="ls-dot">⚠</div>
+        <div class="ls-label">Overdue</div>
+        <div class="ls-desc">Past due date</div>
+      </div>
+      <div class="lifecycle-step ls-cancelled">
+        <div class="ls-dot">✕</div>
+        <div class="ls-label">Cancelled</div>
+        <div class="ls-desc">Voided invoice</div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding:14px 18px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;font-size:13px;color:#475569;max-width:600px;">
+      💡 Status is selected when saving the invoice and can be updated any time from the invoice list. ShahoSuite auto-moves invoices to <strong>Overdue</strong> when the due date passes.
     </div>
   </div>
 </section>
 
-<!-- ── FAQ ── -->
-<section class="who-section" id="faq">
+<!-- SIMPLICITY SECTION -->
+<section class="simple-section">
   <div class="section-inner">
-    <div class="section-tag" style="color:#10b981;">FAQ</div>
-    <h2>Frequently Asked Questions</h2>
-    <div class="who-grid">
-      <div class="who-card"><span class="who-icon">✅</span><div class="who-title">VAT-compliant?</div><div class="who-desc">Yes, every invoice includes all HMRC-required fields: VAT number, line-item VAT, supplier address and unique invoice number.</div></div>
-      <div class="who-card"><span class="who-icon">💸</span><div class="who-title">Credit notes?</div><div class="who-desc">Issue full or partial credit notes in seconds — accounts update instantly.</div></div>
-      <div class="who-card"><span class="who-icon">💷</span><div class="who-title">Cost?</div><div class="who-desc">£50/month for the Director account, which includes all 16 modules. No per-invoice fees. Staff accounts are £15/month each.</div></div>
+    <div class="section-tag">Why ShahoSuite</div>
+    <h2>Minimum clicks.<br/>Maximum control.</h2>
+    <p class="section-sub">Working with ShahoSuite means less time on admin and more time on your business. Simple, safe and secure.</p>
+
+    <div class="simple-grid">
+      <div class="simple-card">
+        <div class="simple-num">1</div>
+        <div class="simple-title">Click to create</div>
+        <div class="simple-desc">One screen, one form. Invoice number, date and due date auto-filled. Select a customer and go.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-num">1</div>
+        <div class="simple-title">Click to send</div>
+        <div class="simple-desc">PDF generated automatically. Sent to the customer's email with one click — logged with timestamp.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-num">1</div>
+        <div class="simple-title">Click to credit note</div>
+        <div class="simple-desc">Issue a credit note directly from the invoice in one click. Accounting updates automatically.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-num">0</div>
+        <div class="simple-title">Spreadsheets needed</div>
+        <div class="simple-desc">Everything links. Invoices connect to customers, accounting and analytics — automatically, always.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── CTA ── -->
+<!-- AZURE TRUST BAR -->
+<div class="azure-bar">
+  <div class="azure-bar-inner">
+    <span class="azure-pill"><span class="azure-dot"></span>Hosted on Microsoft Azure</span>
+    <span class="azure-pill"><span class="azure-dot"></span>99.9% Uptime SLA</span>
+    <span class="azure-pill"><span class="azure-dot"></span>UK Data Centres</span>
+    <span class="azure-pill"><span class="azure-dot"></span>SSL Encrypted</span>
+    <span class="azure-pill"><span class="azure-dot"></span>GDPR-Ready</span>
+    <span class="azure-pill"><span class="azure-dot"></span>100% Cloud-Based</span>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<section class="compare-section">
+  <div class="section-inner">
+    <div class="section-tag">Why Switch</div>
+    <h2>No more spreadsheets.</h2>
+    <p class="section-sub">Most UK small businesses still invoice from Excel. Here's what that actually costs.</p>
+    <div class="compare-grid">
+      <div class="compare-card compare-old">
+        <div class="compare-label">❌ Without ShahoSuite</div>
+        <ul class="compare-items">
+          <li>Manual invoice numbers — easy to duplicate</li>
+          <li>Chasing payments by hand every month</li>
+          <li>VAT errors risk HMRC penalties</li>
+          <li>No link between invoices and accounts</li>
+          <li>No dashboard — no idea what's outstanding</li>
+          <li>Credit notes on separate spreadsheets</li>
+          <li>No status trail — no audit history</li>
+        </ul>
+      </div>
+      <div class="compare-card compare-new">
+        <div class="compare-label">✅ With ShahoSuite</div>
+        <ul class="compare-items">
+          <li>Auto-numbered sequential invoices</li>
+          <li>Automatic payment reminders sent for you</li>
+          <li>HMRC-compliant fields built in</li>
+          <li>Invoices linked to accounting automatically</li>
+          <li>Live payment dashboard always up to date</li>
+          <li>Credit notes linked to originals in one click</li>
+          <li>Full status lifecycle — Draft to Paid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAT & HMRC -->
+<section class="vat-section">
+  <div class="section-inner">
+    <div class="vat-grid">
+      <div>
+        <div class="section-tag">UK Compliance</div>
+        <h2>VAT-ready.<br/>HMRC-compliant.</h2>
+        <p style="font-size:15px;color:#475569;line-height:1.7;margin-bottom:18px;">Every ShahoSuite invoice includes the fields HMRC requires. Built-in by default — nothing to configure.</p>
+        <ul class="vat-list">
+          <li>Supplier name, address and VAT registration number</li>
+          <li>Unique sequential invoice number</li>
+          <li>Date of supply and invoice date</li>
+          <li>Description of goods or services</li>
+          <li>Net amount, VAT rate and VAT amount — all separate</li>
+          <li>Customer name and address</li>
+        </ul>
+        <div style="margin-top:16px;padding:12px 16px;background:rgba(139,92,246,0.05);border:1px solid rgba(139,92,246,0.15);border-radius:10px;font-size:12.5px;color:#475569;line-height:1.6;">
+          <strong style="color:#0f172a;">Note:</strong> Always confirm your specific VAT obligations with a qualified UK accountant or HMRC directly.
+        </div>
+      </div>
+      <div class="vat-visual">
+        <div class="vat-visual-hdr"><span class="vat-dot"></span>Invoice Fields — ShahoSuite</div>
+        <div class="vat-row"><span class="vl">Invoice Number</span><span class="vv p">INV-20260318-8706</span></div>
+        <div class="vat-row"><span class="vl">Invoice Date</span><span class="vv">18/03/2026</span></div>
+        <div class="vat-row"><span class="vl">Payment Terms</span><span class="vv">Net 30</span></div>
+        <div class="vat-row"><span class="vl">Due Date</span><span class="vv g">17/04/2026</span></div>
+        <div class="vat-row"><span class="vl">VAT Registration</span><span class="vv p">GB 123 456 789</span></div>
+        <div class="vat-row"><span class="vl">Net Amount</span><span class="vv">£80.00</span></div>
+        <div class="vat-row"><span class="vl">VAT @ 20%</span><span class="vv">£16.00</span></div>
+        <div class="vat-row"><span class="vl">Total Inc. VAT</span><span class="vv g">£96.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Does ShahoSuite produce VAT-compliant invoices for UK businesses?</summary>
+        <div class="faq-a">Yes. Every invoice includes all HMRC-required fields — VAT registration number, unique invoice number, net and VAT amounts shown separately, supplier and customer address. Compliant by default for UK VAT-registered businesses.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What invoice statuses does ShahoSuite support?</summary>
+        <div class="faq-a">ShahoSuite supports six statuses: <strong>Draft</strong> (created, not sent), <strong>Sent</strong> (emailed to customer), <strong>Partially Paid</strong> (part payment received), <strong>Paid</strong> (fully settled), <strong>Overdue</strong> (past due date — auto-applied), and <strong>Cancelled</strong> (voided). Status is selected on save and can be updated any time from the invoice list.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How do credit notes work?</summary>
+        <div class="faq-a">Credit notes are linked directly to the original invoice. Issue a full or partial credit note in one click — accounting records and outstanding balances update automatically. No separate spreadsheets needed.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does ShahoSuite send automatic payment reminders?</summary>
+        <div class="faq-a">Yes. Reminders are sent automatically based on your credit terms — before the due date, on the due date, and when an invoice becomes overdue. You set the rules once; ShahoSuite handles the chasing.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is ShahoSuite safe? Where is my data stored?</summary>
+        <div class="faq-a">ShahoSuite is hosted on <strong>Microsoft Azure</strong> — the same cloud platform used by 95% of Fortune 500 companies. Your data is stored in UK data centres, SSL encrypted, and fully GDPR-compliant. You always own your data.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How much does ShahoSuite cost?</summary>
+        <div class="faq-a"><strong>£50/month</strong> for the Director account — full access to all 16 modules including invoicing, credit notes, accounting, bookings and more. No per-invoice fees. Staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#8b5cf6;font-weight:600;">full pricing</a>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED MODULES -->
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+    <h2>Invoices work with everything</h2>
+    <p class="section-sub">All modules share data automatically. No re-keying. No gaps.</p>
+    <div class="related-grid">
+      <a href="/credit-notes.html" class="related-card"><span class="related-emoji">💰</span><div class="related-name">Credit Notes</div><div class="related-link">Linked directly →</div></a>
+      <a href="/accounting.html"   class="related-card"><span class="related-emoji">📕</span><div class="related-name">Accounting</div><div class="related-link">Auto-updates →</div></a>
+      <a href="/customers.html"    class="related-card"><span class="related-emoji">👤</span><div class="related-name">Customers</div><div class="related-link">Invoice history →</div></a>
+      <a href="/analytics.html"    class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Revenue data →</div></a>
+      <a href="/pricing.html"      class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
 <section class="cta-section">
-  <div class="section-inner">
-    <h2>Ready to invoice smarter?</h2>
-    <p>Start your free trial and send your first invoice in minutes.</p>
-    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta">Sign up →</a>
+  <div class="cta-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+    <h2>Stop chasing.<br/>Start getting paid.</h2>
+    <p>Professional invoicing. Minimum clicks. Hosted securely on Microsoft Azure. £50/month — all 16 modules included.</p>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month →</a>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="/invoices.html">Invoices</a>
-    <a href="/booking.html">Booking</a>
+    <a href="/index.html">Home</a>
+    <a href="/index.html#features">Modules</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/accounting.html">Accounting</a>
     <a href="/customers.html">Customers</a>
     <a href="mailto:admin@shahosuite.com">Contact</a>
     <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
   </div>
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
 </footer>
+
 </body>
 </html>
