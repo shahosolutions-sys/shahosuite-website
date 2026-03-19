@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Orders — Order Management Software for UK Small Businesses</title>
+<meta name="description" content="Manage orders from creation to completion. Track order status, payments, customers and totals in real time. Hosted on Microsoft Azure. £50/month all-in-one." />
+<meta name="keywords" content="order management software UK, order tracking software UK small business, sales order software UK, order management system UK, online order tracking UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/orders.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Orders — Order Management Software for UK Small Businesses" />
+<meta property="og:description" content="Track every order from draft to completion. Status, payment, customer — all in one place. £50/month." />
+<meta property="og:url" content="https://www.shahosuite.com/orders.html" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "name":"ShahoSuite — Orders Module",
+      "applicationCategory":"BusinessApplication",
+      "applicationSubCategory":"OrderManagementSoftware",
+      "operatingSystem":"Web",
+      "url":"https://www.shahosuite.com/orders.html",
+      "description":"Order management software for UK small businesses. Track orders from draft to completion with status, payment and customer details.",
+      "featureList":["Order list with status tracking","Draft, Completed, Cancelled, Refunded statuses","Payment tracking per order","Customer linked to each order","Total revenue summary","Pending and completed order counts","Search and filter orders","Create order in one click"],
+      "offers":{"@type":"Offer","price":"50","priceCurrency":"GBP"},
+      "provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What order statuses does ShahoSuite support?","acceptedAnswer":{"@type":"Answer","text":"ShahoSuite supports Draft, Completed, Cancelled and Refunded order statuses. Each order shows its status clearly so you always know where every order stands."}},
+        {"@type":"Question","name":"Can I search and filter orders?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can search by order ID, customer name or description, and filter by status — All Status, Draft, Completed, Cancelled or Refunded."}},
+        {"@type":"Question","name":"Does ShahoSuite show order totals and revenue?","acceptedAnswer":{"@type":"Answer","text":"Yes. The bottom of the Orders page shows Total Orders, Pending Orders, Completed Orders and Total Revenue — always live and up to date."}},
+        {"@type":"Question","name":"How much does ShahoSuite orders cost?","acceptedAnswer":{"@type":"Answer","text":"The Orders module is included in the Director account at £50/month with all 16 modules. Staff accounts are £15/month each."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; user-select: none; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover  { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo:active { transform: translateY(3px);  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.18)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login  { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover  { border-color: #9ca3af; color: #111827; box-shadow: 0 3px 0 #9ca3af; transform: translateY(-1px); }
+.btn-login:active { transform: translateY(2px); box-shadow: 0 0 0 #d1d5db; }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover  { background: #1e293b; box-shadow: 0 4px 0 #374151; transform: translateY(-1px); }
+.btn-signup:active { transform: translateY(3px); box-shadow: 0 0 0 #374151; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.breadcrumb a:hover { color: #06b6d4; }
+.bc-sep { color: #cbd5e1; }
+
+/* ── HERO ── */
+.hero { padding: 72px 28px 88px; background: linear-gradient(160deg, #ecfeff 0%, #cffafe 30%, #f0fdf4 100%); text-align: center; overflow: hidden; position: relative; }
+.hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+.module-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px; background: rgba(255,255,255,0.9); border: 1px solid rgba(6,182,212,0.25); border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(6,182,212,0.1); backdrop-filter: blur(8px); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #06b6d4; flex-shrink: 0; }
+h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; color: #0f172a; }
+h1 em { color: #06b6d4; font-style: normal; }
+.hero-sub { font-size: 17px; color: #475569; margin-bottom: 14px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.trust-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.trust-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(255,255,255,0.88); border: 1px solid rgba(0,0,0,0.07); font-size: 12px; font-weight: 600; color: #374151; backdrop-filter: blur(8px); box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.tp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── MOCKUP ── */
+.mockup-outer { max-width: 860px; margin: 0 auto; position: relative; }
+.mockup-frame { border-radius: 20px; overflow: hidden; box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 14px 0 rgba(6,182,212,0.18), 0 30px 80px rgba(6,182,212,0.2), 0 0 0 1px rgba(6,182,212,0.1); }
+.mockup-chrome { background: #1e293b; padding: 10px 14px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 10; }
+.cd { width: 9px; height: 9px; border-radius: 50%; }
+.cd.r{background:#ef4444;} .cd.y{background:#f59e0b;} .cd.g{background:#22c55e;}
+.chrome-url { flex: 1; text-align: center; background: rgba(255,255,255,0.09); border-radius: 6px; padding: 4px 14px; color: rgba(255,255,255,0.75); font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+.app-shell { display: grid; grid-template-columns: 168px 1fr; min-height: 520px; }
+.app-sidebar { background: #0d1117; padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.06); }
+.sb-brand { padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+.sb-icon { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 8px; margin: 1px 8px; border-radius: 6px; }
+.sb-item.active { background: rgba(6,182,212,0.16); color: #67e8f9; font-weight: 700; border-left: 2px solid #06b6d4; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+
+.app-main-wrap { position: relative; overflow: hidden; background: #f8f9fc; }
+.frost-overlay { position: absolute; inset: 0; z-index: 3; background: rgba(255,255,255,0.46); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); pointer-events: none; }
+.gloss-overlay { position: absolute; top: 0; left: 0; right: 0; height: 40%; background: linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0) 100%); z-index: 4; pointer-events: none; }
+.app-main-inner { padding: 14px; position: relative; z-index: 2; }
+
+/* Page header */
+.ord-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.ord-title { font-size: 16px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 7px; }
+.ord-create { background: #10b981; color: #fff; border-radius: 8px; padding: 6px 14px; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 5px; box-shadow: 0 3px 0 #059669; }
+
+/* Search + filter row */
+.ord-filters { display: flex; gap: 8px; margin-bottom: 12px; }
+.ord-search { flex: 1; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 11px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.ord-filter { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 12px; font-size: 11px; color: #374151; display: flex; align-items: center; gap: 4px; }
+
+/* Table */
+.ord-table { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.ord-thead { display: grid; grid-template-columns: 52px 100px 80px 60px 72px 90px 52px 90px 110px; padding: 7px 12px; background: #f8fafc; border-bottom: 1px solid #e5e7eb; font-size: 9px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; gap: 4px; }
+.ord-row { display: grid; grid-template-columns: 52px 100px 80px 60px 72px 90px 52px 90px 110px; padding: 9px 12px; border-bottom: 1px solid #f1f5f9; align-items: center; gap: 4px; }
+.ord-row:last-child { border-bottom: none; }
+.ord-id { font-size: 11px; font-weight: 700; color: #374151; }
+.ord-customer { font-size: 11px; font-weight: 600; color: #0f172a; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ord-desc { font-size: 10px; color: #94a3b8; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ord-items { font-size: 10px; color: #64748b; }
+.ord-total { font-size: 11px; font-weight: 700; color: #0f172a; }
+.ord-payment { display: flex; flex-direction: column; gap: 1px; }
+.ord-pay-method { font-size: 10px; color: #374151; font-weight: 500; }
+.ord-pay-status { font-size: 9px; color: #f59e0b; font-weight: 600; }
+.ord-date { font-size: 10px; color: #94a3b8; }
+
+/* Status badges matching screenshot colours exactly */
+.status-badge { display: inline-flex; padding: 3px 9px; border-radius: 20px; font-size: 9.5px; font-weight: 700; white-space: nowrap; }
+.s-draft     { background: #f59e0b; color: #fff; }
+.s-completed { background: #22c55e; color: #fff; }
+.s-cancelled { background: #ef4444; color: #fff; }
+.s-refunded  { background: #f97316; color: #fff; }
+
+/* Action buttons matching screenshot */
+.ord-actions { display: flex; gap: 4px; }
+.act-view { background: #3b82f6; color: #fff; border: none; border-radius: 20px; padding: 4px 10px; font-size: 9px; font-weight: 700; display: flex; align-items: center; gap: 3px; box-shadow: 0 2px 0 #1d4ed8; cursor: default; font-family: 'DM Sans', sans-serif; }
+.act-edit { background: #f97316; color: #fff; border: none; border-radius: 20px; padding: 4px 10px; font-size: 9px; font-weight: 700; display: flex; align-items: center; gap: 3px; box-shadow: 0 2px 0 #c2410c; cursor: default; font-family: 'DM Sans', sans-serif; }
+
+/* Summary bar */
+.ord-summary { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.ord-sum-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 14px; text-align: center; }
+.osc-label { font-size: 10px; color: #94a3b8; font-weight: 500; margin-bottom: 5px; }
+.osc-val { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+.osc-1 { color: #0f172a; }
+.osc-2 { color: #f59e0b; }
+.osc-3 { color: #22c55e; }
+.osc-4 { color: #0f172a; }
+
+/* Floating card */
+.mockup-float { position: absolute; bottom: -20px; right: -22px; z-index: 20; background: rgba(255,255,255,0.97); border: 1px solid rgba(255,255,255,0.99); border-radius: 14px; padding: 14px 18px; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: 0 10px 32px rgba(6,182,212,0.22), 0 2px 0 rgba(255,255,255,0.9) inset; min-width: 152px; }
+.mf-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.mf-val   { font-size: 22px; font-weight: 800; color: #06b6d4; letter-spacing: -0.5px; line-height: 1; }
+.mf-sub   { font-size: 11px; color: #64748b; margin-top: 3px; }
+.mf-row   { display: flex; justify-content: space-between; font-size: 11px; margin-top: 7px; padding-top: 7px; border-top: 1px solid #f1f5f9; }
+.mf-rl { color: #94a3b8; }
+.mf-rv { font-weight: 700; }
+
+/* ── SHARED ── */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #06b6d4; }
+h2 { font-size: clamp(24px, 3.8vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+/* Status lifecycle */
+.lifecycle-section { padding: 80px 28px; background: #fff; }
+.lifecycle-track { display: flex; align-items: center; gap: 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }
+.lifecycle-step { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 130px; flex: 1; position: relative; }
+.lifecycle-step:not(:last-child)::after { content: ''; position: absolute; top: 20px; right: -50%; width: 100%; height: 2px; background: var(--lc, #e2e8f0); z-index: 0; }
+.ls-dot { width: 42px; height: 42px; border-radius: 50%; z-index: 1; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; margin-bottom: 10px; border: 2px solid var(--lc, #e2e8f0); background: var(--lbg); color: var(--ltx); box-shadow: 0 3px 0 var(--lsh); }
+.ls-label { font-size: 12px; font-weight: 700; color: var(--ltx); margin-bottom: 3px; }
+.ls-desc  { font-size: 11px; color: #94a3b8; line-height: 1.4; max-width: 100px; }
+.ls-draft     { --lc:#f59e0b; --lbg:#fffbeb; --ltx:#b45309; --lsh:#fde68a; }
+.ls-completed { --lc:#22c55e; --lbg:#f0fdf4; --ltx:#166534; --lsh:#bbf7d0; }
+.ls-cancelled { --lc:#ef4444; --lbg:#fff1f2; --ltx:#b91c1c; --lsh:#fecaca; }
+.ls-refunded  { --lc:#f97316; --lbg:#fff7ed; --ltx:#c2410c; --lsh:#fed7aa; }
+
+/* Benefits */
+.benefits-section { padding: 80px 28px; background: #f8fafc; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.benefit-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#06b6d4;--bs:#cffafe;} .bc2{--bc:#22c55e;--bs:#dcfce7;} .bc3{--bc:#f59e0b;--bs:#fef3c7;}
+.bc4{--bc:#ef4444;--bs:#fee2e2;} .bc5{--bc:#8b5cf6;--bs:#ede9fe;} .bc6{--bc:#3b82f6;--bs:#dbeafe;}
+.bc7{--bc:#f97316;--bs:#ffedd5;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon  { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: #0f172a; }
+.benefit-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* Azure */
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* FAQ */
+.faq-section { padding: 80px 28px; background: #fff; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #a5f3fc; box-shadow: 0 4px 0 #a5f3fc; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #06b6d4; font-weight: 400; flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* Related */
+.related-section { padding: 72px 28px; background: #f8fafc; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.related-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s; }
+.related-card:hover { border-color: #06b6d4; box-shadow: 0 4px 0 #a5f3fc; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name  { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+.related-link  { font-size: 11px; color: #06b6d4; }
+
+/* CTA */
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg, #ecfeff 0%, #f0fdf4 100%); }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 12px; }
+.cta-section p  { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.cta-pricing-card { background: #fff; border: 2px solid #06b6d4; border-radius: 20px; padding: 28px 28px 24px; margin-bottom: 24px; box-shadow: 0 6px 0 #0e7490, 0 14px 40px rgba(6,182,212,0.14); text-align: left; }
+.cta-price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+.cta-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cpr-left { display: flex; flex-direction: column; gap: 2px; }
+.cpr-title { font-size: 15px; font-weight: 700; color: #0f172a; }
+.cpr-desc  { font-size: 12px; color: #64748b; }
+.cpr-badge { display: inline-block; padding: 3px 10px; background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.25); border-radius: 20px; font-size: 11px; font-weight: 700; color: #0e7490; margin-top: 4px; }
+.cpr-price { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.cpr-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.cpr-amount sup { font-size: 14px; vertical-align: top; margin-top: 4px; display: inline-block; }
+.cpr-amount sub { font-size: 13px; color: #64748b; font-weight: 500; letter-spacing: 0; }
+.cpr-amount.cyan { color: #0e7490; }
+.cpr-note  { font-size: 11px; color: #94a3b8; }
+.btn-cta-main { display: block; width: 100%; padding: 15px 36px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; color: #fff; background: #06b6d4; box-shadow: 0 5px 0 #0e7490, 0 10px 24px rgba(6,182,212,0.28); transition: all 0.15s; text-align: center; }
+.btn-cta-main:hover  { transform: translateY(-2px); box-shadow: 0 7px 0 #0e7490, 0 14px 30px rgba(6,182,212,0.36); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #0e7490; }
+.cta-fine-print { font-size: 12px; color: #94a3b8; margin-top: 14px; line-height: 1.6; }
+
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #06b6d4; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+@media (max-width: 760px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .app-sidebar { display: none; }
+  .mockup-float { display: none; }
+  .ord-thead, .ord-row { grid-template-columns: 44px 90px 60px 72px 90px 100px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/index.html">Home</a><span class="bc-sep">›</span>
+    <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
+    <span>Orders</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="module-badge"><span class="badge-dot"></span>🛒 Orders Module</div>
+    <h1>Order <em>Management</em><br/>Built for UK Business</h1>
+    <p class="hero-sub">Every order tracked from draft to completion. Status, payment, customer and total — all visible at a glance. Minimum clicks.</p>
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#06b6d4;"></span>Order status tracking</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Live revenue total</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>GDPR-ready</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#8b5cf6;"></span>100% cloud</span>
+    </div>
+
+    <!-- ORDER LIST MOCKUP -->
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+        <div class="mockup-chrome">
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <div class="chrome-url">🔒 www.shahosuite.com/orders</div>
+        </div>
+        <div class="app-shell">
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div>
+            <div class="sb-item">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item">📦 Products</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">💰 Credit Notes</div>
+            <div class="sb-item active">🛒 Orders</div>
+            <div class="sb-item">🏭 Suppliers</div>
+            <div class="sb-item">🗂️ Categories</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item">📊 Analytics</div>
+            <div class="sb-item">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+          </div>
+          <div class="app-main-wrap">
+            <div class="frost-overlay"></div>
+            <div class="gloss-overlay"></div>
+            <div class="app-main-inner">
+              <div class="ord-header">
+                <div class="ord-title">🛒 Order List</div>
+                <div class="ord-create">+ Create Order</div>
+              </div>
+              <div class="ord-filters">
+                <div class="ord-search">🔍 Search by order ID, customer, description...</div>
+                <div class="ord-filter">All Status ▾</div>
+              </div>
+              <div class="ord-table">
+                <div class="ord-thead">
+                  <span>Order ID</span><span>Customer</span><span>Description</span>
+                  <span>Items</span><span>Total</span><span>Payment</span>
+                  <span>Date</span><span>Status</span><span>Actions</span>
+                </div>
+                <div class="ord-row">
+                  <div class="ord-id">#7</div><div class="ord-customer">MIcrosof</div><div class="ord-desc">—</div>
+                  <div class="ord-items">1 item</div><div class="ord-total">£118.80</div>
+                  <div class="ord-payment"><span class="ord-pay-method">Card</span><span class="ord-pay-status">Pending</span></div>
+                  <div class="ord-date">N/A</div>
+                  <div><span class="status-badge s-draft">Draft</span></div>
+                  <div class="ord-actions"><div class="act-view">👁 View</div><div class="act-edit">✏️ Edit</div></div>
+                </div>
+                <div class="ord-row">
+                  <div class="ord-id">#6</div><div class="ord-customer">Shaho Mahmudii</div><div class="ord-desc">—</div>
+                  <div class="ord-items">1 item</div><div class="ord-total">£118.80</div>
+                  <div class="ord-payment"><span class="ord-pay-method">Card</span><span class="ord-pay-status">Pending</span></div>
+                  <div class="ord-date">N/A</div>
+                  <div><span class="status-badge s-completed">Completed</span></div>
+                  <div class="ord-actions"><div class="act-view">👁 View</div><div class="act-edit">✏️ Edit</div></div>
+                </div>
+                <div class="ord-row">
+                  <div class="ord-id">#5</div><div class="ord-customer">Shaho Mahmudii</div><div class="ord-desc">333</div>
+                  <div class="ord-items">1 item</div><div class="ord-total">£356.40</div>
+                  <div class="ord-payment"><span class="ord-pay-method">Card</span><span class="ord-pay-status">Pending</span></div>
+                  <div class="ord-date">N/A</div>
+                  <div><span class="status-badge s-completed">Completed</span></div>
+                  <div class="ord-actions"><div class="act-view">👁 View</div><div class="act-edit">✏️ Edit</div></div>
+                </div>
+                <div class="ord-row">
+                  <div class="ord-id">#4</div><div class="ord-customer">Shaho Mahmudii</div><div class="ord-desc">—</div>
+                  <div class="ord-items">2 items</div><div class="ord-total">£217.80</div>
+                  <div class="ord-payment"><span class="ord-pay-method">Card</span><span class="ord-pay-status">Pending</span></div>
+                  <div class="ord-date">N/A</div>
+                  <div><span class="status-badge s-completed">Completed</span></div>
+                  <div class="ord-actions"><div class="act-view">👁 View</div><div class="act-edit">✏️ Edit</div></div>
+                </div>
+                <div class="ord-row">
+                  <div class="ord-id">#3</div><div class="ord-customer">Prilly Lewis</div><div class="ord-desc">—</div>
+                  <div class="ord-items">1 item</div><div class="ord-total">£99.00</div>
+                  <div class="ord-payment"><span class="ord-pay-method">Card</span><span class="ord-pay-status">Pending</span></div>
+                  <div class="ord-date">N/A</div>
+                  <div><span class="status-badge s-cancelled">Cancelled</span></div>
+                  <div class="ord-actions"><div class="act-view">👁 View</div><div class="act-edit">✏️ Edit</div></div>
+                </div>
+                <div class="ord-row">
+                  <div class="ord-id">#1</div><div class="ord-customer">MIcrosof</div><div class="ord-desc">—</div>
+                  <div class="ord-items">1 item</div><div class="ord-total">£120.00</div>
+                  <div class="ord-payment"><span class="ord-pay-method">Card</span><span class="ord-pay-status">Pending</span></div>
+                  <div class="ord-date">N/A</div>
+                  <div><span class="status-badge s-refunded">Refunded</span></div>
+                  <div class="ord-actions"><div class="act-view">👁 View</div><div class="act-edit">✏️ Edit</div></div>
+                </div>
+              </div>
+              <!-- Summary bar -->
+              <div class="ord-summary">
+                <div class="ord-sum-card"><div class="osc-label">Total Orders</div><div class="osc-val osc-1">7</div></div>
+                <div class="ord-sum-card"><div class="osc-label">Pending Orders</div><div class="osc-val osc-2">0</div></div>
+                <div class="ord-sum-card"><div class="osc-label">Completed Orders</div><div class="osc-val osc-3">4</div></div>
+                <div class="ord-sum-card"><div class="osc-label">Total Revenue</div><div class="osc-val osc-4">£1,129.80</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mockup-float">
+        <div class="mf-label">Total Revenue</div>
+        <div class="mf-val">£1,129.80</div>
+        <div class="mf-sub">7 orders total</div>
+        <div class="mf-row"><span class="mf-rl">Completed</span><span class="mf-rv" style="color:#22c55e;">4</span></div>
+        <div class="mf-row"><span class="mf-rl">Cancelled</span><span class="mf-rv" style="color:#ef4444;">1</span></div>
+        <div class="mf-row"><span class="mf-rl">Refunded</span><span class="mf-rv" style="color:#f97316;">1</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS LIFECYCLE -->
+<section class="lifecycle-section" id="status">
+  <div class="section-inner">
+    <div class="section-tag">Order Status</div>
+    <h2>Four statuses. Every order tracked.</h2>
+    <p class="section-sub">Every order moves through a clear status. You always know exactly where every order stands.</p>
+    <div class="lifecycle-track">
+      <div class="lifecycle-step ls-draft"><div class="ls-dot">📝</div><div class="ls-label">Draft</div><div class="ls-desc">Created, not yet confirmed</div></div>
+      <div class="lifecycle-step ls-completed"><div class="ls-dot">✓</div><div class="ls-label">Completed</div><div class="ls-desc">Fulfilled and closed</div></div>
+      <div class="lifecycle-step ls-cancelled"><div class="ls-dot">✕</div><div class="ls-label">Cancelled</div><div class="ls-desc">Voided by customer or you</div></div>
+      <div class="lifecycle-step ls-refunded"><div class="ls-dot">↩</div><div class="ls-label">Refunded</div><div class="ls-desc">Payment returned</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Everything order management should do</h2>
+    <p class="section-sub">From creation to completion — every order tracked, every total visible, every customer linked.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1"><span class="benefit-icon">🛒</span><div class="benefit-title">Full Order List</div><div class="benefit-desc">Every order in one table — ID, customer, items, total, payment method and status.</div></div>
+      <div class="benefit-card bc2"><span class="benefit-icon">✅</span><div class="benefit-title">Four Order Statuses</div><div class="benefit-desc">Draft, Completed, Cancelled and Refunded — each colour-coded so status is instant to read.</div></div>
+      <div class="benefit-card bc3"><span class="benefit-icon">💰</span><div class="benefit-title">Revenue Summary</div><div class="benefit-desc">Total orders, pending, completed and total revenue — live at the bottom of every order view.</div></div>
+      <div class="benefit-card bc4"><span class="benefit-icon">🔍</span><div class="benefit-title">Search &amp; Filter</div><div class="benefit-desc">Find any order by ID, customer name or description. Filter by status instantly.</div></div>
+      <div class="benefit-card bc5"><span class="benefit-icon">👁</span><div class="benefit-title">View &amp; Edit</div><div class="benefit-desc">Every order has one-click View and Edit actions — change status, update details, add notes.</div></div>
+      <div class="benefit-card bc6"><span class="benefit-icon">👤</span><div class="benefit-title">Linked to Customers</div><div class="benefit-desc">Every order is linked to a customer profile. See the full order history from any customer record.</div></div>
+      <div class="benefit-card bc7"><span class="benefit-icon">📊</span><div class="benefit-title">Feeds Analytics</div><div class="benefit-desc">Order data feeds directly into your <a href="/analytics.html" style="color:#f97316;font-weight:600;">Analytics</a> dashboard — revenue, trends and category breakdowns.</div></div>
+      <div class="benefit-card bc8"><span class="benefit-icon">🔒</span><div class="benefit-title">Safe on Azure</div><div class="benefit-desc">All order data on Microsoft Azure, SSL encrypted, UK data centres, GDPR-compliant.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>100% Cloud-Based</span>
+</div>
+
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">What order statuses does ShahoSuite support?</summary><div class="faq-a">ShahoSuite supports four order statuses: <strong>Draft</strong> (created, not confirmed), <strong>Completed</strong> (fulfilled), <strong>Cancelled</strong> (voided) and <strong>Refunded</strong> (payment returned). Each is colour-coded for instant readability.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I search and filter orders?</summary><div class="faq-a">Yes. Search by order ID, customer name or description. Filter by status — All, Draft, Completed, Cancelled or Refunded.</div></details>
+      <details class="faq-item"><summary class="faq-q">Does ShahoSuite show order revenue totals?</summary><div class="faq-a">Yes. The summary bar shows Total Orders, Pending Orders, Completed Orders and Total Revenue — always live and up to date.</div></details>
+      <details class="faq-item"><summary class="faq-q">How much does ShahoSuite orders cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — all 16 modules included. Staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#06b6d4;font-weight:600;">full pricing</a>.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+    <h2>Orders connect to everything</h2>
+    <p class="section-sub">Orders feed into customers, accounting and analytics automatically.</p>
+    <div class="related-grid">
+      <a href="/customers.html"  class="related-card"><span class="related-emoji">👤</span><div class="related-name">Customers</div><div class="related-link">Order history →</div></a>
+      <a href="/invoices.html"   class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Invoice from order →</div></a>
+      <a href="/suppliers.html"  class="related-card"><span class="related-emoji">🏭</span><div class="related-name">Suppliers</div><div class="related-link">Supply chain →</div></a>
+      <a href="/accounting.html" class="related-card"><span class="related-emoji">📕</span><div class="related-name">Accounting</div><div class="related-link">Cost records →</div></a>
+      <a href="/analytics.html"  class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Order trends →</div></a>
+      <a href="/pricing.html"    class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+    <h2>Track every order.<br/>Miss nothing.</h2>
+    <p>Full order management, status tracking and revenue summaries. Hosted on Microsoft Azure.</p>
+    <div class="cta-pricing-card">
+      <div class="cta-price-row">
+        <div class="cpr-left"><div class="cpr-title">🧑‍💼 Director Account</div><div class="cpr-desc">Full access to all 16 modules including Orders.</div><div class="cpr-badge">All 16 modules included</div></div>
+        <div class="cpr-price"><div class="cpr-amount cyan"><sup>£</sup>50<sub>/mo</sub></div><div class="cpr-note">1 admin account</div></div>
+      </div>
+      <div class="cta-price-row">
+        <div class="cpr-left"><div class="cpr-title">👤 + Add Staff Members</div><div class="cpr-desc">Each staff gets their own login with role-based access.</div></div>
+        <div class="cpr-price"><div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div><div class="cpr-note">Unlimited staff seats</div></div>
+      </div>
+    </div>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month + £15 per staff →</a>
+    <div class="cta-fine-print">No contracts. No setup fees. Cancel any time.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a><a href="/index.html#features">Modules</a><a href="/pricing.html">Pricing</a>
+    <a href="/invoices.html">Invoices</a><a href="/customers.html">Customers</a><a href="/suppliers.html">Suppliers</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+</body>
+</html>

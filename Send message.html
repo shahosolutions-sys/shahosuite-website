@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Send Message — Email Customers Directly from Your Business Platform</title>
+<meta name="description" content="Send professional emails to customers directly from ShahoSuite. Quick templates, bulk send to all customers, guest emails and message history. Hosted on Microsoft Azure. £50/month." />
+<meta name="keywords" content="send email to customers UK, customer messaging software UK, bulk email small business UK, customer communication platform UK, email marketing small business UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/send-message.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Send Message — Email Your Customers Directly" />
+<meta property="og:description" content="Quick templates, bulk send, guest emails and message history. £50/month all-in-one." />
+<meta property="og:url" content="https://www.shahosuite.com/send-message.html" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "name":"ShahoSuite — Send Message Module",
+      "applicationCategory":"BusinessApplication",
+      "applicationSubCategory":"CustomerCommunicationSoftware",
+      "operatingSystem":"Web",
+      "url":"https://www.shahosuite.com/send-message.html",
+      "description":"Send professional emails to customers directly from ShahoSuite. Quick templates, bulk send, guest emails and message history.",
+      "featureList":["Quick templates: New Update, Promotion, Invoice Reminder, Thank You, Appointment","Send to all customers in one click","Add guest emails (non-customers)","Personalise with {name} token","Full message history","Compose and History tabs","Subject and message fields","Send to multiple recipients"],
+      "offers":{"@type":"Offer","price":"50","priceCurrency":"GBP"},
+      "provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Can I send emails to all my customers at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Click '+ All Customers' to add your entire customer list as recipients with one click. You can also add individual customers by searching or add guest email addresses."}},
+        {"@type":"Question","name":"Does ShahoSuite have email templates?","acceptedAnswer":{"@type":"Answer","text":"Yes. Quick Templates include New Update, Promotion, Invoice Reminder, Thank You and Appointment — pre-built to save time and look professional."}},
+        {"@type":"Question","name":"Can I personalise emails per recipient?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use {name} in your message and ShahoSuite replaces it with each recipient's name automatically."}},
+        {"@type":"Question","name":"Can I send emails to people who are not in my customer list?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Add Guest Email feature lets you add any email address as a recipient — even if they are not in your ShahoSuite customer database."}},
+        {"@type":"Question","name":"How much does ShahoSuite messaging cost?","acceptedAnswer":{"@type":"Answer","text":"The Send Message module is included in the Director account at £50/month with all 16 modules. Staff accounts are £15/month each."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; user-select: none; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover  { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo:active { transform: translateY(3px); filter: drop-shadow(0 1px 0 rgba(0,0,0,0.18)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login  { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover  { border-color: #9ca3af; color: #111827; box-shadow: 0 3px 0 #9ca3af; transform: translateY(-1px); }
+.btn-login:active { transform: translateY(2px); box-shadow: 0 0 0 #d1d5db; }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover  { background: #1e293b; box-shadow: 0 4px 0 #374151; transform: translateY(-1px); }
+.btn-signup:active { transform: translateY(3px); box-shadow: 0 0 0 #374151; }
+
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.breadcrumb a:hover { color: #ec4899; }
+.bc-sep { color: #cbd5e1; }
+
+/* HERO */
+.hero { padding: 72px 28px 88px; background: linear-gradient(160deg, #fdf2f8 0%, #fce7f3 30%, #eff6ff 100%); text-align: center; overflow: hidden; position: relative; }
+.hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+.module-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px; background: rgba(255,255,255,0.9); border: 1px solid rgba(236,72,153,0.2); border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(236,72,153,0.1); backdrop-filter: blur(8px); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #ec4899; flex-shrink: 0; }
+h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; color: #0f172a; }
+h1 em { color: #ec4899; font-style: normal; }
+.hero-sub { font-size: 17px; color: #475569; margin-bottom: 14px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.trust-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.trust-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(255,255,255,0.88); border: 1px solid rgba(0,0,0,0.07); font-size: 12px; font-weight: 600; color: #374151; backdrop-filter: blur(8px); box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.tp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* MOCKUP */
+.mockup-outer { max-width: 780px; margin: 0 auto; position: relative; }
+.mockup-frame { border-radius: 20px; overflow: hidden; box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 14px 0 rgba(236,72,153,0.16), 0 30px 80px rgba(236,72,153,0.18), 0 0 0 1px rgba(236,72,153,0.1); }
+.mockup-chrome { background: #1e293b; padding: 10px 14px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 10; }
+.cd { width: 9px; height: 9px; border-radius: 50%; }
+.cd.r{background:#ef4444;} .cd.y{background:#f59e0b;} .cd.g{background:#22c55e;}
+.chrome-url { flex: 1; text-align: center; background: rgba(255,255,255,0.09); border-radius: 6px; padding: 4px 14px; color: rgba(255,255,255,0.75); font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+.app-shell { display: grid; grid-template-columns: 168px 1fr; min-height: 500px; }
+.app-sidebar { background: #0d1117; padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.06); }
+.sb-brand { padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+.sb-icon { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 8px; margin: 1px 8px; border-radius: 6px; }
+.sb-item.active { background: rgba(236,72,153,0.16); color: #f9a8d4; font-weight: 700; border-left: 2px solid #ec4899; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+
+.app-main-wrap { position: relative; overflow: hidden; background: #f8f9fc; }
+.frost-overlay { position: absolute; inset: 0; z-index: 3; background: rgba(255,255,255,0.46); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); pointer-events: none; }
+.gloss-overlay { position: absolute; top: 0; left: 0; right: 0; height: 40%; background: linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0) 100%); z-index: 4; pointer-events: none; }
+.app-main-inner { padding: 16px; position: relative; z-index: 2; }
+
+/* Page header */
+.msg-header { margin-bottom: 4px; }
+.msg-title { font-size: 18px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px; }
+.msg-subtitle { font-size: 11px; color: #64748b; margin-top: 2px; margin-bottom: 14px; }
+
+/* Compose / History tabs */
+.msg-tabs { display: flex; gap: 4px; margin-bottom: 14px; }
+.msg-tab { padding: 7px 16px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: default; display: flex; align-items: center; gap: 5px; border: 1px solid #e2e8f0; color: #64748b; background: #fff; }
+.msg-tab.active { background: #3b82f6; color: #fff; border-color: #3b82f6; box-shadow: 0 3px 0 #1d4ed8; }
+
+/* Compose card */
+.compose-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+
+/* Quick Templates */
+.qt-label { font-size: 11px; font-weight: 700; color: #374151; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+.qt-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.qt-pill { padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: 600; border: 1px solid #e2e8f0; color: #374151; background: #fff; cursor: default; box-shadow: 0 1px 0 #e2e8f0; }
+
+/* Form fields */
+.form-label { font-size: 10px; font-weight: 700; color: #374151; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
+.all-customers-btn { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); color: #1d4ed8; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; cursor: default; }
+.form-input { width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 7px 10px; font-size: 11px; color: #94a3b8; font-family: 'DM Sans', sans-serif; background: #f8fafc; margin-bottom: 10px; }
+
+/* Guest email row */
+.guest-row { background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.12); border-radius: 8px; padding: 8px 10px; margin-bottom: 10px; }
+.guest-label { font-size: 10px; color: #3b82f6; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+.guest-inputs { display: grid; grid-template-columns: 1fr 1.5fr auto; gap: 5px; align-items: center; }
+.guest-input { border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 8px; font-size: 10px; color: #94a3b8; background: #fff; font-family: 'DM Sans', sans-serif; }
+.guest-add { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 5px 10px; font-size: 10px; font-weight: 700; color: #374151; cursor: default; }
+
+.form-textarea { width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; padding: 7px 10px; font-size: 11px; color: #94a3b8; font-family: 'DM Sans', sans-serif; background: #f8fafc; height: 80px; resize: none; margin-bottom: 10px; }
+.form-textarea-label { font-size: 10px; font-weight: 700; color: #374151; margin-bottom: 5px; display: flex; justify-content: space-between; }
+.personalise-hint { font-size: 9px; color: #94a3b8; font-style: italic; }
+
+/* Send button */
+.send-btn { width: 100%; padding: 11px; border-radius: 8px; background: #64748b; color: #fff; font-size: 12px; font-weight: 700; border: none; cursor: default; display: flex; align-items: center; justify-content: center; gap: 6px; font-family: 'DM Sans', sans-serif; }
+
+/* Floating card */
+.mockup-float { position: absolute; bottom: -20px; right: -22px; z-index: 20; background: rgba(255,255,255,0.97); border: 1px solid rgba(255,255,255,0.99); border-radius: 14px; padding: 14px 18px; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: 0 10px 32px rgba(236,72,153,0.2), 0 2px 0 rgba(255,255,255,0.9) inset; min-width: 148px; }
+.mf-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.mf-val   { font-size: 18px; font-weight: 800; color: #ec4899; letter-spacing: -0.5px; line-height: 1; }
+.mf-sub   { font-size: 11px; color: #64748b; margin-top: 3px; }
+.mf-row   { display: flex; justify-content: space-between; font-size: 11px; margin-top: 7px; padding-top: 7px; border-top: 1px solid #f1f5f9; }
+.mf-rl { color: #94a3b8; } .mf-rv { font-weight: 700; }
+
+/* SHARED */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #ec4899; }
+h2 { font-size: clamp(24px, 3.8vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+.benefits-section { padding: 80px 28px; background: #fff; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.benefit-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#ec4899;--bs:#fce7f3;} .bc2{--bc:#3b82f6;--bs:#dbeafe;} .bc3{--bc:#10b981;--bs:#d1fae5;}
+.bc4{--bc:#8b5cf6;--bs:#ede9fe;} .bc5{--bc:#f59e0b;--bs:#fef3c7;} .bc6{--bc:#06b6d4;--bs:#cffafe;}
+.bc7{--bc:#6366f1;--bs:#e0e7ff;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon  { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: #0f172a; }
+.benefit-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+.faq-section { padding: 80px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #fbcfe8; box-shadow: 0 4px 0 #fbcfe8; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #ec4899; font-weight: 400; flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+.related-section { padding: 72px 28px; background: #fff; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.related-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s; }
+.related-card:hover { border-color: #ec4899; box-shadow: 0 4px 0 #fbcfe8; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name  { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+.related-link  { font-size: 11px; color: #ec4899; }
+
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg, #fdf2f8 0%, #eff6ff 100%); }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 12px; }
+.cta-section p  { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.cta-pricing-card { background: #fff; border: 2px solid #ec4899; border-radius: 20px; padding: 28px 28px 24px; margin-bottom: 24px; box-shadow: 0 6px 0 #be185d, 0 14px 40px rgba(236,72,153,0.14); text-align: left; }
+.cta-price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+.cta-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cpr-left { display: flex; flex-direction: column; gap: 2px; }
+.cpr-title { font-size: 15px; font-weight: 700; color: #0f172a; }
+.cpr-desc  { font-size: 12px; color: #64748b; }
+.cpr-badge { display: inline-block; padding: 3px 10px; background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.25); border-radius: 20px; font-size: 11px; font-weight: 700; color: #be185d; margin-top: 4px; }
+.cpr-price { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.cpr-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.cpr-amount sup { font-size: 14px; vertical-align: top; margin-top: 4px; display: inline-block; }
+.cpr-amount sub { font-size: 13px; color: #64748b; font-weight: 500; letter-spacing: 0; }
+.cpr-amount.pink { color: #be185d; }
+.cpr-note  { font-size: 11px; color: #94a3b8; }
+.btn-cta-main { display: block; width: 100%; padding: 15px 36px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; color: #fff; background: #ec4899; box-shadow: 0 5px 0 #be185d, 0 10px 24px rgba(236,72,153,0.28); transition: all 0.15s; text-align: center; }
+.btn-cta-main:hover  { transform: translateY(-2px); box-shadow: 0 7px 0 #be185d, 0 14px 30px rgba(236,72,153,0.36); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #be185d; }
+.cta-fine-print { font-size: 12px; color: #94a3b8; margin-top: 14px; line-height: 1.6; }
+
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #ec4899; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+@media (max-width: 760px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .app-sidebar { display: none; }
+  .mockup-float { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/index.html">Home</a><span class="bc-sep">›</span>
+    <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
+    <span>Send Message</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="module-badge"><span class="badge-dot"></span>📨 Send Message Module</div>
+    <h1>Email Your <em>Customers</em><br/>Directly from ShahoSuite</h1>
+    <p class="hero-sub">Quick templates, bulk send, personalised messages and full history — all inside your business platform. No separate email tool needed.</p>
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#ec4899;"></span>Quick templates</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Send to all customers</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#8b5cf6;"></span>Personalise with {name}</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>Message history</span>
+    </div>
+
+    <!-- SEND MESSAGE MOCKUP -->
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+        <div class="mockup-chrome">
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <div class="chrome-url">🔒 www.shahosuite.com/send-message</div>
+        </div>
+        <div class="app-shell">
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div>
+            <div class="sb-item">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">🛒 Orders</div>
+            <div class="sb-item">🏭 Suppliers</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item">📊 Analytics</div>
+            <div class="sb-item active">📨 Send Message</div>
+            <div class="sb-item">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+            <div class="sb-item">⚙️ Settings</div>
+            <div class="sb-item">📋 Audit Log</div>
+          </div>
+          <div class="app-main-wrap">
+            <div class="frost-overlay"></div>
+            <div class="gloss-overlay"></div>
+            <div class="app-main-inner">
+
+              <div class="msg-header">
+                <div class="msg-title">📨 Send Message</div>
+                <div class="msg-subtitle">Send emails to customers or any email address</div>
+              </div>
+
+              <!-- Tabs -->
+              <div class="msg-tabs">
+                <div class="msg-tab active">📨 Compose</div>
+                <div class="msg-tab">📋 History</div>
+              </div>
+
+              <!-- Compose card — real layout from screenshot -->
+              <div class="compose-card">
+                <!-- Quick templates -->
+                <div class="qt-label">⚡ Quick Templates</div>
+                <div class="qt-pills">
+                  <div class="qt-pill">New Update</div>
+                  <div class="qt-pill">Promotion</div>
+                  <div class="qt-pill">Invoice Reminder</div>
+                  <div class="qt-pill">Thank You</div>
+                  <div class="qt-pill">Appointment</div>
+                </div>
+
+                <!-- Recipients -->
+                <div class="form-label">
+                  To: (Recipients) *
+                  <span class="all-customers-btn">+ All Customers</span>
+                </div>
+                <div class="form-input">🔍 Type customer name to search...</div>
+
+                <!-- Guest email -->
+                <div class="guest-row">
+                  <div class="guest-label">👤 Add Guest Email (not a customer)</div>
+                  <div class="guest-inputs">
+                    <input class="guest-input" placeholder="Name (optional)" readonly />
+                    <input class="guest-input" placeholder="Email address" readonly />
+                    <div class="guest-add">Add</div>
+                  </div>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-label">Subject *</div>
+                <div class="form-input" style="color:#cbd5e1;">Enter email subject...</div>
+
+                <!-- Message -->
+                <div class="form-textarea-label">
+                  Message *
+                  <span class="personalise-hint">Use {name} to personalise</span>
+                </div>
+                <div class="form-textarea" style="display:flex;align-items:flex-start;padding-top:8px;">
+                  <span style="color:#cbd5e1;font-size:11px;">Type your message here... Use {name} to personalise per recipient</span>
+                </div>
+
+                <!-- Send button -->
+                <div class="send-btn">📨 Send to 0 Recipients</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mockup-float">
+        <div class="mf-label">Quick Templates</div>
+        <div class="mf-val">5 built-in</div>
+        <div class="mf-sub">Ready to use</div>
+        <div class="mf-row"><span class="mf-rl">Bulk send</span><span class="mf-rv" style="color:#3b82f6;">All customers</span></div>
+        <div class="mf-row"><span class="mf-rl">Personalise</span><span class="mf-rv" style="color:#ec4899;">{name}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Everything customer messaging should do</h2>
+    <p class="section-sub">Professional emails to your customers — without leaving ShahoSuite.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1"><span class="benefit-icon">⚡</span><div class="benefit-title">5 Quick Templates</div><div class="benefit-desc">New Update, Promotion, Invoice Reminder, Thank You and Appointment — ready to use in one click.</div></div>
+      <div class="benefit-card bc2"><span class="benefit-icon">👥</span><div class="benefit-title">Send to All Customers</div><div class="benefit-desc">One click adds your entire customer list as recipients. Perfect for announcements and promotions.</div></div>
+      <div class="benefit-card bc3"><span class="benefit-icon">🎯</span><div class="benefit-title">Personalise with {name}</div><div class="benefit-desc">Use {name} in your message and ShahoSuite replaces it with each recipient's name automatically.</div></div>
+      <div class="benefit-card bc4"><span class="benefit-icon">📧</span><div class="benefit-title">Add Guest Emails</div><div class="benefit-desc">Send to any email address — even people not in your customer list. No restrictions.</div></div>
+      <div class="benefit-card bc5"><span class="benefit-icon">📋</span><div class="benefit-title">Message History</div><div class="benefit-desc">Full history of every message sent — who, when, subject and content. Always logged.</div></div>
+      <div class="benefit-card bc6"><span class="benefit-icon">🔍</span><div class="benefit-title">Search Recipients</div><div class="benefit-desc">Find any customer by name and add them as a recipient in seconds.</div></div>
+      <div class="benefit-card bc7"><span class="benefit-icon">🔗</span><div class="benefit-title">Linked to Customers</div><div class="benefit-desc">Every message is linked to the customer record — see communication history from any customer profile.</div></div>
+      <div class="benefit-card bc8"><span class="benefit-icon">🔒</span><div class="benefit-title">Safe on Azure</div><div class="benefit-desc">All message data on Microsoft Azure, SSL encrypted, UK data centres, GDPR-compliant.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>100% Cloud-Based</span>
+</div>
+
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">Can I send emails to all my customers at once?</summary><div class="faq-a">Yes. Click <strong>+ All Customers</strong> to add your entire customer list as recipients with one click. You can also add individual customers or guest email addresses.</div></details>
+      <details class="faq-item"><summary class="faq-q">Does ShahoSuite have email templates?</summary><div class="faq-a">Yes. Five Quick Templates are built in: <strong>New Update, Promotion, Invoice Reminder, Thank You</strong> and <strong>Appointment</strong>. Select one and the message is pre-filled instantly.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I personalise emails per recipient?</summary><div class="faq-a">Yes. Use <strong>{name}</strong> anywhere in your message and ShahoSuite automatically replaces it with each recipient's name when the email is sent.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I send to people who are not customers?</summary><div class="faq-a">Yes. The <strong>Add Guest Email</strong> feature lets you add any email address as a recipient — even if they are not in your ShahoSuite customer database.</div></details>
+      <details class="faq-item"><summary class="faq-q">How much does ShahoSuite messaging cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — all 16 modules included. Staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#ec4899;font-weight:600;">full pricing</a>.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+    <h2>Messaging connects to everything</h2>
+    <p class="section-sub">Send invoice reminders, booking confirmations and updates directly from ShahoSuite.</p>
+    <div class="related-grid">
+      <a href="/customers.html"  class="related-card"><span class="related-emoji">👤</span><div class="related-name">Customers</div><div class="related-link">Message history →</div></a>
+      <a href="/invoices.html"   class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Invoice reminders →</div></a>
+      <a href="/booking.html"    class="related-card"><span class="related-emoji">📅</span><div class="related-name">Booking</div><div class="related-link">Booking confirmations →</div></a>
+      <a href="/support.html"    class="related-card"><span class="related-emoji">🆘</span><div class="related-name">Support</div><div class="related-link">Customer responses →</div></a>
+      <a href="/analytics.html"  class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Engagement data →</div></a>
+      <a href="/pricing.html"    class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+    <h2>Talk to your customers.<br/>From one platform.</h2>
+    <p>Templates, bulk send, personalisation and history — all inside ShahoSuite. Hosted on Microsoft Azure.</p>
+    <div class="cta-pricing-card">
+      <div class="cta-price-row">
+        <div class="cpr-left"><div class="cpr-title">🧑‍💼 Director Account</div><div class="cpr-desc">Full access to all 16 modules including Send Message.</div><div class="cpr-badge">All 16 modules included</div></div>
+        <div class="cpr-price"><div class="cpr-amount pink"><sup>£</sup>50<sub>/mo</sub></div><div class="cpr-note">1 admin account</div></div>
+      </div>
+      <div class="cta-price-row">
+        <div class="cpr-left"><div class="cpr-title">👤 + Add Staff Members</div><div class="cpr-desc">Each staff gets their own login with role-based access.</div></div>
+        <div class="cpr-price"><div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div><div class="cpr-note">Unlimited staff seats</div></div>
+      </div>
+    </div>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month + £15 per staff →</a>
+    <div class="cta-fine-print">No contracts. No setup fees. Cancel any time.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a><a href="/index.html#features">Modules</a><a href="/pricing.html">Pricing</a>
+    <a href="/customers.html">Customers</a><a href="/booking.html">Booking</a><a href="/support.html">Support</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+</body>
+</html>
