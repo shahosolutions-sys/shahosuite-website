@@ -197,187 +197,585 @@ h1 em { color: #0ea5e9; font-style: normal; }
   background: rgba(15,23,42,0.95); padding: 14px 0;
   border-right: 1px solid rgba(255,255,255,0.05);
 }
-.sb-brand { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 0; }
-.sb-brand svg { width: 20px; height: 20px; }
-.sb-title { font-size: 12px; font-weight: 800; letter-spacing: 0.8px; color: rgba(255,255,255,0.85); }
-.sb-nav { margin-top: 14px; }
-.sb-link {
-  display: flex; align-items: center; gap: 10px; padding: 11px 16px; margin: 6px 12px;
-  border-radius: 14px; color: rgba(255,255,255,0.75); text-decoration: none;
-  font-size: 13px; font-weight: 600;
-  transition: background 0.18s, color 0.18s;
+.sb-brand {
+  padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.85);
+  display: flex; align-items: center; gap: 7px;
+  border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;
 }
-.sb-link:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.95); }
-.sb-link.active { background: rgba(255,255,255,0.15); color: #fff; }
-
-/* main content */
-.app-main { padding: 22px 24px; }
-.section-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 12px; }
-.section-desc { font-size: 14px; color: #475569; margin-bottom: 18px; line-height: 1.6; }
-
-/* booking table */
-.schedule-table {
-  width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.85);
-  border: 1px solid rgba(226,232,240,0.7); border-radius: 14px; overflow: hidden;
+.sb-brand-dot { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item {
+  padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.38);
+  display: flex; align-items: center; gap: 8px; border-radius: 6px; margin: 1px 8px;
 }
-.schedule-table th, .schedule-table td {
-  padding: 12px 14px; text-align: left; font-size: 13px; color: #334155;
+.sb-item.active {
+  background: rgba(14,165,233,0.15); color: #7dd3fc; font-weight: 600;
+  border-left: 2px solid #0ea5e9; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px;
 }
-.schedule-table th { background: rgba(226,232,240,0.9); font-weight: 700; }
-.schedule-table tr:not(:first-child) { border-top: 1px solid rgba(226,232,240,0.7); }
-.schedule-tag { display: inline-flex; align-items: center; gap: 6px;
-  padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
-  background: rgba(16,185,129,0.12); color: #10b981;
+.sb-item:hover:not(.active) { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.6); }
+
+/* main booking view */
+.app-main { background: #f8f9fc; padding: 16px; }
+.app-header-row {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
 }
+.app-page-title { font-size: 14px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px; }
+.view-tabs { display: flex; gap: 4px; }
+.view-tab { padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 600; border: 1px solid #e2e8f0; color: #64748b; background: #fff; cursor: default; }
+.view-tab.active { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
 
-/* CTA */
-.cta-section { padding: 88px 28px; text-align: center; background: linear-gradient(135deg, #eef2ff 0%, #f0fdf4 100%); }
-.cta-section h2 { margin-bottom: 14px; }
-.cta-section p { font-size: 17px; color: #475569; max-width: 460px; margin: 0 auto 34px; }
-.btn-cta { display: inline-block; padding: 15px 40px; border-radius: 50px; font-size: 16px; font-weight: 700; text-decoration: none; color: #fff; background: linear-gradient(90deg, #6366f1, #10b981); box-shadow: 0 6px 0 #4338ca, 0 12px 28px rgba(99,102,241,0.28); transition: all 0.15s; }
-.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #4338ca, 0 16px 34px rgba(99,102,241,0.36); }
-.btn-cta:active { transform: translateY(6px); box-shadow: 0 0 0 #4338ca; }
+/* week calendar */
+.cal-header {
+  display: grid; grid-template-columns: 48px repeat(7,1fr); gap: 1px;
+  background: #e2e8f0; border-radius: 8px 8px 0 0; overflow: hidden; margin-bottom: 2px;
+}
+.cal-header-cell {
+  background: #fff; padding: 6px 4px; text-align: center;
+  font-size: 10px; font-weight: 700; color: #64748b;
+}
+.cal-header-cell.today { background: #eff6ff; color: #1d4ed8; }
+.cal-header-cell span { display: block; font-size: 14px; font-weight: 800; color: #0f172a; margin-top: 1px; }
+.cal-header-cell.today span { color: #0ea5e9; }
 
-/* Footer */
-footer { padding: 44px 28px 32px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
-footer a { color: #64748b; text-decoration: none; margin: 0 12px; transition: color 0.2s; }
-footer a:hover { color: #6366f1; }
-.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 14px; }
+.cal-body { display: grid; grid-template-columns: 48px repeat(7,1fr); gap: 1px; background: #e2e8f0; }
+.cal-time { background: #f8fafc; padding: 4px; font-size: 9px; color: #94a3b8; text-align: right; padding-right: 6px; display: flex; align-items: flex-start; justify-content: flex-end; }
+.cal-cell { background: #fff; min-height: 36px; position: relative; padding: 2px; }
+.cal-cell.today-col { background: #f0f9ff; }
 
-@media (max-width: 700px) {
+/* booking blocks */
+.booking-block {
+  border-radius: 5px; padding: 4px 6px; font-size: 9.5px; font-weight: 600;
+  line-height: 1.3; margin-bottom: 2px; cursor: default;
+}
+.bb-sky    { background: #e0f2fe; color: #075985; border-left: 3px solid #0ea5e9; }
+.bb-green  { background: #dcfce7; color: #166534; border-left: 3px solid #22c55e; }
+.bb-purple { background: #ede9fe; color: #5b21b6; border-left: 3px solid #8b5cf6; }
+.bb-amber  { background: #fef3c7; color: #92400e; border-left: 3px solid #f59e0b; }
+.bb-rose   { background: #ffe4e6; color: #9f1239; border-left: 3px solid #f43f5e; }
+
+/* new booking panel (right side of today col) */
+.new-booking-panel {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px;
+  margin-top: 6px;
+}
+.nbp-title { font-size: 10px; font-weight: 700; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+.nbp-field { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 5px 8px; font-size: 10px; color: #64748b; margin-bottom: 5px; width: 100%; }
+.nbp-btn { background: #0ea5e9; color: #fff; border: none; border-radius: 6px; padding: 6px 12px; font-size: 10px; font-weight: 700; width: 100%; cursor: default; box-shadow: 0 3px 0 #0369a1; font-family: 'DM Sans', sans-serif; }
+
+/* floating confirmation card */
+.mockup-float {
+  position: absolute; bottom: -18px; right: -20px; z-index: 5;
+  background: rgba(255,255,255,0.92); border: 1px solid rgba(255,255,255,0.95);
+  border-radius: 14px; padding: 12px 16px;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 28px rgba(14,165,233,0.18), 0 2px 0 rgba(255,255,255,0.9) inset;
+  min-width: 155px;
+}
+.mf-icon  { font-size: 18px; margin-bottom: 4px; }
+.mf-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.mf-val   { font-size: 14px; font-weight: 800; color: #0ea5e9; margin-top: 2px; }
+.mf-sub   { font-size: 11px; color: #64748b; margin-top: 1px; }
+
+/* ── SHARED SECTION ── */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #0ea5e9; }
+h2 { font-size: clamp(24px, 3.8vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+/* ── BENEFITS ── */
+.benefits-section { padding: 80px 28px; background: #fff; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.benefit-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px;
+  border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 14px rgba(0,0,0,0.03);
+  transition: all 0.2s;
+}
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#0ea5e9;--bs:#bae6fd;} .bc2{--bc:#10b981;--bs:#d1fae5;} .bc3{--bc:#8b5cf6;--bs:#ede9fe;}
+.bc4{--bc:#f59e0b;--bs:#fef3c7;} .bc5{--bc:#f43f5e;--bs:#ffe4e6;} .bc6{--bc:#06b6d4;--bs:#cffafe;}
+.bc7{--bc:#6366f1;--bs:#e0e7ff;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon  { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: #0f172a; }
+.benefit-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── HOW IT WORKS ── */
+.how-section { padding: 80px 28px; background: #f8fafc; }
+.steps-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px;
+  position: relative;
+}
+.steps-row::before {
+  content: ''; position: absolute; top: 28px; left: calc(33% - 20px); right: calc(33% - 20px);
+  height: 2px; background: linear-gradient(90deg, #bae6fd, #0ea5e9, #bae6fd);
+  z-index: 0;
+}
+.step-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 28px 22px;
+  text-align: center; position: relative; z-index: 1;
+  box-shadow: 0 4px 0 #e2e8f0, 0 6px 18px rgba(0,0,0,0.04);
+  transition: all 0.2s;
+}
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 #bae6fd, 0 14px 28px rgba(14,165,233,0.1); border-color: #bae6fd; }
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 16px;
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 800; color: #fff;
+  box-shadow: 0 4px 0 #075985;
+}
+.step-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+.step-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── WHO USES IT ── */
+.who-section { padding: 80px 28px; background: #fff; }
+.who-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.who-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 20px; text-align: center;
+  box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s;
+}
+.who-card:hover { transform: translateY(-4px); border-color: #0ea5e9; box-shadow: 0 4px 0 #bae6fd; }
+.who-icon  { font-size: 30px; margin-bottom: 10px; display: block; }
+.who-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 5px; }
+.who-desc  { font-size: 12.5px; color: #64748b; line-height: 1.55; }
+
+/* ── SIMPLICITY ── */
+.simple-section { padding: 80px 28px; background: #f8fafc; }
+.simple-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.simple-card {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 26px 22px; text-align: center;
+  box-shadow: 0 4px 0 #e5e7eb; transition: all 0.2s;
+}
+.simple-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 #bae6fd; border-color: #bae6fd; background: #fff; }
+.simple-num   { font-size: 34px; font-weight: 800; color: #0ea5e9; letter-spacing: -2px; margin-bottom: 6px; }
+.simple-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 5px; }
+.simple-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── AZURE TRUST BAR ── */
+.azure-bar {
+  background: #0f172a; padding: 28px;
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px;
+}
+.azure-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px; padding: 7px 16px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8);
+}
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* ── FAQ ── */
+.faq-section { padding: 80px 28px; background: #fff; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #bae6fd; box-shadow: 0 4px 0 #bae6fd; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #0ea5e9; font-weight: 400; flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* ── RELATED MODULES ── */
+.related-section { padding: 72px 28px; background: #f8fafc; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.related-card {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center;
+  text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s;
+}
+.related-card:hover { border-color: #0ea5e9; box-shadow: 0 4px 0 #bae6fd; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name  { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+.related-link  { font-size: 11px; color: #0ea5e9; }
+
+/* ── CTA ── */
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg, #f0f9ff 0%, #f0fdf4 100%); }
+.cta-inner { max-width: 540px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 12px; }
+.cta-section p  { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.btn-cta-main {
+  display: inline-block; padding: 14px 36px; border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700;
+  text-decoration: none; color: #fff; background: #0ea5e9;
+  box-shadow: 0 5px 0 #0369a1, 0 10px 24px rgba(14,165,233,0.28); transition: all 0.15s;
+}
+.btn-cta-main:hover  { transform: translateY(-2px); box-shadow: 0 7px 0 #0369a1, 0 14px 30px rgba(14,165,233,0.36); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #0369a1; }
+
+/* ── FOOTER ── */
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #0ea5e9; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 760px) {
   .app-layout { grid-template-columns: 1fr; }
-  .mockup-outer { padding: 0 16px; }
-  .schedule-table th, .schedule-table td { padding: 10px 12px; }
+  .app-sidebar { display: none; }
+  .steps-row { grid-template-columns: 1fr; }
+  .steps-row::before { display: none; }
+  .mockup-float { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo">
+    <a href="/index.html" class="logo">
       <span class="logo-left">Shaho</span><span class="logo-right">Suite</span>
     </a>
     <div class="nav-btns">
       <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
       <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
-      <a href="/invoices.html" class="btn-login" style="font-weight:700;">🧾 Invoices</a>
-      <a href="/booking.html" class="btn-login" style="font-weight:700;">📅 Booking</a>
-      <a href="/customers.html" class="btn-login" style="font-weight:700;">👤 Customers</a>
     </div>
   </div>
 </nav>
 
-<!-- ── BREADCRUMB ── -->
-<div class="breadcrumb">
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
   <div class="breadcrumb-inner">
-    <a href="/">Home</a>
-    <span class="bc-sep">/</span>
+    <a href="/index.html">Home</a><span class="bc-sep">›</span>
+    <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
     <span>Booking</span>
   </div>
-</div>
+</nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="module-badge"><span class="badge-dot"></span> Booking module</div>
-    <h1>Online booking that works with your business</h1>
-    <p class="hero-sub">Let customers book themselves, manage staff availability, and keep everything synced — all in one beautiful dashboard.</p>
 
-    <div class="trust-row">
-      <div class="trust-pill"><span class="tp-dot"></span> Calendar sync</div>
-      <div class="trust-pill"><span class="tp-dot"></span> Auto confirmations</div>
-      <div class="trust-pill"><span class="tp-dot"></span> Client self-booking</div>
+    <div class="module-badge">
+      <span class="badge-dot"></span>📅 Booking Module
     </div>
 
+    <h1>Online <em>Booking</em><br/>Built for UK Business</h1>
+
+    <p class="hero-sub">
+      Let customers book themselves. Staff availability managed automatically.
+      Confirmations sent instantly — minimum clicks, zero missed appointments.
+    </p>
+
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#0ea5e9;"></span>Auto-confirmations</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#8b5cf6;"></span>Multi-staff scheduling</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>GDPR-ready</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f43f5e;"></span>100% cloud</span>
+    </div>
+
+    <!-- BOOKING CALENDAR MOCKUP -->
     <div class="mockup-outer">
       <div class="mockup-frame">
         <div class="mockup-chrome">
-          <span class="cd r"></span>
-          <span class="cd y"></span>
-          <span class="cd g"></span>
-          <div class="chrome-url">shahosuite.com/booking</div>
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <div class="chrome-url">shahosuitefrontstorage.z33.web.core.windows.net/booking</div>
         </div>
+
         <div class="app-layout">
-          <aside class="app-sidebar">
-            <div class="sb-brand">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16v16H4z" fill="rgba(255,255,255,0.12)"/><path d="M7 7h4v4H7z" fill="rgba(255,255,255,0.25)"/><path d="M13 7h4v4h-4z" fill="rgba(255,255,255,0.35)"/></svg>
-              <span class="sb-title">Booking</span>
+          <!-- Sidebar -->
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-brand-dot"></div>ShahoSuite</div>
+            <div class="sb-item">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">🛒 Orders</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item">📊 Analytics</div>
+            <div class="sb-item">📨 Send Message</div>
+            <div class="sb-item active">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+            <div class="sb-item">⚙️ Settings</div>
+          </div>
+
+          <!-- Main booking calendar -->
+          <div class="app-main">
+            <div class="app-header-row">
+              <div class="app-page-title">📅 Booking Calendar — March 2026</div>
+              <div class="view-tabs">
+                <div class="view-tab">Day</div>
+                <div class="view-tab active">Week</div>
+                <div class="view-tab">Month</div>
+              </div>
             </div>
-            <nav class="sb-nav">
-              <a href="#" class="sb-link active"><span>📅</span> Calendar</a>
-              <a href="#" class="sb-link"><span>👥</span> Customers</a>
-              <a href="#" class="sb-link"><span>⚙️</span> Settings</a>
-            </nav>
-          </aside>
-          <main class="app-main">
-            <div class="section-title">This week's schedule</div>
-            <div class="section-desc">Bookings are updated in real time and sync with your staff calendars.</div>
-            <table class="schedule-table">
-              <thead>
-                <tr>
-                  <th>Time</th>
-                  <th>Service</th>
-                  <th>Customer</th>
-                  <th>Staff</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>09:00</td>
-                  <td>Web design consultation</td>
-                  <td>Chris J.</td>
-                  <td>Alex</td>
-                  <td><span class="schedule-tag">Confirmed</span></td>
-                </tr>
-                <tr>
-                  <td>10:30</td>
-                  <td>Therapy session</td>
-                  <td>Sam K.</td>
-                  <td>Jules</td>
-                  <td><span class="schedule-tag">Pending</span></td>
-                </tr>
-                <tr>
-                  <td>13:00</td>
-                  <td>Salon appointment</td>
-                  <td>Katie P.</td>
-                  <td>Ria</td>
-                  <td><span class="schedule-tag">Confirmed</span></td>
-                </tr>
-                <tr>
-                  <td>15:15</td>
-                  <td>Consulting call</td>
-                  <td>Jordan B.</td>
-                  <td>Sam</td>
-                  <td><span class="schedule-tag">Rescheduled</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </main>
-        </div>
+
+            <!-- Week calendar header -->
+            <div class="cal-header">
+              <div class="cal-header-cell" style="background:#f8fafc;"></div>
+              <div class="cal-header-cell">Mon<span>16</span></div>
+              <div class="cal-header-cell">Tue<span>17</span></div>
+              <div class="cal-header-cell today">Wed<span>18</span></div>
+              <div class="cal-header-cell">Thu<span>19</span></div>
+              <div class="cal-header-cell">Fri<span>20</span></div>
+              <div class="cal-header-cell">Sat<span>21</span></div>
+              <div class="cal-header-cell">Sun<span>22</span></div>
+            </div>
+
+            <!-- 09:00 row -->
+            <div class="cal-body">
+              <div class="cal-time">09:00</div>
+              <div class="cal-cell"><div class="booking-block bb-sky">Sarah J.<br/>Hair Cut · 45m</div></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell today-col"><div class="booking-block bb-green">Mark T.<br/>Consultation · 1h</div></div>
+              <div class="cal-cell"><div class="booking-block bb-purple">Dr. Patel<br/>Review · 30m</div></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"></div>
+            </div>
+
+            <!-- 10:00 row -->
+            <div class="cal-body">
+              <div class="cal-time">10:00</div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"><div class="booking-block bb-amber">Emma R.<br/>Colour · 2h</div></div>
+              <div class="cal-cell today-col"><div class="booking-block bb-sky">Lisa M.<br/>Follow-up · 30m</div></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"><div class="booking-block bb-green">Tom B.<br/>Session · 1h</div></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"></div>
+            </div>
+
+            <!-- 11:00 row -->
+            <div class="cal-body">
+              <div class="cal-time">11:00</div>
+              <div class="cal-cell"><div class="booking-block bb-rose">James K.<br/>Treatment · 1h</div></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell today-col">
+                <!-- New booking panel inside today's column -->
+                <div class="new-booking-panel">
+                  <div class="nbp-title">➕ New Booking</div>
+                  <input class="nbp-field" value="Bella's Studio" readonly />
+                  <input class="nbp-field" value="Hair & Colour — 90m" readonly />
+                  <input class="nbp-field" value="Staff: Sophie A." readonly />
+                  <div class="nbp-btn">Confirm Booking</div>
+                </div>
+              </div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"></div>
+              <div class="cal-cell"></div>
+            </div>
+
+          </div><!-- /app-main -->
+        </div><!-- /app-layout -->
+      </div><!-- /mockup-frame -->
+
+      <!-- Floating confirmation -->
+      <div class="mockup-float">
+        <div class="mf-icon">✅</div>
+        <div class="mf-label">Booking confirmed</div>
+        <div class="mf-val">Auto-sent</div>
+        <div class="mf-sub">Email to customer</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Everything a booking system should do</h2>
+    <p class="section-sub">Eight features that fill your calendar and free up your time.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1">
+        <span class="benefit-icon">🌐</span>
+        <div class="benefit-title">Customer Self-Booking</div>
+        <div class="benefit-desc">Give customers a booking page they can use any time — day or night. They choose the service, staff and slot. You do nothing.</div>
+      </div>
+      <div class="benefit-card bc2">
+        <span class="benefit-icon">🧑‍💼</span>
+        <div class="benefit-title">Multi-Staff Scheduling</div>
+        <div class="benefit-desc">Each staff member has their own availability. Bookings land on the right person automatically — no double-bookings, no conflicts.</div>
+      </div>
+      <div class="benefit-card bc3">
+        <span class="benefit-icon">✅</span>
+        <div class="benefit-title">Automatic Confirmations</div>
+        <div class="benefit-desc">The moment a booking is made, a confirmation email goes to the customer. No manual follow-up. Professional every time.</div>
+      </div>
+      <div class="benefit-card bc4">
+        <span class="benefit-icon">🔔</span>
+        <div class="benefit-title">Booking Reminders</div>
+        <div class="benefit-desc">Automated reminders sent before the appointment reduce no-shows and keep your calendar full.</div>
+      </div>
+      <div class="benefit-card bc5">
+        <span class="benefit-icon">📅</span>
+        <div class="benefit-title">Day, Week &amp; Month View</div>
+        <div class="benefit-desc">Switch between calendar views instantly. See one day in detail or your entire month at a glance — your choice.</div>
+      </div>
+      <div class="benefit-card bc6">
+        <span class="benefit-icon">⚙️</span>
+        <div class="benefit-title">Service &amp; Duration Setup</div>
+        <div class="benefit-desc">Define your services, durations and which staff can perform them. The system blocks time correctly every time.</div>
+      </div>
+      <div class="benefit-card bc7">
+        <span class="benefit-icon">👤</span>
+        <div class="benefit-title">Linked to Customers</div>
+        <div class="benefit-desc">Every booking adds to the customer's history. See every appointment, invoice and message in one customer profile.</div>
+      </div>
+      <div class="benefit-card bc8">
+        <span class="benefit-icon">🔒</span>
+        <div class="benefit-title">Safe &amp; Secure</div>
+        <div class="benefit-desc">Hosted on Microsoft Azure. All customer booking data is SSL encrypted, UK-stored and GDPR-compliant by default.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CTA ── -->
-<section class="cta-section">
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
   <div class="section-inner">
-    <h2>Ready to take bookings without the chaos?</h2>
-    <p>Start now with one platform that handles customers, invoicing and scheduling — all in one place.</p>
-    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta">Sign up →</a>
+    <div class="section-tag">How It Works</div>
+    <h2>Three steps. Zero effort.</h2>
+    <p class="section-sub">ShahoSuite booking is designed around minimum clicks — for you and your customers.</p>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Customer books online</div>
+        <div class="step-desc">They choose the service, staff member and available time slot — from any device, any time.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Auto-confirmation sent</div>
+        <div class="step-desc">ShahoSuite immediately emails the customer a confirmation. Staff are notified. Calendar updates instantly.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Reminder sent automatically</div>
+        <div class="step-desc">Before the appointment, a reminder goes out. Fewer no-shows. Less chasing. More time for the work that matters.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- WHO USES IT -->
+<section class="who-section" id="who">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#10b981;">Who Uses It</div>
+    <h2>Built for service businesses across the UK</h2>
+    <p class="section-sub">Any business where time is the product — ShahoSuite booking is made for you.</p>
+    <div class="who-grid">
+      <div class="who-card"><span class="who-icon">💇‍♀️</span><div class="who-title">Salons &amp; Barbershops</div><div class="who-desc">Appointments, staff rotas and customer records in one place.</div></div>
+      <div class="who-card"><span class="who-icon">🏥</span><div class="who-title">Clinics &amp; Therapists</div><div class="who-desc">Patient bookings, reminders and follow-up tracking.</div></div>
+      <div class="who-card"><span class="who-icon">📚</span><div class="who-title">Tutors &amp; Coaches</div><div class="who-desc">Session bookings, student records and invoice generation.</div></div>
+      <div class="who-card"><span class="who-icon">💪</span><div class="who-title">Personal Trainers</div><div class="who-desc">Client scheduling, availability management and billing.</div></div>
+      <div class="who-card"><span class="who-icon">📋</span><div class="who-title">Consultants</div><div class="who-desc">Discovery calls, project meetings and client management.</div></div>
+      <div class="who-card"><span class="who-icon">🔧</span><div class="who-title">Tradespeople</div><div class="who-desc">Job bookings, site visits and quote follow-ups — organised.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMPLICITY -->
+<section class="simple-section">
+  <div class="section-inner">
+    <div class="section-tag">Why ShahoSuite</div>
+    <h2>Minimum clicks.<br/>Maximum bookings.</h2>
+    <p class="section-sub">Simple, fast and safe. Working with ShahoSuite takes seconds — not minutes.</p>
+    <div class="simple-grid">
+      <div class="simple-card">
+        <div class="simple-num">0</div>
+        <div class="simple-title">Manual confirmations</div>
+        <div class="simple-desc">Every confirmation and reminder is sent automatically. You set the rules once.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-num">0</div>
+        <div class="simple-title">Double-bookings</div>
+        <div class="simple-desc">Staff availability is checked automatically. The system blocks conflicts before they happen.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-num">1</div>
+        <div class="simple-title">Platform for everything</div>
+        <div class="simple-desc">Booking, invoicing, CRM, accounting and staff management — all in ShahoSuite.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-num">24/7</div>
+        <div class="simple-title">Customers can book</div>
+        <div class="simple-desc">Your booking page is always live. Customers book while you sleep. Hosted on Microsoft Azure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AZURE TRUST BAR -->
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>100% Cloud-Based</span>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Can customers book appointments themselves online?</summary>
+        <div class="faq-a">Yes. ShahoSuite gives you a customer-facing booking page where people can choose the service, staff member and available time slot — from any device, at any time. No phone calls needed.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Does ShahoSuite send automatic booking confirmations?</summary>
+        <div class="faq-a">Yes. The moment a booking is made, a confirmation email is automatically sent to the customer. Reminders can also be sent before the appointment — you configure when, ShahoSuite handles the rest.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I manage multiple staff members' availability?</summary>
+        <div class="faq-a">Yes. Each staff member has their own availability schedule set up in the <a href="/staff.html" style="color:#0ea5e9;font-weight:600;">Staff module</a>. Bookings are automatically assigned to the right person and the calendar reflects their live availability. No double-bookings possible.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is ShahoSuite booking suitable for salons and clinics?</summary>
+        <div class="faq-a">Yes. ShahoSuite is used by salons, beauty studios, clinics, therapists, tutors, personal trainers, consultants and tradespeople across the UK. Any business that books appointments by time will find it fits immediately.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is my customers' booking data safe?</summary>
+        <div class="faq-a">Yes. ShahoSuite is hosted on <strong>Microsoft Azure</strong> with UK data centres, SSL encryption and full GDPR compliance. Customer booking data is stored securely and you always own your data.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How much does ShahoSuite booking cost?</summary>
+        <div class="faq-a">The Booking module is included in the Director account at <strong>£50/month</strong> — along with all 15 other modules. No per-booking fees, no setup costs, no contracts. Staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#0ea5e9;font-weight:600;">full pricing</a>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED MODULES -->
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+    <h2>Booking works with everything</h2>
+    <p class="section-sub">All modules share data automatically — no re-keying, no gaps.</p>
+    <div class="related-grid">
+      <a href="/customers.html"     class="related-card"><span class="related-emoji">👤</span><div class="related-name">Customers</div><div class="related-link">Full booking history →</div></a>
+      <a href="/staff.html"         class="related-card"><span class="related-emoji">🧑‍💼</span><div class="related-name">Staff</div><div class="related-link">Availability &amp; scheduling →</div></a>
+      <a href="/send-message.html"  class="related-card"><span class="related-emoji">📨</span><div class="related-name">Send Message</div><div class="related-link">Confirmations &amp; reminders →</div></a>
+      <a href="/invoices.html"      class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Invoice after booking →</div></a>
+      <a href="/analytics.html"     class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Booking performance →</div></a>
+      <a href="/pricing.html"       class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+    <h2>Fill your calendar.<br/>Free up your time.</h2>
+    <p>Customer self-booking, auto-confirmations and staff scheduling — all in ShahoSuite. Hosted on Microsoft Azure. £50/month, all 16 modules.</p>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-links">
-    <a href="/">Home</a>
+    <a href="/index.html">Home</a>
+    <a href="/index.html#features">Modules</a>
+    <a href="/pricing.html">Pricing</a>
     <a href="/invoices.html">Invoices</a>
-    <a href="/booking.html">Booking</a>
     <a href="/customers.html">Customers</a>
+    <a href="/staff.html">Staff</a>
     <a href="mailto:admin@shahosuite.com">Contact</a>
     <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
   </div>

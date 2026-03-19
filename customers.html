@@ -71,7 +71,268 @@ nav {
 .btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
 .btn-signup:hover  { background: #1e293b; box-shadow: 0 4px 0 #374151; transform: translateY(-1px); }
 .btn-signup:active { transform: translateY(3px); box-shadow: 0 0 0 #374151; }
-/* rest of the page styles are intentionally minimal here since this is a single module page */
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.breadcrumb a:hover { color: #10b981; }
+.bc-sep { color: #cbd5e1; }
+
+/* ── HERO ── */
+.hero { padding: 72px 28px 88px; background: linear-gradient(160deg, #f0fdf4 0%, #ecfdf5 40%, #f0f9ff 100%); text-align: center; overflow: hidden; position: relative; }
+.hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+
+.module-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px; background: rgba(255,255,255,0.9); border: 1px solid rgba(16,185,129,0.2); border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(16,185,129,0.08); backdrop-filter: blur(8px); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; flex-shrink: 0; }
+
+h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; color: #0f172a; }
+h1 em { color: #10b981; font-style: normal; }
+.hero-sub { font-size: 17px; color: #475569; margin-bottom: 14px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+
+.trust-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px; }
+.trust-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(255,255,255,0.85); border: 1px solid rgba(0,0,0,0.07); font-size: 12px; font-weight: 600; color: #374151; backdrop-filter: blur(8px); box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.tp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════════
+   GLOSSY FROSTED MOCKUP — blurred content, 
+   gives the idea without being readable
+══════════════════════════════════════════════ */
+.mockup-outer { max-width: 780px; margin: 0 auto; position: relative; }
+
+.mockup-frame {
+  border-radius: 20px; overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.95) inset,
+    0 12px 0 rgba(16,185,129,0.15),
+    0 28px 70px rgba(16,185,129,0.18),
+    0 0 0 1px rgba(16,185,129,0.1);
+  position: relative;
+}
+
+/* The browser chrome stays sharp */
+.mockup-chrome { background: #1e293b; padding: 10px 14px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 2; }
+.cd { width: 9px; height: 9px; border-radius: 50%; }
+.cd.r{background:#ef4444;} .cd.y{background:#f59e0b;} .cd.g{background:#22c55e;}
+.chrome-url { flex: 1; text-align: center; background: rgba(255,255,255,0.07); border-radius: 5px; padding: 3px 12px; color: rgba(255,255,255,0.4); font-size: 11px; }
+
+/* The app body — blurred glass effect */
+.app-body-wrap {
+  position: relative;
+  background: linear-gradient(145deg, #e8f5e9, #e3f2fd, #f3e5f5);
+  min-height: 400px;
+}
+
+/* Heavy frosted glass overlay — makes content impressionistic */
+.app-body-wrap::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 3;
+  background: rgba(255,255,255,0.52);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/* Top gloss shine on whole frame */
+.app-body-wrap::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 48%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 100%);
+  z-index: 4; pointer-events: none;
+}
+
+/* The actual app content — sits under the blur */
+.app-layout { display: grid; grid-template-columns: 165px 1fr; min-height: 400px; position: relative; z-index: 2; }
+
+/* Sidebar — slightly less blurred so you can see the menu */
+.app-sidebar { background: rgba(15,23,42,0.88); padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.08); }
+.sb-brand { padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 8px; }
+.sb-brand-dot { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 8px; margin: 1px 8px; border-radius: 6px; }
+.sb-item.active { background: rgba(16,185,129,0.18); color: #6ee7b7; font-weight: 600; border-left: 2px solid #10b981; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+
+/* Main content area — blurred out */
+.app-main-blur { padding: 14px; background: rgba(248,249,252,0.6); }
+
+/* Blurred toolbar row */
+.blur-toolbar { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; }
+.blur-pill { height: 28px; border-radius: 8px; background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.06); }
+.blur-pill.wide  { width: 160px; }
+.blur-pill.med   { width: 90px; }
+.blur-pill.sm    { width: 60px; }
+.blur-pill.green { width: 100px; background: rgba(59,130,246,0.6); }
+
+/* Blurred table header */
+.blur-thead { display: grid; grid-template-columns: 30px 100px 1fr 60px 55px 80px 130px; gap: 6px; padding: 8px 10px; background: rgba(248,250,252,0.8); border-radius: 8px 8px 0 0; border: 1px solid rgba(0,0,0,0.05); margin-bottom: 2px; }
+.blur-th { height: 10px; border-radius: 4px; background: rgba(148,163,184,0.4); }
+
+/* Blurred rows */
+.blur-row { display: grid; grid-template-columns: 30px 100px 1fr 60px 55px 80px 130px; gap: 6px; padding: 10px 10px; background: rgba(255,255,255,0.65); border-bottom: 1px solid rgba(0,0,0,0.04); align-items: center; }
+.blur-row:last-child { border-bottom: none; border-radius: 0 0 8px 8px; }
+.blur-row:hover { background: rgba(255,255,255,0.8); }
+
+/* Blurred avatar */
+.blur-av { width: 26px; height: 26px; border-radius: 50%; }
+.bav-1{background:linear-gradient(135deg,#6366f1,#8b5cf6);}
+.bav-2{background:linear-gradient(135deg,#0ea5e9,#2563eb);}
+.bav-3{background:linear-gradient(135deg,#10b981,#059669);}
+.bav-4{background:linear-gradient(135deg,#f59e0b,#d97706);}
+.bav-5{background:linear-gradient(135deg,#f43f5e,#e11d48);}
+
+/* Blurred text lines */
+.blur-line { height: 8px; border-radius: 4px; background: rgba(100,116,139,0.25); }
+.blur-line.dark { background: rgba(15,23,42,0.2); }
+.blur-line.tiny { height: 6px; margin-top: 4px; background: rgba(148,163,184,0.2); }
+
+/* Blurred badge */
+.blur-badge { height: 18px; width: 42px; border-radius: 20px; background: rgba(34,197,94,0.25); }
+
+/* Blurred action buttons */
+.blur-actions { display: flex; flex-direction: column; gap: 3px; }
+.blur-btn-row { display: flex; gap: 3px; }
+.blur-btn { height: 18px; border-radius: 5px; }
+.bb-g  { width: 38px; background: rgba(34,197,94,0.5); }
+.bb-w  { width: 46px; background: rgba(148,163,184,0.25); }
+.bb-b  { width: 36px; background: rgba(59,130,246,0.5); }
+.bb-p  { width: 36px; background: rgba(236,72,153,0.5); }
+.bb-o  { width: 44px; background: rgba(249,115,22,0.5); }
+
+/* Blurred date column */
+.blur-date { height: 8px; width: 55px; border-radius: 4px; background: rgba(148,163,184,0.2); }
+.blur-never { height: 8px; width: 36px; border-radius: 4px; background: rgba(203,213,225,0.4); }
+
+/* Pagination blur */
+.blur-pagination { display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 8px 10px; background: rgba(248,250,252,0.7); border-top: 1px solid rgba(0,0,0,0.04); }
+.blur-pg-text { height: 8px; width: 100px; border-radius: 4px; background: rgba(148,163,184,0.25); }
+.blur-pg-num { width: 22px; height: 22px; border-radius: 5px; background: rgba(59,130,246,0.6); }
+.blur-pg-arr { height: 8px; width: 14px; border-radius: 4px; background: rgba(148,163,184,0.25); }
+
+/* Floating card — stays SHARP and readable */
+.mockup-float {
+  position: absolute; bottom: -20px; right: -22px; z-index: 10;
+  background: rgba(255,255,255,0.96); border: 1px solid rgba(255,255,255,0.98);
+  border-radius: 14px; padding: 14px 18px;
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 32px rgba(16,185,129,0.22), 0 2px 0 rgba(255,255,255,0.9) inset;
+  min-width: 152px;
+}
+.mf-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.mf-val   { font-size: 22px; font-weight: 800; color: #10b981; letter-spacing: -0.5px; line-height: 1; }
+.mf-sub   { font-size: 11px; color: #64748b; margin-top: 3px; }
+
+/* ── SECTION ── */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #10b981; }
+h2 { font-size: clamp(24px, 3.8vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+/* ── ACTIONS SHOWCASE ── */
+.actions-section { padding: 80px 28px; background: #fff; }
+.actions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.action-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 20px; border-top: 4px solid var(--ac); box-shadow: 0 4px 0 var(--as), 0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; text-align: center; }
+.action-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--as), 0 14px 28px rgba(0,0,0,0.07); }
+.ac-view    {--ac:#22c55e;--as:#dcfce7;} .ac-invoices{--ac:#8b5cf6;--as:#ede9fe;}
+.ac-orders  {--ac:#3b82f6;--as:#dbeafe;} .ac-book    {--ac:#0ea5e9;--as:#bae6fd;}
+.ac-edit    {--ac:#ec4899;--as:#fce7f3;} .ac-archive {--ac:#f97316;--as:#ffedd5;}
+.action-icon  { font-size: 26px; margin-bottom: 10px; display: block; }
+.action-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 5px; }
+.action-desc  { font-size: 12.5px; color: #64748b; line-height: 1.55; }
+
+/* ── BENEFITS ── */
+.benefits-section { padding: 80px 28px; background: #f8fafc; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.benefit-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#10b981;--bs:#d1fae5;} .bc2{--bc:#3b82f6;--bs:#dbeafe;} .bc3{--bc:#8b5cf6;--bs:#ede9fe;}
+.bc4{--bc:#f59e0b;--bs:#fef3c7;} .bc5{--bc:#ec4899;--bs:#fce7f3;} .bc6{--bc:#f97316;--bs:#ffedd5;}
+.bc7{--bc:#0ea5e9;--bs:#bae6fd;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon  { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: #0f172a; }
+.benefit-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── AZURE ── */
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* ── FAQ ── */
+.faq-section { padding: 80px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #bbf7d0; box-shadow: 0 4px 0 #bbf7d0; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #10b981; font-weight: 400; flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* ── RELATED ── */
+.related-section { padding: 72px 28px; background: #fff; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.related-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s; }
+.related-card:hover { border-color: #10b981; box-shadow: 0 4px 0 #bbf7d0; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name  { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+.related-link  { font-size: 11px; color: #10b981; }
+
+/* ══════════════════════════════════
+   CTA — with full pricing breakdown
+══════════════════════════════════ */
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%); }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 12px; }
+.cta-section p  { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+
+/* Pricing breakdown card */
+.cta-pricing-card {
+  background: #fff; border: 2px solid #10b981; border-radius: 20px;
+  padding: 28px 28px 24px; margin-bottom: 24px;
+  box-shadow: 0 6px 0 #059669, 0 14px 40px rgba(16,185,129,0.14);
+  text-align: left;
+}
+.cta-price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid #f1f5f9;
+}
+.cta-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cpr-left { display: flex; flex-direction: column; gap: 2px; }
+.cpr-title { font-size: 15px; font-weight: 700; color: #0f172a; }
+.cpr-desc  { font-size: 12px; color: #64748b; }
+.cpr-price { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.cpr-amount { font-size: 26px; font-weight: 800; color: #0f172a; letter-spacing: -1px; line-height: 1; }
+.cpr-amount sup { font-size: 14px; vertical-align: top; margin-top: 4px; display: inline-block; }
+.cpr-amount sub { font-size: 13px; color: #64748b; font-weight: 500; letter-spacing: 0; }
+.cpr-amount.green { color: #10b981; }
+.cpr-note  { font-size: 11px; color: #94a3b8; }
+.cta-included-badge {
+  display: inline-block; padding: 3px 10px;
+  background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 20px; font-size: 11px; font-weight: 700; color: #10b981; margin-top: 4px;
+}
+
+.btn-cta-main {
+  display: inline-block; width: 100%; padding: 15px 36px; border-radius: 12px;
+  font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700;
+  text-decoration: none; color: #fff; background: #10b981;
+  box-shadow: 0 5px 0 #059669, 0 10px 24px rgba(16,185,129,0.28); transition: all 0.15s;
+  text-align: center;
+}
+.btn-cta-main:hover  { transform: translateY(-2px); box-shadow: 0 7px 0 #059669, 0 14px 30px rgba(16,185,129,0.36); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #059669; }
+
+.cta-fine-print { font-size: 12px; color: #94a3b8; margin-top: 14px; line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #10b981; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+@media (max-width: 760px) {
+  .app-layout { grid-template-columns: 1fr; }
+  .app-sidebar { display: none; }
+  .mockup-float { display: none; }
+  .blur-thead, .blur-row { grid-template-columns: 30px 1fr 55px 120px; }
+}
 </style>
 </head>
 <body>
@@ -269,4 +530,130 @@ nav {
     <p class="section-sub">Every customer has six instant actions — no navigating, no searching. Everything is right there.</p>
     <div class="actions-grid">
       <div class="action-card ac-view"><span class="action-icon">👁</span><div class="action-title">View</div><div class="action-desc">Full customer profile — contact info, all history, notes and tags in one screen.</div></div>
-*** End of File
+      <div class="action-card ac-invoices"><span class="action-icon">🧾</span><div class="action-title">Invoices</div><div class="action-desc">See every invoice sent to this customer — status, amount, date — instantly.</div></div>
+      <div class="action-card ac-orders"><span class="action-icon">🛒</span><div class="action-title">Orders</div><div class="action-desc">Full order history — what they ordered, when and how much.</div></div>
+      <div class="action-card ac-book"><span class="action-icon">📅</span><div class="action-title">Book</div><div class="action-desc">Jump straight to booking with this customer pre-filled. One click — no re-entering details.</div></div>
+      <div class="action-card ac-edit"><span class="action-icon">✏️</span><div class="action-title">Edit</div><div class="action-desc">Update contact info, notes and tags. Changes saved instantly.</div></div>
+      <div class="action-card ac-archive"><span class="action-icon">📦</span><div class="action-title">Archive</div><div class="action-desc">Move inactive customers out of view. All history kept safe and searchable.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Everything a CRM should do</h2>
+    <p class="section-sub">No separate tools. No spreadsheets. Every customer detail in one place.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1"><span class="benefit-icon">👤</span><div class="benefit-title">Complete Profiles</div><div class="benefit-desc">Name, photo, email, phone, address, notes, tags and status — all in one organised record.</div></div>
+      <div class="benefit-card bc2"><span class="benefit-icon">🧾</span><div class="benefit-title">Invoice History</div><div class="benefit-desc">See every invoice, its status and amount directly from the customer record.</div></div>
+      <div class="benefit-card bc3"><span class="benefit-icon">🛒</span><div class="benefit-title">Order History</div><div class="benefit-desc">Full purchase history — what they bought, when, and how much spent.</div></div>
+      <div class="benefit-card bc4"><span class="benefit-icon">📅</span><div class="benefit-title">Book in One Click</div><div class="benefit-desc">Jump straight to booking with the customer pre-filled. Minimum clicks.</div></div>
+      <div class="benefit-card bc5"><span class="benefit-icon">🔍</span><div class="benefit-title">Search &amp; Filter</div><div class="benefit-desc">Find any customer instantly. Filter by Active, Archived or All.</div></div>
+      <div class="benefit-card bc6"><span class="benefit-icon">📦</span><div class="benefit-title">Archive Without Deleting</div><div class="benefit-desc">All history kept safe. Toggle Show Archived to bring them back any time.</div></div>
+      <div class="benefit-card bc7"><span class="benefit-icon">📤</span><div class="benefit-title">Export Your Data</div><div class="benefit-desc">Download your full customer list any time. Your data always belongs to you.</div></div>
+      <div class="benefit-card bc8"><span class="benefit-icon">🔒</span><div class="benefit-title">Safe &amp; Secure</div><div class="benefit-desc">Microsoft Azure, SSL encrypted, UK data centres, GDPR-ready.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AZURE -->
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>100% Cloud-Based</span>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">What customer information does ShahoSuite store?</summary><div class="faq-a">ShahoSuite stores customer name, profile image, contact email, phone number, address, notes, tags, status (active/archived), last order date and links to all their invoices, orders and bookings — all in one profile.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I view a customer's invoice and order history?</summary><div class="faq-a">Yes. From any customer row you can click <strong>Invoices</strong> to see all their invoices or <strong>Orders</strong> to see their full order history — no navigating to other modules needed.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I book an appointment directly from the customer list?</summary><div class="faq-a">Yes. Each customer row has a <strong>Book</strong> button that takes you directly to the <a href="/booking.html" style="color:#10b981;font-weight:600;">Booking</a> form with the customer already pre-filled. One click — no re-entering details.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is my customer data safe and GDPR-compliant?</summary><div class="faq-a">Yes. All customer data is stored on <strong>Microsoft Azure</strong> UK data centres, SSL encrypted and fully GDPR-compliant. You can export your data at any time — it always belongs to you.</div></details>
+      <details class="faq-item"><summary class="faq-q">How much does ShahoSuite cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — full access to all 16 modules including the full CRM, invoicing, bookings and more. Additional staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#10b981;font-weight:600;">full pricing</a>.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+    <h2>Customers connect to everything</h2>
+    <p class="section-sub">Every module links back to the customer. No gaps, no re-keying.</p>
+    <div class="related-grid">
+      <a href="/invoices.html"     class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Invoice history →</div></a>
+      <a href="/booking.html"      class="related-card"><span class="related-emoji">📅</span><div class="related-name">Booking</div><div class="related-link">Book from profile →</div></a>
+      <a href="/orders.html"       class="related-card"><span class="related-emoji">🛒</span><div class="related-name">Orders</div><div class="related-link">Order history →</div></a>
+      <a href="/send-message.html" class="related-card"><span class="related-emoji">📨</span><div class="related-name">Send Message</div><div class="related-link">Email customer →</div></a>
+      <a href="/analytics.html"    class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Top customers →</div></a>
+      <a href="/pricing.html"      class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">View all plans →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA WITH FULL PRICING BREAKDOWN -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+    <h2>Know your customers.<br/>Grow your business.</h2>
+    <p>Full CRM, invoice history, bookings and orders — all connected. Hosted on Microsoft Azure.</p>
+
+    <!-- Pricing breakdown -->
+    <div class="cta-pricing-card">
+      <!-- Director -->
+      <div class="cta-price-row">
+        <div class="cpr-left">
+          <div class="cpr-title">🧑‍💼 Director Account</div>
+          <div class="cpr-desc">Full access to all 16 modules. Complete control.</div>
+          <div class="cta-included-badge">All 16 modules included</div>
+        </div>
+        <div class="cpr-price">
+          <div class="cpr-amount green"><sup>£</sup>50<sub>/mo</sub></div>
+          <div class="cpr-note">1 admin account</div>
+        </div>
+      </div>
+      <!-- Staff -->
+      <div class="cta-price-row">
+        <div class="cpr-left">
+          <div class="cpr-title">👤 + Add Staff Members</div>
+          <div class="cpr-desc">Director invites team. Each staff gets their own login with role-based access.</div>
+        </div>
+        <div class="cpr-price">
+          <div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div>
+          <div class="cpr-note">Unlimited staff seats</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">
+      Sign up — £50/month + £15 per staff →
+    </a>
+    <div class="cta-fine-print">No contracts. No setup fees. Cancel any time. Staff have limited, role-based access.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#features">Modules</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/invoices.html">Invoices</a>
+    <a href="/booking.html">Booking</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+
+</body>
+</html>
