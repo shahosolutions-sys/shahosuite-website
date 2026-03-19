@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Products — Product Management Software for UK Small Businesses</title>
+<meta name="description" content="Manage all your products with SKU, pricing, stock levels, categories and images. Track inventory, low stock alerts and total inventory value. Hosted on Microsoft Azure. £50/month." />
+<meta name="keywords" content="product management software UK, inventory management UK small business, stock management software UK, product catalogue software UK, SKU tracking software UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/products.html" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ShahoSuite — Products Module","applicationCategory":"BusinessApplication","applicationSubCategory":"InventoryManagementSoftware","operatingSystem":"Web","url":"https://www.shahosuite.com/products.html","featureList":["Product image upload","SKU tracking","Product name and description","Category assignment","Price and cost tracking","Stock level management","Low stock alerts","Active/archived status","Export CSV","Total inventory value"],"offers":{"@type":"Offer","price":"50","priceCurrency":"GBP"},"provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover { transform: translateY(-2px); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; }
+.btn-login  { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover { border-color: #9ca3af; transform: translateY(-1px); }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover { background: #1e293b; transform: translateY(-1px); }
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.bc-sep { color: #cbd5e1; }
+.hero { padding: 72px 28px 88px; background: linear-gradient(160deg,#fff7ed 0%,#fed7aa 30%,#fef3c7 100%); text-align: center; overflow: hidden; }
+.hero-inner { max-width: 940px; margin: 0 auto; position: relative; z-index: 1; }
+.module-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px; background: rgba(255,255,255,0.9); border: 1px solid rgba(249,115,22,0.2); border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(249,115,22,0.1); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #f97316; flex-shrink: 0; }
+h1 { font-size: clamp(34px,5.5vw,58px); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; }
+h1 em { color: #f97316; font-style: normal; }
+.hero-sub { font-size: 17px; color: #475569; margin-bottom: 14px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.trust-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.trust-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(255,255,255,0.88); border: 1px solid rgba(0,0,0,0.07); font-size: 12px; font-weight: 600; color: #374151; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.tp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* MOCKUP */
+.mockup-outer { max-width: 860px; margin: 0 auto; position: relative; }
+.mockup-frame { border-radius: 20px; overflow: hidden; box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 14px 0 rgba(249,115,22,0.18), 0 30px 80px rgba(249,115,22,0.2), 0 0 0 1px rgba(249,115,22,0.1); }
+.mockup-chrome { background: #1e293b; padding: 10px 14px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 10; }
+.cd { width: 9px; height: 9px; border-radius: 50%; } .cd.r{background:#ef4444;} .cd.y{background:#f59e0b;} .cd.g{background:#22c55e;}
+.chrome-url { flex:1; text-align:center; background:rgba(255,255,255,0.09); border-radius:6px; padding:4px 14px; color:rgba(255,255,255,0.75); font-size:11px; display:flex; align-items:center; justify-content:center; gap:5px; }
+.app-shell { display: grid; grid-template-columns: 168px 1fr; min-height: 500px; }
+.app-sidebar { background: #0d1117; padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.06); }
+.sb-brand { padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+.sb-icon { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 8px; margin: 1px 8px; border-radius: 6px; }
+.sb-item.active { background: rgba(249,115,22,0.16); color: #fdba74; font-weight: 700; border-left: 2px solid #f97316; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+.app-main-wrap { position: relative; overflow: hidden; background: #f8f9fc; }
+.frost-overlay { position: absolute; inset: 0; z-index: 3; background: rgba(255,255,255,0.46); backdrop-filter: blur(7px); pointer-events: none; }
+.gloss-overlay { position: absolute; top:0; left:0; right:0; height:40%; background: linear-gradient(180deg,rgba(255,255,255,0.38) 0%,rgba(255,255,255,0) 100%); z-index:4; pointer-events:none; }
+.app-main-inner { padding: 14px; position: relative; z-index: 2; }
+
+/* Products page */
+.prod-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.prod-title { font-size: 16px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 7px; }
+.prod-add { background: #10b981; color: #fff; border-radius: 8px; padding: 6px 14px; font-size: 11px; font-weight: 700; box-shadow: 0 3px 0 #059669; }
+.prod-filters { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+.pf-search { flex:1; min-width:120px; background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:6px 10px; font-size:10px; color:#94a3b8; display:flex; align-items:center; gap:5px; }
+.pf-select { background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:5px 8px; font-size:10px; color:#374151; }
+.pf-archived { font-size:10px; color:#64748b; display:flex; align-items:center; gap:4px; }
+.pf-toggle { width:28px; height:16px; background:#10b981; border-radius:8px; position:relative; }
+.pf-toggle-dot { width:12px; height:12px; background:#fff; border-radius:50%; position:absolute; top:2px; right:2px; box-shadow:0 1px 2px rgba(0,0,0,0.2); }
+.pf-export { background:#fff; border:1px solid #e2e8f0; border-radius:7px; padding:5px 9px; font-size:10px; font-weight:600; color:#374151; display:flex; align-items:center; gap:4px; }
+
+/* Product table */
+.prod-table { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+.prod-thead { display: grid; grid-template-columns: 46px 80px 1fr 80px 80px 60px 65px 110px; padding: 7px 10px; background: #f8fafc; border-bottom: 1px solid #e5e7eb; font-size: 8.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; gap: 4px; }
+.prod-row { display: grid; grid-template-columns: 46px 80px 1fr 80px 80px 60px 65px 110px; padding: 9px 10px; border-bottom: 1px solid #f1f5f9; align-items: center; gap: 4px; }
+.prod-row:last-child { border-bottom: none; }
+.prod-img { width: 36px; height: 36px; border-radius: 8px; overflow: hidden; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #94a3b8; }
+.prod-img img { width: 100%; height: 100%; object-fit: cover; }
+.prod-sku { font-size: 9.5px; color: #64748b; word-break: break-all; }
+.prod-info-name { font-size: 11px; font-weight: 700; color: #0f172a; }
+.prod-info-desc { font-size: 9px; color: #94a3b8; margin-top: 1px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.prod-cat { font-size: 9.5px; color: #64748b; }
+.prod-price { font-size: 11px; font-weight: 700; color: #0f172a; }
+.prod-cost { font-size: 9px; color: #94a3b8; }
+/* Stock badges */
+.stock-badge { display: inline-flex; padding: 3px 7px; border-radius: 6px; font-size: 9.5px; font-weight: 700; align-items: center; gap: 3px; }
+.stock-low  { background: #fef9c3; color: #854d0e; }
+.stock-good { background: #dcfce7; color: #166534; }
+.stock-zero { background: #fee2e2; color: #991b1b; }
+.stock-lowlabel { font-size: 8px; color: #f59e0b; font-weight: 700; display: flex; align-items: center; gap: 2px; }
+.prod-active { background: #22c55e; color: #fff; border-radius: 20px; padding: 3px 10px; font-size: 9.5px; font-weight: 700; display: inline-flex; }
+.prod-actions { display: flex; flex-direction: column; gap: 3px; }
+.prod-act-row { display: flex; gap: 3px; }
+.act-v { background: #3b82f6; color: #fff; border: none; border-radius: 20px; padding: 4px 9px; font-size: 9px; font-weight: 700; cursor: default; font-family: 'DM Sans',sans-serif; box-shadow: 0 2px 0 #1d4ed8; }
+.act-e { background: #f97316; color: #fff; border: none; border-radius: 20px; padding: 4px 9px; font-size: 9px; font-weight: 700; cursor: default; font-family: 'DM Sans',sans-serif; box-shadow: 0 2px 0 #c2410c; }
+.act-a { background: #ef4444; color: #fff; border: none; border-radius: 20px; padding: 4px 9px; font-size: 9px; font-weight: 700; cursor: default; font-family: 'DM Sans',sans-serif; box-shadow: 0 2px 0 #b91c1c; }
+
+/* Summary bar */
+.prod-summary { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.ps-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; text-align: center; }
+.ps-label { font-size: 9.5px; color: #94a3b8; font-weight: 500; margin-bottom: 4px; }
+.ps-val { font-size: 18px; font-weight: 800; }
+.ps-1 { color: #0f172a; } .ps-2 { color: #22c55e; } .ps-3 { color: #ef4444; } .ps-4 { color: #0f172a; }
+
+/* Float card */
+.float-card { position: absolute; bottom: -20px; right: -22px; z-index: 20; background: rgba(255,255,255,0.97); border: 1px solid rgba(255,255,255,0.99); border-radius: 14px; padding: 14px 18px; backdrop-filter: blur(24px); box-shadow: 0 10px 32px rgba(249,115,22,0.22), 0 2px 0 rgba(255,255,255,0.9) inset; min-width: 152px; }
+.fc-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.fc-val { font-size: 22px; font-weight: 800; color: #f97316; letter-spacing: -0.5px; line-height: 1; }
+.fc-sub { font-size: 11px; color: #64748b; margin-top: 3px; }
+.fc-row { display: flex; justify-content: space-between; font-size: 11px; margin-top: 7px; padding-top: 7px; border-top: 1px solid #f1f5f9; }
+.fc-rl { color: #94a3b8; } .fc-rv { font-weight: 700; }
+
+/* shared */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #f97316; }
+h2 { font-size: clamp(24px,3.8vw,40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+.benefits-section { padding: 80px 28px; background: #fff; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 14px; }
+.benefit-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs),0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs),0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#f97316;--bs:#ffedd5;} .bc2{--bc:#ef4444;--bs:#fee2e2;} .bc3{--bc:#10b981;--bs:#d1fae5;} .bc4{--bc:#3b82f6;--bs:#dbeafe;} .bc5{--bc:#8b5cf6;--bs:#ede9fe;} .bc6{--bc:#f59e0b;--bs:#fef3c7;} .bc7{--bc:#84cc16;--bs:#d9f99d;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; }
+.benefit-desc { font-size: 13px; color: #64748b; line-height: 1.6; }
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+.faq-section { padding: 80px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #fed7aa; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #f97316; font-weight: 400; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+.related-section { padding: 72px 28px; background: #fff; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap: 12px; }
+.related-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s; }
+.related-card:hover { border-color: #f97316; box-shadow: 0 4px 0 #ffedd5; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.related-link { font-size: 11px; color: #f97316; }
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg,#fff7ed 0%,#f0fdf4 100%); }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px,4vw,38px); margin-bottom: 12px; }
+.cta-section p { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.cta-pricing-card { background: #fff; border: 2px solid #f97316; border-radius: 20px; padding: 28px 28px 24px; margin-bottom: 24px; box-shadow: 0 6px 0 #c2410c,0 14px 40px rgba(249,115,22,0.14); text-align: left; }
+.cta-price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+.cta-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cpr-left { display: flex; flex-direction: column; gap: 2px; }
+.cpr-title { font-size: 15px; font-weight: 700; }
+.cpr-desc { font-size: 12px; color: #64748b; }
+.cpr-badge { display: inline-block; padding: 3px 10px; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.25); border-radius: 20px; font-size: 11px; font-weight: 700; color: #c2410c; margin-top: 4px; }
+.cpr-price { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.cpr-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.cpr-amount sup { font-size: 14px; vertical-align: top; margin-top: 4px; display: inline-block; }
+.cpr-amount sub { font-size: 13px; color: #64748b; font-weight: 500; }
+.cpr-amount.orange { color: #c2410c; }
+.cpr-note { font-size: 11px; color: #94a3b8; }
+.btn-cta-main { display: block; width: 100%; padding: 15px 36px; border-radius: 12px; font-family: 'DM Sans',sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; color: #fff; background: #f97316; box-shadow: 0 5px 0 #c2410c,0 10px 24px rgba(249,115,22,0.28); transition: all 0.15s; text-align: center; }
+.btn-cta-main:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #c2410c,0 14px 30px rgba(249,115,22,0.36); }
+.cta-fine-print { font-size: 12px; color: #94a3b8; margin-top: 14px; }
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; }
+footer a:hover { color: #f97316; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+@media(max-width:760px){.app-shell{grid-template-columns:1fr}.app-sidebar{display:none}.float-card{display:none}.prod-summary{grid-template-columns:repeat(2,1fr)}.prod-thead,.prod-row{grid-template-columns:36px 1fr 70px 50px 90px}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a>
+  <div class="nav-btns">
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+  </div>
+</div></nav>
+<nav class="breadcrumb"><div class="breadcrumb-inner"><a href="/index.html">Home</a><span class="bc-sep">›</span><a href="/index.html#features">Modules</a><span class="bc-sep">›</span><span>Products</span></div></nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="module-badge"><span class="badge-dot"></span>📦 Products Module</div>
+    <h1>Product &amp; Inventory <em>Management</em><br/>Built for UK Business</h1>
+    <p class="hero-sub">SKU, pricing, stock levels, categories, images and cost tracking — every product organised, every stock level monitored, all in one place.</p>
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f97316;"></span>SKU tracking</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#ef4444;"></span>Low stock alerts</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Inventory value</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#84cc16;"></span>Export CSV</span>
+    </div>
+
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+        <div class="mockup-chrome"><div class="cd r"></div><div class="cd y"></div><div class="cd g"></div><div class="chrome-url">🔒 www.shahosuite.com/products</div></div>
+        <div class="app-shell">
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div>
+            <div class="sb-item">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item active">📦 Products</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">💰 Credit Notes</div>
+            <div class="sb-item">🛒 Orders</div>
+            <div class="sb-item">🏭 Suppliers</div>
+            <div class="sb-item">🗂️ Categories</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item">📊 Analytics</div>
+            <div class="sb-item">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+          </div>
+          <div class="app-main-wrap">
+            <div class="frost-overlay"></div><div class="gloss-overlay"></div>
+            <div class="app-main-inner">
+              <div class="prod-header"><div class="prod-title">📦 Products</div><div class="prod-add">+ Add Product</div></div>
+              <div class="prod-filters">
+                <div class="pf-search">🔍 Search by name, SKU, or description...</div>
+                <div class="pf-select">All Categories ▾</div>
+                <div class="pf-select">All Status ▾</div>
+                <div class="pf-select">All Stock ▾</div>
+                <div class="pf-archived">Show Archived: <div class="pf-toggle"><div class="pf-toggle-dot"></div></div></div>
+                <div class="pf-export">🔍 Export CSV</div>
+              </div>
+              <div class="prod-table">
+                <div class="prod-thead"><span>Image</span><span>SKU</span><span>Name</span><span>Category</span><span>Price</span><span>Stock</span><span>Status</span><span>Actions</span></div>
+                <!-- Row 1: AI Consultancy -->
+                <div class="prod-row">
+                  <div class="prod-img" style="background:#1e293b;"><span style="font-size:16px;">✍️</span></div>
+                  <div class="prod-sku">ICT-30548</div>
+                  <div><div class="prod-info-name">AI Consultancy</div><div class="prod-info-desc">This is about provide reliable AI to business</div></div>
+                  <div class="prod-cat">ICT Consultancy</div>
+                  <div><div class="prod-price">£99.00</div><div class="prod-cost" style="color:#94a3b8;">Cost: £10.00</div></div>
+                  <div>
+                    <div class="stock-badge stock-low">5 pcs</div>
+                    <div class="stock-lowlabel">⚠️ Low Stock</div>
+                  </div>
+                  <div><span class="prod-active">Active</span></div>
+                  <div class="prod-actions"><div class="prod-act-row"><div class="act-v">👁 View</div><div class="act-e">✏️ Edit</div></div><div class="act-a">🗄 Archive</div></div>
+                </div>
+                <!-- Row 2: Test Product -->
+                <div class="prod-row">
+                  <div class="prod-img"><span style="font-size:16px;">📦</span></div>
+                  <div class="prod-sku">SKU-1772486659326</div>
+                  <div><div class="prod-info-name">Test Product av</div><div class="prod-info-desc">This is an test for product</div></div>
+                  <div class="prod-cat">Test category</div>
+                  <div><div class="prod-price">£1.00</div><div class="prod-cost">Cost: £1.00</div></div>
+                  <div><div class="stock-badge stock-good">20 pack</div></div>
+                  <div><span class="prod-active">Active</span></div>
+                  <div class="prod-actions"><div class="prod-act-row"><div class="act-v">👁 View</div><div class="act-e">✏️ Edit</div></div><div class="act-a">🗄 Archive</div></div>
+                </div>
+                <!-- Row 3: Google Sites -->
+                <div class="prod-row">
+                  <div class="prod-img" style="background:#1e3a5f;"><span style="font-size:16px;">🌐</span></div>
+                  <div class="prod-sku">SKU-1771453438922</div>
+                  <div><div class="prod-info-name">Google Sites - websites building</div><div class="prod-info-desc">Its about build website on google sites.</div></div>
+                  <div class="prod-cat">ICT Consultancy</div>
+                  <div><div class="prod-price">£99.00</div><div class="prod-cost">Cost: £19.00</div></div>
+                  <div>
+                    <div class="stock-badge stock-zero">0 pcs</div>
+                    <div class="stock-lowlabel">⚠️ Low Stock</div>
+                  </div>
+                  <div><span class="prod-active">Active</span></div>
+                  <div class="prod-actions"><div class="prod-act-row"><div class="act-v">👁 View</div><div class="act-e">✏️ Edit</div></div><div class="act-a">🗄 Archive</div></div>
+                </div>
+                <!-- Row 4: ICT Consultancy -->
+                <div class="prod-row">
+                  <div class="prod-img"><span style="font-size:10px;color:#94a3b8;">No Image</span></div>
+                  <div class="prod-sku">SKU-1766938729320</div>
+                  <div><div class="prod-info-name">ICT Consultancey</div><div class="prod-info-desc">ICT Consultancey ICT Consultancey</div></div>
+                  <div class="prod-cat">ICT Consultancy</div>
+                  <div><div class="prod-price">£99.00</div><div class="prod-cost">Cost: £12.00</div></div>
+                  <div>
+                    <div class="stock-badge stock-zero">0 pcs</div>
+                    <div class="stock-lowlabel">⚠️ Low Stock</div>
+                  </div>
+                  <div><span class="prod-active">Active</span></div>
+                  <div class="prod-actions"><div class="prod-act-row"><div class="act-v">👁 View</div><div class="act-e">✏️ Edit</div></div><div class="act-a">🗄 Archive</div></div>
+                </div>
+              </div>
+              <!-- Summary bar — real data -->
+              <div class="prod-summary">
+                <div class="ps-card"><div class="ps-label">Total Products</div><div class="ps-val ps-1">4</div></div>
+                <div class="ps-card"><div class="ps-label">Active Products</div><div class="ps-val ps-2">4</div></div>
+                <div class="ps-card"><div class="ps-label">Low Stock Items</div><div class="ps-val ps-3">3</div></div>
+                <div class="ps-card"><div class="ps-label">Total Inventory Value</div><div class="ps-val ps-4">£515.00</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="fc-label">Inventory Value</div><div class="fc-val">£515.00</div><div class="fc-sub">4 products</div>
+        <div class="fc-row"><span class="fc-rl">Active</span><span class="fc-rv" style="color:#22c55e;">4</span></div>
+        <div class="fc-row"><span class="fc-rl">Low stock</span><span class="fc-rv" style="color:#ef4444;">3</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Every product tracked.<br/>Every stock level visible.</h2>
+    <p class="section-sub">SKU, pricing, stock alerts and inventory value — all in one product management module.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1"><span class="benefit-icon">📦</span><div class="benefit-title">Full Product Profiles</div><div class="benefit-desc">Image, SKU, name, description, category, price, cost and stock level — all in one product record.</div></div>
+      <div class="benefit-card bc2"><span class="benefit-icon">⚠️</span><div class="benefit-title">Low Stock Alerts</div><div class="benefit-desc">Low Stock items are flagged automatically — so you never run out without warning.</div></div>
+      <div class="benefit-card bc3"><span class="benefit-icon">💰</span><div class="benefit-title">Price &amp; Cost Tracking</div><div class="benefit-desc">Track selling price and cost price per product — see your margin at a glance.</div></div>
+      <div class="benefit-card bc4"><span class="benefit-icon">📊</span><div class="benefit-title">Total Inventory Value</div><div class="benefit-desc">Live total inventory value — always up to date as stock changes.</div></div>
+      <div class="benefit-card bc5"><span class="benefit-icon">🔍</span><div class="benefit-title">Search, Filter &amp; Export</div><div class="benefit-desc">Find any product by name, SKU or description. Filter by category, status or stock level. Export CSV any time.</div></div>
+      <div class="benefit-card bc6"><span class="benefit-icon">🏷️</span><div class="benefit-title">SKU Management</div><div class="benefit-desc">Every product has a unique SKU — making orders, invoices and stock tracking precise and error-free.</div></div>
+      <div class="benefit-card bc7"><span class="benefit-icon">🗂️</span><div class="benefit-title">Category Assignment</div><div class="benefit-desc">Assign every product to a category — links directly to your Analytics income breakdown.</div></div>
+      <div class="benefit-card bc8"><span class="benefit-icon">🔒</span><div class="benefit-title">Safe on Azure</div><div class="benefit-desc">All product data on Microsoft Azure, SSL encrypted, UK data centres, GDPR-compliant.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+</div>
+
+<section class="faq-section"><div class="section-inner">
+  <div class="section-tag">FAQ</div><h2>Common questions</h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary class="faq-q">What product information does ShahoSuite store?</summary><div class="faq-a">ShahoSuite stores product image, SKU, name, description, category, selling price, cost price, stock level and status (Active/Archived) — all in one organised record.</div></details>
+    <details class="faq-item"><summary class="faq-q">Does ShahoSuite alert me when stock is low?</summary><div class="faq-a">Yes. The Products page flags Low Stock items automatically — highlighted in the stock column and counted in the summary bar so you always know what needs restocking.</div></details>
+    <details class="faq-item"><summary class="faq-q">Can I export my product list?</summary><div class="faq-a">Yes. Click Export CSV to download your full product catalogue any time — ready for accountants, stock takes or external systems.</div></details>
+    <details class="faq-item"><summary class="faq-q">How much does ShahoSuite cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — all 16 modules. Staff accounts <strong>£15/month each</strong>.</div></details>
+  </div>
+</div></section>
+
+<section class="related-section"><div class="section-inner">
+  <div class="section-tag" style="color:#64748b;">Connected Modules</div><h2>Products connect to everything</h2>
+  <p class="section-sub">Products feed directly into orders, invoices, analytics and accounting.</p>
+  <div class="related-grid">
+    <a href="/orders.html"     class="related-card"><span class="related-emoji">🛒</span><div class="related-name">Orders</div><div class="related-link">Add to orders →</div></a>
+    <a href="/invoices.html"   class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Add to invoices →</div></a>
+    <a href="/categories.html" class="related-card"><span class="related-emoji">🗂️</span><div class="related-name">Categories</div><div class="related-link">Organise products →</div></a>
+    <a href="/suppliers.html"  class="related-card"><span class="related-emoji">🏭</span><div class="related-name">Suppliers</div><div class="related-link">Source products →</div></a>
+    <a href="/analytics.html"  class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Product revenue →</div></a>
+    <a href="/pricing.html"    class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+  </div>
+</div></section>
+
+<section class="cta-section"><div class="cta-inner">
+  <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+  <h2>Know your stock.<br/>Never run dry.</h2>
+  <p>SKU tracking, low stock alerts, inventory value and CSV export. Hosted on Microsoft Azure.</p>
+  <div class="cta-pricing-card">
+    <div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">🧑‍💼 Director Account</div><div class="cpr-desc">All 16 modules including Products.</div><div class="cpr-badge">All 16 modules included</div></div><div class="cpr-price"><div class="cpr-amount orange"><sup>£</sup>50<sub>/mo</sub></div><div class="cpr-note">1 admin account</div></div></div>
+    <div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">👤 + Add Staff Members</div><div class="cpr-desc">Role-based access for your team.</div></div><div class="cpr-price"><div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div><div class="cpr-note">Unlimited staff</div></div></div>
+  </div>
+  <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month + £15 per staff →</a>
+  <div class="cta-fine-print">No contracts. No setup fees. Cancel any time.</div>
+</div></section>
+
+<footer><div class="footer-links">
+  <a href="/index.html">Home</a><a href="/categories.html">Categories</a><a href="/orders.html">Orders</a>
+  <a href="/suppliers.html">Suppliers</a><a href="/pricing.html">Pricing</a>
+  <a href="mailto:admin@shahosuite.com">Contact</a>
+  <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+</div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p></footer>
+</body>
+</html>
