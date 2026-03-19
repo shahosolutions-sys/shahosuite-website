@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Analytics — Real-Time Business Performance for UK Small Businesses</title>
+<meta name="description" content="Real-time business analytics for UK small businesses. Revenue, orders, top customers, income by category and expenses — all in one live dashboard. Hosted on Microsoft Azure. £50/month." />
+<meta name="keywords" content="business analytics software UK, small business dashboard UK, revenue tracking software UK, business performance dashboard UK, sales analytics UK small business, income tracking software UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/analytics.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Analytics — Real-Time Business Performance Dashboard" />
+<meta property="og:description" content="Revenue, orders, top customers and category breakdowns — live. £50/month all-in-one." />
+<meta property="og:url" content="https://www.shahosuite.com/analytics.html" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"SoftwareApplication",
+      "name":"ShahoSuite — Analytics Module",
+      "applicationCategory":"BusinessApplication",
+      "applicationSubCategory":"BusinessIntelligenceSoftware",
+      "operatingSystem":"Web",
+      "url":"https://www.shahosuite.com/analytics.html",
+      "description":"Real-time business analytics for UK small businesses. Revenue charts, daily orders, top customers, income by category and expense breakdown.",
+      "featureList":["Total revenue tracking","Daily orders chart","Top customer ranking","Active customer count","Monthly revenue bar chart","Income by category","Expenses by category","Export CSV","Last 6 months filter","Real-time refresh"],
+      "offers":{"@type":"Offer","price":"50","priceCurrency":"GBP"},
+      "provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What does the ShahoSuite Analytics module show?","acceptedAnswer":{"@type":"Answer","text":"ShahoSuite Analytics shows total revenue, orders, top customer, active customer count, monthly revenue charts, daily order trends, income by category and expenses by category — all in real time."}},
+        {"@type":"Question","name":"Is the analytics data real-time?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Analytics dashboard updates in real time as invoices are paid, orders are placed and customers are added. You can also manually refresh and filter by time period."}},
+        {"@type":"Question","name":"Can I export my analytics data?","acceptedAnswer":{"@type":"Answer","text":"Yes. ShahoSuite lets you export your analytics data as CSV with one click — ready for reporting, your accountant or business reviews."}},
+        {"@type":"Question","name":"How much does ShahoSuite Analytics cost?","acceptedAnswer":{"@type":"Answer","text":"The Analytics module is included in the Director account at £50/month with all 16 modules. Staff accounts are £15/month each."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; user-select: none; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover  { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo:active { transform: translateY(3px);  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.18)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login  { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover  { border-color: #9ca3af; color: #111827; box-shadow: 0 3px 0 #9ca3af; transform: translateY(-1px); }
+.btn-login:active { transform: translateY(2px); box-shadow: 0 0 0 #d1d5db; }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover  { background: #1e293b; box-shadow: 0 4px 0 #374151; transform: translateY(-1px); }
+.btn-signup:active { transform: translateY(3px); box-shadow: 0 0 0 #374151; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.breadcrumb a:hover { color: #f59e0b; }
+.bc-sep { color: #cbd5e1; }
+
+/* ── HERO ── */
+.hero { padding: 72px 28px 88px; background: linear-gradient(160deg, #fffbeb 0%, #fef3c7 30%, #fff7ed 100%); text-align: center; overflow: hidden; position: relative; }
+.hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+
+.module-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px; background: rgba(255,255,255,0.9); border: 1px solid rgba(245,158,11,0.25); border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(245,158,11,0.1); backdrop-filter: blur(8px); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; flex-shrink: 0; }
+
+h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; color: #0f172a; }
+h1 em { color: #f59e0b; font-style: normal; }
+.hero-sub { font-size: 17px; color: #475569; margin-bottom: 14px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+
+.trust-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.trust-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(255,255,255,0.88); border: 1px solid rgba(0,0,0,0.07); font-size: 12px; font-weight: 600; color: #374151; backdrop-filter: blur(8px); box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.tp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   ANALYTICS MOCKUP — real UI, glossy
+══════════════════════════════════════ */
+.mockup-outer { max-width: 860px; margin: 0 auto; position: relative; }
+.mockup-frame { border-radius: 20px; overflow: hidden; box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 14px 0 rgba(245,158,11,0.2), 0 30px 80px rgba(245,158,11,0.22), 0 0 0 1px rgba(245,158,11,0.12); }
+.mockup-chrome { background: #1e293b; padding: 10px 14px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 10; }
+.cd { width: 9px; height: 9px; border-radius: 50%; }
+.cd.r{background:#ef4444;} .cd.y{background:#f59e0b;} .cd.g{background:#22c55e;}
+.chrome-lock { color: rgba(255,255,255,0.4); font-size: 10px; }
+.chrome-url { flex: 1; text-align: center; background: rgba(255,255,255,0.09); border-radius: 6px; padding: 4px 14px; color: rgba(255,255,255,0.75); font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+/* App shell */
+.app-shell { display: grid; grid-template-columns: 170px 1fr; min-height: 520px; position: relative; }
+
+/* Sidebar — clean and readable */
+.app-sidebar { background: #0d1117; padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.06); }
+.sb-brand { padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+.sb-icon { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 8px; margin: 1px 8px; border-radius: 6px; }
+.sb-item.active { background: rgba(245,158,11,0.16); color: #fcd34d; font-weight: 700; border-left: 2px solid #f59e0b; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+
+/* Main analytics area */
+.app-main-wrap { position: relative; overflow: hidden; background: #f8f9fc; }
+.frost-overlay { position: absolute; inset: 0; z-index: 3; background: rgba(255,255,255,0.46); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); pointer-events: none; }
+.gloss-overlay { position: absolute; top: 0; left: 0; right: 0; height: 40%; background: linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0) 100%); z-index: 4; pointer-events: none; }
+
+.app-main-inner { padding: 14px; position: relative; z-index: 2; }
+
+/* Page header */
+.an-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.an-title { font-size: 16px; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 7px; }
+.an-subtitle { font-size: 10px; color: #64748b; margin-top: 2px; }
+.an-controls { display: flex; gap: 6px; }
+.an-ctrl { padding: 5px 11px; border-radius: 7px; font-size: 10px; font-weight: 600; border: 1px solid #e2e8f0; color: #374151; background: #fff; display: flex; align-items: center; gap: 4px; box-shadow: 0 2px 0 #e2e8f0; }
+.an-ctrl.green { background: #10b981; color: #fff; border-color: #10b981; box-shadow: 0 2px 0 #059669; }
+
+/* 4 KPI cards — real data from screenshot */
+.kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 12px; }
+.kpi-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px 14px; border-top: 3px solid var(--kc); }
+.kpi-icon-row { font-size: 16px; margin-bottom: 6px; }
+.kpi-val { font-size: 16px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; line-height: 1; margin-bottom: 3px; }
+.kpi-label { font-size: 9px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi1{--kc:#f59e0b;} .kpi2{--kc:#3b82f6;} .kpi3{--kc:#10b981;} .kpi4{--kc:#8b5cf6;}
+
+/* Charts row */
+.charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.chart-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px; }
+.chart-title-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.chart-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.chart-title { font-size: 10px; font-weight: 700; color: #374151; }
+
+/* Monthly revenue bar chart */
+.bar-chart { display: flex; align-items: flex-end; gap: 3px; height: 72px; }
+.bar-month { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: 1; }
+.bar-fill { width: 100%; border-radius: 3px 3px 0 0; min-height: 2px; }
+.bar-lbl { font-size: 7px; color: #94a3b8; white-space: nowrap; }
+.bm-oct { background: rgba(245,158,11,0.12); height: 4%; }
+.bm-nov { background: rgba(245,158,11,0.12); height: 3%; }
+.bm-dec { background: rgba(245,158,11,0.18); height: 6%; }
+.bm-jan { background: rgba(239,68,68,0.45);  height: 22%; }
+.bm-feb { background: rgba(167,139,250,0.55); height: 30%; }
+.bm-mar { background: rgba(147,210,245,0.85); height: 88%; }
+
+/* Daily orders line chart — simplified smooth curve */
+.line-chart { position: relative; height: 72px; }
+.line-svg { width: 100%; height: 100%; }
+
+/* Bottom charts: Income by Category + Expenses by Category */
+.charts-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cat-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; margin-top: 6px; }
+.cat-bar { border-radius: 3px 3px 0 0; flex: 1; }
+.cb-inc-1 { background: rgba(16,185,129,0.8); height: 100%; }
+.cb-inc-2 { background: rgba(16,185,129,0.7); height: 88%; }
+.cb-inc-3 { background: rgba(16,185,129,0.2); height: 8%; }
+.cb-exp-1 { background: rgba(239,68,68,0.85); height: 100%; }
+.cb-exp-2 { background: rgba(239,68,68,0.55); height: 52%; }
+.cb-exp-3 { background: rgba(239,68,68,0.38); height: 28%; }
+.cb-exp-4 { background: rgba(239,68,68,0.28); height: 18%; }
+.cb-exp-5 { background: rgba(239,68,68,0.22); height: 12%; }
+.cb-exp-6 { background: rgba(239,68,68,0.16); height: 8%; }
+.cb-exp-7 { background: rgba(239,68,68,0.12); height: 6%; }
+.cat-lbl-row { display: flex; gap: 4px; margin-top: 4px; }
+.cat-lbl { font-size: 6.5px; color: #94a3b8; flex: 1; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* ── FLOATING CARDS — sharp & readable ── */
+.float-revenue {
+  position: absolute; bottom: -22px; right: -24px; z-index: 20;
+  background: rgba(255,255,255,0.97); border: 1px solid rgba(255,255,255,0.99);
+  border-radius: 16px; padding: 15px 19px;
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 12px 36px rgba(245,158,11,0.24), 0 2px 0 rgba(255,255,255,0.9) inset;
+  min-width: 162px;
+}
+.fr-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+.fr-val   { font-size: 26px; font-weight: 800; color: #f59e0b; letter-spacing: -1px; line-height: 1; }
+.fr-sub   { font-size: 11px; color: #64748b; margin-top: 4px; }
+.fr-row   { display: flex; justify-content: space-between; font-size: 11px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f1f5f9; }
+.fr-rl { color: #94a3b8; }
+.fr-rv { font-weight: 700; }
+.fr-rv.g { color: #10b981; } .fr-rv.b { color: #3b82f6; } .fr-rv.p { color: #8b5cf6; }
+
+.float-kpi {
+  position: absolute; top: 18px; left: -24px; z-index: 20;
+  background: rgba(255,255,255,0.97); border: 1px solid rgba(255,255,255,0.99);
+  border-radius: 14px; padding: 12px 16px;
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 24px rgba(245,158,11,0.2), 0 2px 0 rgba(255,255,255,0.9) inset;
+  min-width: 138px;
+}
+.fk-label { font-size: 9px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.fk-row   { display: flex; justify-content: space-between; align-items: center; font-size: 11px; padding: 3px 0; border-bottom: 1px solid #f8fafc; }
+.fk-row:last-child { border-bottom: none; }
+.fk-name  { color: #374151; font-weight: 500; }
+.fk-val   { font-weight: 700; color: #0f172a; }
+
+/* ── SECTIONS ── */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #f59e0b; }
+h2 { font-size: clamp(24px, 3.8vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+/* ── BENEFITS ── */
+.benefits-section { padding: 80px 28px; background: #fff; }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.benefit-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; }
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#f59e0b;--bs:#fef3c7;} .bc2{--bc:#10b981;--bs:#d1fae5;} .bc3{--bc:#3b82f6;--bs:#dbeafe;}
+.bc4{--bc:#ef4444;--bs:#fee2e2;} .bc5{--bc:#8b5cf6;--bs:#ede9fe;} .bc6{--bc:#06b6d4;--bs:#cffafe;}
+.bc7{--bc:#6366f1;--bs:#e0e7ff;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.benefit-icon  { font-size: 26px; margin-bottom: 12px; display: block; }
+.benefit-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; color: #0f172a; }
+.benefit-desc  { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── AZURE ── */
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* ── FAQ ── */
+.faq-section { padding: 80px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #fde68a; box-shadow: 0 4px 0 #fde68a; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; color: #f59e0b; font-weight: 400; flex-shrink: 0; }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* ── RELATED ── */
+.related-section { padding: 72px 28px; background: #fff; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.related-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s; }
+.related-card:hover { border-color: #f59e0b; box-shadow: 0 4px 0 #fde68a; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name  { font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 3px; }
+.related-link  { font-size: 11px; color: #f59e0b; }
+
+/* ── CTA ── */
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg, #fffbeb 0%, #f0fdf4 100%); }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 12px; }
+.cta-section p  { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.cta-pricing-card { background: #fff; border: 2px solid #f59e0b; border-radius: 20px; padding: 28px 28px 24px; margin-bottom: 24px; box-shadow: 0 6px 0 #d97706, 0 14px 40px rgba(245,158,11,0.16); text-align: left; }
+.cta-price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+.cta-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cpr-left { display: flex; flex-direction: column; gap: 2px; }
+.cpr-title { font-size: 15px; font-weight: 700; color: #0f172a; }
+.cpr-desc  { font-size: 12px; color: #64748b; }
+.cpr-badge { display: inline-block; padding: 3px 10px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); border-radius: 20px; font-size: 11px; font-weight: 700; color: #d97706; margin-top: 4px; }
+.cpr-price { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.cpr-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.cpr-amount sup { font-size: 14px; vertical-align: top; margin-top: 4px; display: inline-block; }
+.cpr-amount sub { font-size: 13px; color: #64748b; font-weight: 500; letter-spacing: 0; }
+.cpr-amount.amber { color: #d97706; }
+.cpr-note  { font-size: 11px; color: #94a3b8; }
+.btn-cta-main { display: block; width: 100%; padding: 15px 36px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; color: #fff; background: #f59e0b; box-shadow: 0 5px 0 #d97706, 0 10px 24px rgba(245,158,11,0.3); transition: all 0.15s; text-align: center; }
+.btn-cta-main:hover  { transform: translateY(-2px); box-shadow: 0 7px 0 #d97706, 0 14px 30px rgba(245,158,11,0.38); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #d97706; }
+.cta-fine-print { font-size: 12px; color: #94a3b8; margin-top: 14px; line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #f59e0b; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+@media (max-width: 760px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .app-sidebar { display: none; }
+  .float-revenue, .float-kpi { display: none; }
+  .kpi-row { grid-template-columns: repeat(2,1fr); }
+  .charts-row, .charts-row-2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo">
+      <span class="logo-left">Shaho</span><span class="logo-right">Suite</span>
+    </a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/index.html">Home</a><span class="bc-sep">›</span>
+    <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
+    <span>Analytics</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="module-badge"><span class="badge-dot"></span>📊 Analytics Module</div>
+
+    <h1>Real-Time <em>Business Analytics</em><br/>for UK Business</h1>
+
+    <p class="hero-sub">
+      Revenue, orders, top customers and category breakdowns —
+      all live, all in one dashboard. See exactly how your business is performing.
+    </p>
+
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>Real-time data</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Revenue charts</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#ef4444;"></span>Expense breakdown</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#10b981;"></span>Export CSV</span>
+    </div>
+
+    <!-- ══ ANALYTICS MOCKUP — real UI, glossy ══ -->
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+
+        <!-- Sharp browser chrome — www.shahosuite.com -->
+        <div class="mockup-chrome">
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <div class="chrome-url">
+            <span class="chrome-lock">🔒</span>
+            www.shahosuite.com/analytics
+          </div>
+        </div>
+
+        <div class="app-shell">
+
+          <!-- SIDEBAR — same as real app -->
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div>
+            <div class="sb-item">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item">📦 Products</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">💰 Credit Notes</div>
+            <div class="sb-item">🛒 Orders</div>
+            <div class="sb-item">🏭 Suppliers</div>
+            <div class="sb-item">🗂️ Categories</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item active">📊 Analytics</div>
+            <div class="sb-item">📋 Credit Terms</div>
+            <div class="sb-item">📨 Send Message</div>
+            <div class="sb-item">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+          </div>
+
+          <!-- MAIN ANALYTICS — real layout, frosted -->
+          <div class="app-main-wrap">
+            <div class="frost-overlay"></div>
+            <div class="gloss-overlay"></div>
+
+            <div class="app-main-inner">
+
+              <!-- Page header — real copy from screenshot -->
+              <div class="an-header">
+                <div>
+                  <div class="an-title">📊 Analytics — Real-time business performance overview</div>
+                </div>
+                <div class="an-controls">
+                  <div class="an-ctrl">Last 6 Months ▾</div>
+                  <div class="an-ctrl green">📤 Export CSV</div>
+                  <div class="an-ctrl">↻ Refresh</div>
+                </div>
+              </div>
+
+              <!-- 4 KPI cards — real data from screenshot -->
+              <div class="kpi-row">
+                <div class="kpi-card kpi1">
+                  <div class="kpi-icon-row">💰</div>
+                  <div class="kpi-val">£9,351.20</div>
+                  <div class="kpi-label">Total Revenue</div>
+                </div>
+                <div class="kpi-card kpi2">
+                  <div class="kpi-icon-row">📦</div>
+                  <div class="kpi-val">4</div>
+                  <div class="kpi-label">Orders (5 days)</div>
+                </div>
+                <div class="kpi-card kpi3">
+                  <div class="kpi-icon-row">🏆</div>
+                  <div class="kpi-val">Shaho M</div>
+                  <div class="kpi-label">Top Customer</div>
+                </div>
+                <div class="kpi-card kpi4">
+                  <div class="kpi-icon-row">👥</div>
+                  <div class="kpi-val">8</div>
+                  <div class="kpi-label">Active Customers</div>
+                </div>
+              </div>
+
+              <!-- Two charts: Monthly Revenue + Daily Orders -->
+              <div class="charts-row">
+
+                <!-- Monthly Revenue bar chart -->
+                <div class="chart-card">
+                  <div class="chart-title-row">
+                    <div class="chart-dot" style="background:#f59e0b;"></div>
+                    <div class="chart-title">Monthly Revenue</div>
+                  </div>
+                  <div class="bar-chart">
+                    <div class="bar-month"><div class="bar-fill bm-oct"></div><div class="bar-lbl">Oct</div></div>
+                    <div class="bar-month"><div class="bar-fill bm-nov"></div><div class="bar-lbl">Nov</div></div>
+                    <div class="bar-month"><div class="bar-fill bm-dec"></div><div class="bar-lbl">Dec</div></div>
+                    <div class="bar-month"><div class="bar-fill bm-jan"></div><div class="bar-lbl">Jan</div></div>
+                    <div class="bar-month"><div class="bar-fill bm-feb"></div><div class="bar-lbl">Feb</div></div>
+                    <div class="bar-month"><div class="bar-fill bm-mar"></div><div class="bar-lbl">Mar</div></div>
+                  </div>
+                </div>
+
+                <!-- Daily Orders line chart -->
+                <div class="chart-card">
+                  <div class="chart-title-row">
+                    <div class="chart-dot" style="background:#10b981;"></div>
+                    <div class="chart-title">Daily Orders</div>
+                  </div>
+                  <div class="line-chart">
+                    <svg class="line-svg" viewBox="0 0 200 72" preserveAspectRatio="none">
+                      <!-- Area fill -->
+                      <defs>
+                        <linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+                          <stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,68 C20,68 30,20 50,18 C70,16 80,38 100,32 C120,26 140,50 160,48 C180,46 190,68 200,68 Z" fill="url(#lg1)"/>
+                      <!-- Line -->
+                      <path d="M0,68 C20,68 30,20 50,18 C70,16 80,38 100,32 C120,26 140,50 160,48 C180,46 190,68 200,68" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                      <!-- Dots -->
+                      <circle cx="0"   cy="68" r="3" fill="#10b981"/>
+                      <circle cx="50"  cy="18" r="3" fill="#10b981"/>
+                      <circle cx="100" cy="32" r="3" fill="#10b981"/>
+                      <circle cx="160" cy="48" r="3" fill="#10b981"/>
+                      <circle cx="200" cy="68" r="3" fill="#10b981"/>
+                    </svg>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:4px;">
+                    <span style="font-size:7px;color:#94a3b8;">4d ago</span>
+                    <span style="font-size:7px;color:#94a3b8;">3d ago</span>
+                    <span style="font-size:7px;color:#94a3b8;">2d ago</span>
+                    <span style="font-size:7px;color:#94a3b8;">Yesterday</span>
+                    <span style="font-size:7px;color:#94a3b8;">Today</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom charts: Income by Category + Expenses by Category -->
+              <div class="charts-row-2">
+
+                <!-- Income by Category -->
+                <div class="chart-card">
+                  <div class="chart-title-row">
+                    <div class="chart-dot" style="background:#10b981;"></div>
+                    <div class="chart-title">Income by Category</div>
+                  </div>
+                  <div class="cat-bars">
+                    <div class="cat-bar cb-inc-1"></div>
+                    <div class="cat-bar cb-inc-2"></div>
+                    <div class="cat-bar cb-inc-3"></div>
+                  </div>
+                  <div class="cat-lbl-row">
+                    <span class="cat-lbl">Credit Applied</span>
+                    <span class="cat-lbl">Invoice Payment</span>
+                    <span class="cat-lbl">Accounting</span>
+                  </div>
+                </div>
+
+                <!-- Expenses by Category -->
+                <div class="chart-card">
+                  <div class="chart-title-row">
+                    <div class="chart-dot" style="background:#ef4444;"></div>
+                    <div class="chart-title">Expenses by Category</div>
+                  </div>
+                  <div class="cat-bars">
+                    <div class="cat-bar cb-exp-1"></div>
+                    <div class="cat-bar cb-exp-2"></div>
+                    <div class="cat-bar cb-exp-3"></div>
+                    <div class="cat-bar cb-exp-4"></div>
+                    <div class="cat-bar cb-exp-5"></div>
+                    <div class="cat-bar cb-exp-6"></div>
+                    <div class="cat-bar cb-exp-7"></div>
+                  </div>
+                  <div class="cat-lbl-row">
+                    <span class="cat-lbl">Refund</span>
+                    <span class="cat-lbl">Stock</span>
+                    <span class="cat-lbl">Utilities</span>
+                    <span class="cat-lbl">Office</span>
+                    <span class="cat-lbl">Subs</span>
+                    <span class="cat-lbl">Rent</span>
+                    <span class="cat-lbl">Equip</span>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- /app-main-inner -->
+          </div><!-- /app-main-wrap -->
+        </div><!-- /app-shell -->
+      </div><!-- /mockup-frame -->
+
+      <!-- Floating revenue card — SHARP -->
+      <div class="float-revenue">
+        <div class="fr-label">Total Revenue</div>
+        <div class="fr-val">£9,351.20</div>
+        <div class="fr-sub">Last 6 months</div>
+        <div class="fr-row"><span class="fr-rl">Orders</span><span class="fr-rv b">4</span></div>
+        <div class="fr-row"><span class="fr-rl">Top customer</span><span class="fr-rv g">Shaho M</span></div>
+        <div class="fr-row"><span class="fr-rl">Active</span><span class="fr-rv p">8 customers</span></div>
+      </div>
+
+      <!-- Floating KPI mini card — SHARP -->
+      <div class="float-kpi">
+        <div class="fk-label">Live KPIs</div>
+        <div class="fk-row"><span class="fk-name">Revenue</span><span class="fk-val">£9,351</span></div>
+        <div class="fk-row"><span class="fk-name">Orders</span><span class="fk-val">4</span></div>
+        <div class="fk-row"><span class="fk-name">Customers</span><span class="fk-val">8</span></div>
+      </div>
+
+    </div><!-- /mockup-outer -->
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Everything your business<br/>needs to see clearly</h2>
+    <p class="section-sub">Live numbers. Real charts. No manual reports. Just the truth about your business — always up to date.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1"><span class="benefit-icon">💰</span><div class="benefit-title">Total Revenue — Live</div><div class="benefit-desc">See your total revenue for any period the moment invoices are paid. No manual calculation.</div></div>
+      <div class="benefit-card bc2"><span class="benefit-icon">📦</span><div class="benefit-title">Order Tracking</div><div class="benefit-desc">Daily and period order counts — see exactly how many orders came in and when.</div></div>
+      <div class="benefit-card bc3"><span class="benefit-icon">🏆</span><div class="benefit-title">Top Customer</div><div class="benefit-desc">Instantly see who your highest-value customer is — updated live as invoices are paid.</div></div>
+      <div class="benefit-card bc4"><span class="benefit-icon">📈</span><div class="benefit-title">Monthly Revenue Chart</div><div class="benefit-desc">Bar chart showing revenue month by month — spot trends and seasonal patterns at a glance.</div></div>
+      <div class="benefit-card bc5"><span class="benefit-icon">📉</span><div class="benefit-title">Daily Orders Chart</div><div class="benefit-desc">Line chart of daily order volume — see busy days, quiet days and overall trajectory.</div></div>
+      <div class="benefit-card bc6"><span class="benefit-icon">🗂️</span><div class="benefit-title">Income by Category</div><div class="benefit-desc">See which product or service categories are generating the most revenue.</div></div>
+      <div class="benefit-card bc7"><span class="benefit-icon">💸</span><div class="benefit-title">Expenses by Category</div><div class="benefit-desc">Expense breakdown by category — know exactly where your money is going.</div></div>
+      <div class="benefit-card bc8"><span class="benefit-icon">📤</span><div class="benefit-title">Export CSV</div><div class="benefit-desc">Download your analytics data as CSV at any time — for reporting, your accountant or business reviews.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AZURE -->
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>100% Cloud-Based</span>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">What does the ShahoSuite Analytics module show?</summary><div class="faq-a">ShahoSuite Analytics shows total revenue, orders in the last 5 days, your top customer, active customer count, a monthly revenue bar chart, a daily orders line chart, income breakdown by category and expense breakdown by category — all in real time.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is the analytics data real-time?</summary><div class="faq-a">Yes. The dashboard updates automatically as invoices are paid, orders are placed and customers are added. You can also click Refresh to pull the latest data instantly, and filter by time period.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I export my analytics data?</summary><div class="faq-a">Yes. Click Export CSV from the Analytics dashboard to download your full data — ready for your accountant, business review or HMRC records.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is my analytics data safe?</summary><div class="faq-a">Yes. All data is stored on <strong>Microsoft Azure</strong> UK data centres, SSL encrypted and fully GDPR-compliant. Your business data always belongs to you.</div></details>
+      <details class="faq-item"><summary class="faq-q">How much does ShahoSuite Analytics cost?</summary><div class="faq-a">The Analytics module is included in the Director account at <strong>£50/month</strong> with all 16 modules. Staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#f59e0b;font-weight:600;">full pricing</a>.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="related-section">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+    <h2>Analytics connects to everything</h2>
+    <p class="section-sub">Every invoice, order and customer feeds into your analytics automatically.</p>
+    <div class="related-grid">
+      <a href="/invoices.html"    class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Revenue source →</div></a>
+      <a href="/orders.html"      class="related-card"><span class="related-emoji">🛒</span><div class="related-name">Orders</div><div class="related-link">Order data →</div></a>
+      <a href="/customers.html"   class="related-card"><span class="related-emoji">👤</span><div class="related-name">Customers</div><div class="related-link">Top customers →</div></a>
+      <a href="/accounting.html"  class="related-card"><span class="related-emoji">📕</span><div class="related-name">Accounting</div><div class="related-link">P&amp;L data →</div></a>
+      <a href="/categories.html"  class="related-card"><span class="related-emoji">🗂️</span><div class="related-name">Categories</div><div class="related-link">Category breakdown →</div></a>
+      <a href="/pricing.html"     class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+    <h2>See your business clearly.<br/>Grow with confidence.</h2>
+    <p>Real-time revenue, orders, customers and category breakdowns — all live. Hosted on Microsoft Azure. £50/month all 16 modules.</p>
+    <div class="cta-pricing-card">
+      <div class="cta-price-row">
+        <div class="cpr-left">
+          <div class="cpr-title">🧑‍💼 Director Account</div>
+          <div class="cpr-desc">Full access to all 16 modules including Analytics.</div>
+          <div class="cpr-badge">All 16 modules included</div>
+        </div>
+        <div class="cpr-price">
+          <div class="cpr-amount amber"><sup>£</sup>50<sub>/mo</sub></div>
+          <div class="cpr-note">1 admin account</div>
+        </div>
+      </div>
+      <div class="cta-price-row">
+        <div class="cpr-left">
+          <div class="cpr-title">👤 + Add Staff Members</div>
+          <div class="cpr-desc">Each staff gets their own login with role-based access.</div>
+        </div>
+        <div class="cpr-price">
+          <div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div>
+          <div class="cpr-note">Unlimited staff seats</div>
+        </div>
+      </div>
+    </div>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">
+      Sign up — £50/month + £15 per staff →
+    </a>
+    <div class="cta-fine-print">No contracts. No setup fees. Cancel any time. Staff have limited, role-based access.</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#features">Modules</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/invoices.html">Invoices</a>
+    <a href="/accounting.html">Accounting</a>
+    <a href="/customers.html">Customers</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+
+</body>
+</html>
+EOF
+git add analytics.html && git commit -m "Add analytics.html production page" && git push origin main
