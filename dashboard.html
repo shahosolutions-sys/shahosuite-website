@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Dashboard — Business Management Dashboard for UK Small Businesses</title>
+<meta name="description" content="Real-time business dashboard showing today's revenue, bookings, overdue invoices, low stock alerts, quick actions and smart suggestions. All-in-one for UK small businesses. £50/month." />
+<meta name="keywords" content="business dashboard software UK, small business dashboard UK, real-time business overview UK, business management dashboard UK, all-in-one business software dashboard UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/dashboard.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Dashboard — Real-Time Business Overview for UK Small Businesses" />
+<meta property="og:description" content="Revenue, bookings, alerts, quick actions and smart suggestions — your whole business at a glance. £50/month." />
+<meta property="og:url" content="https://www.shahosuite.com/dashboard.html" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"ShahoSuite — Dashboard Module",
+  "applicationCategory":"BusinessApplication",
+  "applicationSubCategory":"BusinessIntelligenceSoftware",
+  "operatingSystem":"Web",
+  "url":"https://www.shahosuite.com/dashboard.html",
+  "description":"Real-time business dashboard for UK small businesses. Today's revenue, bookings, overdue invoices, low stock alerts, quick actions and smart suggestions.",
+  "featureList":["Today's revenue","Today's bookings","Overdue invoice count","Low stock alerts","Revenue overview chart","Quick actions — New Invoice, Order, Customer, Product, Booking","Smart suggestions","Alert banners for urgent items"],
+  "offers":{"@type":"Offer","price":"50","priceCurrency":"GBP"},
+  "provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login  { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover { border-color: #9ca3af; transform: translateY(-1px); }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover { background: #1e293b; transform: translateY(-1px); }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: #f8fafc; border-bottom: 1px solid #e5e7eb; padding: 10px 0; margin-top: 68px; }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; font-size: 12px; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: #64748b; text-decoration: none; }
+.breadcrumb a:hover { color: #3b82f6; }
+.bc-sep { color: #cbd5e1; }
+
+/* ── HERO ── */
+.hero { padding: 72px 28px 88px; background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 30%, #e0f2fe 100%); text-align: center; overflow: hidden; position: relative; }
+.hero-inner { max-width: 940px; margin: 0 auto; position: relative; z-index: 1; }
+.module-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 20px; background: rgba(255,255,255,0.9); border: 1px solid rgba(59,130,246,0.2); border-radius: 30px; font-size: 13px; color: #374151; font-weight: 600; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(59,130,246,0.1); }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #3b82f6; flex-shrink: 0; }
+h1 { font-size: clamp(34px,5.5vw,58px); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 18px; }
+h1 em { color: #3b82f6; font-style: normal; }
+.hero-sub { font-size: 17px; color: #475569; margin-bottom: 14px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.trust-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.trust-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 50px; background: rgba(255,255,255,0.88); border: 1px solid rgba(0,0,0,0.07); font-size: 12px; font-weight: 600; color: #374151; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.tp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════
+   DASHBOARD MOCKUP — real UI, glossy blur
+═══════════════════════════════════════ */
+.mockup-outer { max-width: 860px; margin: 0 auto; position: relative; }
+.mockup-frame {
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 14px 0 rgba(59,130,246,0.18), 0 30px 80px rgba(59,130,246,0.2), 0 0 0 1px rgba(59,130,246,0.1);
+}
+.mockup-chrome { background: #1e293b; padding: 10px 14px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 10; }
+.cd { width: 9px; height: 9px; border-radius: 50%; }
+.cd.r{background:#ef4444;} .cd.y{background:#f59e0b;} .cd.g{background:#22c55e;}
+.chrome-url { flex:1; text-align:center; background:rgba(255,255,255,0.09); border-radius:6px; padding:4px 14px; color:rgba(255,255,255,0.75); font-size:11px; display:flex; align-items:center; justify-content:center; gap:5px; }
+
+.app-shell { display: grid; grid-template-columns: 168px 1fr; min-height: 560px; }
+
+/* Sidebar */
+.app-sidebar { background: #0d1117; padding: 14px 0; border-right: 1px solid rgba(255,255,255,0.06); }
+.sb-brand { padding: 0 14px 12px; font-size: 13px; font-weight: 800; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 7px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 8px; }
+.sb-icon { width: 24px; height: 24px; border-radius: 6px; background: linear-gradient(135deg,#7c3aed,#2563eb); flex-shrink: 0; }
+.sb-item { padding: 7px 14px; font-size: 11px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 8px; margin: 1px 8px; border-radius: 6px; }
+.sb-item.active { background: rgba(59,130,246,0.18); color: #93c5fd; font-weight: 700; border-left: 2px solid #3b82f6; border-radius: 0 6px 6px 0; margin-left: 0; padding-left: 22px; }
+
+/* Main wrap — frosted glass */
+.app-main-wrap { position: relative; overflow: hidden; background: #f8f9fc; }
+.frost-overlay { position: absolute; inset: 0; z-index: 3; background: rgba(255,255,255,0.44); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); pointer-events: none; }
+.gloss-overlay { position: absolute; top:0; left:0; right:0; height:40%; background: linear-gradient(180deg,rgba(255,255,255,0.38) 0%,rgba(255,255,255,0) 100%); z-index:4; pointer-events:none; }
+.app-main-inner { padding: 14px; position: relative; z-index: 2; }
+
+/* ── Dashboard page header ── */
+.dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.dash-biz { display: flex; align-items: center; gap: 10px; }
+.dash-logo { width: 36px; height: 36px; border-radius: 8px; background: #1e293b; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.dash-biz-name { font-size: 14px; font-weight: 800; color: #0f172a; }
+.dash-date { font-size: 9.5px; color: #94a3b8; margin-top: 1px; }
+.dash-add-btn { background: #10b981; color: #fff; border-radius: 8px; padding: 6px 13px; font-size: 10px; font-weight: 700; box-shadow: 0 2px 0 #059669; display: flex; align-items: center; gap: 4px; }
+
+/* ── Alert banners — real from screenshot ── */
+.alert-banners { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.alert-banner { border-radius: 8px; padding: 9px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 10.5px; font-weight: 600; }
+.alert-banner.red    { background: #ef4444; color: #fff; }
+.alert-banner.orange { background: #f97316; color: #fff; }
+.alert-icon { margin-right: 6px; }
+.alert-arrow { font-size: 12px; opacity: 0.8; }
+
+/* ── 4 KPI cards ── */
+.kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 12px; }
+.kpi-card { border-radius: 10px; padding: 12px 14px; }
+.kpi-green  { background: #10b981; }
+.kpi-blue   { background: #3b82f6; }
+.kpi-red    { background: #ef4444; }
+.kpi-orange { background: #f97316; }
+.kpi-label { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 5px; display: flex; align-items: center; gap: 5px; text-transform: uppercase; letter-spacing: 0.4px; }
+.kpi-val { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px; line-height: 1; }
+.kpi-sub { font-size: 9px; color: rgba(255,255,255,0.65); margin-top: 4px; display: flex; align-items: center; gap: 4px; }
+
+/* ── Revenue overview ── */
+.revenue-section { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+.rev-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+.rev-chart { height: 56px; display: flex; align-items: flex-end; gap: 3px; padding-top: 6px; }
+.rev-bar { flex: 1; border-radius: 3px 3px 0 0; background: rgba(59,130,246,0.15); }
+.rev-bar.has-data { background: linear-gradient(to top, rgba(59,130,246,0.7), rgba(59,130,246,0.3)); }
+.rev-months { display: flex; gap: 3px; margin-top: 4px; }
+.rev-m { flex: 1; text-align: center; font-size: 7px; color: #94a3b8; }
+
+/* ── Quick Actions ── */
+.qa-section { margin-bottom: 10px; }
+.qa-title { font-size: 11px; font-weight: 700; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+.qa-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; }
+.qa-btn { border-radius: 10px; padding: 10px 8px; text-align: center; cursor: default; }
+.qa-invoice  { background: #ec4899; }
+.qa-order    { background: #10b981; }
+.qa-customer { background: #3b82f6; }
+.qa-product  { background: #f97316; }
+.qa-booking  { background: #7c3aed; }
+.qa-emoji { font-size: 18px; margin-bottom: 4px; display: block; }
+.qa-label { font-size: 9px; font-weight: 700; color: #fff; }
+
+/* ── Smart Suggestions ── */
+.ss-section { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
+.ss-title { font-size: 11px; font-weight: 700; color: #0f172a; padding: 10px 12px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; gap: 5px; }
+.ss-item { padding: 9px 12px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ss-item:last-child { border-bottom: none; }
+.ss-item-left { display: flex; align-items: center; gap: 8px; }
+.ss-dot { width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; flex-shrink: 0; }
+.ss-text { font-size: 10px; color: #374151; }
+.ss-arrow { font-size: 11px; color: #94a3b8; }
+
+/* Floating card */
+.float-card { position: absolute; bottom: -20px; right: -24px; z-index: 20; background: rgba(255,255,255,0.97); border: 1px solid rgba(255,255,255,0.99); border-radius: 14px; padding: 14px 18px; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: 0 10px 32px rgba(59,130,246,0.22), 0 2px 0 rgba(255,255,255,0.9) inset; min-width: 155px; }
+.fc-label { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+.fc-val { font-size: 20px; font-weight: 800; color: #3b82f6; letter-spacing: -0.5px; line-height: 1; }
+.fc-sub { font-size: 11px; color: #64748b; margin-top: 3px; }
+.fc-row { display: flex; justify-content: space-between; font-size: 11px; margin-top: 7px; padding-top: 7px; border-top: 1px solid #f1f5f9; }
+.fc-rl { color: #94a3b8; } .fc-rv { font-weight: 700; }
+
+/* ── SHARED ── */
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #3b82f6; }
+h2 { font-size: clamp(24px,3.8vw,40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+/* ── FEATURES ── */
+.features-section { padding: 80px 28px; background: #fff; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 14px; }
+.feat-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; border-left: 4px solid var(--bc); box-shadow: 0 4px 0 var(--bs), 0 4px 14px rgba(0,0,0,0.03); transition: all 0.2s; }
+.feat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 0 var(--bs), 0 14px 28px rgba(0,0,0,0.07); }
+.bc1{--bc:#3b82f6;--bs:#dbeafe;} .bc2{--bc:#10b981;--bs:#d1fae5;} .bc3{--bc:#ef4444;--bs:#fee2e2;}
+.bc4{--bc:#f97316;--bs:#ffedd5;} .bc5{--bc:#8b5cf6;--bs:#ede9fe;} .bc6{--bc:#f59e0b;--bs:#fef3c7;}
+.bc7{--bc:#ec4899;--bs:#fce7f3;} .bc8{--bc:#0f172a;--bs:#e2e8f0;}
+.feat-icon { font-size: 26px; margin-bottom: 12px; display: block; }
+.feat-title { font-size: 14px; font-weight: 700; margin-bottom: 7px; }
+.feat-desc { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+/* ── AZURE ── */
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* ── FAQ ── */
+.faq-section { padding: 80px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-item:hover { border-color: #bfdbfe; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content:'+'; font-size:18px; color:#3b82f6; font-weight:400; }
+details[open] .faq-q::after { content:'−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* ── RELATED ── */
+.related-section { padding: 72px 28px; background: #fff; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); gap: 12px; }
+.related-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 16px; text-align: center; text-decoration: none; color: inherit; box-shadow: 0 4px 0 #e2e8f0; transition: all 0.2s; }
+.related-card:hover { border-color: #3b82f6; box-shadow: 0 4px 0 #bfdbfe; transform: translateY(-3px); }
+.related-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+.related-name { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.related-link { font-size: 11px; color: #3b82f6; }
+
+/* ── CTA ── */
+.cta-section { padding: 80px 28px; text-align: center; background: linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%); }
+.cta-inner { max-width: 600px; margin: 0 auto; }
+.cta-section h2 { font-size: clamp(24px,4vw,38px); margin-bottom: 12px; }
+.cta-section p { font-size: 15px; color: #475569; margin-bottom: 28px; line-height: 1.7; }
+.cta-pricing-card { background: #fff; border: 2px solid #3b82f6; border-radius: 20px; padding: 28px 28px 24px; margin-bottom: 24px; box-shadow: 0 6px 0 #1d4ed8, 0 14px 40px rgba(59,130,246,0.14); text-align: left; }
+.cta-price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+.cta-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.cpr-left { display: flex; flex-direction: column; gap: 2px; }
+.cpr-title { font-size: 15px; font-weight: 700; }
+.cpr-desc { font-size: 12px; color: #64748b; }
+.cpr-badge { display: inline-block; padding: 3px 10px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25); border-radius: 20px; font-size: 11px; font-weight: 700; color: #1d4ed8; margin-top: 4px; }
+.cpr-price { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+.cpr-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+.cpr-amount sup { font-size: 14px; vertical-align: top; margin-top: 4px; display: inline-block; }
+.cpr-amount sub { font-size: 13px; color: #64748b; font-weight: 500; }
+.cpr-amount.blue { color: #1d4ed8; }
+.cpr-note { font-size: 11px; color: #94a3b8; }
+.btn-cta-main { display: block; width: 100%; padding: 15px 36px; border-radius: 12px; font-family: 'DM Sans',sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; color: #fff; background: #3b82f6; box-shadow: 0 5px 0 #1d4ed8, 0 10px 24px rgba(59,130,246,0.28); transition: all 0.15s; text-align: center; }
+.btn-cta-main:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #1d4ed8, 0 14px 30px rgba(59,130,246,0.36); }
+.btn-cta-main:active { transform: translateY(5px); box-shadow: 0 0 0 #1d4ed8; }
+.cta-fine-print { font-size: 12px; color: #94a3b8; margin-top: 14px; }
+
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; }
+footer a:hover { color: #3b82f6; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+@media (max-width: 760px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .app-sidebar { display: none; }
+  .float-card { display: none; }
+  .kpi-grid { grid-template-columns: repeat(2,1fr); }
+  .qa-grid { grid-template-columns: repeat(3,1fr); }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="breadcrumb"><div class="breadcrumb-inner">
+  <a href="/index.html">Home</a><span class="bc-sep">›</span>
+  <a href="/index.html#features">Modules</a><span class="bc-sep">›</span>
+  <span>Dashboard</span>
+</div></nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="module-badge"><span class="badge-dot"></span>🏠 Dashboard Module</div>
+    <h1>Your Whole Business<br/><em>At a Glance</em></h1>
+    <p class="hero-sub">
+      Today's revenue, bookings, overdue invoices and low stock alerts — all live on one screen.
+      Quick actions. Smart suggestions. Your command centre.
+    </p>
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Live KPIs</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#ef4444;"></span>Overdue alerts</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f97316;"></span>Low stock alerts</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#8b5cf6;"></span>Smart suggestions</span>
+    </div>
+
+    <!-- ═══ DASHBOARD MOCKUP ═══ -->
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+        <div class="mockup-chrome">
+          <div class="cd r"></div><div class="cd y"></div><div class="cd g"></div>
+          <div class="chrome-url">🔒 www.shahosuite.com/dashboard</div>
+        </div>
+
+        <div class="app-shell">
+          <!-- Sidebar -->
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div>
+            <div class="sb-item active">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item">📦 Products</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">💰 Credit Notes</div>
+            <div class="sb-item">🛒 Orders</div>
+            <div class="sb-item">🏭 Suppliers</div>
+            <div class="sb-item">🗂️ Categories</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item">📊 Analytics</div>
+            <div class="sb-item">📨 Send Message</div>
+            <div class="sb-item">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+            <div class="sb-item">⚙️ Settings</div>
+            <div class="sb-item">📋 Audit Log</div>
+          </div>
+
+          <!-- Main content — frosted -->
+          <div class="app-main-wrap">
+            <div class="frost-overlay"></div>
+            <div class="gloss-overlay"></div>
+            <div class="app-main-inner">
+
+              <!-- Business header — real from screenshot -->
+              <div class="dash-header">
+                <div class="dash-biz">
+                  <div class="dash-logo">🏢</div>
+                  <div>
+                    <div class="dash-biz-name">Shaho Solutions Limited</div>
+                    <div class="dash-date">Friday, 20 March 2026</div>
+                  </div>
+                </div>
+                <div class="dash-add-btn">+ Add Customer</div>
+              </div>
+
+              <!-- Alert banners — real data from screenshot -->
+              <div class="alert-banners">
+                <div class="alert-banner red">
+                  <span><span class="alert-icon">🔔</span>You have 4 overdue invoices — review now</span>
+                  <span class="alert-arrow">→</span>
+                </div>
+                <div class="alert-banner orange">
+                  <span><span class="alert-icon">📦</span>4 products running low on stock — reorder soon</span>
+                  <span class="alert-arrow">→</span>
+                </div>
+              </div>
+
+              <!-- 4 KPI cards — real data from screenshot -->
+              <div class="kpi-grid">
+                <div class="kpi-card kpi-green">
+                  <div class="kpi-label">💰 Today's Revenue</div>
+                  <div class="kpi-val">£0.00</div>
+                  <div class="kpi-sub">📉 Trending down</div>
+                </div>
+                <div class="kpi-card kpi-blue">
+                  <div class="kpi-label">📅 Today's Bookings</div>
+                  <div class="kpi-val">0</div>
+                  <div class="kpi-sub">appointments today</div>
+                </div>
+                <div class="kpi-card kpi-red">
+                  <div class="kpi-label">🔔 Overdue Invoices</div>
+                  <div class="kpi-val">4</div>
+                  <div class="kpi-sub">Need attention</div>
+                </div>
+                <div class="kpi-card kpi-orange">
+                  <div class="kpi-label">📦 Low Stock Items</div>
+                  <div class="kpi-val">4</div>
+                  <div class="kpi-sub">Restock needed</div>
+                </div>
+              </div>
+
+              <!-- Revenue overview chart -->
+              <div class="revenue-section">
+                <div class="rev-title">📈 Revenue Overview</div>
+                <div class="rev-chart">
+                  <div class="rev-bar" style="height:8%;"></div>
+                  <div class="rev-bar" style="height:6%;"></div>
+                  <div class="rev-bar" style="height:10%;"></div>
+                  <div class="rev-bar has-data" style="height:35%;"></div>
+                  <div class="rev-bar has-data" style="height:55%;"></div>
+                  <div class="rev-bar has-data" style="height:100%;"></div>
+                  <div class="rev-bar" style="height:4%;"></div>
+                  <div class="rev-bar" style="height:3%;"></div>
+                  <div class="rev-bar" style="height:3%;"></div>
+                  <div class="rev-bar" style="height:3%;"></div>
+                  <div class="rev-bar" style="height:2%;"></div>
+                  <div class="rev-bar" style="height:2%;"></div>
+                </div>
+                <div class="rev-months">
+                  <div class="rev-m">Apr</div><div class="rev-m">May</div><div class="rev-m">Jun</div>
+                  <div class="rev-m">Jul</div><div class="rev-m">Aug</div><div class="rev-m">Sep</div>
+                  <div class="rev-m">Oct</div><div class="rev-m">Nov</div><div class="rev-m">Dec</div>
+                  <div class="rev-m">Jan</div><div class="rev-m">Feb</div><div class="rev-m">Mar</div>
+                </div>
+              </div>
+
+              <!-- Quick Actions — real colours from screenshot -->
+              <div class="qa-section">
+                <div class="qa-title">⚡ Quick Actions</div>
+                <div class="qa-grid">
+                  <div class="qa-btn qa-invoice"><span class="qa-emoji">🧾</span><div class="qa-label">New Invoice</div></div>
+                  <div class="qa-btn qa-order"><span class="qa-emoji">🛒</span><div class="qa-label">New Order</div></div>
+                  <div class="qa-btn qa-customer"><span class="qa-emoji">👤</span><div class="qa-label">New Customer</div></div>
+                  <div class="qa-btn qa-product"><span class="qa-emoji">📦</span><div class="qa-label">New Product</div></div>
+                  <div class="qa-btn qa-booking"><span class="qa-emoji">📅</span><div class="qa-label">New Booking</div></div>
+                </div>
+              </div>
+
+              <!-- Smart Suggestions — real data from screenshot -->
+              <div class="ss-section">
+                <div class="ss-title">💡 Smart Suggestions</div>
+                <div class="ss-item">
+                  <div class="ss-item-left"><span class="ss-dot" style="background:#ef4444;"></span><div class="ss-text">Invoice #8 is 36 days overdue — send reminder</div></div>
+                  <span class="ss-arrow">→</span>
+                </div>
+                <div class="ss-item">
+                  <div class="ss-item-left"><span class="ss-dot" style="background:#ef4444;"></span><div class="ss-text">Invoice #7 is 50 days overdue — send reminder</div></div>
+                  <span class="ss-arrow">→</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating card — sharp & readable -->
+      <div class="float-card">
+        <div class="fc-label">Quick Actions</div>
+        <div class="fc-val">5 shortcuts</div>
+        <div class="fc-sub">Invoice to booking</div>
+        <div class="fc-row"><span class="fc-rl">Overdue</span><span class="fc-rv" style="color:#ef4444;">4 invoices</span></div>
+        <div class="fc-row"><span class="fc-rl">Low stock</span><span class="fc-rv" style="color:#f97316;">4 items</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Your command centre.<br/>Everything visible from one screen.</h2>
+    <p class="section-sub">The Dashboard is the first thing you see when you log in — your whole business summarised, live, with alerts and shortcuts.</p>
+    <div class="features-grid">
+      <div class="feat-card bc1"><span class="feat-icon">💰</span><div class="feat-title">Today's Revenue — Live</div><div class="feat-desc">See exactly how much your business has earned today. Updates instantly as invoices are paid.</div></div>
+      <div class="feat-card bc2"><span class="feat-icon">📅</span><div class="feat-title">Today's Bookings</div><div class="feat-desc">How many appointments are scheduled today — live count linked directly to the Booking module.</div></div>
+      <div class="feat-card bc3"><span class="feat-icon">🔔</span><div class="feat-title">Overdue Invoice Alerts</div><div class="feat-desc">Red banner and KPI card showing overdue invoice count. Click to go straight to the invoice list.</div></div>
+      <div class="feat-card bc4"><span class="feat-icon">📦</span><div class="feat-title">Low Stock Alerts</div><div class="feat-desc">Orange banner flags products running low. See the count and reorder before you run out.</div></div>
+      <div class="feat-card bc5"><span class="feat-icon">⚡</span><div class="feat-title">Quick Actions</div><div class="feat-desc">New Invoice, New Order, New Customer, New Product, New Booking — five one-click shortcuts to the most common tasks.</div></div>
+      <div class="feat-card bc6"><span class="feat-icon">💡</span><div class="feat-title">Smart Suggestions</div><div class="feat-desc">ShahoSuite analyses your data and surfaces the most important actions — overdue invoices to chase, stock to reorder.</div></div>
+      <div class="feat-card bc7"><span class="feat-icon">📈</span><div class="feat-title">Revenue Overview Chart</div><div class="feat-desc">12-month revenue bar chart — see trends, peaks and gaps at a glance without opening Analytics.</div></div>
+      <div class="feat-card bc8"><span class="feat-icon">🏢</span><div class="feat-title">Business Profile Header</div><div class="feat-desc">Your business name, logo and today's date — always visible at the top of your dashboard.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AZURE -->
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>100% Cloud-Based</span>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section"><div class="section-inner">
+  <div class="section-tag">FAQ</div><h2>Common questions</h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary class="faq-q">What does the ShahoSuite Dashboard show?</summary><div class="faq-a">The Dashboard shows Today's Revenue, Today's Bookings, Overdue Invoices, Low Stock Items, a 12-month Revenue Overview chart, Quick Action shortcuts and Smart Suggestions — all live and updated automatically.</div></details>
+    <details class="faq-item"><summary class="faq-q">What are Smart Suggestions?</summary><div class="faq-a">Smart Suggestions analyse your business data and surface the most important actions — overdue invoices that need chasing, stock items that need reordering, and other priority tasks. They update automatically as your data changes.</div></details>
+    <details class="faq-item"><summary class="faq-q">Can I create invoices and bookings directly from the Dashboard?</summary><div class="faq-a">Yes. The Quick Actions row has five shortcuts: New Invoice, New Order, New Customer, New Product and New Booking — one click to start any of these common tasks without navigating to a separate module.</div></details>
+    <details class="faq-item"><summary class="faq-q">How much does ShahoSuite cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — all 16 modules. Staff accounts are <strong>£15/month each</strong>. See <a href="/pricing.html" style="color:#3b82f6;font-weight:600;">full pricing</a>.</div></details>
+  </div>
+</div></section>
+
+<!-- RELATED -->
+<section class="related-section"><div class="section-inner">
+  <div class="section-tag" style="color:#64748b;">Connected Modules</div>
+  <h2>Dashboard connects to everything</h2>
+  <p class="section-sub">Every KPI, alert and quick action links directly to the relevant module.</p>
+  <div class="related-grid">
+    <a href="/invoices.html"   class="related-card"><span class="related-emoji">🧾</span><div class="related-name">Invoices</div><div class="related-link">Overdue alerts →</div></a>
+    <a href="/booking.html"    class="related-card"><span class="related-emoji">📅</span><div class="related-name">Booking</div><div class="related-link">Today's bookings →</div></a>
+    <a href="/products.html"   class="related-card"><span class="related-emoji">📦</span><div class="related-name">Products</div><div class="related-link">Low stock alerts →</div></a>
+    <a href="/analytics.html"  class="related-card"><span class="related-emoji">📊</span><div class="related-name">Analytics</div><div class="related-link">Revenue trends →</div></a>
+    <a href="/customers.html"  class="related-card"><span class="related-emoji">👤</span><div class="related-name">Customers</div><div class="related-link">Quick add →</div></a>
+    <a href="/pricing.html"    class="related-card"><span class="related-emoji">💷</span><div class="related-name">Pricing</div><div class="related-link">£50/month →</div></a>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="cta-section"><div class="cta-inner">
+  <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+  <h2>See your business clearly.<br/>Act on what matters.</h2>
+  <p>Live KPIs, smart alerts and quick actions — your whole business on one screen. Hosted on Microsoft Azure.</p>
+  <div class="cta-pricing-card">
+    <div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">🧑‍💼 Director Account</div><div class="cpr-desc">Full access to all 16 modules including Dashboard.</div><div class="cpr-badge">All 16 modules included</div></div><div class="cpr-price"><div class="cpr-amount blue"><sup>£</sup>50<sub>/mo</sub></div><div class="cpr-note">1 admin account</div></div></div>
+    <div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">👤 + Add Staff Members</div><div class="cpr-desc">Each staff gets their own login with role-based access.</div></div><div class="cpr-price"><div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div><div class="cpr-note">Unlimited staff</div></div></div>
+  </div>
+  <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month + £15 per staff →</a>
+  <div class="cta-fine-print">No contracts. No setup fees. Cancel any time.</div>
+</div></section>
+
+<footer><div class="footer-links">
+  <a href="/index.html">Home</a><a href="/invoices.html">Invoices</a><a href="/booking.html">Booking</a>
+  <a href="/analytics.html">Analytics</a><a href="/pricing.html">Pricing</a>
+  <a href="mailto:admin@shahosuite.com">Contact</a>
+  <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+</div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p></footer>
+
+</body>
+</html>

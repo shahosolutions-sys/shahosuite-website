@@ -41,6 +41,8 @@ h1 em{color:#475569;font-style:normal}
 .trust-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
 .trust-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;background:rgba(255,255,255,0.88);border:1px solid rgba(0,0,0,0.07);font-size:12px;font-weight:600;color:#374151;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
 .tp-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* MOCKUP */
 .mockup-outer{max-width:840px;margin:0 auto;position:relative}
 .mockup-frame{border-radius:20px;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,0.95) inset,0 14px 0 rgba(100,116,139,0.18),0 30px 80px rgba(100,116,139,0.2),0 0 0 1px rgba(100,116,139,0.12)}
 .mockup-chrome{background:#1e293b;padding:10px 14px;display:flex;align-items:center;gap:8px;position:relative;z-index:10}
@@ -56,14 +58,20 @@ h1 em{color:#475569;font-style:normal}
 .frost-overlay{position:absolute;inset:0;z-index:3;background:rgba(255,255,255,0.46);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);pointer-events:none}
 .gloss-overlay{position:absolute;top:0;left:0;right:0;height:40%;background:linear-gradient(180deg,rgba(255,255,255,0.38) 0%,rgba(255,255,255,0) 100%);z-index:4;pointer-events:none}
 .app-main-inner{padding:14px;position:relative;z-index:2}
+
+/* Audit log page */
 .al-header{margin-bottom:12px}
 .al-title{font-size:16px;font-weight:800;color:#0f172a;display:flex;align-items:center;gap:7px}
+
+/* Filter bar */
 .al-filters{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
 .al-filter{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:5px 10px;font-size:10px;color:#64748b;display:flex;align-items:center;gap:4px}
 .al-filter.date{min-width:80px}
 .al-rows{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:5px 10px;font-size:10px;color:#374151;display:flex;align-items:center;gap:4px}
 .al-apply{background:#3b82f6;color:#fff;border:none;border-radius:7px;padding:5px 12px;font-size:10px;font-weight:700;cursor:default;font-family:'DM Sans',sans-serif}
 .al-reset{background:#fff;border:1px solid #e2e8f0;border-radius:7px;padding:5px 10px;font-size:10px;color:#64748b;cursor:default}
+
+/* Audit table */
 .al-table{background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden}
 .al-thead{display:grid;grid-template-columns:120px 130px 90px 90px 60px 1fr;padding:7px 10px;background:#f8fafc;border-bottom:1px solid #e5e7eb;font-size:8.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;gap:4px}
 .al-row{display:grid;grid-template-columns:120px 130px 90px 90px 60px 1fr;padding:8px 10px;border-bottom:1px solid #f1f5f9;align-items:center;gap:4px}
@@ -71,20 +79,27 @@ h1 em{color:#475569;font-style:normal}
 .al-datetime{font-size:10px;color:#64748b}
 .al-user{font-size:10px;color:#374151;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .al-user.system{color:#94a3b8;font-style:italic}
+
+/* Action badges — matching screenshot exactly */
 .action-badge{display:inline-flex;padding:3px 8px;border-radius:5px;font-size:9px;font-weight:700;font-family:monospace}
 .ab-create{background:#0f172a;color:#fff}
 .ab-created{background:#22c55e;color:#fff}
 .ab-deleted{background:#ef4444;color:#fff}
 .ab-updated{background:#3b82f6;color:#fff}
+
 .al-entity{display:inline-flex;padding:2px 7px;border-radius:4px;font-size:9px;color:#475569;background:#f1f5f9;border:1px solid #e2e8f0;font-family:monospace}
 .al-id{font-size:10px;color:#94a3b8}
 .al-changes{font-size:10px;color:#3b82f6;font-weight:600;cursor:default;display:flex;align-items:center;gap:3px}
+
+/* Float card */
 .float-card{position:absolute;bottom:-20px;right:-22px;z-index:20;background:rgba(255,255,255,0.97);border:1px solid rgba(255,255,255,0.99);border-radius:14px;padding:14px 18px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 10px 32px rgba(100,116,139,0.2),0 2px 0 rgba(255,255,255,0.9) inset;min-width:148px}
 .fc-label{font-size:10px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
 .fc-val{font-size:22px;font-weight:800;color:#475569;letter-spacing:-0.5px;line-height:1}
 .fc-sub{font-size:11px;color:#64748b;margin-top:3px}
 .fc-row{display:flex;justify-content:space-between;font-size:11px;margin-top:7px;padding-top:7px;border-top:1px solid #f1f5f9}
 .fc-rl{color:#94a3b8}.fc-rv{font-weight:700}
+
+/* shared */
 .section-inner{max-width:1100px;margin:0 auto}
 .section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;color:#64748b}
 h2{font-size:clamp(24px,3.8vw,40px);font-weight:800;letter-spacing:-1.5px;margin-bottom:14px;color:#0f172a}
@@ -137,6 +152,205 @@ footer a:hover{color:#475569}
 </style>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a><div class="nav-btns"><a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a><a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a></div></div></nav>
+<nav><div class="nav-inner">
+  <a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a>
+  <div class="nav-btns">
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+  </div>
+</div></nav>
 <nav class="breadcrumb"><div class="breadcrumb-inner"><a href="/index.html">Home</a><span class="bc-sep">›</span><a href="/index.html#features">Modules</a><span class="bc-sep">›</span><span>Audit Log</span></div></nav>
-<section class="hero"><div class="hero-inner"><div class="module-badge"><span class="badge-dot"></span>📋 Audit Log Module</div><h1>Complete <em>Audit Trail</em><br/>for Your Business</h1><p class="hero-sub">Every action logged — who did what, when and to which record. Date, user, action type, entity and changes. Full transparency for compliance and accountability.</p><div class="trust-row"><span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span><span class="trust-pill"><span class="tp-dot" style="background:#64748b;"></span>Full activity trail</span><span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Who, what, when</span><span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>GDPR-ready</span><span class="trust-pill"><span class="tp-dot" style="background:#7c3aed;"></span>Director only</span></div><div class="mockup-outer"><div class="mockup-frame"><div class="mockup-chrome"><div class="cd r"></div><div class="cd y"></div><div class="cd g"></div><div class="chrome-url">🔒 www.shahosuite.com/audit-log</div></div><div class="app-shell"><div class="app-sidebar"><div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div><div class="sb-item">🏠 Dashboard</div><div class="sb-item">👤 Customers</div><div class="sb-item">🧾 Invoices</div><div class="sb-item">💰 Credit Notes</div><div class="sb-item">🛒 Orders</div><div class="sb-item">🏭 Suppliers</div><div class="sb-item">📕 Accounting</div><div class="sb-item">📊 Analytics</div><div class="sb-item">📅 Booking</div><div class="sb-item">🆘 Support</div><div class="sb-item">🧑‍💼 Staff</div><div class="sb-item">⚙️ Settings</div><div class="sb-item active">📋 Audit Log</div></div><div class="app-main-wrap"><div class="frost-overlay"></div><div class="gloss-overlay"></div><div class="app-main-inner"><div class="al-header"><div class="al-title">📋 Audit Log</div></div><div class="al-filters"><div class="al-filter">Entity type ▾</div><div class="al-filter">Action ▾</div><div class="al-filter date">Start date</div><div style="font-size:10px;color:#94a3b8;">→</div><div class="al-filter date">End date 📅</div><div class="al-rows">50 rows ▾</div><div class="al-apply">Apply</div><div class="al-reset">Reset</div></div><div class="al-table"><div class="al-thead"><span>Date / Time</span><span>User</span><span>Action</span><span>Entity Type</span><span>Entity ID</span><span>Changes</span></div><div class="al-row"><div class="al-datetime">2026-03-18 14:30:42</div><div class="al-user system">System</div><div><span class="action-badge ab-create">CREATE</span></div><div><span class="al-entity">payment</span></div><div class="al-id">25</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-17 15:56:15</div><div class="al-user">shahom157@gmail.com</div><div><span class="action-badge ab-deleted">DELETED</span></div><div><span class="al-entity">customer</span></div><div class="al-id">6</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-14 18:01:25</div><div class="al-user system">System</div><div><span class="action-badge ab-create">CREATE</span></div><div><span class="al-entity">payment</span></div><div class="al-id">24</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-13 13:17:34</div><div class="al-user system">System</div><div><span class="action-badge ab-create">CREATE</span></div><div><span class="al-entity">payment</span></div><div class="al-id">23</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-11 00:22:27</div><div class="al-user">shahom157@gmail.com</div><div><span class="action-badge ab-created">CREATED</span></div><div><span class="al-entity">invoice</span></div><div class="al-id">66</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-11 00:21:58</div><div class="al-user">shahom157@gmail.com</div><div><span class="action-badge ab-created">CREATED</span></div><div><span class="al-entity">invoice</span></div><div class="al-id">65</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-11 00:19:33</div><div class="al-user">shahom157@gmail.com</div><div><span class="action-badge ab-created">CREATED</span></div><div><span class="al-entity">invoice</span></div><div class="al-id">64</div><div class="al-changes">› View changes</div></div><div class="al-row"><div class="al-datetime">2026-03-11 00:16:39</div><div class="al-user">shahom157@gmail.com</div><div><span class="action-badge ab-created">CREATED</span></div><div><span class="al-entity">invoice</span></div><div class="al-id">61</div><div class="al-changes">› View changes</div></div></div></div></div></div></div><div class="float-card"><div class="fc-label">Audit Log</div><div class="fc-val">Full trail</div><div class="fc-sub">Every action logged</div><div class="fc-row"><span class="fc-rl">Actions</span><span class="fc-rv" style="color:#22c55e;">CREATE</span></div><div class="fc-row"><span class="fc-rl">Deleted</span><span class="fc-rv" style="color:#ef4444;">DELETED</span></div><div class="fc-row"><span class="fc-rl">Access</span><span class="fc-rv" style="color:#7c3aed;">Director only</span></div></div></div></div></section><section class="benefits-section" id="features"><div class="section-inner"><div class="section-tag">Key Features</div><h2>Every action. Every user.<br/>Full accountability.</h2><p class="section-sub">Know exactly what happened in your business — who made changes, when and to which records.</p><div class="benefits-grid"><div class="benefit-card bc1"><span class="benefit-icon">📋</span><div class="benefit-title">Complete Audit Trail</div><div class="benefit-desc">Every CREATE, UPDATE and DELETE action logged — nothing missed, nothing hidden.</div></div><div class="benefit-card bc2"><span class="benefit-icon">✅</span><div class="benefit-title">Action Type Badges</div><div class="benefit-desc">CREATE, CREATED, DELETED and UPDATED — colour-coded badges make every action instantly readable.</div></div><div class="benefit-card bc3"><span class="benefit-icon">🗑️</span><div class="benefit-title">Deleted Record Tracking</div><div class="benefit-desc">See exactly what was deleted, by whom and when — so nothing disappears without a trace.</div></div><div class="benefit-card bc4"><span class="benefit-icon">🔍</span><div class="benefit-title">Filter by Entity & Action</div><div class="benefit-desc">Filter logs by entity type (invoice, customer, payment), action type and date range.</div></div><div class="benefit-card bc5"><span class="benefit-icon">👁</span><div class="benefit-title">View Changes</div><div class="benefit-desc">Drill into any log entry to see exactly what changed — field by field, before and after.</div></div><div class="benefit-card bc6"><span class="benefit-icon">🔒</span><div class="benefit-title">Director Only</div><div class="benefit-desc">The Audit Log is Director-only. Staff cannot see or access the log. Full control stays with you.</div></div></div></div></section><div class="azure-bar"><span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span><span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span><span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span><span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span><span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span></div><section class="faq-section"><div class="section-inner"><div class="section-tag">FAQ</div><h2>Common questions</h2><div class="faq-list"><details class="faq-item"><summary class="faq-q">What does the Audit Log track?</summary><div class="faq-a">The Audit Log records every action in ShahoSuite — who performed it, when, what type of action (CREATE, UPDATED, DELETED) and which record was affected. You can view the exact changes made to any record.</div></details><details class="faq-item"><summary class="faq-q">Can staff see the Audit Log?</summary><div class="faq-a">No. The Audit Log is Director-only. Staff members cannot access or view the log — this ensures full accountability and privacy.</div></details><details class="faq-item"><summary class="faq-q">Can I filter the Audit Log?</summary><div class="faq-a">Yes. Filter by entity type (invoice, customer, payment etc.), action type and date range. Set the number of rows per page up to 50.</div></details><details class="faq-item"><summary class="faq-q">Is the Audit Log GDPR-compliant?</summary><div class="faq-a">Yes. The Audit Log helps meet GDPR accountability requirements by providing a complete trail of who accessed or changed personal data and when.</div></details><details class="faq-item"><summary class="faq-q">How much does ShahoSuite cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — all 16 modules. Staff accounts <strong>£15/month each</strong>.</div></details></div></div></section><section class="cta-section"><div class="cta-inner"><div class="section-tag" style="text-align:center;display:block;">Start Today</div><h2>Full accountability.<br/>Full control.</h2><p>Complete audit trail — every action, every user, every change. Director-only. Hosted on Microsoft Azure.</p><div class="cta-pricing-card"><div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">🧑‍💼 Director Account</div><div class="cpr-desc">All 16 modules including Audit Log.</div><div class="cpr-badge">All 16 modules included</div></div><div class="cpr-price"><div class="cpr-amount slate"><sup>£</sup>50<sub>/mo</sub></div><div class="cpr-note">1 admin account</div></div></div><div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">👤 + Add Staff Members</div><div class="cpr-desc">Role-based access — staff cannot see audit log.</div></div><div class="cpr-price"><div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div><div class="cpr-note">Unlimited staff</div></div></div></div><a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month + £15 per staff →</a><div class="cta-fine-print">No contracts. No setup fees. Cancel any time.</div></div></section><footer><div class="footer-links"><a href="/index.html">Home</a><a href="/staff.html">Staff</a><a href="/settings.html">Settings</a><a href="/invoices.html">Invoices</a><a href="/pricing.html">Pricing</a><a href="mailto:admin@shahosuite.com">Contact</a><a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a></div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales</p></footer></body></html>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="module-badge"><span class="badge-dot"></span>📋 Audit Log Module</div>
+    <h1>Complete <em>Audit Trail</em><br/>for Your Business</h1>
+    <p class="hero-sub">Every action logged — who did what, when and to which record. Date, user, action type, entity and changes. Full transparency for compliance and accountability.</p>
+    <div class="trust-row">
+      <span class="trust-pill"><span class="tp-dot" style="background:#22c55e;"></span>Hosted on Microsoft Azure</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#64748b;"></span>Full activity trail</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#3b82f6;"></span>Who, what, when</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#f59e0b;"></span>GDPR-ready</span>
+      <span class="trust-pill"><span class="tp-dot" style="background:#7c3aed;"></span>Director only</span>
+    </div>
+
+    <div class="mockup-outer">
+      <div class="mockup-frame">
+        <div class="mockup-chrome"><div class="cd r"></div><div class="cd y"></div><div class="cd g"></div><div class="chrome-url">🔒 www.shahosuite.com/audit-log</div></div>
+        <div class="app-shell">
+          <div class="app-sidebar">
+            <div class="sb-brand"><div class="sb-icon"></div>ShahoSuite</div>
+            <div class="sb-item">🏠 Dashboard</div>
+            <div class="sb-item">👤 Customers</div>
+            <div class="sb-item">🧾 Invoices</div>
+            <div class="sb-item">💰 Credit Notes</div>
+            <div class="sb-item">🛒 Orders</div>
+            <div class="sb-item">🏭 Suppliers</div>
+            <div class="sb-item">📕 Accounting</div>
+            <div class="sb-item">📊 Analytics</div>
+            <div class="sb-item">📅 Booking</div>
+            <div class="sb-item">🆘 Support</div>
+            <div class="sb-item">🧑‍💼 Staff</div>
+            <div class="sb-item">⚙️ Settings</div>
+            <div class="sb-item active">📋 Audit Log</div>
+          </div>
+          <div class="app-main-wrap">
+            <div class="frost-overlay"></div><div class="gloss-overlay"></div>
+            <div class="app-main-inner">
+
+              <div class="al-header">
+                <div class="al-title">📋 Audit Log</div>
+              </div>
+
+              <!-- Filter bar — real from screenshot -->
+              <div class="al-filters">
+                <div class="al-filter">Entity type ▾</div>
+                <div class="al-filter">Action ▾</div>
+                <div class="al-filter date">Start date</div>
+                <div style="font-size:10px;color:#94a3b8;">→</div>
+                <div class="al-filter date">End date 📅</div>
+                <div class="al-rows">50 rows ▾</div>
+                <div class="al-apply">Apply</div>
+                <div class="al-reset">Reset</div>
+              </div>
+
+              <!-- Table — real data from screenshot -->
+              <div class="al-table">
+                <div class="al-thead"><span>Date / Time</span><span>User</span><span>Action</span><span>Entity Type</span><span>Entity ID</span><span>Changes</span></div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-18 14:30:42</div>
+                  <div class="al-user system">System</div>
+                  <div><span class="action-badge ab-create">CREATE</span></div>
+                  <div><span class="al-entity">payment</span></div>
+                  <div class="al-id">25</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-17 15:56:15</div>
+                  <div class="al-user">shahom157@gmail.com</div>
+                  <div><span class="action-badge ab-deleted">DELETED</span></div>
+                  <div><span class="al-entity">customer</span></div>
+                  <div class="al-id">6</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-14 18:01:25</div>
+                  <div class="al-user system">System</div>
+                  <div><span class="action-badge ab-create">CREATE</span></div>
+                  <div><span class="al-entity">payment</span></div>
+                  <div class="al-id">24</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-13 13:17:34</div>
+                  <div class="al-user system">System</div>
+                  <div><span class="action-badge ab-create">CREATE</span></div>
+                  <div><span class="al-entity">payment</span></div>
+                  <div class="al-id">23</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-11 00:22:27</div>
+                  <div class="al-user">shahom157@gmail.com</div>
+                  <div><span class="action-badge ab-created">CREATED</span></div>
+                  <div><span class="al-entity">invoice</span></div>
+                  <div class="al-id">66</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-11 00:21:58</div>
+                  <div class="al-user">shahom157@gmail.com</div>
+                  <div><span class="action-badge ab-created">CREATED</span></div>
+                  <div><span class="al-entity">invoice</span></div>
+                  <div class="al-id">65</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-11 00:19:33</div>
+                  <div class="al-user">shahom157@gmail.com</div>
+                  <div><span class="action-badge ab-created">CREATED</span></div>
+                  <div><span class="al-entity">invoice</span></div>
+                  <div class="al-id">64</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+                <div class="al-row">
+                  <div class="al-datetime">2026-03-11 00:16:39</div>
+                  <div class="al-user">shahom157@gmail.com</div>
+                  <div><span class="action-badge ab-created">CREATED</span></div>
+                  <div><span class="al-entity">invoice</span></div>
+                  <div class="al-id">61</div>
+                  <div class="al-changes">› View changes</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="fc-label">Audit Log</div>
+        <div class="fc-val">Full trail</div>
+        <div class="fc-sub">Every action logged</div>
+        <div class="fc-row"><span class="fc-rl">Actions</span><span class="fc-rv" style="color:#22c55e;">CREATE</span></div>
+        <div class="fc-row"><span class="fc-rl">Deleted</span><span class="fc-rv" style="color:#ef4444;">DELETED</span></div>
+        <div class="fc-row"><span class="fc-rl">Access</span><span class="fc-rv" style="color:#7c3aed;">Director only</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits-section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Key Features</div>
+    <h2>Every action. Every user.<br/>Full accountability.</h2>
+    <p class="section-sub">Know exactly what happened in your business — who made changes, when and to which records.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card bc1"><span class="benefit-icon">📋</span><div class="benefit-title">Complete Audit Trail</div><div class="benefit-desc">Every CREATE, UPDATE and DELETE action logged — nothing missed, nothing hidden.</div></div>
+      <div class="benefit-card bc2"><span class="benefit-icon">✅</span><div class="benefit-title">Action Type Badges</div><div class="benefit-desc">CREATE, CREATED, DELETED and UPDATED — colour-coded badges make every action instantly readable.</div></div>
+      <div class="benefit-card bc3"><span class="benefit-icon">🗑️</span><div class="benefit-title">Deleted Record Tracking</div><div class="benefit-desc">See exactly what was deleted, by whom and when — so nothing disappears without a trace.</div></div>
+      <div class="benefit-card bc4"><span class="benefit-icon">🔍</span><div class="benefit-title">Filter by Entity &amp; Action</div><div class="benefit-desc">Filter logs by entity type (invoice, customer, payment), action type and date range.</div></div>
+      <div class="benefit-card bc5"><span class="benefit-icon">👁</span><div class="benefit-title">View Changes</div><div class="benefit-desc">Drill into any log entry to see exactly what changed — field by field, before and after.</div></div>
+      <div class="benefit-card bc6"><span class="benefit-icon">🔒</span><div class="benefit-title">Director Only</div><div class="benefit-desc">The Audit Log is Director-only. Staff cannot see or access the log. Full control stays with you.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+</div>
+
+<section class="faq-section"><div class="section-inner">
+  <div class="section-tag">FAQ</div><h2>Common questions</h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary class="faq-q">What does the Audit Log track?</summary><div class="faq-a">The Audit Log records every action in ShahoSuite — who performed it, when, what type of action (CREATE, UPDATED, DELETED) and which record was affected. You can view the exact changes made to any record.</div></details>
+    <details class="faq-item"><summary class="faq-q">Can staff see the Audit Log?</summary><div class="faq-a">No. The Audit Log is Director-only. Staff members cannot access or view the log — this ensures full accountability and privacy.</div></details>
+    <details class="faq-item"><summary class="faq-q">Can I filter the Audit Log?</summary><div class="faq-a">Yes. Filter by entity type (invoice, customer, payment etc.), action type and date range. Set the number of rows per page up to 50.</div></details>
+    <details class="faq-item"><summary class="faq-q">Is the Audit Log GDPR-compliant?</summary><div class="faq-a">Yes. The Audit Log helps meet GDPR accountability requirements by providing a complete trail of who accessed or changed personal data and when.</div></details>
+    <details class="faq-item"><summary class="faq-q">How much does ShahoSuite cost?</summary><div class="faq-a"><strong>£50/month</strong> for the Director account — all 16 modules. Staff accounts <strong>£15/month each</strong>.</div></details>
+  </div>
+</div></section>
+
+<section class="cta-section"><div class="cta-inner">
+  <div class="section-tag" style="text-align:center;display:block;">Start Today</div>
+  <h2>Full accountability.<br/>Full control.</h2>
+  <p>Complete audit trail — every action, every user, every change. Director-only. Hosted on Microsoft Azure.</p>
+  <div class="cta-pricing-card">
+    <div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">🧑‍💼 Director Account</div><div class="cpr-desc">All 16 modules including Audit Log.</div><div class="cpr-badge">All 16 modules included</div></div><div class="cpr-price"><div class="cpr-amount slate"><sup>£</sup>50<sub>/mo</sub></div><div class="cpr-note">1 admin account</div></div></div>
+    <div class="cta-price-row"><div class="cpr-left"><div class="cpr-title">👤 + Add Staff Members</div><div class="cpr-desc">Role-based access — staff cannot see audit log.</div></div><div class="cpr-price"><div class="cpr-amount"><sup>£</sup>15<sub>/mo each</sub></div><div class="cpr-note">Unlimited staff</div></div></div>
+  </div>
+  <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-cta-main">Sign up — £50/month + £15 per staff →</a>
+  <div class="cta-fine-print">No contracts. No setup fees. Cancel any time.</div>
+</div></section>
+
+<footer><div class="footer-links">
+  <a href="/index.html">Home</a><a href="/staff.html">Staff</a><a href="/settings.html">Settings</a>
+  <a href="/invoices.html">Invoices</a><a href="/pricing.html">Pricing</a>
+  <a href="mailto:admin@shahosuite.com">Contact</a>
+  <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+</div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p></footer>
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Pricing — Simple Business Software Pricing for UK Small Businesses</title>
+<meta name="description" content="One price. All 16 modules. £50/month for the Director account with full access. Add staff at £15/month each. No contracts, no setup fees. Hosted on Microsoft Azure." />
+<meta name="keywords" content="business software pricing UK, all-in-one business software £50 month, small business software UK price, invoicing booking CRM software UK price, ShahoSuite pricing" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/pricing.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Pricing — £50/month. All 16 Modules. No Contracts." />
+<meta property="og:description" content="Director account £50/month — all 16 modules. Add staff at £15/month each. No contracts, no setup fees." />
+<meta property="og:url" content="https://www.shahosuite.com/pricing.html" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"ShahoSuite — All-in-One Business Platform",
+  "description":"Complete business management software for UK small businesses. 16 modules including CRM, invoicing, booking, accounting and analytics.",
+  "url":"https://www.shahosuite.com/pricing.html",
+  "offers":[
+    {"@type":"Offer","name":"Director Account","price":"50","priceCurrency":"GBP","priceSpecification":{"@type":"UnitPriceSpecification","price":"50","priceCurrency":"GBP","unitCode":"MON"},"description":"Full access to all 16 modules. 1 admin account."},
+    {"@type":"Offer","name":"Staff Account","price":"15","priceCurrency":"GBP","priceSpecification":{"@type":"UnitPriceSpecification","price":"15","priceCurrency":"GBP","unitCode":"MON"},"description":"Role-based staff access. Invited by Director."}
+  ],
+  "provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117"}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --c1: #6366f1; --c2: #10b981; --c3: #f59e0b; --c4: #ec4899; --c5: #0ea5e9;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: #fff; color: #0f172a; line-height: 1.6; overflow-x: hidden; }
+
+/* ── NAV ── */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 12px rgba(0,0,0,0.05); }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.22)); transition: filter 0.15s, transform 0.15s; }
+.logo:hover  { transform: translateY(-2px); filter: drop-shadow(0 6px 0 rgba(0,0,0,0.28)); }
+.logo:active { transform: translateY(3px); filter: drop-shadow(0 1px 0 rgba(0,0,0,0.18)); }
+.logo-left  { padding: 8px 0 8px 16px; background: #fff; color: #0f172a; border: 2px solid #0f172a; border-right: none; border-radius: 10px 0 0 10px; }
+.logo-right { padding: 8px 16px 8px 0; background: #0f172a; color: #fff; border: 2px solid #0f172a; border-left: none; border-radius: 0 10px 10px 0; }
+.nav-btns { display: flex; gap: 8px; align-items: center; }
+.btn-login  { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; color: #374151; background: #fff; border: 1.5px solid #d1d5db; box-shadow: 0 2px 0 #d1d5db; transition: all 0.15s; }
+.btn-login:hover  { border-color: #9ca3af; transform: translateY(-1px); }
+.btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
+.btn-signup:hover { background: #1e293b; transform: translateY(-1px); }
+
+/* ══════════════════════════════════
+   TICKER NEWS BAR — the special bit
+══════════════════════════════════ */
+.ticker-wrap {
+  margin-top: 68px;
+  background: #0f172a;
+  overflow: hidden;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+/* Label badge on left */
+.ticker-label {
+  flex-shrink: 0;
+  background: #6366f1;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  z-index: 2;
+  white-space: nowrap;
+}
+/* Fade edge */
+.ticker-label::after {
+  content: '';
+  position: absolute;
+  left: 110px;
+  top: 0;
+  width: 32px;
+  height: 100%;
+  background: linear-gradient(90deg, #0f172a, transparent);
+  z-index: 1;
+}
+.ticker-track {
+  display: flex;
+  animation: ticker 32s linear infinite;
+  white-space: nowrap;
+  align-items: center;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  white-space: nowrap;
+}
+.ticker-item span { color: #fff; font-weight: 700; }
+.ticker-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--tc, #6366f1);
+  flex-shrink: 0;
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero {
+  padding: 72px 28px 80px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background grid */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; }
+
+/* Colour-changing animated badge */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 22px; border-radius: 30px;
+  font-size: 13px; font-weight: 700; margin-bottom: 24px;
+  border: 1.5px solid transparent;
+  animation: badge-cycle 8s ease-in-out infinite;
+}
+@keyframes badge-cycle {
+  0%,100% { background: rgba(99,102,241,0.08);  border-color: rgba(99,102,241,0.25);  color: #4f46e5; }
+  25%      { background: rgba(16,185,129,0.08);  border-color: rgba(16,185,129,0.25);  color: #059669; }
+  50%      { background: rgba(245,158,11,0.08);  border-color: rgba(245,158,11,0.25);  color: #d97706; }
+  75%      { background: rgba(236,72,153,0.08);  border-color: rgba(236,72,153,0.25);  color: #be185d; }
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -2.5px; margin-bottom: 20px; color: #0f172a;
+}
+
+/* The colour-changing word */
+.price-highlight {
+  display: inline-block;
+  animation: text-cycle 8s ease-in-out infinite;
+  font-style: normal;
+}
+@keyframes text-cycle {
+  0%,100% { color: #6366f1; }
+  25%      { color: #10b981; }
+  50%      { color: #f59e0b; }
+  75%      { color: #ec4899; }
+}
+
+.hero-sub {
+  font-size: 18px; color: #475569; margin-bottom: 14px;
+  max-width: 560px; margin-left: auto; margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Colour-changing sub-line */
+.hero-sub-colour {
+  font-size: 15px; font-weight: 700; margin-bottom: 48px;
+  animation: sub-cycle 8s ease-in-out infinite;
+}
+@keyframes sub-cycle {
+  0%,100% { color: #6366f1; }
+  25%      { color: #10b981; }
+  50%      { color: #f59e0b; }
+  75%      { color: #ec4899; }
+}
+
+/* ══════════════════════════════
+   PRICING CARDS
+══════════════════════════════ */
+.cards-section { padding: 0 28px 80px; }
+.cards-inner { max-width: 760px; margin: 0 auto; }
+.cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Director card */
+.price-card {
+  border-radius: 24px; padding: 36px 32px;
+  position: relative; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.price-card:hover { transform: translateY(-6px); }
+
+.card-director {
+  background: #0f172a;
+  color: #fff;
+  box-shadow: 0 8px 0 #1e293b, 0 20px 50px rgba(15,23,42,0.3);
+}
+.card-director:hover { box-shadow: 0 14px 0 #1e293b, 0 28px 60px rgba(15,23,42,0.38); }
+
+/* Animated gradient shimmer on director card */
+.card-director::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: shimmer 4s ease-in-out infinite;
+}
+@keyframes shimmer { 0%{left:-100%} 100%{left:200%} }
+
+.card-staff {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 8px 0 #e2e8f0, 0 16px 40px rgba(0,0,0,0.06);
+  color: #0f172a;
+}
+.card-staff:hover { box-shadow: 0 14px 0 #e2e8f0, 0 24px 50px rgba(0,0,0,0.1); border-color: #cbd5e1; }
+
+/* Top badge */
+.card-top-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;
+  margin-bottom: 18px; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.card-director .card-top-badge { background: rgba(99,102,241,0.25); color: #a5b4fc; }
+.card-staff    .card-top-badge { background: rgba(16,185,129,0.1);  color: #059669; border: 1px solid rgba(16,185,129,0.2); }
+
+.card-name { font-size: 14px; font-weight: 600; margin-bottom: 8px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1.5px; }
+.card-director .card-name { color: rgba(255,255,255,0.5); }
+.card-staff    .card-name { color: #94a3b8; }
+
+/* Price display */
+.card-price { display: flex; align-items: flex-start; gap: 4px; margin-bottom: 8px; line-height: 1; }
+.price-currency { font-size: 22px; font-weight: 800; margin-top: 8px; }
+.price-amount { font-size: 72px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
+.price-period { font-size: 15px; font-weight: 500; margin-top: auto; margin-bottom: 8px; opacity: 0.6; }
+.card-director .price-currency,
+.card-director .price-amount,
+.card-director .price-period { color: #fff; }
+.card-staff .price-currency,
+.card-staff .price-amount    { color: #0f172a; }
+.card-staff .price-period    { color: #64748b; }
+
+/* Animated accent on director price */
+.card-director .price-amount {
+  background: linear-gradient(90deg, #fff 0%, #a5b4fc 50%, #fff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: price-shine 4s ease-in-out infinite;
+}
+@keyframes price-shine {
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
+}
+
+.card-tagline { font-size: 13px; margin-bottom: 22px; line-height: 1.5; }
+.card-director .card-tagline { color: rgba(255,255,255,0.6); }
+.card-staff    .card-tagline { color: #64748b; }
+
+/* Feature list */
+.card-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
+.card-features li { font-size: 13.5px; display: flex; align-items: flex-start; gap: 10px; }
+.card-director .card-features li { color: rgba(255,255,255,0.8); }
+.card-staff    .card-features li { color: #374151; }
+.feat-check {
+  width: 18px; height: 18px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 800; flex-shrink: 0; margin-top: 2px;
+}
+.card-director .feat-check { background: rgba(99,102,241,0.3); color: #a5b4fc; }
+.card-staff    .feat-check { background: rgba(16,185,129,0.12); color: #10b981; }
+
+/* CTA buttons */
+.card-btn {
+  display: block; width: 100%; padding: 14px; border-radius: 12px;
+  font-family: 'DM Sans',sans-serif; font-size: 15px; font-weight: 700;
+  text-align: center; text-decoration: none; transition: all 0.15s; border: none; cursor: pointer;
+}
+.card-director .card-btn {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #6366f1);
+  background-size: 200% 100%;
+  color: #fff;
+  box-shadow: 0 5px 0 rgba(99,102,241,0.5);
+  animation: btn-gradient 4s ease-in-out infinite;
+}
+.card-director .card-btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 rgba(99,102,241,0.5); }
+.card-director .card-btn:active { transform: translateY(5px); box-shadow: 0 0 0 rgba(99,102,241,0.5); }
+@keyframes btn-gradient { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+.card-staff .card-btn {
+  background: #0f172a; color: #fff;
+  box-shadow: 0 5px 0 #374151;
+}
+.card-staff .card-btn:hover  { background: #1e293b; transform: translateY(-2px); box-shadow: 0 7px 0 #374151; }
+.card-staff .card-btn:active { transform: translateY(5px); box-shadow: 0 0 0 #374151; }
+
+/* Fine print */
+.card-fine { font-size: 11px; text-align: center; margin-top: 10px; opacity: 0.5; }
+
+/* ══════════════════════
+   EVERYTHING INCLUDED
+══════════════════════ */
+.modules-section { padding: 80px 28px; background: #f8fafc; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+h2 { font-size: clamp(26px,4vw,44px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; color: #0f172a; }
+.section-sub { font-size: 16px; color: #64748b; max-width: 500px; margin-bottom: 48px; line-height: 1.7; }
+
+/* Colour-changing section tag */
+.tag-cycle { animation: tag-colour 8s ease-in-out infinite; }
+@keyframes tag-colour {
+  0%,100% { color: #6366f1; }
+  25%      { color: #10b981; }
+  50%      { color: #f59e0b; }
+  75%      { color: #ec4899; }
+}
+
+/* Module grid — all 16 */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.mod-item {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+  padding: 18px 14px; text-align: center;
+  box-shadow: 0 3px 0 #e2e8f0;
+  transition: all 0.2s;
+  border-top: 3px solid var(--mc);
+}
+.mod-item:hover { transform: translateY(-4px); box-shadow: 0 7px 0 var(--ms); border-color: var(--mc); }
+.mod-emoji { font-size: 24px; display: block; margin-bottom: 8px; }
+.mod-name  { font-size: 12px; font-weight: 700; color: #0f172a; }
+.mod-check { font-size: 10px; color: var(--mc); font-weight: 600; margin-top: 3px; }
+
+.m1 {--mc:#3b82f6;--ms:#dbeafe}  .m2 {--mc:#10b981;--ms:#d1fae5} .m3 {--mc:#f97316;--ms:#ffedd5}
+.m4 {--mc:#8b5cf6;--ms:#ede9fe}  .m5 {--mc:#f43f5e;--ms:#ffe4e6} .m6 {--mc:#06b6d4;--ms:#cffafe}
+.m7 {--mc:#14b8a6;--ms:#99f6e4}  .m8 {--mc:#84cc16;--ms:#d9f99d} .m9 {--mc:#6366f1;--ms:#e0e7ff}
+.m10{--mc:#f59e0b;--ms:#fef3c7}  .m11{--mc:#ec4899;--ms:#fce7f3} .m12{--mc:#0ea5e9;--ms:#bae6fd}
+.m13{--mc:#ef4444;--ms:#fee2e2}  .m14{--mc:#7c3aed;--ms:#ede9fe} .m15{--mc:#d946ef;--ms:#fae8ff}
+.m16{--mc:#64748b;--ms:#e2e8f0}
+
+/* ══════════════════════
+   COMPARE
+══════════════════════ */
+.compare-section { padding: 80px 28px; background: #fff; }
+.compare-table { max-width: 760px; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 6px 0 #e2e8f0; }
+.ct-header { display: grid; grid-template-columns: 1fr 140px 140px; background: #0f172a; padding: 14px 20px; gap: 8px; }
+.ct-h-label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); }
+.ct-h-col { text-align: center; }
+.ct-h-col .col-name { font-size: 13px; font-weight: 800; color: #fff; }
+.ct-h-col .col-price { font-size: 11px; color: rgba(255,255,255,0.5); }
+.ct-h-col.highlight .col-name { color: #a5b4fc; }
+.ct-row { display: grid; grid-template-columns: 1fr 140px 140px; padding: 12px 20px; border-bottom: 1px solid #f1f5f9; gap: 8px; align-items: center; }
+.ct-row:last-child { border-bottom: none; }
+.ct-row:nth-child(even) { background: #f8fafc; }
+.ct-feature { font-size: 13px; color: #374151; font-weight: 500; }
+.ct-check { text-align: center; }
+.ck-yes { color: #10b981; font-size: 16px; }
+.ck-no  { color: #cbd5e1; font-size: 16px; }
+.ck-partial { font-size: 10px; color: #f59e0b; font-weight: 700; }
+
+/* ══════════════════════
+   FAQ
+══════════════════════ */
+.faq-section { padding: 80px 28px; background: #f8fafc; }
+.faq-list { max-width: 740px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 0 #e2e8f0; }
+.faq-q { padding: 16px 20px; font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.faq-q::after { content: '+'; font-size: 18px; font-weight: 400; animation: faq-colour 8s ease-in-out infinite; }
+@keyframes faq-colour { 0%,100%{color:#6366f1} 25%{color:#10b981} 50%{color:#f59e0b} 75%{color:#ec4899} }
+details[open] .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 16px; font-size: 13.5px; color: #475569; line-height: 1.7; border-top: 1px solid #f1f5f9; }
+
+/* ══════════════════════
+   AZURE
+══════════════════════ */
+.azure-bar { background: #0f172a; padding: 28px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.azure-pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 7px 16px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.az-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: azp 2s infinite; }
+@keyframes azp { 0%,100%{opacity:1}50%{opacity:0.35} }
+
+/* ══════════════════════
+   FINAL CTA
+══════════════════════ */
+.final-cta { padding: 88px 28px; text-align: center; background: #fff; position: relative; overflow: hidden; }
+.final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.final-cta-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+.final-cta h2 { font-size: clamp(28px, 5vw, 52px); font-weight: 800; letter-spacing: -2px; margin-bottom: 16px; }
+/* Colour-changing CTA headline word */
+.cta-word {
+  display: inline-block;
+  animation: text-cycle 8s ease-in-out infinite;
+}
+.final-cta p { font-size: 16px; color: #64748b; margin-bottom: 36px; line-height: 1.7; }
+.final-btn {
+  display: inline-block; padding: 17px 48px; border-radius: 14px;
+  font-family: 'DM Sans',sans-serif; font-size: 17px; font-weight: 700;
+  text-decoration: none; color: #fff;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899, #6366f1);
+  background-size: 300% 100%;
+  animation: gradient-flow 6s ease-in-out infinite;
+  box-shadow: 0 6px 0 rgba(99,102,241,0.4), 0 14px 30px rgba(99,102,241,0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.final-btn:hover  { transform: translateY(-3px); box-shadow: 0 9px 0 rgba(99,102,241,0.4), 0 20px 40px rgba(99,102,241,0.3); }
+.final-btn:active { transform: translateY(6px); box-shadow: 0 0 0 rgba(99,102,241,0.4); }
+@keyframes gradient-flow { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+.final-fine { font-size: 12px; color: #94a3b8; margin-top: 14px; }
+
+footer { padding: 40px 28px 28px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e5e7eb; background: #fff; }
+footer a { color: #64748b; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+footer a:hover { color: #6366f1; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px; margin-bottom: 12px; }
+
+@media (max-width: 640px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .ct-header, .ct-row { grid-template-columns: 1fr 100px 100px; }
+  .modules-grid { grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo"><span class="logo-left">Shaho</span><span class="logo-right">Suite</span></a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ TICKER BAR — scrolling news style ══ -->
+<div class="ticker-wrap">
+  <div class="ticker-label">What's included</div>
+  <div class="ticker-track">
+    <!-- First set -->
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#6366f1"></span>🧾 <span>Invoicing</span> — VAT-compliant, PDF export, payment tracking</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#10b981"></span>👤 <span>CRM</span> — Full customer profiles, history, bookings</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#0ea5e9"></span>📅 <span>Booking</span> — Online appointments, staff scheduling</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#f59e0b"></span>📊 <span>Analytics</span> — Live revenue, orders, top customers</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#6366f1"></span>📕 <span>Accounting</span> — P&amp;L, General Ledger, Accounts Receivable</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#ec4899"></span>📨 <span>Send Message</span> — Email customers, bulk send, templates</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#f43f5e"></span>💰 <span>Credit Notes</span> — Goodwill, Refund, Overpayment</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#14b8a6"></span>🏭 <span>Suppliers</span> — Profiles, spend tracking, payment terms</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#22c55e"></span>✅ <span>No contracts</span> — Cancel any time</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#7c3aed"></span>🔒 <span>Microsoft Azure</span> — UK data centres, 99.9% uptime</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#84cc16"></span>🗂️ <span>Categories</span> — Product organisation &amp; analytics breakdown</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#ef4444"></span>🆘 <span>Support</span> — Built-in ticket system, priority levels</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#6366f1"></span>🧾 <span>Invoicing</span> — VAT-compliant, PDF export, payment tracking</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#10b981"></span>👤 <span>CRM</span> — Full customer profiles, history, bookings</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#0ea5e9"></span>📅 <span>Booking</span> — Online appointments, staff scheduling</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#f59e0b"></span>📊 <span>Analytics</span> — Live revenue, orders, top customers</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#6366f1"></span>📕 <span>Accounting</span> — P&amp;L, General Ledger, Accounts Receivable</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#ec4899"></span>📨 <span>Send Message</span> — Email customers, bulk send, templates</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#f43f5e"></span>💰 <span>Credit Notes</span> — Goodwill, Refund, Overpayment</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#14b8a6"></span>🏭 <span>Suppliers</span> — Profiles, spend tracking, payment terms</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#22c55e"></span>✅ <span>No contracts</span> — Cancel any time</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#7c3aed"></span>🔒 <span>Microsoft Azure</span> — UK data centres, 99.9% uptime</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#84cc16"></span>🗂️ <span>Categories</span> — Product organisation &amp; analytics breakdown</div>
+    <div class="ticker-item"><span class="ticker-dot" style="--tc:#ef4444"></span>🆘 <span>Support</span> — Built-in ticket system, priority levels</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">💷 Simple UK Pricing — No Surprises</div>
+    <h1>One price.<br/><em class="price-highlight">16 modules.</em><br/>Everything included.</h1>
+    <p class="hero-sub">ShahoSuite gives your business a complete platform for £50/month. Invoicing, CRM, booking, accounting, analytics and 11 more — all connected, all included.</p>
+    <p class="hero-sub-colour">No contracts · No setup fees · No per-invoice charges · Cancel any time</p>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="cards-section">
+  <div class="cards-inner">
+    <div class="cards-grid">
+
+      <!-- DIRECTOR -->
+      <div class="price-card card-director">
+        <div class="card-top-badge">⭐ Most Popular</div>
+        <div class="card-name">Director Account</div>
+        <div class="card-price">
+          <span class="price-currency">£</span>
+          <span class="price-amount">50</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="card-tagline">Full access to all 16 modules. One admin login. Complete control.</p>
+        <ul class="card-features">
+          <li><span class="feat-check">✓</span>All 16 modules included</li>
+          <li><span class="feat-check">✓</span>Unlimited customers, invoices &amp; orders</li>
+          <li><span class="feat-check">✓</span>Full CRM, invoicing &amp; bookings</li>
+          <li><span class="feat-check">✓</span>Accounting, analytics &amp; reports</li>
+          <li><span class="feat-check">✓</span>Invite unlimited staff members</li>
+          <li><span class="feat-check">✓</span>Microsoft Azure cloud hosting</li>
+          <li><span class="feat-check">✓</span>GDPR-ready, UK data centres</li>
+          <li><span class="feat-check">✓</span>Director-only: settings, billing, audit log</li>
+        </ul>
+        <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="card-btn">Get started →</a>
+        <p class="card-fine">No card required to explore · Cancel any time</p>
+      </div>
+
+      <!-- STAFF -->
+      <div class="price-card card-staff">
+        <div class="card-top-badge">👤 Add Your Team</div>
+        <div class="card-name">Staff Account</div>
+        <div class="card-price">
+          <span class="price-currency" style="color:#0f172a;">£</span>
+          <span class="price-amount">15</span>
+          <span class="price-period">/month each</span>
+        </div>
+        <p class="card-tagline">Invited by the Director. Role-based access. Their own login.</p>
+        <ul class="card-features">
+          <li><span class="feat-check">✓</span>Own login and dashboard</li>
+          <li><span class="feat-check">✓</span>Access modules the Director enables</li>
+          <li><span class="feat-check">✓</span>Take bookings and manage customers</li>
+          <li><span class="feat-check">✓</span>Create and manage invoices</li>
+          <li><span class="feat-check">✓</span>View orders and support tickets</li>
+          <li><span class="feat-check">✓</span>Unlimited staff seats available</li>
+          <li><span class="feat-check" style="background:rgba(239,68,68,0.1);color:#ef4444;">✗</span>No billing or payment access</li>
+          <li><span class="feat-check" style="background:rgba(239,68,68,0.1);color:#ef4444;">✗</span>No settings or audit log</li>
+        </ul>
+        <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="card-btn">Sign up as Director →</a>
+        <p class="card-fine">Director invites staff · Staff added from Settings</p>
+      </div>
+
+    </div>
+
+    <!-- Example cost calculator -->
+    <div style="margin-top:24px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;">
+      <div>
+        <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Solo founder</div>
+        <div style="font-size:26px;font-weight:800;color:#6366f1;letter-spacing:-1px;">£50<span style="font-size:13px;color:#64748b;font-weight:500;">/mo</span></div>
+        <div style="font-size:11px;color:#64748b;">1 Director</div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Small team</div>
+        <div style="font-size:26px;font-weight:800;color:#10b981;letter-spacing:-1px;">£95<span style="font-size:13px;color:#64748b;font-weight:500;">/mo</span></div>
+        <div style="font-size:11px;color:#64748b;">1 Director + 3 Staff</div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Growing team</div>
+        <div style="font-size:26px;font-weight:800;color:#f59e0b;letter-spacing:-1px;">£200<span style="font-size:13px;color:#64748b;font-weight:500;">/mo</span></div>
+        <div style="font-size:11px;color:#64748b;">1 Director + 10 Staff</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL 16 MODULES -->
+<section class="modules-section">
+  <div class="section-inner">
+    <div class="section-tag tag-cycle">All 16 Modules Included</div>
+    <h2>Every module. One subscription.</h2>
+    <p class="section-sub">No picking and choosing — every module is included in the £50/month Director account.</p>
+    <div class="modules-grid">
+      <div class="mod-item m1"><span class="mod-emoji">🏠</span><div class="mod-name">Dashboard</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m2"><span class="mod-emoji">👤</span><div class="mod-name">Customers</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m3"><span class="mod-emoji">📦</span><div class="mod-name">Products</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m4"><span class="mod-emoji">🧾</span><div class="mod-name">Invoices</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m5"><span class="mod-emoji">💰</span><div class="mod-name">Credit Notes</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m6"><span class="mod-emoji">🛒</span><div class="mod-name">Orders</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m7"><span class="mod-emoji">🏭</span><div class="mod-name">Suppliers</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m8"><span class="mod-emoji">🗂️</span><div class="mod-name">Categories</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m9"><span class="mod-emoji">📕</span><div class="mod-name">Accounting</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m10"><span class="mod-emoji">📊</span><div class="mod-name">Analytics</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m11"><span class="mod-emoji">📨</span><div class="mod-name">Send Message</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m12"><span class="mod-emoji">📅</span><div class="mod-name">Booking</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m13"><span class="mod-emoji">🆘</span><div class="mod-name">Support</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m14"><span class="mod-emoji">🧑‍💼</span><div class="mod-name">Staff</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m15"><span class="mod-emoji">⚙️</span><div class="mod-name">Settings</div><div class="mod-check">✓ included</div></div>
+      <div class="mod-item m16"><span class="mod-emoji">📋</span><div class="mod-name">Audit Log</div><div class="mod-check">✓ included</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section class="compare-section">
+  <div class="section-inner">
+    <div class="section-tag tag-cycle">Director vs Staff</div>
+    <h2>What each account can do</h2>
+    <p class="section-sub">The Director has full control. Staff have role-based access — the Director decides what they can see.</p>
+    <div class="compare-table">
+      <div class="ct-header">
+        <div class="ct-h-label">Feature</div>
+        <div class="ct-h-col highlight"><div class="col-name">Director</div><div class="col-price">£50/mo</div></div>
+        <div class="ct-h-col"><div class="col-name">Staff</div><div class="col-price">£15/mo each</div></div>
+      </div>
+      <div class="ct-row"><div class="ct-feature">All 16 modules</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-partial">Role-based</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Invoices &amp; Credit Notes</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-yes">✓</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Customer CRM</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-yes">✓</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Bookings &amp; Scheduling</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-yes">✓</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Orders &amp; Suppliers</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-yes">✓</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Analytics &amp; Accounting</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-partial">View only</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Billing &amp; Subscription</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Settings</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Audit Log</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feature">Invite &amp; manage staff</div><div class="ct-check"><span class="ck-yes">✓</span></div><div class="ct-check"><span class="ck-no">✗</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AZURE BAR -->
+<div class="azure-bar">
+  <span class="azure-pill"><span class="az-dot"></span>Hosted on Microsoft Azure</span>
+  <span class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill"><span class="az-dot"></span>UK Data Centres</span>
+  <span class="azure-pill"><span class="az-dot"></span>SSL Encrypted</span>
+  <span class="azure-pill"><span class="az-dot"></span>GDPR-Ready</span>
+  <span class="azure-pill"><span class="az-dot"></span>No Contracts</span>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-tag tag-cycle">FAQ</div>
+    <h2>Pricing questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">Is everything really included in £50/month?</summary><div class="faq-a">Yes. The Director account at £50/month includes all 16 modules — Invoicing, CRM, Booking, Accounting, Analytics, Credit Notes, Orders, Suppliers, Categories, Send Message, Support, Staff, Settings, Audit Log, Products and Dashboard. No modules are locked behind higher tiers.</div></details>
+      <details class="faq-item"><summary class="faq-q">How do I add staff members?</summary><div class="faq-a">The Director invites staff from the Staff module — enter their name and email, they receive an invitation and create their login. Each staff member costs <strong>£15/month</strong>. You can add unlimited staff members.</div></details>
+      <details class="faq-item"><summary class="faq-q">Are there any per-invoice or per-booking fees?</summary><div class="faq-a">No. ShahoSuite has no per-invoice, per-booking or per-transaction fees. One flat monthly price covers unlimited customers, invoices, orders and bookings.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I cancel at any time?</summary><div class="faq-a">Yes. No contracts, no minimum term, no cancellation fees. Cancel any time from your account settings and your subscription ends at the next billing date.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is there a free trial?</summary><div class="faq-a">You can create an account and explore ShahoSuite before committing. Sign up at <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" style="color:#6366f1;font-weight:600;">shahosuite.com/register</a>.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is my data safe?</summary><div class="faq-a">Yes. All data is hosted on <strong>Microsoft Azure</strong> UK data centres — SSL encrypted, GDPR-compliant and backed by a 99.9% uptime SLA. Your data always belongs to you.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>Start running your business<br/><span class="cta-word">smarter</span> today.</h2>
+    <p>£50/month. All 16 modules. No contracts. Hosted on Microsoft Azure.</p>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/register" class="final-btn">
+      Sign up — £50/month →
+    </a>
+    <p class="final-fine">No contracts · No setup fees · Cancel any time · Staff from £15/month each</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#features">All Modules</a>
+    <a href="/invoices.html">Invoices</a>
+    <a href="/booking.html">Booking</a>
+    <a href="/customers.html">Customers</a>
+    <a href="/accounting.html">Accounting</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+
+</body>
+</html>
