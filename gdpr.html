@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite — GDPR & Data Protection</title>
+<meta name="description" content="How ShahoSuite protects your data under UK GDPR. Azure UK data centres, role-based access, audit log, data isolation and encryption. Shaho Solutions Limited, Company No. 16017117." />
+<meta name="keywords" content="GDPR compliance UK business software, data protection small business UK, GDPR invoicing software UK, Azure data security UK" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.shahosuite.com/gdpr.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 12px rgba(0,0,0,0.05)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;transition:transform 0.15s,opacity 0.15s}
+.logo:hover{transform:translateY(-2px);opacity:0.9}
+.logo img{height:42px;width:auto;display:block}
+.nav-btns{display:flex;gap:8px}
+.btn-login{padding:8px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
+.btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
+.btn-signup{padding:8px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all 0.15s}
+.btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
+
+/* Page layout */
+.page-wrap{max-width:900px;margin:0 auto;padding:108px 28px 80px}
+.page-header{margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid #f1f5f9;text-align:center}
+.page-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#22c55e;margin-bottom:12px;display:block}
+.page-title{font-size:clamp(28px,5vw,48px);font-weight:800;letter-spacing:-2px;margin-bottom:14px;color:#0f172a}
+.page-sub{font-size:17px;color:#475569;max-width:580px;margin:0 auto 20px;line-height:1.7}
+.page-meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.meta-pill{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:#166534}
+
+/* Trust score banner */
+.trust-banner{background:linear-gradient(135deg,#f0fdf4,#eff6ff);border:2px solid #bbf7d0;border-radius:20px;padding:28px 32px;margin-bottom:48px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px;text-align:center}
+.tb-item{}
+.tb-icon{font-size:28px;margin-bottom:6px;display:block}
+.tb-label{font-size:12px;font-weight:700;color:#0f172a}
+.tb-sub{font-size:11px;color:#64748b;margin-top:2px}
+
+/* Sections */
+.section{margin-bottom:48px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid #f1f5f9}
+.section-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.si-green{background:#f0fdf4}
+.si-blue{background:#eff6ff}
+.si-purple{background:#f5f3ff}
+.si-orange{background:#fff7ed}
+.si-red{background:#fff1f2}
+.si-slate{background:#f8fafc}
+.section-title{font-size:20px;font-weight:800;color:#0f172a;letter-spacing:-0.5px}
+.section-desc{font-size:14.5px;color:#475569;margin-bottom:16px;line-height:1.75}
+
+/* Feature cards grid */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.feature-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;border-left:4px solid var(--fc);box-shadow:0 3px 0 var(--fs)}
+.feature-card:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--fs)}
+.fc-green{--fc:#22c55e;--fs:#dcfce7}
+.fc-blue{--fc:#3b82f6;--fs:#dbeafe}
+.fc-purple{--fc:#8b5cf6;--fs:#ede9fe}
+.fc-orange{--fc:#f97316;--fs:#ffedd5}
+.fc-slate{--fc:#64748b;--fs:#e2e8f0}
+.feat-icon{font-size:22px;margin-bottom:8px;display:block}
+.feat-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:5px}
+.feat-desc{font-size:13px;color:#64748b;line-height:1.6}
+
+/* Azure proof card */
+.azure-proof{background:#0f172a;border-radius:20px;padding:28px 32px;margin:24px 0;color:#fff}
+.ap-title{font-size:16px;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.ap-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 14px}
+.ap-item-label{font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.ap-item-val{font-size:13px;font-weight:700;color:#fff}
+.ap-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block;margin-right:5px;animation:azp 2s infinite}
+@keyframes azp{0%,100%{opacity:1}50%{opacity:0.35}}
+
+/* Audit log showcase */
+.audit-showcase{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;margin:16px 0}
+.audit-header{background:#0f172a;padding:10px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;display:flex;justify-content:space-between}
+.audit-row{display:grid;grid-template-columns:130px 140px 90px 80px 1fr;padding:9px 16px;border-bottom:1px solid #f1f5f9;font-size:11px;align-items:center;gap:8px}
+.audit-row:last-child{border-bottom:none}
+.ar-date{color:#64748b}
+.ar-user{color:#374151;font-weight:500;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ar-action{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;font-family:monospace}
+.ar-create{background:#dcfce7;color:#166534}
+.ar-delete{background:#fee2e2;color:#991b1b}
+.ar-update{background:#dbeafe;color:#1e40af}
+.ar-entity{font-size:10px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;padding:1px 6px;font-family:monospace;color:#475569}
+.ar-link{color:#3b82f6;font-weight:600;font-size:10px}
+
+/* Role access table */
+.access-table{border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin:16px 0}
+.at-header{display:grid;grid-template-columns:1fr 100px 100px;background:#0f172a;padding:10px 16px;gap:8px}
+.at-h{font-size:11px;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px}
+.at-h.centre{text-align:center}
+.at-row{display:grid;grid-template-columns:1fr 100px 100px;padding:10px 16px;border-bottom:1px solid #f1f5f9;gap:8px;align-items:center}
+.at-row:last-child{border-bottom:none}
+.at-row:nth-child(even){background:#f8fafc}
+.at-feature{font-size:13px;color:#374151;font-weight:500}
+.at-cell{text-align:center;font-size:14px}
+.tick{color:#22c55e;font-size:16px}
+.cross{color:#ef4444;font-size:16px}
+.partial{font-size:10px;color:#f59e0b;font-weight:700}
+
+/* Rights */
+.rights-list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.right-item{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 18px;display:flex;align-items:flex-start;gap:14px}
+.ri-icon{font-size:22px;flex-shrink:0}
+.ri-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:3px}
+.ri-desc{font-size:13px;color:#64748b;line-height:1.5}
+
+/* Contact box */
+.contact-box{background:#f0fdf4;border:2px solid #bbf7d0;border-radius:16px;padding:24px 28px;text-align:center}
+.contact-box h3{font-size:18px;font-weight:800;margin-bottom:8px}
+.contact-box p{font-size:14px;color:#475569;margin-bottom:14px}
+.contact-btn{display:inline-block;padding:11px 28px;border-radius:10px;background:#22c55e;color:#fff;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 0 #16a34a;transition:all 0.15s}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 #16a34a}
+
+/* Azure bar */
+.azure-bar{background:#0f172a;padding:20px 28px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+.azure-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.8)}
+footer{padding:40px 28px 28px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+footer a{color:#64748b;text-decoration:none;margin:0 10px}
+footer a:hover{color:#22c55e}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;margin-bottom:12px}
+
+@media(max-width:640px){
+  .audit-row{grid-template-columns:1fr 1fr;font-size:10px}
+  .at-row,.at-header{grid-template-columns:1fr 80px 80px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo">
+      <img src="/logo.png" alt="ShahoSuite" width="140" height="42" style="height:42px;width:auto;display:block;" />
+    </a>
+    <div class="nav-btns">
+      <a href="https://app.shahosuite.com/login"    class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-header">
+    <span class="page-tag">Trust &amp; Compliance</span>
+    <h1 class="page-title">GDPR &amp; Data Protection</h1>
+    <p class="page-sub">Your business data is isolated, encrypted and protected on Microsoft Azure UK data centres. We take privacy seriously — here is exactly how.</p>
+    <div class="page-meta">
+      <div class="meta-pill">✅ UK GDPR Compliant</div>
+      <div class="meta-pill">🔒 Azure UK Data Centres</div>
+      <div class="meta-pill">📋 Full Audit Log</div>
+      <div class="meta-pill">👤 Role-Based Access</div>
+      <div class="meta-pill">🏢 Company No. 16017117</div>
+    </div>
+  </div>
+
+  <!-- Trust score banner -->
+  <div class="trust-banner">
+    <div class="tb-item"><span class="tb-icon">🔒</span><div class="tb-label">Encrypted</div><div class="tb-sub">In transit &amp; at rest</div></div>
+    <div class="tb-item"><span class="tb-icon">🇬🇧</span><div class="tb-label">UK Only</div><div class="tb-sub">Azure UK data centres</div></div>
+    <div class="tb-item"><span class="tb-icon">🏠</span><div class="tb-label">Data Isolation</div><div class="tb-sub">Your data, only yours</div></div>
+    <div class="tb-item"><span class="tb-icon">📋</span><div class="tb-label">Audit Log</div><div class="tb-sub">Every action recorded</div></div>
+    <div class="tb-item"><span class="tb-icon">👥</span><div class="tb-label">Role Access</div><div class="tb-sub">Staff see only their data</div></div>
+    <div class="tb-item"><span class="tb-icon">🗑️</span><div class="tb-label">Right to Delete</div><div class="tb-sub">Deleted in 30 days</div></div>
+  </div>
+
+  <!-- 1. Azure Infrastructure -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon si-blue">🔵</div>
+      <h2 class="section-title">Hosted on Microsoft Azure — UK Data Centres</h2>
+    </div>
+    <p class="section-desc">ShahoSuite runs entirely on <strong>Microsoft Azure</strong> — the same infrastructure used by the NHS, UK government departments and major banks. Your data never leaves the United Kingdom.</p>
+
+    <div class="azure-proof">
+      <div class="ap-title">🔵 Azure Infrastructure Details</div>
+      <div class="ap-grid">
+        <div class="ap-item"><div class="ap-item-label">Cloud Provider</div><div class="ap-item-val">Microsoft Azure</div></div>
+        <div class="ap-item"><div class="ap-item-label">Data Region</div><div class="ap-item-val"><span class="ap-dot"></span>UK South / UK West</div></div>
+        <div class="ap-item"><div class="ap-item-label">Data Location</div><div class="ap-item-val">United Kingdom only</div></div>
+        <div class="ap-item"><div class="ap-item-label">Uptime Target</div><div class="ap-item-val">99.9% SLA</div></div>
+        <div class="ap-item"><div class="ap-item-label">Encryption</div><div class="ap-item-val">TLS 1.2+ in transit</div></div>
+        <div class="ap-item"><div class="ap-item-label">Storage</div><div class="ap-item-val">AES-256 at rest</div></div>
+        <div class="ap-item"><div class="ap-item-label">Compliance</div><div class="ap-item-val">ISO 27001 · SOC 2</div></div>
+        <div class="ap-item"><div class="ap-item-label">Email Delivery</div><div class="ap-item-val">Azure Communication Services</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Data Isolation -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon si-green">🏠</div>
+      <h2 class="section-title">Data Isolation — Your Data Is Only Yours</h2>
+    </div>
+    <p class="section-desc">Every ShahoSuite account is completely isolated from every other account. There is no way for one business to see another business's data.</p>
+    <div class="feature-grid">
+      <div class="feature-card fc-green"><span class="feat-icon">🏠</span><div class="feat-title">Account Isolation</div><div class="feat-desc">Your customers, invoices, orders and staff are completely separate from all other ShahoSuite accounts. No shared data pools.</div></div>
+      <div class="feature-card fc-blue"><span class="feat-icon">🔐</span><div class="feat-title">Authenticated Access Only</div><div class="feat-desc">All data requires authentication to access. No anonymous access, no public endpoints exposing your data.</div></div>
+      <div class="feature-card fc-purple"><span class="feat-icon">🔒</span><div class="feat-title">Encrypted Storage</div><div class="feat-desc">All data stored using AES-256 encryption at rest on Azure. Even physical access to servers cannot read your data.</div></div>
+      <div class="feature-card fc-orange"><span class="feat-icon">🚫</span><div class="feat-title">No Data Sharing</div><div class="feat-desc">Your data is never sold, shared with third parties, or used for advertising. It exists solely to run your ShahoSuite account.</div></div>
+    </div>
+  </div>
+
+  <!-- 3. Role-Based Access Control -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon si-purple">👥</div>
+      <h2 class="section-title">Role-Based Access Control</h2>
+    </div>
+    <p class="section-desc">Not everyone on your team needs to see everything. ShahoSuite enforces strict role-based access — the Director controls what each staff member can see and do.</p>
+
+    <div class="access-table">
+      <div class="at-header">
+        <div class="at-h">Feature / Data</div>
+        <div class="at-h centre">Director</div>
+        <div class="at-h centre">Staff</div>
+      </div>
+      <div class="at-row"><div class="at-feature">Invoices &amp; Credit Notes</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="tick">✓</span></div></div>
+      <div class="at-row"><div class="at-feature">Customer CRM</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="tick">✓</span></div></div>
+      <div class="at-row"><div class="at-feature">Bookings &amp; Orders</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="tick">✓</span></div></div>
+      <div class="at-row"><div class="at-feature">Analytics &amp; Accounting</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="partial">View only</span></div></div>
+      <div class="at-row"><div class="at-feature">Billing &amp; Subscription</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="cross">✗</span></div></div>
+      <div class="at-row"><div class="at-feature">Settings &amp; Business Profile</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="cross">✗</span></div></div>
+      <div class="at-row"><div class="at-feature">Audit Log</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="cross">✗</span></div></div>
+      <div class="at-row"><div class="at-feature">Invite / Manage Staff</div><div class="at-cell"><span class="tick">✓</span></div><div class="at-cell"><span class="cross">✗</span></div></div>
+    </div>
+  </div>
+
+  <!-- 4. Audit Log -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon si-slate">📋</div>
+      <h2 class="section-title">Complete Audit Log — Every Action Recorded</h2>
+    </div>
+    <p class="section-desc">ShahoSuite records every action performed in your account — who did it, when, and what changed. The Audit Log is visible to the Director only and cannot be deleted or altered.</p>
+
+    <div class="audit-showcase">
+      <div class="audit-header">
+        <span>Date / Time</span><span>User</span><span>Action</span><span>Entity</span><span>Details</span>
+      </div>
+      <div class="audit-row">
+        <div class="ar-date">2026-03-18 14:30</div>
+        <div class="ar-user">System</div>
+        <div><span class="ar-action ar-create">CREATE</span></div>
+        <div><span class="ar-entity">payment</span></div>
+        <div class="ar-link">› View changes</div>
+      </div>
+      <div class="audit-row">
+        <div class="ar-date">2026-03-17 15:56</div>
+        <div class="ar-user">admin@shahosuite.com</div>
+        <div><span class="ar-action ar-delete">DELETED</span></div>
+        <div><span class="ar-entity">customer</span></div>
+        <div class="ar-link">› View changes</div>
+      </div>
+      <div class="audit-row">
+        <div class="ar-date">2026-03-11 00:22</div>
+        <div class="ar-user">admin@shahosuite.com</div>
+        <div><span class="ar-action ar-create">CREATED</span></div>
+        <div><span class="ar-entity">invoice</span></div>
+        <div class="ar-link">› View changes</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#64748b;margin-top:8px;">Every record shows the exact timestamp, user email, action type and the entity affected. The Director can see all staff activity. Staff cannot see the Audit Log.</p>
+  </div>
+
+  <!-- 5. Data Retention & Deletion -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon si-red">🗑️</div>
+      <h2 class="section-title">Data Retention &amp; Your Right to Deletion</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card fc-green"><span class="feat-icon">📅</span><div class="feat-title">Active Accounts</div><div class="feat-desc">Data retained for the duration of your active subscription. Nothing deleted without your instruction.</div></div>
+      <div class="feature-card fc-orange"><span class="feat-icon">🗑️</span><div class="feat-title">After Cancellation</div><div class="feat-desc">All personal and business data is permanently deleted within 30 days of cancellation.</div></div>
+      <div class="feature-card fc-blue"><span class="feat-icon">📊</span><div class="feat-title">Financial Records</div><div class="feat-desc">Anonymised financial records retained for 6 years for HMRC compliance — no personal data retained.</div></div>
+      <div class="feature-card fc-slate"><span class="feat-icon">📤</span><div class="feat-title">Export Before Leaving</div><div class="feat-desc">You can export all your data as CSV before cancelling. Your data always belongs to you.</div></div>
+    </div>
+  </div>
+
+  <!-- 6. Your GDPR Rights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon si-green">⚖️</div>
+      <h2 class="section-title">Your Rights Under UK GDPR</h2>
+    </div>
+    <div class="rights-list">
+      <div class="right-item"><span class="ri-icon">👁</span><div><div class="ri-title">Right to Access</div><div class="ri-desc">Request a full copy of all data we hold about you and your business. We respond within 30 days.</div></div></div>
+      <div class="right-item"><span class="ri-icon">✏️</span><div><div class="ri-title">Right to Rectification</div><div class="ri-desc">Request correction of any inaccurate personal data we hold. Most data can be corrected directly in Settings.</div></div></div>
+      <div class="right-item"><span class="ri-icon">🗑️</span><div><div class="ri-title">Right to Erasure</div><div class="ri-desc">Request deletion of your data at any time. Cancel your account and all data is deleted within 30 days.</div></div></div>
+      <div class="right-item"><span class="ri-icon">📤</span><div><div class="ri-title">Right to Data Portability</div><div class="ri-desc">Export all your data as CSV from any module at any time. Your data is always yours to take.</div></div></div>
+      <div class="right-item"><span class="ri-icon">🚫</span><div><div class="ri-title">Right to Object</div><div class="ri-desc">Object to processing of your personal data in certain circumstances. Contact us at admin@shahosuite.com.</div></div></div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h3>Questions about your data?</h3>
+    <p>We're a real company with a real person behind it. Email us and we'll respond within 24 hours.</p>
+    <a href="mailto:admin@shahosuite.com" class="contact-btn">📧 Email admin@shahosuite.com</a>
+    <p style="font-size:12px;color:#64748b;margin-top:14px;">
+      If you are not satisfied, you can contact the ICO: 
+      <a href="https://ico.org.uk" target="_blank" rel="noopener" style="color:#22c55e;font-weight:600;">ico.org.uk</a> · 0303 123 1113
+    </p>
+  </div>
+
+</div>
+
+<div class="azure-bar">
+  <span class="azure-pill"><span class="ap-dot" style="width:7px;height:7px;border-radius:50%;background:#22c55e;animation:azp 2s infinite;display:inline-block;"></span>Microsoft Azure UK</span>
+  <span class="azure-pill">🇬🇧 UK Data Centres Only</span>
+  <span class="azure-pill">🔒 AES-256 Encrypted</span>
+  <span class="azure-pill">📋 Full Audit Log</span>
+  <span class="azure-pill">👥 Role-Based Access</span>
+  <span class="azure-pill">✅ UK GDPR Compliant</span>
+  <span class="azure-pill">🏢 Co. No. 16017117</span>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/security.html">Security</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+
+</body>
+</html>
