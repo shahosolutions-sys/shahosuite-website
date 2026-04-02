@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Security — Microsoft Azure UK Hosting, SSL & Data Protection</title>
+<meta name="description" content="ShahoSuite is hosted on Microsoft Azure UK data centres. SSL encrypted, 99.9% uptime SLA, AES-256 encryption, GDPR compliant. Your business data never leaves the United Kingdom." />
+<meta name="keywords" content="secure business software UK, Microsoft Azure hosted UK, UK data centre business software, GDPR secure invoicing software UK, SSL encrypted business platform UK" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/security.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Security — Microsoft Azure UK, SSL Encrypted, GDPR Ready" />
+<meta property="og:description" content="Your ShahoSuite data is hosted on Microsoft Azure UK data centres. AES-256 encrypted, 99.9% uptime, GDPR compliant. Never leaves the UK." />
+<meta property="og:url" content="https://www.shahosuite.com/security.html" />
+<meta property="og:image" content="https://www.shahosuite.com/logo.png" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"ShahoSuite Security",
+  "description":"ShahoSuite is hosted on Microsoft Azure UK data centres with SSL encryption, AES-256 data encryption at rest, and 99.9% uptime SLA.",
+  "url":"https://www.shahosuite.com/security.html",
+  "publisher":{"@type":"Organization","name":"Shaho Solutions Limited","identifier":"16017117","url":"https://www.shahosuite.com"}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 12px rgba(0,0,0,0.05)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;transition:transform 0.15s,opacity 0.15s}
+.logo:hover{transform:translateY(-2px);opacity:0.88}
+.logo img{height:54px;width:auto;display:block}
+.nav-btns{display:flex;gap:8px;align-items:center}
+.btn-login{padding:8px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;text-decoration:none;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
+.btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
+.btn-signup{padding:8px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;text-decoration:none;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all 0.15s}
+.btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
+
+/* HERO */
+.hero{padding:120px 28px 80px;background:linear-gradient(160deg,#eff6ff 0%,#f0f9ff 50%,#f0fdf4 100%);text-align:center;position:relative;overflow:hidden;margin-top:76px}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 22px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:24px;background:rgba(59,130,246,0.08);border:1.5px solid rgba(59,130,246,0.25);color:#1d4ed8}
+.hero-badge span{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
+h1{font-size:clamp(34px,5.5vw,58px);font-weight:800;line-height:1.06;letter-spacing:-2px;margin-bottom:18px;color:#0f172a}
+h1 em{color:#3b82f6;font-style:normal}
+.hero-sub{font-size:17px;color:#475569;margin-bottom:40px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.75}
+
+/* Trust score bar */
+.trust-score{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:0}
+.ts-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;border:1.5px solid}
+.ts-green{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+.ts-blue{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+.ts-purple{background:#f5f3ff;border-color:#ddd6fe;color:#6d28d9}
+
+/* PAGE WRAP */
+.page-wrap{max-width:1000px;margin:0 auto;padding:72px 28px 80px}
+
+/* SECTION */
+.section{margin-bottom:72px}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;color:#3b82f6}
+.section-title{font-size:clamp(22px,3.5vw,34px);font-weight:800;letter-spacing:-1px;margin-bottom:14px;color:#0f172a}
+.section-desc{font-size:15px;color:#475569;line-height:1.75;margin-bottom:28px;max-width:640px}
+
+/* AZURE DASHBOARD MOCKUP */
+.azure-mockup{background:#0f172a;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(15,23,42,0.4),0 4px 0 #1e293b}
+.az-chrome{background:#1e293b;padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.az-dot{width:10px;height:10px;border-radius:50%}
+.az-dot.r{background:#ef4444}.az-dot.y{background:#f59e0b}.az-dot.g{background:#22c55e}
+.az-url{flex:1;text-align:center;background:rgba(255,255,255,0.06);border-radius:6px;padding:5px 14px;color:rgba(255,255,255,0.5);font-size:12px}
+.az-body{padding:24px}
+.az-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.az-logo-box{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#0078d4,#40a9ff);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.az-title{font-size:16px;font-weight:700;color:#fff}
+.az-sub{font-size:11px;color:rgba(255,255,255,0.4);margin-top:1px}
+.az-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.az-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px}
+.az-card-label{font-size:10px;color:rgba(255,255,255,0.4);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+.az-card-val{font-size:14px;font-weight:700;color:#fff}
+.az-card-sub{font-size:10px;margin-top:3px}
+.az-green{color:#22c55e}.az-blue{color:#60a5fa}.az-yellow{color:#fbbf24}
+.az-status-row{display:flex;gap:8px;flex-wrap:wrap}
+.az-status-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.25);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;color:#22c55e}
+.az-status-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:azp 2s infinite}
+@keyframes azp{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* INFO GRID */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.info-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px;border-left:4px solid var(--ic);box-shadow:0 4px 0 var(--is),0 8px 20px rgba(0,0,0,0.04);transition:transform 0.2s,box-shadow 0.2s}
+.info-card:hover{transform:translateY(-4px);box-shadow:0 8px 0 var(--is),0 16px 32px rgba(0,0,0,0.08)}
+.ic1{--ic:#3b82f6;--is:#dbeafe}.ic2{--ic:#22c55e;--is:#dcfce7}.ic3{--ic:#8b5cf6;--is:#ede9fe}
+.ic4{--ic:#f59e0b;--is:#fef3c7}.ic5{--ic:#ef4444;--is:#fee2e2}.ic6{--ic:#0ea5e9;--is:#bae6fd}
+.ic7{--ic:#10b981;--is:#d1fae5}.ic8{--ic:#6366f1;--is:#e0e7ff}
+.ic-icon{font-size:28px;margin-bottom:12px;display:block}
+.ic-title{font-size:15px;font-weight:700;margin-bottom:7px;color:#0f172a}
+.ic-desc{font-size:13px;color:#64748b;line-height:1.65}
+.ic-badge{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(59,130,246,0.08);color:#1d4ed8;border:1px solid rgba(59,130,246,0.2)}
+
+/* CERT CARD */
+.cert-card{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-radius:20px;padding:32px 36px;display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:16px}
+.cc-left{}
+.cc-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;color:#22c55e;margin-bottom:16px}
+.cc-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-0.5px}
+.cc-sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6}
+.cc-right{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.cc-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px}
+.cc-item-label{font-size:10px;color:rgba(255,255,255,0.4);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.cc-item-val{font-size:13px;font-weight:700;color:#fff}
+
+/* UPTIME DISPLAY */
+.uptime-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:16px}
+.uptime-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px;text-align:center;box-shadow:0 3px 0 #e2e8f0}
+.uptime-num{font-size:36px;font-weight:800;letter-spacing:-1.5px;line-height:1}
+.uptime-label{font-size:12px;color:#64748b;margin-top:5px;font-weight:600}
+.uptime-bar{height:8px;background:#f1f5f9;border-radius:4px;margin-top:12px;overflow:hidden}
+.uptime-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#22c55e,#10b981)}
+
+/* COMPARISON TABLE */
+.compare-table{border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;box-shadow:0 4px 0 #e2e8f0}
+.ct-head{display:grid;grid-template-columns:1fr 120px 120px 120px;background:#0f172a;padding:12px 20px;gap:8px}
+.ct-h{font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.5px;text-align:center}
+.ct-h.left{text-align:left}
+.ct-row{display:grid;grid-template-columns:1fr 120px 120px 120px;padding:12px 20px;border-bottom:1px solid #f1f5f9;gap:8px;align-items:center}
+.ct-row:last-child{border-bottom:none}
+.ct-row:nth-child(even){background:#f8fafc}
+.ct-feat{font-size:13px;color:#374151;font-weight:500}
+.ct-cell{text-align:center;font-size:13px}
+.ct-yes{color:#22c55e;font-size:16px}
+.ct-no{color:#ef4444;font-size:16px}
+.ct-shah{font-size:11px;font-weight:700;color:#3b82f6}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 2px 0 #e2e8f0}
+.faq-item:hover{border-color:#bfdbfe}
+.faq-q{padding:16px 20px;font-size:14px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q::after{content:'+';font-size:18px;color:#3b82f6;font-weight:400}
+details[open] .faq-q::after{content:'−'}
+.faq-a{padding:0 20px 16px;font-size:13.5px;color:#475569;line-height:1.7;border-top:1px solid #f1f5f9}
+
+/* CTA */
+.cta-box{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border:2px solid #bfdbfe;border-radius:20px;padding:40px;text-align:center;margin-top:72px}
+.cta-box h2{font-size:clamp(22px,3.5vw,34px);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.cta-box p{font-size:15px;color:#475569;margin-bottom:24px;line-height:1.7}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{padding:13px 32px;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;text-decoration:none;color:#fff;background:#3b82f6;box-shadow:0 5px 0 #1d4ed8;transition:all 0.15s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 0 #1d4ed8}
+.btn-secondary{padding:13px 32px;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;text-decoration:none;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 3px 0 #d1d5db;transition:all 0.15s}
+.btn-secondary:hover{transform:translateY(-2px);border-color:#9ca3af}
+
+/* AZURE BAR */
+.azure-bar{background:#0f172a;padding:24px 28px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
+.azure-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:7px 16px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);text-decoration:none;transition:background 0.15s}
+.azure-pill:hover{background:rgba(255,255,255,0.13)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:azp 2s infinite;display:inline-block}
+
+footer{padding:40px 28px 28px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+footer a{color:#64748b;text-decoration:none;margin:0 10px;transition:color 0.2s}
+footer a:hover{color:#3b82f6}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;margin-bottom:12px}
+
+@media(max-width:640px){
+  .az-grid{grid-template-columns:1fr 1fr}
+  .cert-card{grid-template-columns:1fr}
+  .ct-head,.ct-row{grid-template-columns:1fr 80px 80px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="logo">
+      <img src="/logo.png" alt="ShahoSuite" width="180" height="54" style="height:54px;width:auto;display:block;" />
+    </a>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login"    class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span></span>Live Infrastructure — United Kingdom</div>
+    <h1>Your Data Is Safe.<br/>We Can <em>Prove It.</em></h1>
+    <p class="hero-sub">ShahoSuite runs on Microsoft Azure UK data centres — the same infrastructure used by the NHS and UK government. Every byte encrypted. Every action logged. Your data never leaves the United Kingdom.</p>
+    <div class="trust-score">
+      <span class="ts-pill ts-green">✅ UK GDPR Compliant</span>
+      <span class="ts-pill ts-blue">🔵 Microsoft Azure UK</span>
+      <span class="ts-pill ts-purple">🔒 AES-256 Encrypted</span>
+      <span class="ts-pill ts-green">📋 Full Audit Log</span>
+      <span class="ts-pill ts-blue">🏢 Company No. 16017117</span>
+    </div>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <!-- 1. AZURE INFRASTRUCTURE -->
+  <div class="section">
+    <div class="section-label">Infrastructure</div>
+    <h2 class="section-title">Built on Microsoft Azure — UK Only</h2>
+    <p class="section-desc">Every component of ShahoSuite — database, storage, email delivery, and web hosting — runs on Microsoft Azure infrastructure located in the United Kingdom. Your data never touches a server outside the UK.</p>
+
+    <!-- Azure portal mockup -->
+    <div class="azure-mockup">
+      <div class="az-chrome">
+        <div class="az-dot r"></div><div class="az-dot y"></div><div class="az-dot g"></div>
+        <div class="az-url">🔒 portal.azure.com — ShahoSuite Infrastructure</div>
+      </div>
+      <div class="az-body">
+        <div class="az-header">
+          <div class="az-logo-box">🔵</div>
+          <div>
+            <div class="az-title">ShahoSuite — Azure Resources</div>
+            <div class="az-sub">Subscription · UK South &amp; UK West · All services operational</div>
+          </div>
+        </div>
+        <div class="az-grid">
+          <div class="az-card">
+            <div class="az-card-label">Region</div>
+            <div class="az-card-val">UK South</div>
+            <div class="az-card-sub az-green">● London, England</div>
+          </div>
+          <div class="az-card">
+            <div class="az-card-label">Failover Region</div>
+            <div class="az-card-val">UK West</div>
+            <div class="az-card-sub az-blue">● Cardiff, Wales</div>
+          </div>
+          <div class="az-card">
+            <div class="az-card-label">Web Hosting</div>
+            <div class="az-card-val">Azure Static Web Apps</div>
+            <div class="az-card-sub az-green">● Running</div>
+          </div>
+          <div class="az-card">
+            <div class="az-card-label">Database</div>
+            <div class="az-card-val">Azure Database</div>
+            <div class="az-card-sub az-green">● UK South</div>
+          </div>
+          <div class="az-card">
+            <div class="az-card-label">Email Delivery</div>
+            <div class="az-card-val">Azure Communication</div>
+            <div class="az-card-sub az-green">● Services Active</div>
+          </div>
+          <div class="az-card">
+            <div class="az-card-label">Uptime SLA</div>
+            <div class="az-card-val az-green">99.9%</div>
+            <div class="az-card-sub az-yellow">Microsoft Guaranteed</div>
+          </div>
+        </div>
+        <div class="az-status-row">
+          <div class="az-status-pill"><span class="az-status-dot"></span>Web App — Running</div>
+          <div class="az-status-pill"><span class="az-status-dot"></span>Database — Operational</div>
+          <div class="az-status-pill"><span class="az-status-dot"></span>SSL Certificate — Valid</div>
+          <div class="az-status-pill"><span class="az-status-dot"></span>Email — Active</div>
+          <div class="az-status-pill"><span class="az-status-dot"></span>Storage — UK South</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ENCRYPTION -->
+  <div class="section">
+    <div class="section-label">Encryption</div>
+    <h2 class="section-title">Military-Grade Encryption — In Transit &amp; At Rest</h2>
+    <p class="section-desc">Every connection to ShahoSuite is encrypted. Every file, invoice, customer record and business detail stored on our servers is encrypted. Two layers of protection — always on, always active.</p>
+
+    <div class="cert-card">
+      <div class="cc-left">
+        <div class="cc-badge">🔒 SSL Certificate — Valid</div>
+        <div class="cc-title">TLS 1.2+ Encryption<br/>In Transit</div>
+        <div class="cc-sub">Every request to ShahoSuite — from your browser to our servers — is encrypted using Transport Layer Security (TLS 1.2 minimum). The padlock in your browser confirms this is active at all times.</div>
+      </div>
+      <div class="cc-right">
+        <div class="cc-item"><div class="cc-item-label">Protocol</div><div class="cc-item-val">TLS 1.2 / TLS 1.3</div></div>
+        <div class="cc-item"><div class="cc-item-label">Certificate</div><div class="cc-item-val">Azure Managed SSL</div></div>
+        <div class="cc-item"><div class="cc-item-label">Domain</div><div class="cc-item-val">shahosuite.com ✓</div></div>
+        <div class="cc-item"><div class="cc-item-label">Auto-renewal</div><div class="cc-item-val">Yes — never expires</div></div>
+      </div>
+    </div>
+
+    <div class="info-grid" style="margin-top:14px;">
+      <div class="info-card ic1">
+        <span class="ic-icon">🔒</span>
+        <div class="ic-title">AES-256 Encryption at Rest</div>
+        <div class="ic-desc">All data stored in Azure databases and storage is encrypted using AES-256 — the same standard used by banks and governments. Even physical access to Azure servers cannot read your data.</div>
+        <span class="ic-badge">Azure Storage Encryption</span>
+      </div>
+      <div class="info-card ic2">
+        <span class="ic-icon">🔐</span>
+        <div class="ic-title">TLS in Transit</div>
+        <div class="ic-desc">Every connection between your browser and ShahoSuite is protected by TLS 1.2+. Your invoices, customer data and login credentials travel encrypted at all times.</div>
+        <span class="ic-badge">HTTPS enforced site-wide</span>
+      </div>
+      <div class="info-card ic3">
+        <span class="ic-icon">💳</span>
+        <div class="ic-title">Payments via Stripe</div>
+        <div class="ic-desc">Payment processing is handled entirely by Stripe — a PCI-DSS Level 1 certified payment processor. Card data never touches ShahoSuite servers. We only see your subscription status.</div>
+        <span class="ic-badge">PCI-DSS Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. UPTIME -->
+  <div class="section">
+    <div class="section-label">Availability</div>
+    <h2 class="section-title">99.9% Uptime — Backed by Microsoft</h2>
+    <p class="section-desc">ShahoSuite's infrastructure runs on Azure's guaranteed SLA. Microsoft commits to 99.9% uptime for Azure services — that means a maximum of 8.7 hours downtime per year.</p>
+
+    <div class="uptime-row">
+      <div class="uptime-card">
+        <div class="uptime-num" style="color:#22c55e;">99.9%</div>
+        <div class="uptime-label">Azure Uptime SLA</div>
+        <div class="uptime-bar"><div class="uptime-fill" style="width:99.9%"></div></div>
+      </div>
+      <div class="uptime-card">
+        <div class="uptime-num" style="color:#3b82f6;">8.7h</div>
+        <div class="uptime-label">Max downtime per year</div>
+        <div class="uptime-bar"><div class="uptime-fill" style="width:99%;background:linear-gradient(90deg,#3b82f6,#60a5fa)"></div></div>
+      </div>
+      <div class="uptime-card">
+        <div class="uptime-num" style="color:#8b5cf6;">2</div>
+        <div class="uptime-label">UK Azure Regions</div>
+        <div class="uptime-bar"><div class="uptime-fill" style="width:100%;background:linear-gradient(90deg,#8b5cf6,#a78bfa)"></div></div>
+      </div>
+      <div class="uptime-card">
+        <div class="uptime-num" style="color:#f59e0b;">24/7</div>
+        <div class="uptime-label">Always available</div>
+        <div class="uptime-bar"><div class="uptime-fill" style="width:100%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ACCESS CONTROL -->
+  <div class="section">
+    <div class="section-label">Access Control</div>
+    <h2 class="section-title">Who Can See Your Data</h2>
+    <p class="section-desc">ShahoSuite uses strict role-based access control. Staff members only see what the Director permits. Sensitive business data — billing, audit logs, settings — are Director-only. And Shaho Solutions Limited staff never access your account data without your explicit permission.</p>
+
+    <div class="info-grid">
+      <div class="info-card ic4">
+        <span class="ic-icon">👑</span>
+        <div class="ic-title">Director — Full Access</div>
+        <div class="ic-desc">The account owner (Director) has full access to all 16 modules, billing, settings, staff management and the complete audit log.</div>
+      </div>
+      <div class="info-card ic5">
+        <span class="ic-icon">👤</span>
+        <div class="ic-title">Staff — Role-Based Only</div>
+        <div class="ic-desc">Staff members can only access modules the Director has enabled. They cannot see billing, settings, audit logs or other staff details.</div>
+      </div>
+      <div class="info-card ic6">
+        <span class="ic-icon">📋</span>
+        <div class="ic-title">Audit Log — Every Action</div>
+        <div class="ic-desc">Every CREATE, UPDATE and DELETE in your account is permanently logged with timestamp, user email and exact changes. Nothing can happen silently.</div>
+      </div>
+      <div class="info-card ic7">
+        <span class="ic-icon">🏠</span>
+        <div class="ic-title">Data Isolation</div>
+        <div class="ic-desc">Your account data is completely isolated from all other ShahoSuite accounts. There is no shared data pool — your records are only ever accessible to your account.</div>
+      </div>
+      <div class="info-card ic8">
+        <span class="ic-icon">🚫</span>
+        <div class="ic-title">No Staff Access</div>
+        <div class="ic-desc">Shaho Solutions Limited staff do not access customer accounts or data as part of normal operations. Any access would require explicit customer permission and be audit-logged.</div>
+      </div>
+      <div class="info-card ic1">
+        <span class="ic-icon">🔑</span>
+        <div class="ic-title">Secure Authentication</div>
+        <div class="ic-desc">Login is protected by secure authentication. Passwords are never stored in plain text. Sessions expire automatically for your protection.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. COMPARE -->
+  <div class="section">
+    <div class="section-label">Comparison</div>
+    <h2 class="section-title">How ShahoSuite Compares on Security</h2>
+    <p class="section-desc">Many UK business tools don't disclose where your data is hosted. We do — because we have nothing to hide.</p>
+
+    <div class="compare-table">
+      <div class="ct-head">
+        <div class="ct-h left">Security Feature</div>
+        <div class="ct-h">ShahoSuite</div>
+        <div class="ct-h">Typical SaaS</div>
+        <div class="ct-h">Spreadsheets</div>
+      </div>
+      <div class="ct-row"><div class="ct-feat">UK data centres confirmed</div><div class="ct-cell ct-shah">UK Only ✓</div><div class="ct-cell"><span class="ct-no">✗</span></div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">AES-256 encryption at rest</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell ct-shah">Sometimes</div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">SSL / TLS in transit</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">Full audit log</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell ct-shah">Rarely</div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">Role-based access control</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell ct-shah">Sometimes</div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">GDPR data deletion in 30 days</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell ct-shah">Varies</div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">Payments via Stripe (PCI-DSS)</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell ct-shah">Varies</div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+      <div class="ct-row"><div class="ct-feat">99.9% uptime SLA</div><div class="ct-cell"><span class="ct-yes">✓</span></div><div class="ct-cell ct-shah">Sometimes</div><div class="ct-cell"><span class="ct-no">✗</span></div></div>
+    </div>
+  </div>
+
+  <!-- 6. FAQ -->
+  <div class="section">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Security questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary class="faq-q">Where is my ShahoSuite data stored?</summary><div class="faq-a">All data is stored on Microsoft Azure servers located in the United Kingdom — specifically the UK South (London) and UK West (Cardiff) regions. Your data never leaves the UK.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is ShahoSuite encrypted?</summary><div class="faq-a">Yes — two layers of encryption. Data in transit is protected by TLS 1.2+ (the padlock in your browser). Data at rest is encrypted using AES-256 — the same standard used by banks and governments.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can ShahoSuite staff see my business data?</summary><div class="faq-a">No. Shaho Solutions Limited staff do not access customer account data as part of normal operations. All access would require explicit customer permission and every action is logged in the audit log.</div></details>
+      <details class="faq-item"><summary class="faq-q">What happens to my data if I cancel?</summary><div class="faq-a">Your data is permanently deleted within 30 days of cancellation, in accordance with UK GDPR. You can export all your data before cancelling from any module in CSV format.</div></details>
+      <details class="faq-item"><summary class="faq-q">Is ShahoSuite GDPR compliant?</summary><div class="faq-a">Yes. ShahoSuite is operated by Shaho Solutions Limited (Company No. 16017117), a registered UK company. Data is stored in UK data centres, deleted on request, and processed under a lawful basis under UK GDPR. See our <a href="/gdpr.html" style="color:#3b82f6;font-weight:600;">full GDPR page</a> for details.</div></details>
+      <details class="faq-item"><summary class="faq-q">How is payment data protected?</summary><div class="faq-a">Payment processing is handled entirely by Stripe — a PCI-DSS Level 1 certified provider. Card numbers, CVV codes and payment details never touch ShahoSuite servers. We only store your subscription status.</div></details>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h2>Safe, secure and built in the UK.</h2>
+    <p>Microsoft Azure hosting · AES-256 encryption · UK data centres · GDPR compliant · Full audit log · Role-based access. All included in £50/month.</p>
+    <div class="cta-btns">
+      <a href="https://app.shahosuite.com/register" class="btn-primary">Sign up — £50/month →</a>
+      <a href="/gdpr.html" class="btn-secondary">Read our GDPR page →</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="azure-bar">
+  <span class="azure-pill"><span class="live-dot"></span>Microsoft Azure UK South</span>
+  <span class="azure-pill"><span class="live-dot"></span>99.9% Uptime SLA</span>
+  <span class="azure-pill">🔒 TLS 1.2+ In Transit</span>
+  <span class="azure-pill">🔐 AES-256 At Rest</span>
+  <span class="azure-pill">✅ UK GDPR Compliant</span>
+  <span class="azure-pill">💳 Stripe PCI-DSS</span>
+  <span class="azure-pill">🏢 Co. No. 16017117</span>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/gdpr.html">GDPR</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/founder.html">Our Founder</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales</p>
+</footer>
+
+</body>
+</html>
