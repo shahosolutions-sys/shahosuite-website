@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Landlord — Property Management Software for UK Landlords</title>
+<meta name="description" content="ShahoSuite Landlord is a complete property management platform for UK landlords. Manage portfolios, tenants, rent, maintenance, documents and compliance on Microsoft Azure UK." />
+<meta name="keywords" content="landlord software UK, property management software UK, rent tracking UK, HMO management software, landlord dashboard, UK landlord platform" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<link rel="canonical" href="https://www.shahosuite.com/landlord.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Landlord — Full Suite Overview for UK Landlords" />
+<meta property="og:description" content="ShahoSuite Landlord is designed for UK landlords with property management, rent tracking, maintenance, compliance and tenant workflows — all on Microsoft Azure UK." />
+<meta property="og:url" content="https://www.shahosuite.com/landlord.html" />
+<meta property="og:image" content="https://www.shahosuite.com/og-image.png" />
+<meta property="og:locale" content="en_GB" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,summary{font:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 12px rgba(0,0,0,0.05)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;transition:transform .15s,opacity .15s}
+.logo:hover{transform:translateY(-2px);opacity:.88}
+.logo img{height:54px;width:auto;display:block}
+.nav-centre{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.nav-link{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:600;color:#374151;display:flex;align-items:center;gap:5px;transition:all .15s}
+.nav-link:hover{background:#f8fafc;color:#0f172a}
+.nav-btns{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.btn-login{padding:8px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all .15s}
+.btn-login:hover{border-color:#9ca3af;color:#111827;transform:translateY(-1px)}
+.btn-signup{padding:8px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
+.btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
+.hero{padding:100px 28px 68px;background:linear-gradient(160deg,#eff6ff 0%,#ffffff 45%,#ecfdf5 100%);text-align:center;position:relative;overflow:hidden}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:26px;background:#fff;border:1px solid rgba(15,23,42,.08)}
+.hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-1.8px;margin-bottom:20px}
+.hero p{font-size:17px;color:#475569;max-width:640px;margin:0 auto 28px;line-height:1.7}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:18px}
+.section{padding:72px 28px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#0f172a}
+h2{font-size:clamp(28px,4.2vw,44px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;color:#0f172a}
+.section-sub{font-size:16px;color:#475569;max-width:720px;margin-bottom:32px;line-height:1.8}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.feature-card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.feature-card h3{font-size:18px;font-weight:800;margin-bottom:14px}
+.feature-card p{font-size:14px;color:#475569;line-height:1.75}
+.feature-card ul{margin-top:14px;list-style:none;padding-left:0}
+.feature-card li{font-size:14px;color:#475569;line-height:1.75;padding-left:24px;position:relative;margin-bottom:10px}
+.feature-card li::before{content:'•';position:absolute;left:0;top:2px;color:#10b981;font-weight:700}
+.callout{background:#f8fafc;border:1px solid #e5e7eb;border-radius:18px;padding:26px;margin-top:40px}
+.callout h3{font-size:18px;margin-bottom:14px}
+.callout p{font-size:15px;color:#475569;line-height:1.75}
+.faq-section{padding-bottom:72px}
+.faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.faq-card h3{font-size:20px;margin-bottom:16px}
+.faq-card p{font-size:15px;color:#475569;line-height:1.75}
+.footer{padding:44px 28px 32px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:14px}
+.footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#6366f1}
+.cta{padding:60px 28px 72px;background:linear-gradient(180deg,#f0f9ff 0%,#eff6ff 100%);text-align:center}
+.cta h2{margin-bottom:14px}
+.cta p{font-size:16px;color:#475569;max-width:680px;margin:0 auto 24px;line-height:1.75}
+.cta a{display:inline-block;padding:15px 28px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
+.cta a:hover{transform:translateY(-2px)}
+@media(max-width:980px){.nav-inner{padding:0 20px}}@media(max-width:760px){.nav-centre{display:none}.hero{padding-top:120px}}@media(max-width:640px){.feature-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite logo" width="180" height="54" /></a>
+    <div class="nav-centre">
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/gdpr.html" class="nav-link">GDPR</a>
+      <a href="/security.html" class="nav-link">Security</a>
+      <a href="/landlord.html" class="nav-link">Landlord</a>
+      <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">🏠 ShahoSuite Landlord</div>
+      <h1>Full Suite Overview for UK Landlords</h1>
+      <p><strong>Built for UK landlords. Every feature you need, nothing you don't.</strong></p>
+      <p>ShahoSuite Landlord is a complete property management platform designed around the real daily workflow of a UK landlord — from the moment a tenant signs to the day they move out, and everything in between.</p>
+      <div class="hero-actions">
+        <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+        <a href="/pricing.html" class="btn-signup">See pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Dashboard</div>
+      <h2>Your portfolio at a glance</h2>
+      <p>The moment you log in you see four live KPIs and quick-access controls that keep your portfolio moving: occupancy, arrears, expiring compliance certificates, and open maintenance jobs.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Occupancy Rate</h3>
+          <p>What percentage of properties are currently let, colour-coded green/amber/red so you can spot gaps instantly.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Total Arrears</h3>
+          <p>The exact pound amount of unpaid rent for the month. Zero means all rent has been collected.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Expiring Certs</h3>
+          <p>How many safety certificates are due within 60 days, so nothing catches you off guard.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Open Jobs</h3>
+          <p>Outstanding maintenance jobs across your portfolio, with fast access to the property and job details.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Quick access and live property lists</h3>
+        <p>Below the KPIs you get buttons to every key page and a live property list showing address, type and arrears status — all clickable so you can move from overview to action in one click.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8fafc;">
+    <div class="section-inner">
+      <div class="section-tag">Properties Group</div>
+      <h2>Property, tenant and lease management</h2>
+      <p>Everything your landlord business needs to manage portfolio, tenants, tenancies, and property status from one UK-hosted platform.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>🏘️ Properties</h3>
+          <p>Add address, postcode, property type, number of bedrooms, monthly rent and status (To Let / Let / Under Maintenance). For HMO properties, record shared space notes for kitchens, bathrooms and communal areas.</p>
+        </div>
+        <div class="feature-card">
+          <h3>👤 Tenants</h3>
+          <p>Keep a full tenant record with name, email, phone, move-in/move-out dates, status, photo and room number for HMOs. View complete financial statements with rent history, partial payments and running balance.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📄 Leases</h3>
+          <p>Every tenancy agreement in one table. Record property, tenant, tenancy type, dates, rent, deposit and room number with colour-coded expiry warnings.</p>
+        </div>
+      </div>
+      <div class="feature-card" style="margin-top:24px;">
+        <h3>Lease actions</h3>
+        <p>Each lease row includes Edit, Agreement and Remove actions. The system generates a rent record automatically when a new tenancy is created.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Rent Group</div>
+      <h2>Rent Tracker</h2>
+      <p>The operational heart of the suite. See every property-tenant combination for the selected month with payment status, summary totals and easy chase tools.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>✅ Paid</h3>
+          <p>Green badge for confirmed payments so you know which rents are fully collected.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🟡 ½ Partial</h3>
+          <p>Amber badge showing partial payments and how much remains outstanding.</p>
+        </div>
+        <div class="feature-card">
+          <h3>⚠️ Due</h3>
+          <p>Rent expected but not yet received. The system highlights these records so you can act quickly.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Void</h3>
+          <p>Properties with no active tenant this month are shown separately so you can manage void periods clearly.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>One-click payments and filter focus</h3>
+        <p>Mark rent paid with a click or enter partial amounts inline. Filter by Due or Partial records to focus on the accounts that need chasing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8fafc;">
+    <div class="section-inner">
+      <div class="section-tag">Maintenance Group</div>
+      <h2>Maintenance Jobs &amp; Compliance</h2>
+      <p>Track repairs, inspections and safety documents alongside your rental and property workflow.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>🛠️ Maintenance Jobs</h3>
+          <p>Log jobs with property, description, priority, status, reported date and contractor notes. Open job counts feed straight into the dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📁 Documents &amp; Certs</h3>
+          <p>Store gas safety, EPC, EICR, PAT, fire risk and other certificates. Track expiry dates and see status badges for Valid, Expiring Soon and Expired.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <h3>Compliance made visible</h3>
+        <p>Expiry-driven colour badges mean you never miss a certificate renewal. Compliance status is always clear across your portfolio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Finance Group</div>
+      <h2>Accounting</h2>
+      <p>Track every rent receipt, repair cost, insurance payment and expense by property. See each address&apos; financial performance and your total portfolio position.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>💰 Income &amp; Expenditure</h3>
+          <p>Log rent, repairs, mortgage, insurance, agent fees and more. Everything is categorised by property.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Portfolio performance</h3>
+          <p>See how each property contributes to your bottom line, plus the wider portfolio result for tax and reporting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8fafc;">
+    <div class="section-inner">
+      <div class="section-tag">Inspections Group</div>
+      <h2>Viewings / Inspections</h2>
+      <p>Schedule viewings and inspections with property, date, contact, type, status and outcome notes. Upcoming entries appear on the property detail panel.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>📅 Viewings</h3>
+          <p>Book and manage property viewings for vacant units with a clear schedule and status tracking.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🔎 Inspections</h3>
+          <p>Record periodic inspections for occupied properties with notes and outcomes, then review them from the property dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Communication Group</div>
+      <h2>Support</h2>
+      <p>Raise and track support tickets directly in the platform. Questions, billing issues and technical problems are all logged in one thread with full history.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8fafc;">
+    <div class="section-inner">
+      <div class="section-tag">System Group</div>
+      <h2>Settings</h2>
+      <p>Update business profile, branding, subscription, user preferences and notification settings. Company name, logo, address and contact details appear on generated tenancy agreements and tenant statements.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">How to get started</div>
+      <h2>Get up and running fast</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Step 1 — Add your properties</h3>
+          <p>Go to Properties in the left menu. Click "Add Property" and fill in address, postcode, property type, bedrooms and monthly rent. For HMOs, add the property once and assign rooms separately.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 2 — Add your tenants</h3>
+          <p>Go to Tenants. Click "Add Tenant" and enter full name, email, phone, property and room number for HMOs. Search by name, email, phone or property.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 3 — Create a lease</h3>
+          <p>Go to Leases. Click "Add Tenancy", link tenant and property, set dates, rent, deposit and tenancy type. The tenant status updates automatically.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 4 — Track rent</h3>
+          <p>Check Rent Tracker for paid, partial and due records. Mark rent as paid with one click and spot arrears quickly on property cards.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 5 — Log maintenance</h3>
+          <p>Go to Maintenance Jobs and add a job with property, issue, priority and contractor notes. Update status as it progresses.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 6 — Upload certificates</h3>
+          <p>Go to Documents and Certs. Upload gas safety, EPC, EICR and other compliance documents. The system tracks expiry dates and flags renewals.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 7 — Review finance</h3>
+          <p>Open Finance for rent collected, outstanding amounts and maintenance costs across your portfolio.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Step 8 — Book viewings</h3>
+          <p>Use Viewings to schedule inspections and appointments. Past and upcoming bookings are listed separately for clear planning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8fafc;">
+    <div class="section-inner">
+      <div class="section-tag">Feedback</div>
+      <h2>We are actively building this</h2>
+      <p>Please test the workflow and share feedback on property setup, HMOs, rent tracking and any fields you need. This is beta, so your insights shape what comes next.</p>
+      <div class="faq-card">
+        <h3>Questions to try</h3>
+        <p>Does adding a property and tenant feel quick and clear? For HMOs, does room grouping make sense? Is rent tracking easy to read? Are any fields missing, like licence numbers or council tax references?</p>
+      </div>
+      <div class="faq-card" style="margin-top:20px;">
+        <h3>Important note</h3>
+        <p>Everything is browser-based and hosted on Microsoft Azure UK. Log in with the landlord account we set up for you. There is nothing to install.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="section-inner">
+      <h2>ShahoSuite Landlord saves you time and keeps you compliant</h2>
+      <p>Complete visibility over your property portfolio from any device, with UK data hosting and GDPR-readiness built in.</p>
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Log in to Landlord →</a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/invoices.html">Invoices</a>
+    <a href="/booking.html">Booking</a>
+    <a href="/customers.html">Customers</a>
+    <a href="/accounting.html">Accounting</a>
+    <a href="/analytics.html">Analytics</a>
+    <a href="/gdpr.html">GDPR</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/security.html">Security</a>
+    <a href="/landlord.html">Landlord</a>
+    <a href="/founder.html">Founder</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/landlord.html">Landlord</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales — Portsmouth, Hampshire, UK</p>
+</footer>
+</body>
+</html>
