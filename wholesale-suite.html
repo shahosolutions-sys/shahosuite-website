@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShahoSuite Wholesale & Retail Suite — UK Wholesale Software</title>
+<meta name="description" content="ShahoSuite Wholesale & Retail Suite gives UK wholesalers and retailers inventory, orders, invoices, suppliers and analytics in one platform." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.shahosuite.com/wholesale-suite.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ShahoSuite Wholesale & Retail Suite — UK Wholesale Software" />
+<meta property="og:description" content="ShahoSuite Wholesale & Retail Suite gives UK wholesalers and retailers inventory, orders, invoices, suppliers and analytics in one platform." />
+<meta property="og:url" content="https://www.shahosuite.com/wholesale-suite.html" />
+<meta property="og:image" content="https://www.shahosuite.com/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);border-bottom:1px solid #e5e7eb;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo img{height:54px;width:auto;display:block}
+.nav-centre{display:flex;align-items:center;gap:4px}
+.nav-link{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:600;color:#374151;display:flex;align-items:center;gap:5px;transition:all .15s}
+.nav-link:hover{background:#f8fafc;color:#0f172a}
+.nav-dropdown{position:relative}
+.nav-dropdown>.nav-link::after{content:'▾';font-size:10px;opacity:0.6;transition:transform .2s}
+.nav-dropdown:hover>.nav-link::after{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:56px;left:0;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:12px;width:260px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;display:grid;gap:4px;z-index:300}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:all;transform:translateY(0)}
+.dd-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#374151;transition:background .15s}
+.dd-item:hover{background:#f8fafc}
+.nav-btns{display:flex;gap:8px}
+.btn-login{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:600;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all .15s}
+.btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
+.btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
+.btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
+.hero{padding:120px 28px 80px;background:linear-gradient(160deg,#eff6ff 0%,#ffffff 55%,#f0fdf4 100%);text-align:center;position:relative;overflow:hidden}
+.hero-inner{max-width:860px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:#fff;border:1px solid rgba(15,23,42,.08)}
+h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:20px}
+.hero-sub{font-size:17px;color:#475569;max-width:620px;margin:0 auto 28px;line-height:1.75}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.section{padding:72px 28px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#f97316}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;color:#0f172a}
+.section-sub{font-size:16px;color:#64748b;max-width:700px;margin-bottom:32px;line-height:1.75}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.feature-card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.feature-card h3{font-size:18px;font-weight:800;margin-bottom:14px}
+.feature-card p{font-size:15px;color:#475569;line-height:1.75}
+.cta{padding:60px 28px 80px;background:linear-gradient(180deg,#f0f9ff 0%,#eff6ff 100%);text-align:center}
+.cta a{display:inline-block;padding:15px 28px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
+.cta a:hover{transform:translateY(-2px)}
+.footer{padding:44px 28px 32px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:14px}
+.footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#6366f1}
+@media(max-width:900px){.nav-centre{display:none}}@media(max-width:640px){.feature-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite logo" width="180" height="54" /></a>
+    <div class="nav-centre">
+      <div class="nav-dropdown">
+        <a href="#modules" class="nav-link">Modules</a>
+        <div class="dropdown-menu">
+          <a href="/dashboard.html" class="dd-item"><span class="dd-emoji">🏠</span><span class="dd-name">Dashboard</span></a>
+          <a href="/customers.html" class="dd-item"><span class="dd-emoji">👤</span><span class="dd-name">Customers</span></a>
+          <a href="/products.html" class="dd-item"><span class="dd-emoji">📦</span><span class="dd-name">Products</span></a>
+          <a href="/invoices.html" class="dd-item"><span class="dd-emoji">🧾</span><span class="dd-name">Invoices</span></a>
+          <a href="/orders.html" class="dd-item"><span class="dd-emoji">🛒</span><span class="dd-name">Orders</span></a>
+          <a href="/suppliers.html" class="dd-item"><span class="dd-emoji">🏭</span><span class="dd-name">Suppliers</span></a>
+        </div>
+      </div>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <div class="nav-dropdown">
+        <a href="#suites" class="nav-link">Suites</a>
+        <div class="dropdown-menu">
+          <a href="/wholesale-suite.html" class="dd-item"><span class="dd-emoji">🛍️</span><span class="dd-name">Wholesale & Retail</span></a>
+          <a href="/landlord-suite.html" class="dd-item"><span class="dd-emoji">🏠</span><span class="dd-name">Landlord</span></a>
+          <a href="/beauty-salon-suite.html" class="dd-item"><span class="dd-emoji">💇</span><span class="dd-name">Beauty Salon</span></a>
+          <a href="#coming-soon" class="dd-item"><span class="dd-emoji">🚀</span><span class="dd-name">More Suites Coming Soon</span></a>
+        </div>
+      </div>
+      <a href="#who" class="nav-link">Who It's For</a>
+      <a href="#trust" class="nav-link">Trust</a>
+      <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-btns">
+      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Wholesale & Retail Suite</div>
+      <h1>Wholesale and retail trading software for UK businesses</h1>
+      <p class="hero-sub">Manage inventory, orders, invoices, suppliers and retail analytics with a single industry-specific suite built for UK wholesalers and retailers.</p>
+      <div class="hero-actions">
+        <a href="/pricing.html" class="btn-signup">Start Free</a>
+        <a href="#features" class="btn-login">Explore Modules</a>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="features">
+    <div class="section-inner">
+      <div class="section-tag">What this suite includes</div>
+      <h2>Everything Wholesale & Retail needs</h2>
+      <p class="section-sub">From stock control to supplier management, this suite is tailored for trading businesses that need fast fulfilment and clear margins.</p>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>Inventory Management</h3><p>Track every product, SKU, stock level and reorder point in one place.</p></div>
+        <div class="feature-card"><h3>Order Processing</h3><p>Capture wholesale and retail orders, manage fulfilment and keep stock aligned.</p></div>
+        <div class="feature-card"><h3>Supplier Control</h3><p>Manage supplier details, purchase costs, lead times and stock receipts.</p></div>
+        <div class="feature-card"><h3>Retail Analytics</h3><p>See product performance, sales velocity and stock value on one dashboard.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="who">
+    <div class="section-inner">
+      <div class="section-tag" style="color:#10b981;">Who it’s for</div>
+      <h2>Designed for wholesale and retail teams</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>UK wholesalers</h3><p>Manage bulk stock, purchase orders and customer price lists.</p></div>
+        <div class="feature-card"><h3>Retail stores</h3><p>Handle product ranges, sales, stock alerts and reporting.</p></div>
+        <div class="feature-card"><h3>Online retailers</h3><p>Keep inventory accurate across sales channels and invoices.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="section-inner">
+      <h2>Start your Wholesale & Retail Suite today</h2>
+      <p>One platform for inventory, orders, invoices and suppliers — built for UK businesses on Microsoft Azure.</p>
+      <a href="https://app.shahosuite.com/register">Start Free</a>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/index.html">Home</a>
+    <a href="/wholesale-suite.html">Wholesale & Retail</a>
+    <a href="/landlord-suite.html">Landlord</a>
+    <a href="/beauty-salon-suite.html">Beauty Salon</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
+    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
+</footer>
+</body>
+</html>
