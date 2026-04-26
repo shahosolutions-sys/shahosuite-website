@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ShahoSuite — All-in-One Business Software for UK Small Businesses & Landlords</title>
 <meta name="description" content="ShahoSuite gives UK small businesses and landlords one platform for CRM, invoicing, booking, accounting, rent tracking and more. £50/month. Azure UK hosted. No contracts." />
-<meta name="keywords" content="all-in-one business software UK, small business CRM UK, landlord software UK, invoicing software UK, booking system UK, property management UK" />
+<meta name="keywords" content="all-in-one business software UK, small business CRM UK, landlord software UK, invoicing software UK, booking system UK, property management UK, rent tracker UK" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Shaho Solutions Limited" />
 <meta name="msvalidate.01" content="66FF8F1C92307A9BFDA46C52878D5F7B" />
@@ -38,13 +38,14 @@
       "operatingSystem":"Web",
       "url":"https://www.shahosuite.com",
       "description":"All-in-one business management platform for UK small businesses and landlords. CRM, invoicing, booking, accounting, analytics, rent tracking and more.",
+      "featureList":["Customer CRM","VAT Invoicing","Online Booking","Accounting P&L","Business Analytics","Rent Tracker","Property Management","Tenancy Agreements","Maintenance Jobs","Compliance Certificates"],
       "offers":{"@type":"Offer","price":"50","priceCurrency":"GBP"},
       "provider":{"@type":"Organization","name":"Shaho Solutions Limited","url":"https://www.shahosuite.com","identifier":"16017117","foundingLocation":"Portsmouth, United Kingdom","address":{"@type":"PostalAddress","addressLocality":"Portsmouth","addressRegion":"Hampshire","addressCountry":"GB"},"sameAs":["https://www.linkedin.com/company/106797762","https://x.com/ShahoSolutions","https://www.facebook.com/profile.php?id=61579025398591","https://www.instagram.com/shaho.solution.limited/","https://www.youtube.com/@ShahoMahmudi"]}
     },
     {
       "@type":"FAQPage",
       "mainEntity":[
-        {"@type":"Question","name":"What is ShahoSuite?","acceptedAnswer":{"@type":"Answer","text":"ShahoSuite is a business platform that provides CRM, business management tools and operational systems for UK small businesses and landlords. 16 modules including invoicing, booking, accounting, analytics and more — all in one place for £50/month."}},
+        {"@type":"Question","name":"What is ShahoSuite?","acceptedAnswer":{"@type":"Answer","text":"ShahoSuite is a business platform that provides CRM, business management tools and operational systems for UK small businesses and landlords. 16+ modules including invoicing, booking, accounting, analytics, rent tracking and more — all in one place for £50/month."}},
         {"@type":"Question","name":"How much does ShahoSuite cost?","acceptedAnswer":{"@type":"Answer","text":"£50/month for the Director account — full access to all modules. Add staff at £15/month each. No contracts, cancel any time."}},
         {"@type":"Question","name":"Is ShahoSuite GDPR compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. All data is hosted on Microsoft Azure UK data centres. Shaho Solutions Limited (Co. No. 16017117) is a registered UK company. Your data never leaves the UK."}}
       ]
@@ -62,72 +63,59 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.6;overflow-x:hidden}
 
-/* ══════════ NAV ══════════ */
+/* ═══ NAV ═══ */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 12px rgba(0,0,0,0.05)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;transition:transform 0.15s,opacity 0.15s}
 .logo:hover{transform:translateY(-2px);opacity:0.88}
 .logo img{height:54px;width:auto;display:block}
-
-/* Nav links */
 .nav-centre{display:flex;align-items:center;gap:2px}
 .nav-link{padding:7px 11px;border-radius:8px;font-size:13px;font-weight:600;color:#374151;text-decoration:none;transition:all 0.15s;white-space:nowrap;display:flex;align-items:center;gap:4px}
 .nav-link:hover{background:#f8fafc;color:#0f172a}
-
-/* Stable dropdown */
 .nav-dropdown{position:relative}
 .nav-dropdown>.nav-link{padding-bottom:28px;margin-bottom:-20px}
 .nav-dropdown>.nav-link::after{content:'▾';font-size:9px;opacity:0.5;transition:transform 0.2s}
 .nav-dropdown:hover>.nav-link::after{transform:rotate(180deg)}
 .dropdown-menu{position:absolute;top:56px;left:50%;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,0.12),0 4px 0 #e2e8f0;opacity:0;visibility:hidden;pointer-events:none;transform:translateX(-50%) translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;display:grid;gap:4px;z-index:300}
 .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
-.dm-modules{width:540px;grid-template-columns:repeat(4,1fr)}
-.dm-suites{width:360px;grid-template-columns:repeat(2,1fr)}
+.dm-mod{width:540px;grid-template-columns:repeat(4,1fr)}
+.dm-suite{width:340px;grid-template-columns:repeat(2,1fr)}
 .dd-item{display:flex;flex-direction:column;align-items:center;text-align:center;padding:10px 6px;border-radius:10px;text-decoration:none;color:#374151;transition:all 0.15s;gap:4px;border:1px solid transparent}
 .dd-item:hover{background:#f8fafc;border-color:#e2e8f0;color:#0f172a;transform:translateY(-2px)}
 .dd-emoji{font-size:20px;line-height:1}
 .dd-name{font-size:10px;font-weight:700}
-
 .nav-btns{display:flex;gap:8px;align-items:center;flex-shrink:0}
 .btn-login{padding:7px 16px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
 .btn-signup{padding:7px 16px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-decoration:none;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all 0.15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
 
-/* ══════════ TICKER ══════════ */
+/* ═══ TICKER ═══ */
 .ticker-wrap{margin-top:76px;background:#0f172a;overflow:hidden;height:42px;display:flex;align-items:center;position:relative;z-index:100}
 .ticker-label{flex-shrink:0;background:#fff;color:#0f172a;font-size:10px;font-weight:800;padding:0 16px;height:100%;display:flex;align-items:center;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
 .ticker-fade{flex-shrink:0;width:32px;height:100%;background:linear-gradient(90deg,#0f172a,transparent);pointer-events:none}
 .ticker-track{display:flex;align-items:center;white-space:nowrap;animation:ticker-scroll 55s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
-.t-item{display:inline-flex;align-items:center;gap:7px;padding:0 24px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.65)}
-.t-item strong{color:#fff;font-weight:800}
-.t-sep{color:rgba(255,255,255,0.15);font-size:16px;padding:0 4px}
+.ti{display:inline-flex;align-items:center;gap:7px;padding:0 24px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.65)}
+.ti strong{color:#fff;font-weight:800}
+.ts{color:rgba(255,255,255,0.15);font-size:16px;padding:0 4px}
 @keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ══════════ HERO ══════════ */
+/* ═══ HERO ═══ */
 .hero{padding:64px 24px 64px;background:linear-gradient(160deg,#f0f9ff 0%,#faf5ff 50%,#f0fdf4 100%);text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(99,102,241,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,0.04) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
 .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
-
-/* Animated badge */
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 20px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:20px;border:1.5px solid transparent;animation:badge-cycle 8s ease-in-out infinite}
 @keyframes badge-cycle{0%,100%{background:rgba(99,102,241,0.08);border-color:rgba(99,102,241,0.3);color:#4f46e5}25%{background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.3);color:#059669}50%{background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.3);color:#d97706}75%{background:rgba(236,72,153,0.08);border-color:rgba(236,72,153,0.3);color:#be185d}}
-
 h1{font-size:clamp(28px,5vw,52px);font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:10px;color:#0f172a}
 .hero-tagline{font-size:clamp(18px,3vw,30px);font-weight:800;letter-spacing:-0.5px;margin-bottom:18px}
 .hero-tagline em{font-style:normal;animation:text-cycle 8s ease-in-out infinite;display:inline-block}
 @keyframes text-cycle{0%,100%{color:#6366f1}25%{color:#10b981}50%{color:#f59e0b}75%{color:#ec4899}}
-
-/* Colourwave slogan */
 .slogan-wrap{margin:0 auto 20px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
 .sw{font-size:clamp(16px,3vw,26px);font-weight:800;letter-spacing:-0.5px;animation:colorwave 5s ease-in-out infinite}
 .sw:nth-child(1){animation-delay:0s}.sw:nth-child(2){animation-delay:0.3s}.sw:nth-child(3){animation-delay:0.6s}.sw:nth-child(4){animation-delay:0.9s}.sw:nth-child(5){animation-delay:1.2s}.sw:nth-child(6){animation-delay:1.5s}
 @keyframes colorwave{0%{color:#0f172a}16%{color:#6366f1}32%{color:#ec4899}48%{color:#f59e0b}64%{color:#10b981}80%{color:#0ea5e9}100%{color:#0f172a}}
-
 .hero-sub{font-size:15px;color:#475569;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.75}
-
-/* Stats bar */
 .stats{display:flex;justify-content:center;flex-wrap:wrap;background:#fff;border:1px solid #e2e8f0;border-radius:16px;max-width:620px;margin:0 auto;box-shadow:0 4px 0 #e2e8f0,0 8px 24px rgba(0,0,0,0.06);overflow:hidden}
 .stat-item{flex:1;min-width:120px;padding:18px 14px;text-align:center;border-right:1px solid #e2e8f0}
 .stat-item:last-child{border-right:none}
@@ -135,36 +123,26 @@ h1{font-size:clamp(28px,5vw,52px);font-weight:800;line-height:1.08;letter-spacin
 .stat-label{font-size:11px;color:#64748b;margin-top:3px;font-weight:500}
 .sn-a{color:#6366f1}.sn-b{color:#10b981}.sn-c{color:#f59e0b}.sn-d{color:#f43f5e}
 
-/* ══════════ SHARED ══════════ */
+/* ═══ SHARED ═══ */
 .si{max-width:1100px;margin:0 auto}
 .stag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;display:block}
 h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a}
 .ssub{font-size:14px;color:#64748b;max-width:500px;margin-bottom:20px;line-height:1.7}
-.csub{font-size:14px;font-weight:700;margin-bottom:40px;display:block;animation:sub-cycle 8s ease-in-out infinite}
+.csub{font-size:14px;font-weight:700;margin-bottom:36px;display:block;animation:sub-cycle 8s ease-in-out infinite}
 @keyframes sub-cycle{0%,100%{color:#6366f1}25%{color:#10b981}50%{color:#f59e0b}75%{color:#ec4899}}
 
-/* ══════════ MODULE CARDS — 3D GLOSSY ══════════ */
+/* ═══ MODULE CARDS ═══ */
 .features{padding:72px 24px;background:#f8fafc}
-.modules-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(144px,1fr));gap:12px}
-
-.mod-card{
-  background:#fff;border-radius:16px;padding:22px 12px 18px;text-align:center;
-  position:relative;overflow:hidden;
-  border:1px solid rgba(0,0,0,0.07);
-  box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 7px 0 #e2e8f0,0 10px 24px rgba(0,0,0,0.07);
-  transition:transform 0.18s ease,box-shadow 0.18s ease;
-  text-decoration:none;color:inherit;display:block;cursor:pointer;
-}
-/* Top gloss */
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.mod-card{background:#fff;border-radius:16px;padding:22px 12px 18px;text-align:center;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,0.07);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 7px 0 #e2e8f0,0 10px 24px rgba(0,0,0,0.07);transition:transform 0.18s ease,box-shadow 0.18s ease;text-decoration:none;color:inherit;display:block;cursor:pointer}
 .mod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:42%;background:linear-gradient(180deg,rgba(255,255,255,0.78) 0%,rgba(255,255,255,0) 100%);border-radius:16px 16px 0 0;pointer-events:none}
-/* Left accent */
 .mod-card::after{content:'';position:absolute;top:18%;left:0;width:3px;height:64%;background:linear-gradient(180deg,var(--ac,#e2e8f0),transparent);border-radius:0 2px 2px 0}
 .mod-card:hover{transform:translateY(-6px);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 13px 0 #e2e8f0,0 18px 36px rgba(0,0,0,0.11)}
 .mod-card:active{transform:translateY(6px);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 2px 0 #e2e8f0}
-.mod-emoji{font-size:28px;display:block;margin-bottom:8px;line-height:1}
-.mod-name{font-size:12px;font-weight:700;color:#0f172a}
+.mod-emoji{font-size:26px;display:block;margin-bottom:7px;line-height:1}
+.mod-name{font-size:11.5px;font-weight:700;color:#0f172a}
 
-/* Colour-cycling border on key cards */
+/* Colour-cycling border */
 .cc{animation:cc-border 6s ease-in-out infinite}
 @keyframes cc-border{
   0%,100%{border-color:rgba(99,102,241,0.55);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 7px 0 rgba(99,102,241,0.2),0 10px 24px rgba(99,102,241,0.1)}
@@ -172,29 +150,31 @@ h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin
   50%{border-color:rgba(245,158,11,0.55);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 7px 0 rgba(245,158,11,0.2),0 10px 24px rgba(245,158,11,0.1)}
   75%{border-color:rgba(236,72,153,0.55);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 7px 0 rgba(236,72,153,0.2),0 10px 24px rgba(236,72,153,0.1)}
 }
-
-/* Staggered delays */
 .cc-d1{animation-delay:0s}.cc-d2{animation-delay:1s}.cc-d3{animation-delay:2s}.cc-d4{animation-delay:3s}.cc-d5{animation-delay:4s}
 
-/* Accents */
+/* Business accents */
 .m1{--ac:#3b82f6}.m2{--ac:#10b981}.m3{--ac:#f97316}.m4{--ac:#8b5cf6}
 .m5{--ac:#f43f5e}.m6{--ac:#06b6d4}.m7{--ac:#14b8a6}.m8{--ac:#84cc16}
 .m9{--ac:#6366f1}.m10{--ac:#f59e0b}.m11{--ac:#ec4899}.m12{--ac:#ef4444}
 .m13{--ac:#0ea5e9}.m14{--ac:#7c3aed}.m15{--ac:#d946ef}.m16{--ac:#64748b}
-
-/* Landlord group label */
-.group-label{grid-column:1/-1;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-top:14px;margin-bottom:4px;display:flex;align-items:center;gap:8px;color:#94a3b8}
-.group-label::after{content:'';flex:1;height:1px;background:#e2e8f0}
-.landlord-wrap{background:#0a1628;border-radius:16px;padding:10px 14px 14px;grid-column:1/-1}
-.landlord-wrap .group-sub{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.3);margin-bottom:8px;margin-top:10px;display:block}
-.landlord-wrap .mod-card{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1)}
-.landlord-wrap .mod-card .mod-name{color:#e2e8f0}
-.landlord-wrap .mod-card:hover{background:rgba(255,255,255,0.09)}
-.landlord-wrap .lm-inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(144px,1fr));gap:10px}
+/* Landlord accents */
 .l1{--ac:#1e40af}.l2{--ac:#0ea5e9}.l3{--ac:#8b5cf6}.l4{--ac:#22c55e}
-.l5{--ac:#ef4444}.l6{--ac:#f59e0b}.l7{--ac:#10b981}.l8{--ac:#ec4899}.l9{--ac:#64748b}
+.l5{--ac:#ef4444}.l6{--ac:#f59e0b}.l7{--ac:#10b981}.l8{--ac:#ec4899}
 
-/* ══════════ SUITES ══════════ */
+/* Landlord section — clean white with blue top bar */
+.landlord-section{background:#fff;border:2px solid #e2e8f0;border-radius:20px;padding:24px;margin-top:20px;box-shadow:0 4px 0 #e2e8f0;position:relative;overflow:hidden}
+.landlord-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#1e40af,#c9a84c);border-radius:20px 20px 0 0}
+.ls-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.ls-title{font-size:14px;font-weight:800;color:#0f172a;display:flex;align-items:center;gap:8px}
+.ls-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;background:rgba(30,64,175,0.1);color:#1e40af;border:1px solid rgba(30,64,175,0.2)}
+.ls-link{font-size:12px;font-weight:700;color:#1e40af;text-decoration:none;display:flex;align-items:center;gap:4px}
+.ls-link:hover{color:#1e3a8a}
+.ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+/* Landlord cards are plain white, no dark band */
+.ls-grid .mod-card{background:#f8fafc;border-color:#e2e8f0;box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 4px 0 #e2e8f0}
+.ls-grid .mod-card:hover{background:#fff;transform:translateY(-4px);box-shadow:0 1px 0 rgba(255,255,255,1) inset,0 8px 0 #e2e8f0,0 14px 28px rgba(30,64,175,0.08)}
+
+/* ═══ SUITES ═══ */
 .suites-section{padding:72px 24px;background:#fff}
 .suites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
 .suite-card{background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:24px 20px;box-shadow:0 5px 0 #e2e8f0;transition:all 0.2s;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden}
@@ -205,7 +185,7 @@ h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin
 .sc-hb{--sc:#ec4899;--ss:#fce7f3}
 .sc-tm{--sc:#0ea5e9;--ss:#bae6fd}
 .sc-xx{--sc:#64748b;--ss:#e2e8f0;opacity:0.75}
-.suite-icon{font-size:34px;margin-bottom:10px;display:block}
+.suite-icon{font-size:32px;margin-bottom:10px;display:block}
 .suite-name{font-size:15px;font-weight:800;color:#0f172a;margin-bottom:6px}
 .suite-desc{font-size:12.5px;color:#64748b;line-height:1.6;margin-bottom:14px}
 .suite-link{font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;text-decoration:none;transition:all 0.15s}
@@ -215,38 +195,29 @@ h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin
 .sl-blue{background:#0ea5e9;color:#fff}.sl-blue:hover{background:#0284c7}
 .sl-grey{background:#f8fafc;color:#64748b;border:1px solid #e2e8f0}
 
-/* ══════════ WHY ══════════ */
+/* ═══ WHY ═══ */
 .why-section{padding:72px 24px;background:#f8fafc}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:36px}
-.why-card{border:1px solid #e2e8f0;border-radius:14px;padding:22px;background:#fff;box-shadow:0 4px 0 #e2e8f0;border-left:4px solid var(--wc)}
+.why-card{border:1px solid #e2e8f0;border-radius:14px;padding:22px;background:#fff;box-shadow:0 4px 0 #e2e8f0;border-left:4px solid var(--wc);transition:transform 0.2s,box-shadow 0.2s}
 .why-card:hover{transform:translateY(-3px);box-shadow:0 7px 0 #e2e8f0}
 .wc1{--wc:#6366f1}.wc2{--wc:#10b981}.wc3{--wc:#f59e0b}.wc4{--wc:#ef4444}.wc5{--wc:#0ea5e9}.wc6{--wc:#8b5cf6}
 .why-icon{font-size:26px;margin-bottom:10px;display:block}
 .why-card h3{font-size:14px;font-weight:700;margin-bottom:6px;color:#0f172a}
 .why-card p{font-size:12.5px;color:#64748b;line-height:1.65}
 
-/* ══════════ WHO IT'S FOR ══════════ */
-.who-section{padding:72px 24px;background:#fff}
-.who-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-.who-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 16px;text-align:center;box-shadow:0 4px 0 #e2e8f0;transition:all 0.2s}
-.who-card:hover{transform:translateY(-4px);border-color:#6366f1;box-shadow:0 4px 0 #c7d2fe}
-.who-icon{font-size:26px;margin-bottom:8px;display:block}
-.who-title{font-size:13px;font-weight:700;margin-bottom:4px}
-.who-desc{font-size:11.5px;color:#64748b;line-height:1.55}
-
-/* ══════════ TRUST ══════════ */
-.trust-section{padding:0 24px 72px;background:#f8fafc}
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(144px,1fr));gap:12px}
+/* ═══ TRUST ═══ */
+.trust-section{padding:72px 24px;background:#fff}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
 .t1{--ac:#22c55e}.t2{--ac:#3b82f6}.t3{--ac:#8b5cf6}.t4{--ac:#f59e0b}.t5{--ac:#64748b}.t6{--ac:#ec4899}
 
-/* ══════════ AZURE BAR ══════════ */
+/* ═══ AZURE BAR ═══ */
 .azure-bar{background:#0f172a;padding:22px 24px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px}
 .azure-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.8);text-decoration:none;transition:background 0.15s}
 .azure-pill:hover{background:rgba(255,255,255,0.13)}
 .az-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:azp 2s infinite;display:inline-block}
 @keyframes azp{0%,100%{opacity:1}50%{opacity:0.35}}
 
-/* ══════════ PRICING — DUAL ══════════ */
+/* ═══ DUAL PRICING ═══ */
 .pricing{padding:72px 24px;background:#f8fafc}
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:40px auto 0}
 .pc{border-radius:20px;padding:32px 28px}
@@ -287,17 +258,15 @@ h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin
 .pc-list li::before{content:'✓';flex-shrink:0;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;margin-top:2px}
 .pc-biz .pc-list li::before{background:rgba(16,185,129,0.12);color:#10b981}
 .pc-land .pc-list li::before{background:rgba(201,168,76,0.15);color:#c9a84c}
-.pc-list li.mt::before{background:#f1f5f9 !important;color:#cbd5e1 !important}
 .pc-list li.mt{color:#94a3b8 !important}
-.pc-land .pc-list li.mt::before{background:rgba(255,255,255,0.05) !important;color:rgba(255,255,255,0.15) !important}
+.pc-list li.mt::before{background:#f1f5f9 !important;color:#cbd5e1 !important}
 .pc-land .pc-list li.mt{color:rgba(255,255,255,0.2) !important}
-
-/* Colour-cycling CTA button */
+.pc-land .pc-list li.mt::before{background:rgba(255,255,255,0.05) !important;color:rgba(255,255,255,0.15) !important}
 .pc-btn{display:block;width:100%;padding:13px;border-radius:11px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;border:none;font-family:'DM Sans',sans-serif;color:#fff;background:linear-gradient(90deg,#6366f1,#10b981,#f59e0b,#ec4899,#6366f1);background-size:300% 100%;animation:btn-grad 6s ease-in-out infinite;box-shadow:0 4px 0 #4338ca;transition:transform 0.15s,box-shadow 0.15s}
 .pc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 #4338ca}
 .pc-btn:active{transform:translateY(4px);box-shadow:0 0 0 #4338ca}
-.pc-btn.land-btn{background:linear-gradient(90deg,#1e40af,#c9a84c,#1e40af);background-size:300% 100%;box-shadow:0 4px 0 #1e3a8a}
-.pc-btn.land-btn:hover{box-shadow:0 6px 0 #1e3a8a}
+.land-btn{background:linear-gradient(90deg,#1e40af,#c9a84c,#1e40af);background-size:300% 100%;box-shadow:0 4px 0 #1e3a8a}
+.land-btn:hover{box-shadow:0 6px 0 #1e3a8a}
 @keyframes btn-grad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .pc-hint{margin-top:14px;background:rgba(0,0,0,0.03);border:1px solid #e5e7eb;border-radius:10px;padding:12px 14px;display:flex;align-items:flex-start;gap:8px}
 .pc-land .pc-hint{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.09)}
@@ -308,7 +277,7 @@ h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin
 .pc-hint-text a{color:#6366f1;font-weight:600;text-decoration:none}
 .pc-land .pc-hint-text a{color:#c9a84c}
 
-/* ══════════ FAQ ══════════ */
+/* ═══ FAQ ═══ */
 .faq-section{padding:72px 24px;background:#fff}
 .faq-list{max-width:720px;margin-top:32px}
 .faq-item{border-bottom:1px solid #e2e8f0;overflow:hidden}
@@ -320,7 +289,7 @@ h2{font-size:clamp(22px,3.5vw,38px);font-weight:800;letter-spacing:-1.5px;margin
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-item.open .faq-a{max-height:200px}
 
-/* ══════════ FOOTER ══════════ */
+/* ═══ FOOTER ═══ */
 footer{padding:36px 24px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 footer a{color:#64748b;text-decoration:none;margin:0 8px;transition:color 0.2s}
 footer a:hover{color:#6366f1}
@@ -331,7 +300,7 @@ footer a:hover{color:#6366f1}
   .stats{flex-direction:column}
   .stat-item{border-right:none;border-bottom:1px solid #e2e8f0}
   .stat-item:last-child{border-bottom:none}
-  .modules-grid,.trust-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}
+  .modules-grid,.trust-grid,.ls-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}
   .pricing-grid{grid-template-columns:1fr}
   .sw{font-size:clamp(14px,5vw,22px)}
 }
@@ -339,17 +308,14 @@ footer a:hover{color:#6366f1}
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo">
-      <img src="/logo.png" alt="ShahoSuite" width="180" height="54" />
-    </a>
+    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" width="180" height="54" /></a>
     <div class="nav-centre">
-      <!-- Modules -->
       <div class="nav-dropdown">
         <a href="#modules" class="nav-link">Modules</a>
-        <div class="dropdown-menu dm-modules">
+        <div class="dropdown-menu dm-mod">
           <a href="/dashboard.html"    class="dd-item"><span class="dd-emoji">🏠</span><span class="dd-name">Dashboard</span></a>
           <a href="/customers.html"    class="dd-item"><span class="dd-emoji">👤</span><span class="dd-name">Customers</span></a>
           <a href="/products.html"     class="dd-item"><span class="dd-emoji">📦</span><span class="dd-name">Products</span></a>
@@ -368,20 +334,18 @@ footer a:hover{color:#6366f1}
           <a href="/audit-log.html"    class="dd-item"><span class="dd-emoji">📋</span><span class="dd-name">Audit Log</span></a>
         </div>
       </div>
-      <!-- Suites — Landlord first, then Wholesale CRM, then H&B, then Technical Mechanics -->
       <div class="nav-dropdown">
         <a href="#suites" class="nav-link">Suites</a>
-        <div class="dropdown-menu dm-suites">
-          <a href="/landlord.html" class="dd-item"><span class="dd-emoji">🏘️</span><span class="dd-name">Landlord</span></a>
-          <a href="#suites"        class="dd-item"><span class="dd-emoji">🛍️</span><span class="dd-name">Wholesale CRM</span></a>
-          <a href="#suites"        class="dd-item"><span class="dd-emoji">💇</span><span class="dd-name">Health &amp; Beauty</span></a>
-          <a href="#suites"        class="dd-item"><span class="dd-emoji">🔧</span><span class="dd-name">Technical Mechanics</span></a>
+        <div class="dropdown-menu dm-suite">
+          <a href="/landlord.html"  class="dd-item"><span class="dd-emoji">🏘️</span><span class="dd-name">Landlord</span></a>
+          <a href="https://app.shahosuite.com/register" class="dd-item"><span class="dd-emoji">🛍️</span><span class="dd-name">Wholesale CRM</span></a>
+          <a href="#suites"         class="dd-item"><span class="dd-emoji">💇</span><span class="dd-name">Health &amp; Beauty</span></a>
+          <a href="#suites"         class="dd-item"><span class="dd-emoji">🔧</span><span class="dd-name">Technical Mechanics</span></a>
         </div>
       </div>
-      <a href="/pricing.html"               class="nav-link">Pricing</a>
-      <a href="#who"                        class="nav-link">Who It's For</a>
-      <a href="#trust"                      class="nav-link">Trust</a>
-      <a href="mailto:admin@shahosuite.com"  class="nav-link">Contact</a>
+      <a href="/pricing.html"              class="nav-link">Pricing</a>
+      <a href="#trust"                     class="nav-link">Trust</a>
+      <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
       <a href="https://app.shahosuite.com/login"    class="btn-login">Log in</a>
@@ -390,37 +354,39 @@ footer a:hover{color:#6366f1}
   </div>
 </nav>
 
-<!-- ══ TICKER ══ -->
+<!-- TICKER -->
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker-label">ShahoSuite</div>
   <div class="ticker-fade"></div>
   <div class="ticker-track">
-    <span class="t-item"><strong>🧾 Invoices</strong> — VAT-compliant, PDF, payment tracking</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>👤 CRM</strong> — Full customer profiles, history, bookings</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>📅 Booking</strong> — Online appointments, staff scheduling</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>📕 Accounting</strong> — P&amp;L, General Ledger, Accounts Receivable</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>💷 Rent Tracker</strong> — Paid · Partial · Due · Void</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🏘️ Properties</strong> — HMO, AST, portfolio management</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🛠️ Maintenance</strong> — Jobs, priority, contractor notes</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>📊 Analytics</strong> — Live revenue, top customers</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🔒 Microsoft Azure UK</strong> — 99.9% uptime, GDPR-ready</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>✅ No contracts</strong> — £50/month, cancel any time</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🧾 Invoices</strong> — VAT-compliant, PDF, payment tracking</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>👤 CRM</strong> — Full customer profiles, history, bookings</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>📅 Booking</strong> — Online appointments, staff scheduling</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>📕 Accounting</strong> — P&amp;L, General Ledger, Accounts Receivable</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>💷 Rent Tracker</strong> — Paid · Partial · Due · Void</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🏘️ Properties</strong> — HMO, AST, portfolio management</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🛠️ Maintenance</strong> — Jobs, priority, contractor notes</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>📊 Analytics</strong> — Live revenue, top customers</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>🔒 Microsoft Azure UK</strong> — 99.9% uptime, GDPR-ready</span><span class="t-sep">·</span>
-    <span class="t-item"><strong>✅ No contracts</strong> — £50/month, cancel any time</span><span class="t-sep">·</span>
+    <span class="ti"><strong>🧾 Invoices</strong> — VAT-compliant, PDF, payment tracking</span><span class="ts">·</span>
+    <span class="ti"><strong>👤 CRM</strong> — Full customer profiles, history, bookings</span><span class="ts">·</span>
+    <span class="ti"><strong>📅 Booking</strong> — Online appointments, staff scheduling</span><span class="ts">·</span>
+    <span class="ti"><strong>💷 Rent Tracker</strong> — Paid · Partial · Due · Void</span><span class="ts">·</span>
+    <span class="ti"><strong>🏘️ Properties</strong> — HMO, AST, portfolio management</span><span class="ts">·</span>
+    <span class="ti"><strong>📕 Accounting</strong> — P&amp;L, General Ledger, Accounts Receivable</span><span class="ts">·</span>
+    <span class="ti"><strong>🛠️ Maintenance</strong> — Jobs, priority, contractor tracking</span><span class="ts">·</span>
+    <span class="ti"><strong>📁 Compliance</strong> — Gas, EPC, EICR, expiry alerts</span><span class="ts">·</span>
+    <span class="ti"><strong>📊 Analytics</strong> — Live revenue, top customers</span><span class="ts">·</span>
+    <span class="ti"><strong>🔒 Microsoft Azure UK</strong> — 99.9% uptime, GDPR-ready</span><span class="ts">·</span>
+    <span class="ti"><strong>✅ No contracts</strong> — £50/month, cancel any time</span><span class="ts">·</span>
+    <span class="ti"><strong>🧾 Invoices</strong> — VAT-compliant, PDF, payment tracking</span><span class="ts">·</span>
+    <span class="ti"><strong>👤 CRM</strong> — Full customer profiles, history, bookings</span><span class="ts">·</span>
+    <span class="ti"><strong>📅 Booking</strong> — Online appointments, staff scheduling</span><span class="ts">·</span>
+    <span class="ti"><strong>💷 Rent Tracker</strong> — Paid · Partial · Due · Void</span><span class="ts">·</span>
+    <span class="ti"><strong>🏘️ Properties</strong> — HMO, AST, portfolio management</span><span class="ts">·</span>
+    <span class="ti"><strong>📕 Accounting</strong> — P&amp;L, General Ledger, Accounts Receivable</span><span class="ts">·</span>
+    <span class="ti"><strong>🛠️ Maintenance</strong> — Jobs, priority, contractor tracking</span><span class="ts">·</span>
+    <span class="ti"><strong>📁 Compliance</strong> — Gas, EPC, EICR, expiry alerts</span><span class="ts">·</span>
+    <span class="ti"><strong>📊 Analytics</strong> — Live revenue, top customers</span><span class="ts">·</span>
+    <span class="ti"><strong>🔒 Microsoft Azure UK</strong> — 99.9% uptime, GDPR-ready</span><span class="ts">·</span>
+    <span class="ti"><strong>✅ No contracts</strong> — £50/month, cancel any time</span><span class="ts">·</span>
   </div>
 </div>
 
 <main>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge">🇬🇧 Built for UK Businesses</div>
@@ -436,7 +402,7 @@ footer a:hover{color:#6366f1}
     </div>
     <p class="hero-sub">Run your business or property portfolio from one platform. No juggling apps. No hidden costs. Cancel any time.</p>
     <div class="stats">
-      <div class="stat-item"><div class="stat-num sn-a">16+</div><div class="stat-label">Modules included</div></div>
+      <div class="stat-item"><div class="stat-num sn-a">19+</div><div class="stat-label">Modules included</div></div>
       <div class="stat-item"><div class="stat-num sn-b">2</div><div class="stat-label">Specialist suites</div></div>
       <div class="stat-item"><div class="stat-num sn-c">24/7</div><div class="stat-label">Always available</div></div>
       <div class="stat-item"><div class="stat-num sn-d">GDPR</div><div class="stat-label">GDPR-ready</div></div>
@@ -444,7 +410,7 @@ footer a:hover{color:#6366f1}
   </div>
 </section>
 
-<!-- ══ ALL MODULES ══ -->
+<!-- ALL MODULES -->
 <section class="features" id="modules">
   <div class="si">
     <span class="stag" style="color:#6366f1;">All Modules</span>
@@ -453,8 +419,8 @@ footer a:hover{color:#6366f1}
     <span class="csub">No integrations. No plugins. No extra costs.</span>
 
     <!-- Business Suite -->
-    <div class="group-label" style="color:#6366f1;">🏢 Business Suite — 16 Modules</div>
-    <div class="modules-grid" style="margin-bottom:18px;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6366f1;margin-bottom:12px;display:flex;align-items:center;gap:8px;">🏢 Business Suite<span style="flex:1;height:1px;background:#e2e8f0;display:block;margin-left:8px;"></span></div>
+    <div class="modules-grid" style="margin-bottom:24px;">
       <a href="/dashboard.html"    class="mod-card m1 cc cc-d1"><span class="mod-emoji">🏠</span><div class="mod-name">Dashboard</div></a>
       <a href="/customers.html"    class="mod-card m2 cc cc-d2"><span class="mod-emoji">👤</span><div class="mod-name">Customers</div></a>
       <a href="/products.html"     class="mod-card m3"><span class="mod-emoji">📦</span><div class="mod-name">Products</div></a>
@@ -473,38 +439,28 @@ footer a:hover{color:#6366f1}
       <a href="/audit-log.html"    class="mod-card m16"><span class="mod-emoji">📋</span><div class="mod-name">Audit Log</div></a>
     </div>
 
-    <!-- Landlord Suite — dark navy band with grouped labels -->
-    <div class="group-label" style="color:#c9a84c;">🏘️ Landlord Suite — Property &amp; Lettings</div>
-    <div class="landlord-wrap">
-      <span class="group-sub">PROPERTIES</span>
-      <div class="lm-inner" style="margin-bottom:10px;">
-        <a href="/landlord.html#modules" class="mod-card l1"><span class="mod-emoji">🏘️</span><div class="mod-name">Properties</div></a>
-        <a href="/landlord.html#modules" class="mod-card l2"><span class="mod-emoji">👤</span><div class="mod-name">Tenants</div></a>
-        <a href="/landlord.html#modules" class="mod-card l3"><span class="mod-emoji">📄</span><div class="mod-name">Leases</div></a>
+    <!-- Landlord Suite — clean white card, no dark background -->
+    <div class="landlord-section">
+      <div class="ls-header">
+        <div class="ls-title">🏘️ Landlord Suite <span class="ls-badge">Property &amp; Lettings</span></div>
+        <a href="/landlord.html" class="ls-link">View full suite →</a>
       </div>
-      <span class="group-sub">RENT</span>
-      <div class="lm-inner" style="margin-bottom:10px;">
-        <a href="/landlord.html#modules" class="mod-card l4"><span class="mod-emoji">💷</span><div class="mod-name">Rent Tracker</div></a>
-      </div>
-      <span class="group-sub">MAINTENANCE</span>
-      <div class="lm-inner" style="margin-bottom:10px;">
-        <a href="/landlord.html#modules" class="mod-card l5"><span class="mod-emoji">🛠️</span><div class="mod-name">Maintenance Jobs</div></a>
-        <a href="/landlord.html#modules" class="mod-card l6"><span class="mod-emoji">📁</span><div class="mod-name">Documents &amp; Certs</div></a>
-      </div>
-      <span class="group-sub">FINANCE</span>
-      <div class="lm-inner" style="margin-bottom:10px;">
-        <a href="/landlord.html#modules" class="mod-card l7"><span class="mod-emoji">💰</span><div class="mod-name">Accounting</div></a>
-      </div>
-      <span class="group-sub">INSPECTIONS</span>
-      <div class="lm-inner">
-        <a href="/landlord.html#modules" class="mod-card l8"><span class="mod-emoji">📅</span><div class="mod-name">Viewings &amp; Inspections</div></a>
+      <div class="ls-grid">
+        <a href="/landlord.html" class="mod-card l1"><span class="mod-emoji">🏘️</span><div class="mod-name">Properties</div></a>
+        <a href="/landlord.html" class="mod-card l2"><span class="mod-emoji">👤</span><div class="mod-name">Tenants</div></a>
+        <a href="/landlord.html" class="mod-card l3"><span class="mod-emoji">📄</span><div class="mod-name">Leases</div></a>
+        <a href="/landlord.html" class="mod-card l4"><span class="mod-emoji">💷</span><div class="mod-name">Rent Tracker</div></a>
+        <a href="/landlord.html" class="mod-card l5"><span class="mod-emoji">🛠️</span><div class="mod-name">Maintenance Jobs</div></a>
+        <a href="/landlord.html" class="mod-card l6"><span class="mod-emoji">📁</span><div class="mod-name">Documents &amp; Certs</div></a>
+        <a href="/landlord.html" class="mod-card l7"><span class="mod-emoji">💰</span><div class="mod-name">Accounting</div></a>
+        <a href="/landlord.html" class="mod-card l8"><span class="mod-emoji">📅</span><div class="mod-name">Viewings &amp; Inspections</div></a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ══ SUITES ══ -->
+<!-- SUITES -->
 <section class="suites-section" id="suites">
   <div class="si">
     <span class="stag" style="color:#10b981;">Industry Suites</span>
@@ -512,7 +468,6 @@ footer a:hover{color:#6366f1}
     <p class="ssub">Each suite gives you the exact tools your industry needs — built on the same trusted platform.</p>
     <div class="suites-grid">
 
-      <!-- 1 — Landlord FIRST -->
       <a href="/landlord.html" class="suite-card sc-ll">
         <span class="suite-icon">🏘️</span>
         <div class="suite-name">Landlord Suite</div>
@@ -520,15 +475,13 @@ footer a:hover{color:#6366f1}
         <span class="suite-link sl-navy">Explore Landlord →</span>
       </a>
 
-      <!-- 2 — Wholesale CRM -->
-      <div class="suite-card sc-ws">
+      <a href="https://app.shahosuite.com/register" class="suite-card sc-ws">
         <span class="suite-icon">🛍️</span>
         <div class="suite-name">Wholesale CRM Suite</div>
         <div class="suite-desc">Inventory, orders, invoices, suppliers and sales analytics — all in one hub for UK wholesalers and retailers.</div>
-        <span class="suite-link sl-orange">Coming Soon</span>
-      </div>
+        <span class="suite-link sl-orange">Get Access →</span>
+      </a>
 
-      <!-- 3 — Health & Beauty -->
       <div class="suite-card sc-hb">
         <span class="suite-icon">💇</span>
         <div class="suite-name">Health &amp; Beauty Suite</div>
@@ -536,7 +489,6 @@ footer a:hover{color:#6366f1}
         <span class="suite-link sl-pink">Coming Soon</span>
       </div>
 
-      <!-- 4 — Technical Mechanics -->
       <div class="suite-card sc-tm">
         <span class="suite-icon">🔧</span>
         <div class="suite-name">Technical Mechanics Suite</div>
@@ -544,7 +496,6 @@ footer a:hover{color:#6366f1}
         <span class="suite-link sl-blue">Coming Soon</span>
       </div>
 
-      <!-- 5 — More coming -->
       <div class="suite-card sc-xx">
         <span class="suite-icon">🚀</span>
         <div class="suite-name">More Suites Coming</div>
@@ -556,7 +507,7 @@ footer a:hover{color:#6366f1}
   </div>
 </section>
 
-<!-- ══ WHY ══ -->
+<!-- WHY -->
 <section class="why-section" id="why">
   <div class="si">
     <span class="stag" style="color:#6366f1;">Why ShahoSuite</span>
@@ -573,25 +524,7 @@ footer a:hover{color:#6366f1}
   </div>
 </section>
 
-<!-- ══ WHO IT'S FOR ══ -->
-<section class="who-section" id="who">
-  <div class="si">
-    <span class="stag" style="color:#10b981;">Who It's For</span>
-    <h2>Built for every UK business</h2>
-    <p class="ssub">Solo or scaling — ShahoSuite fits the way you work.</p>
-    <div class="who-grid">
-      <div class="who-card"><span class="who-icon">🏘️</span><div class="who-title">UK Landlords</div><div class="who-desc">Rent, tenants, maintenance and compliance — all in one dashboard.</div></div>
-      <div class="who-card"><span class="who-icon">💻</span><div class="who-title">Freelancers</div><div class="who-desc">Invoices, bookings and CRM — everything at one price.</div></div>
-      <div class="who-card"><span class="who-icon">🏪</span><div class="who-title">Small Businesses</div><div class="who-desc">Replace 10 tools with one clean platform.</div></div>
-      <div class="who-card"><span class="who-icon">💇</span><div class="who-title">Salons &amp; Clinics</div><div class="who-desc">Booking, staff, CRM and invoicing — all connected.</div></div>
-      <div class="who-card"><span class="who-icon">🔧</span><div class="who-title">Tradespeople</div><div class="who-desc">Jobs, invoicing, customers and parts — sorted.</div></div>
-      <div class="who-card"><span class="who-icon">🛍️</span><div class="who-title">Retailers</div><div class="who-desc">Products, orders, suppliers and analytics in one hub.</div></div>
-      <div class="who-card"><span class="who-icon">🏢</span><div class="who-title">Agencies</div><div class="who-desc">Clients, billing, staff and analytics built for agencies.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TRUST ══ -->
+<!-- TRUST -->
 <section class="trust-section" id="trust">
   <div class="si">
     <span class="stag" style="color:#22c55e;">Trust &amp; Legal</span>
@@ -608,7 +541,7 @@ footer a:hover{color:#6366f1}
   </div>
 </section>
 
-<!-- ══ AZURE BAR ══ -->
+<!-- AZURE BAR -->
 <div class="azure-bar">
   <a href="/security.html" class="azure-pill"><span class="az-dot"></span>Microsoft Azure UK</a>
   <a href="/security.html" class="azure-pill"><span class="az-dot"></span>99.9% Uptime SLA</a>
@@ -618,7 +551,7 @@ footer a:hover{color:#6366f1}
   <a href="/terms.html"    class="azure-pill">🏢 Co. No. 16017117</a>
 </div>
 
-<!-- ══ DUAL PRICING ══ -->
+<!-- DUAL PRICING -->
 <section class="pricing" id="pricing">
   <div class="si">
     <span class="stag" style="color:#f43f5e;">Pricing</span>
@@ -626,7 +559,6 @@ footer a:hover{color:#6366f1}
     <p class="ssub">One price covers everything. No hidden fees. Cancel any time.</p>
     <div class="pricing-grid">
 
-      <!-- Business Suite -->
       <div class="pc pc-biz">
         <div class="pc-badge pb-biz">All 16 modules included</div>
         <div class="pc-label">Business Suite — Director Account</div>
@@ -653,12 +585,11 @@ footer a:hover{color:#6366f1}
         </div>
       </div>
 
-      <!-- Landlord Suite -->
       <div class="pc pc-land">
         <div class="pc-badge pb-land">Landlord Suite included</div>
         <div class="pc-label">Landlord Suite — Director Account</div>
         <div class="pc-amount"><sup>£</sup>50<sub>/mo</sub></div>
-        <div class="pc-note">Complete property portfolio management in one place. Rent, maintenance, compliance — all covered.</div>
+        <div class="pc-note">Complete property portfolio management. Rent, maintenance, compliance — all covered.</div>
         <div class="pc-add">
           <div class="pc-add-price">+ £15 <span>/ staff / month</span></div>
           <div class="pc-add-text">Add letting agents or property managers</div>
@@ -684,50 +615,28 @@ footer a:hover{color:#6366f1}
   </div>
 </section>
 
-<!-- ══ FAQ ══ -->
+<!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="si">
     <span class="stag" style="color:#8b5cf6;">FAQ</span>
     <h2>Common questions</h2>
     <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What is ShahoSuite?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>ShahoSuite is a business platform that provides CRM, business management tools and operational systems for UK small businesses and landlords. 16 modules — invoicing, booking, accounting, analytics, staff management and more — all in one place for £50/month. No juggling apps, no hidden costs.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">How much does ShahoSuite cost?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>£50/month for the Director account — full access to all modules. Add staff at £15/month each. No contracts, no setup fees, cancel any time. Both the Business Suite and Landlord Suite are £50/month.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Is my data safe and GDPR compliant?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes. All data is hosted on Microsoft Azure UK data centres — never leaves the UK. Shaho Solutions Limited (Co. No. 16017117) is a registered UK company. Full GDPR compliance, data deleted within 30 days of cancellation.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">How is ShahoSuite different from Xero or HubSpot?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>ShahoSuite is £50/month flat — covers everything. Xero charges per tier, HubSpot charges per user and gets expensive fast. ShahoSuite is built for UK businesses with UK hosting, GDPR compliance and VAT invoicing built in from day one.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Can I use ShahoSuite for my rental properties?<span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes — the Landlord Suite is purpose-built for UK landlords. Rent tracking, tenant management, maintenance jobs, compliance certificates, HMO room management and tenancy agreement generation. One dashboard, your full portfolio.</p></div>
-      </div>
-
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What is ShahoSuite?<span class="faq-icon">+</span></button><div class="faq-a"><p>ShahoSuite is a business platform that provides CRM, business management tools and operational systems for UK small businesses and landlords. 19+ modules — invoicing, booking, accounting, analytics, rent tracking, property management and more — all in one place for £50/month. No juggling apps, no hidden costs.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How much does ShahoSuite cost?<span class="faq-icon">+</span></button><div class="faq-a"><p>£50/month for the Director account — full access to all modules. Add staff at £15/month each. No contracts, no setup fees, cancel any time. Both the Business Suite and Landlord Suite are £50/month.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is my data safe and GDPR compliant?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes. All data is hosted on Microsoft Azure UK data centres — never leaves the UK. Shaho Solutions Limited (Co. No. 16017117) is a registered UK company. Full GDPR compliance, data deleted within 30 days of cancellation.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How is ShahoSuite different from Xero or HubSpot?<span class="faq-icon">+</span></button><div class="faq-a"><p>ShahoSuite is £50/month flat — covers everything. Xero charges per tier, HubSpot charges per user. ShahoSuite is built specifically for UK businesses with UK hosting, GDPR compliance and VAT invoicing from day one.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I use ShahoSuite for my rental properties?<span class="faq-icon">+</span></button><div class="faq-a"><p>Yes — the Landlord Suite is purpose-built for UK landlords. Rent tracking, tenant management, maintenance jobs, compliance certificates, HMO room management and tenancy agreement generation. One dashboard, your full portfolio.</p></div></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ══ FOOTER ══ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-links">
     <a href="#modules">Modules</a>
     <a href="#suites">Suites</a>
-    <a href="#who">Who It's For</a>
     <a href="#faq">FAQ</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/landlord.html">Landlord Suite</a>
