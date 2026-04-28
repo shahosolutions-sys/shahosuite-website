@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Properties — Tenant Management Software for UK Landlords</title>
+<meta name="description" content="Manage your property portfolio, tenants, rent, and compliance in one landlord-focused dashboard. ShahoSuite is built for UK landlords and letting agents." />
+<link rel="canonical" href="https://www.shahosuite.com/landlord/properties.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Properties — Tenant Management Software for UK Landlords" />
+<meta property="og:description" content="Manage your property portfolio, tenants, rent, and compliance in one landlord-focused dashboard. ShahoSuite is built for UK landlords and letting agents." />
+<meta property="og:url" content="https://www.shahosuite.com/landlord/properties.html" />
+<meta property="og:image" content="https://www.shahosuite.com/og-image.png" />
+<meta property="og:site_name" content="ShahoSuite" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Properties — Tenant Management Software for UK Landlords" />
+<meta name="twitter:description" content="Manage your property portfolio, tenants, rent, and compliance in one landlord-focused dashboard. ShahoSuite is built for UK landlords." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f7fb;color:#0f172a;line-height:1.7;min-height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.page-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid #e2e8f0}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:inline-flex;align-items:center;font-weight:800;color:#0f172a}
+.nav-links{display:flex;align-items:center;gap:10px}
+.nav-link{font-size:13px;font-weight:700;color:#475569;padding:10px 14px;border-radius:999px;transition:all .2s}
+.nav-link:hover{background:#eff6ff;color:#0f172a}
+.nav-btns{display:flex;align-items:center;gap:10px}
+.btn-login,.btn-signup{border-radius:999px;padding:10px 20px;font-weight:700;transition:transform .18s}
+.btn-login{background:#fff;color:#0f172a;border:1px solid #d1d5db}
+.btn-login:hover,.btn-signup:hover{transform:translateY(-1px)}
+.btn-signup{background:#0d9488;color:#fff;border:1px solid #0d9488}
+main{padding:120px 24px 60px}
+.hero{position:relative;padding:80px 0 52px}
+.hero::before{content:'';position:absolute;left:-30px;top:-60px;width:160px;height:160px;background:rgba(13,148,136,.12);border-radius:50%;filter:blur(18px);transform:translateZ(0)}
+.hero::after{content:'';position:absolute;right:-40px;bottom:10px;width:120px;height:120px;background:rgba(59,130,246,.14);border-radius:50%;filter:blur(14px)}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:800;color:#0f172a;background:#d1fae5;border:1px solid #a7f3d0;margin-bottom:18px}
+h1{font-size:clamp(42px,5vw,64px);font-weight:800;letter-spacing:-0.04em;color:#0f172a;margin-bottom:16px}
+.hero-sub{font-size:18px;color:#334155;max-width:760px;margin-bottom:26px;line-height:1.8}
+.cta-group{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.btn-primary{background:#0d9488;color:#fff;border:1px solid #0d9488; padding:14px 24px;border-radius:999px;font-weight:800;box-shadow:0 18px 40px rgba(13,148,136,.16);transition:transform .2s}
+.btn-secondary{background:#fff;color:#0f172a;border:1px solid #cbd5e1;padding:14px 24px;border-radius:999px;font-weight:700;transition:transform .2s}
+.btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
+.search-card{background:#fff;border:1px solid #e2e8f0;box-shadow:0 20px 65px rgba(15,23,42,.06);border-radius:24px;padding:22px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.search-card input{flex:1 1 320px;padding:14px 16px;border:1px solid #cbd5e1;border-radius:14px;font-size:15px;color:#0f172a}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
+.summary-card{position:relative;background:#fff;border:1px solid #e5e7eb;border-radius:24px;padding:24px;min-height:125px;overflow:hidden;box-shadow:0 18px 42px rgba(15,23,42,.05);transition:transform .2s}
+.summary-card:hover{transform:translateY(-4px)}
+.summary-card::before{content:'';position:absolute;right:-24px;top:-24px;width:120px;height:120px;background:rgba(59,130,246,.12);border-radius:50%;}
+.summary-card::after{content:'';position:absolute;left:-20px;bottom:-20px;width:90px;height:90px;background:rgba(16,185,129,.14);border-radius:50%;}
+.summary-icon{font-size:26px;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:16px;background:rgba(15,23,42,.05);margin-bottom:18px}
+.summary-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#64748b;margin-bottom:8px}
+.summary-value{font-size:28px;font-weight:800;color:#0f172a}
+.section{padding:64px 0;position:relative}
+.section::before{content:'';position:absolute;right:10px;top:10px;width:80px;height:80px;background:rgba(236,72,153,.08);border-radius:18px;transform:rotate(24deg)}
+.section::after{content:'';position:absolute;left:20px;bottom:10px;width:56px;height:56px;background:rgba(59,130,246,.08);border-radius:18px;transform:rotate(-18deg)}
+.section-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1}
+.section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#0d9488;margin-bottom:12px}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;color:#0f172a}
+.section-copy{font-size:16px;color:#475569;max-width:720px;margin-bottom:28px;line-height:1.8}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.feature-card{background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:24px;box-shadow:0 18px 40px rgba(15,23,42,.06);transition:transform .2s,box-shadow .2s;position:relative;transform-style:preserve-3d}
+.feature-card:hover{transform:translateY(-6px) rotateX(1deg);box-shadow:0 24px 60px rgba(15,23,42,.12)}
+.feature-card h3{font-size:18px;font-weight:800;margin-bottom:12px;color:#111827}
+.feature-card p{font-size:15px;color:#475569;line-height:1.8}
+.feature-card ul{list-style:none;padding-left:0;margin-top:16px}
+.feature-card li{position:relative;padding-left:24px;margin-bottom:12px;color:#475569;line-height:1.8}
+.feature-card li::before{content:'•';position:absolute;left:0;top:0;color:#0d9488;font-size:20px;line-height:1}
+.property-panel{background:linear-gradient(180deg,rgba(255,255,255,.98),#f8fafc);border:1px solid #e2e8f0;border-radius:24px;padding:24px;box-shadow:0 24px 70px rgba(15,23,42,.08)}
+.property-row{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;box-shadow:0 8px 24px rgba(15,23,42,.05);transition:transform .2s}
+.property-row:hover{transform:translateY(-3px)}
+.property-main{display:grid;gap:8px}
+.property-title{font-size:16px;font-weight:800;color:#0f172a}
+.property-meta{font-size:13px;color:#64748b}
+.property-price{font-size:18px;font-weight:800;color:#0d9488;text-align:right}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.badge-healthy{background:#dcfce7;color:#166534}
+.badge-attention{background:#fef3c7;color:#92400e}
+.badge-arrears{background:#fee2e2;color:#991b1b}
+.card-row{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:#475569}
+.card-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#f8fafc;color:#334155}
+.empty-state{background:#fff;border:2px dashed #cbd5e1;border-radius:24px;padding:48px;text-align:center;color:#334155}
+.empty-state h3{font-size:24px;margin-bottom:10px}
+.empty-state p{color:#64748b;max-width:420px;margin:0 auto}
+.footer{padding:36px 24px 40px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:14px}
+.footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#0f172a}
+@media(max-width:900px){.nav-inner{flex-wrap:wrap;height:auto;padding:16px 24px}.cta-group{flex-direction:column;align-items:flex-start}.search-card{flex-direction:column;align-items:stretch}.property-row{grid-template-columns:1fr}.property-price{text-align:left}.feature-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="page-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">ShahoSuite</a>
+    <div class="nav-links">
+      <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
+      <a href="/landlord/tenants.html" class="nav-link">Tenant Management</a>
+      <a href="/landlord/properties.html" class="nav-link">Properties</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-btns">
+      <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Properties</span>
+      <h1>Manage your property portfolio, tenants, rent, and compliance — all in one place.</h1>
+      <p class="hero-sub">A landlord dashboard designed for UK owners, letting agents, and HMO managers. Track cash flow, tenancy status and legal checks from one clear workspace.</p>
+      <div class="cta-group">
+        <a href="/landlord/tenants.html" class="btn-primary">Open dashboard</a>
+        <a href="mailto:admin@shahosuite.com" class="btn-secondary">Book a demo</a>
+      </div>
+      <div class="search-card">
+        <div style="font-size:14px;color:#475569;font-weight:700">Search</div>
+        <input type="text" placeholder="Search by address, postcode, property type, or tenant name…" />
+      </div>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <div class="summary-icon">🏠</div>
+          <div class="summary-label">Properties</div>
+          <div class="summary-value">Total properties in your portfolio</div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-icon">💰</div>
+          <div class="summary-label">Monthly Income</div>
+          <div class="summary-value">Expected rent across active tenancies</div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-icon">⚠️</div>
+          <div class="summary-label">In Arrears</div>
+          <div class="summary-value">Tenancies with overdue rent payments</div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-icon">🔧</div>
+          <div class="summary-label">Open Issues</div>
+          <div class="summary-value">Outstanding maintenance or compliance tasks</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="add-property">
+    <div class="section-inner">
+      <div class="section-tag">Add Property</div>
+      <h2>Save Property</h2>
+      <p class="section-copy">Add the key details and keep your portfolio ready for rent, inspections and compliance reviews.</p>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Basic Info</h3>
+          <ul>
+            <li><strong>Address</strong> – Full property address</li>
+            <li><strong>Postcode</strong> – UK postcode</li>
+            <li><strong>Property Type</strong> – Select the type of property</li>
+            <li><strong>Status</strong> – Current letting status</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h3>Financial</h3>
+          <ul>
+            <li><strong>Monthly Rent (£)</strong> – Standard monthly rent</li>
+            <li><strong>Bills Included</strong> – Specify if bills are included</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h3>Property Details</h3>
+          <ul>
+            <li><strong>Bedrooms</strong> – Number of bedrooms</li>
+            <li><strong>Bathrooms</strong> – Number of bathrooms</li>
+            <li><strong>Furnished</strong> – Furnishing status</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h3>Building</h3>
+          <ul>
+            <li><strong>Floor</strong> – Floor number (if applicable)</li>
+            <li><strong>Total Floors</strong> – Total floors in building</li>
+            <li><strong>Parking</strong> – Parking availability</li>
+          </ul>
+        </article>
+      </div>
+      <article class="feature-card">
+        <h3>Location Tags</h3>
+        <p>Select features that describe the property’s location and appeal.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Notes</h3>
+        <p>Add internal notes or useful details about the property.</p>
+      </article>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+        <button class="btn-primary">Save Property</button>
+        <button class="btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="property-card">
+    <div class="section-inner">
+      <div class="section-tag">Property Card</div>
+      <h2>Property Card (List View)</h2>
+      <p class="section-copy">Clean property cards help landlords scan portfolio health quickly and act on issues.</p>
+      <div class="property-panel">
+        <div class="property-row">
+          <div class="property-main">
+            <div class="property-title">📍 14 Ocean Road</div>
+            <div class="property-meta">PO5 2AB · 3 bedrooms · Terraced House</div>
+            <div class="card-row">
+              <span class="card-pill">£1,450/mo</span>
+              <span class="card-pill badge-healthy">✅ Healthy</span>
+              <span class="card-pill">Tenant: Alex Green</span>
+            </div>
+          </div>
+          <div class="property-price">£1,450/mo</div>
+        </div>
+        <div class="property-row">
+          <div class="property-main">
+            <div class="property-title">Alerts</div>
+            <div class="card-row">
+              <span class="card-pill">🔧 2 repairs</span>
+              <span class="card-pill">📋 1 certificate</span>
+              <span class="card-pill">📅 1 viewing</span>
+            </div>
+          </div>
+          <div class="property-price">Status: Let · Paid</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="detail-panel">
+    <div class="section-inner">
+      <div class="section-tag">Property Detail</div>
+      <h2>Property Detail Panel</h2>
+      <p class="section-copy">A detail panel gives landlords a quick summary plus access to tenants, tenancies, maintenance and certificates.</p>
+      <article class="feature-card">
+        <h3>Header</h3>
+        <p><strong>Address</strong><br>PO5 2AB · 3 bedrooms · Terraced House · £1,450/month</p>
+      </article>
+      <article class="feature-card">
+        <h3>Shared Spaces</h3>
+        <p>Shared areas or access details for this property.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Rent This Month</h3>
+        <p>✅ Rent received for this period</p>
+        <p>⚠ Rent outstanding — action required</p>
+        <button class="btn-secondary" style="margin-top:12px">Mark as Paid</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="tenants-section">
+    <div class="section-inner">
+      <div class="section-tag">Tenants</div>
+      <h2>Tenants</h2>
+      <p class="section-copy">Track tenant status, contact details, and move-in dates in one landlord-friendly view.</p>
+      <article class="feature-card">
+        <h3>Tenant / Room Row</h3>
+        <p>If occupied:</p>
+        <ul>
+          <li>Name</li>
+          <li>Contact details</li>
+          <li>Status (Active / Former)</li>
+          <li>Move-in date</li>
+        </ul>
+        <p>If empty: — Vacant —</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="tenancies-section">
+    <div class="section-inner">
+      <div class="section-tag">Tenancies</div>
+      <h2>Tenancies</h2>
+      <p class="section-copy">Tenancies track lease terms, rent, duration and renewal status for each property.</p>
+      <article class="feature-card">
+        <h3>Status Labels</h3>
+        <ul>
+          <li><strong>Active</strong> → Lease ongoing</li>
+          <li><strong>Expiring</strong> → Ending soon</li>
+          <li><strong>Expired</strong> → Lease ended</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="maintenance-section">
+    <div class="section-inner">
+      <div class="section-tag">Maintenance</div>
+      <h2>Maintenance</h2>
+      <p class="section-copy">Track repairs, contractors and progress so nothing slips between inspections.</p>
+      <article class="feature-card">
+        <h3>Status Labels</h3>
+        <ul>
+          <li>Reported</li>
+          <li>In progress</li>
+          <li>Completed</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="certificates-section">
+    <div class="section-inner">
+      <div class="section-tag">Certificates & Compliance</div>
+      <h2>Certificates & Compliance</h2>
+      <p class="section-copy">Store safety certificates and compliance records alongside each property.</p>
+      <article class="feature-card">
+        <h3>Status Labels</h3>
+        <ul>
+          <li>Valid</li>
+          <li>Expiring soon</li>
+          <li>Expired</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="viewings-section">
+    <div class="section-inner">
+      <div class="section-tag">Viewings & Inspections</div>
+      <h2>Viewings & Inspections</h2>
+      <p class="section-copy">Track property viewings and inspections with dates, notes and follow-up actions.</p>
+      <article class="feature-card">
+        <h3>Empty state</h3>
+        <p>No upcoming viewings scheduled.</p>
+        <p>Track property viewings and inspections.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="empty-portfolio">
+    <div class="section-inner">
+      <div class="section-tag">Portfolio</div>
+      <h2>No properties yet</h2>
+      <p class="section-copy">Add your first property to start tracking tenants, rent, and compliance.</p>
+      <div class="empty-state">
+        <p>Start your portfolio with one property and keep every tenancy, payment and certificate in a single landlord workspace.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/landlord-suite.html">Landlord Suite</a>
+    <a href="/landlord/tenants.html">Tenant Management</a>
+    <a href="/pricing.html">Pricing</a>
+  </div>
+  <div>© 2026 Shaho Solutions Limited. Built for UK landlords.</div>
+</footer>
+</body>
+</html>
