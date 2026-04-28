@@ -38,31 +38,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
 .btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{padding:120px 28px 80px;background:linear-gradient(160deg,#ecfdf5 0%,#ffffff 55%,#eff6ff 100%);text-align:center;position:relative;overflow:hidden}
+.hero{padding:110px 28px 60px;background:linear-gradient(160deg,#ecfdf5 0%,#ffffff 55%,#eff6ff 100%);text-align:center;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero-dot{position:absolute;border-radius:50%;filter:blur(1px);opacity:.55;mix-blend-mode:screen}
-.hero-dot-1{width:120px;height:120px;background:rgba(16,185,129,.22);top:15%;left:10%;animation:float-1 9s ease-in-out infinite}
-.hero-dot-2{width:90px;height:90px;background:rgba(14,165,233,.22);top:30%;right:12%;animation:float-2 10s ease-in-out infinite}
-.hero-dot-3{width:150px;height:150px;background:rgba(236,72,153,.20);bottom:18%;left:18%;animation:float-3 11s ease-in-out infinite}
-.hero-dot-4{width:80px;height:80px;background:rgba(249,115,22,.24);bottom:25%;right:20%;animation:float-4 8.5s ease-in-out infinite}
-.hero-inner{max-width:860px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:#fff;border:1px solid rgba(15,23,42,.08)}
-@keyframes float-1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(12px,16px) scale(1.05)}}
-@keyframes float-2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-10px,18px) scale(1.08)}}
-@keyframes float-3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,-12px) scale(1.04)}}
-@keyframes float-4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-14px,-18px) scale(1.06)}}
-h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:20px}
-.hero-sub{font-size:17px;color:#475569;max-width:620px;margin:0 auto 28px;line-height:1.75}
-.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
-.section{padding:72px 28px}
-.section-inner{max-width:1100px;margin:0 auto}
+.hero-dot-1{width:120px;height:120px;background:rgba(16,185,129,.22);top:12%;left:8%;animation:float-1 9s ease-in-out infinite}
+.hero-dot-2{width:90px;height:90px;background:rgba(14,165,233,.22);top:28%;right:10%;animation:float-2 10s ease-in-out infinite}
+.hero-dot-3{width:150px;height:150px;background:rgba(236,72,153,.18);bottom:16%;left:16%;animation:float-3 11s ease-in-out infinite}
+.hero-dot-4{width:70px;height:70px;background:rgba(249,115,22,.24);bottom:22%;right:22%;animation:float-4 8.5s ease-in-out infinite}
+.hero-ghost{position:absolute;border-radius:50%;opacity:.15;pointer-events:none;filter:blur(4px)}
+.hero-ghost-1{width:300px;height:300px;background:radial-gradient(circle at 30% 30%,rgba(16,185,129,.18),transparent 55%);top:18%;left:-15%;animation:ghost-move 16s ease-in-out infinite}
+.hero-ghost-2{width:220px;height:220px;background:radial-gradient(circle at 40% 40%,rgba(14,165,233,.18),transparent 55%);top:8%;right:-10%;animation:ghost-move 14s ease-in-out infinite}
+.hero-ghost-3{width:260px;height:260px;background:radial-gradient(circle at 50% 50%,rgba(236,72,153,.14),transparent 55%);bottom:10%;left:12%;animation:ghost-move 18s ease-in-out infinite}
+.hero-floor{position:absolute;left:50%;bottom:-24px;width:320px;height:100px;background:radial-gradient(circle at 50% 40%,rgba(15,23,42,.14),transparent 55%);border-radius:50%;transform:translateX(-50%);filter:blur(9px);opacity:.42}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 24px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:#fff;border:1px solid rgba(15,23,42,.08)}
+@keyframes float-1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(14px,18px) scale(1.06)}}
+@keyframes float-2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,14px) scale(1.1)}}
+@keyframes float-3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(16px,-14px) scale(1.05)}}
+@keyframes float-4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,-16px) scale(1.08)}}
+@keyframes ghost-move{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,-12px) scale(1.02)}}
+h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
+.hero-sub{font-size:17px;color:#334155;max-width:660px;margin:0 auto 30px;line-height:1.8}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.hero-actions .btn-login{background:rgba(255,255,255,.95);border:1px solid #d1d5db;box-shadow:0 4px 0 rgba(209,213,219,.55)}
+.section{padding:56px 28px}
+.section-inner{max-width:980px;margin:0 auto}
 .section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#10b981}
-h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;color:#0f172a}
-.section-sub{font-size:16px;color:#64748b;max-width:700px;margin-bottom:32px;line-height:1.75}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.feature-card{background:#fff;border:1px solid #e2e8eb;border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-bottom:18px;color:#0f172a}
+.section-sub{font-size:16px;color:#475569;max-width:680px;margin-bottom:24px;line-height:1.8}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.feature-card{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:26px;box-shadow:0 18px 45px rgba(15,23,42,.08);transition:transform .18s}
+.feature-card:hover{transform:translateY(-4px)}
 .feature-card h3{font-size:18px;font-weight:800;margin-bottom:14px}
 .feature-card p{font-size:15px;color:#475569;line-height:1.75}
+.feature-card ul{margin-top:14px;list-style:none;padding-left:0}
+.feature-card li{margin-bottom:10px;padding-left:22px;position:relative;color:#475569;line-height:1.75}
+.feature-card li::before{content:'•';position:absolute;left:0;top:0;color:#10b981;font-size:20px;line-height:1}
+.cta{padding:60px 28px 60px;background:linear-gradient(180deg,#f7fee7 0%,#ecfdf5 100%);text-align:center}
+.cta a{display:inline-block;padding:15px 32px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
+.cta a:hover{transform:translateY(-2px)}
+@media(max-width:900px){.nav-centre{display:none}}
+@media(max-width:700px){.hero{padding:100px 20px 50px}.hero-sub{margin-bottom:24px}.feature-grid{grid-template-columns:1fr}}
 .cta{padding:60px 28px 80px;background:linear-gradient(180deg,#f7fee7 0%,#ecfdf5 100%);text-align:center}
 .cta a{display:inline-block;padding:15px 28px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
 .cta a:hover{transform:translateY(-2px)}
@@ -99,8 +115,7 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
           <a href="#coming-soon" class="dd-item"><span class="dd-emoji">🚀</span><span class="dd-name">More Suites Coming Soon</span></a>
         </div>
       </div>
-      <a href="#who" class="nav-link">Who It's For</a>
-      <a href="#trust" class="nav-link">Trust</a>
+      <a href="#features" class="nav-link">Features</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
@@ -116,46 +131,75 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
       <span class="hero-dot hero-dot-2"></span>
       <span class="hero-dot hero-dot-3"></span>
       <span class="hero-dot hero-dot-4"></span>
+      <span class="hero-ghost hero-ghost-1"></span>
+      <span class="hero-ghost hero-ghost-2"></span>
+      <span class="hero-ghost hero-ghost-3"></span>
+      <span class="hero-floor"></span>
     </div>
     <div class="hero-inner">
       <div class="hero-badge">Landlord Suite</div>
-      <h1>Property management for UK landlords</h1>
-      <p class="hero-sub">Manage properties, tenants, rent, maintenance and compliance with a landlord suite built for UK rental businesses.</p>
+      <h1>🏘️ The ShahoSuite Landlord Suite: At a Glance</h1>
+      <p class="hero-sub">We have engineered this suite to handle the “Triple Burden” of modern landlording: Compliance, Cashflow, and Communication.</p>
       <div class="hero-actions">
         <a href="https://app.shahosuite.com/register" class="btn-signup">Start Free</a>
-        <a href="#features" class="btn-login">Explore Features</a>
+        <a href="#features" class="btn-login">See the suite</a>
       </div>
     </div>
   </section>
   <section class="section" id="features">
     <div class="section-inner">
-      <div class="section-tag">What this suite includes</div>
-      <h2>Everything a landlord needs</h2>
-      <p class="section-sub">Keep property, tenant, rent and maintenance workflows together in one UK-hosted platform.</p>
+      <div class="section-tag">What this suite does</div>
+      <h2>Landlord workflow, simplified</h2>
+      <p class="section-sub">Built for the UK landlord, ShahoSuite is your legal and financial bodyguard. From tenancy onboarding to final tax return, run your entire portfolio on the UK’s most secure business engine.</p>
       <div class="feature-grid">
-        <div class="feature-card"><h3>Property Management</h3><p>Add properties, track status, manage HMOs and view portfolio health at a glance.</p></div>
-        <div class="feature-card"><h3>Tenant Records</h3><p>Store tenant profiles, contact details, move-in/out dates and room assignments.</p></div>
-        <div class="feature-card"><h3>Rent Tracking</h3><p>See paid, partial, due and void records with quick actions to chase arrears.</p></div>
-        <div class="feature-card"><h3>Maintenance & Certs</h3><p>Log repairs, track open jobs and keep certificates on schedule for compliance.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="who">
-    <div class="section-inner">
-      <div class="section-tag" style="color:#10b981;">Who it’s for</div>
-      <h2>Perfect for UK landlords</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><h3>Individual landlords</h3><p>Manage rental homes, tenancies and repairs from one place.</p></div>
-        <div class="feature-card"><h3>HMO landlords</h3><p>Track shared properties, room assignments and tenant rent in one dashboard.</p></div>
-        <div class="feature-card"><h3>Portfolio owners</h3><p>See your full portfolio performance, compliance and rent position at a glance.</p></div>
+        <div class="feature-card">
+          <h3>1. Properties & Portfolio 360°</h3>
+          <ul>
+            <li>Unit-level tracking for homes, flats and HMOs</li>
+            <li>Virtual filing cabinet for plans, insurance and deeds</li>
+            <li>Portfolio view for rent performance and status</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>2. The Smart Rent Tracker</h3>
+          <ul>
+            <li>Real-time paid, arrears, partial and void status</li>
+            <li>Void period analytics to protect your yield</li>
+            <li>Automated ledger entries into accounting</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>3. Tenant & Lease Lifecycle</h3>
+          <ul>
+            <li>GDPR-compliant tenant profiles and communication records</li>
+            <li>Lease guard for contracts, notices and deposits</li>
+            <li>Move-in/out checklists that keep every tenancy clean</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>4. The Compliance Vault</h3>
+          <ul>
+            <li>Track Gas Safety, EPC and EICR certificates</li>
+            <li>Smart alerts before certificates expire</li>
+            <li>One-click audit history for council inspections</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>5. Operations & Maintenance</h3>
+          <ul>
+            <li>Job logging for repairs and contractor assignments</li>
+            <li>Cost tracking linked to property P&L</li>
+            <li>Record resolved issues to prove Gold Standard service</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
   <section class="cta">
     <div class="section-inner">
-      <h2>Launch your Landlord Suite today</h2>
-      <p>Start managing properties, tenants and compliance with a suite built for UK landlords.</p>
-      <a href="https://app.shahosuite.com/register">Start Free</a>
+      <h2>Your legal and financial bodyguard for UK landlording</h2>
+      <p>From the first tenancy agreement to the final tax return, ShahoSuite combines professional rent accounting with high-stakes compliance tracking.</p>
+      <a href="https://app.shahosuite.com/register">Run your portfolio safely</a>
     </div>
   </section>
 </main>
