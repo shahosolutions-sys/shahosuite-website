@@ -39,8 +39,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
 .hero{padding:120px 28px 80px;background:linear-gradient(160deg,#ecfdf5 0%,#ffffff 55%,#eff6ff 100%);text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-dot{position:absolute;border-radius:50%;filter:blur(1px);opacity:.55;mix-blend-mode:screen}
+.hero-dot-1{width:120px;height:120px;background:rgba(16,185,129,.22);top:15%;left:10%;animation:float-1 9s ease-in-out infinite}
+.hero-dot-2{width:90px;height:90px;background:rgba(14,165,233,.22);top:30%;right:12%;animation:float-2 10s ease-in-out infinite}
+.hero-dot-3{width:150px;height:150px;background:rgba(236,72,153,.20);bottom:18%;left:18%;animation:float-3 11s ease-in-out infinite}
+.hero-dot-4{width:80px;height:80px;background:rgba(249,115,22,.24);bottom:25%;right:20%;animation:float-4 8.5s ease-in-out infinite}
 .hero-inner{max-width:860px;margin:0 auto}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:#fff;border:1px solid rgba(15,23,42,.08)}
+@keyframes float-1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(12px,16px) scale(1.05)}}
+@keyframes float-2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-10px,18px) scale(1.08)}}
+@keyframes float-3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,-12px) scale(1.04)}}
+@keyframes float-4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-14px,-18px) scale(1.06)}}
 h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:20px}
 .hero-sub{font-size:17px;color:#475569;max-width:620px;margin:0 auto 28px;line-height:1.75}
 .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
@@ -101,6 +111,12 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
 </nav>
 <main>
   <section class="hero">
+    <div class="hero-bg">
+      <span class="hero-dot hero-dot-1"></span>
+      <span class="hero-dot hero-dot-2"></span>
+      <span class="hero-dot hero-dot-3"></span>
+      <span class="hero-dot hero-dot-4"></span>
+    </div>
     <div class="hero-inner">
       <div class="hero-badge">Landlord Suite</div>
       <h1>Property management for UK landlords</h1>
