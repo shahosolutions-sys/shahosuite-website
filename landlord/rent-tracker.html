@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rent Tracker for UK Landlords — ShahoSuite</title>
+<meta name="description" content="Rent Tracker for UK landlords: manage rent, tenants, leases, and compliance from one landlord-focused dashboard." />
+<link rel="canonical" href="https://www.shahosuite.com/landlord/rent-tracker.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Rent Tracker for UK Landlords — ShahoSuite" />
+<meta property="og:description" content="Manage rent, tenants, leases and landlord compliance from one UK landlord dashboard. ShahoSuite helps landlords reduce arrears and stay audit-ready." />
+<meta property="og:url" content="https://www.shahosuite.com/landlord/rent-tracker.html" />
+<meta property="og:image" content="https://www.shahosuite.com/og-image.png" />
+<meta property="og:site_name" content="ShahoSuite" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rent Tracker for UK Landlords — ShahoSuite" />
+<meta name="twitter:description" content="Manage rent, tenants, leases and compliance from one UK landlord dashboard. ShahoSuite helps landlords reduce arrears and stay audit-ready." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#f8fafc;color:#0f172a;line-height:1.7}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.page-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid #e5e7eb}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;font-size:18px;color:#0f172a}
+.nav-links{display:flex;align-items:center;gap:10px}
+.nav-link{font-size:13px;font-weight:700;color:#334155;padding:8px 12px;border-radius:999px;transition:all .2s}
+.nav-link:hover{background:#eff6ff;color:#0f172a}
+.nav-btns{display:flex;align-items:center;gap:8px}
+.btn-login,.btn-signup{border-radius:999px;padding:9px 18px;font-weight:700;transition:transform .18s}
+.btn-login{background:#fff;color:#0f172a;border:1px solid #d1d5db}
+.btn-login:hover,.btn-signup:hover{transform:translateY(-1px)}
+.btn-signup{background:#0d9488;color:#fff;border:1px solid #0d9488}
+main{padding:120px 24px 60px}
+.hero{position:relative;overflow:hidden;padding:72px 0 36px}
+.hero::before{content:'';position:absolute;top:-36px;left:-24px;width:160px;height:160px;background:rgba(13,148,136,.12);border-radius:50%;filter:blur(18px)}
+.hero::after{content:'';position:absolute;right:-20px;bottom:0;width:120px;height:120px;background:rgba(59,130,246,.14);border-radius:50%;filter:blur(14px)}
+.hero-inner{max-width:920px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;gap:8px;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:700;color:#0f172a;background:#d9f99d;border:1px solid #bef264;margin-bottom:16px}
+h1{font-size:clamp(42px,5vw,62px);font-weight:800;line-height:1.02;margin-bottom:18px;background:linear-gradient(135deg,#0d9488,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:18px;color:#334155;max-width:720px;margin-bottom:28px;line-height:1.7}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
+.btn-primary{background:#0d9488;color:#fff;border:1px solid #0d9488;border-radius:999px;padding:14px 24px;font-weight:800}
+.btn-secondary{background:#fff;color:#0f172a;border:1px solid #cbd5e1;border-radius:999px;padding:14px 24px;font-weight:700}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:10px}
+.summary-card{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:24px;box-shadow:0 18px 45px rgba(15,23,42,.06)}
+.summary-icon{font-size:26px;margin-bottom:12px}
+.summary-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#64748b;margin-bottom:10px}
+.summary-value{font-size:18px;font-weight:800;color:#0f172a;line-height:1.4}
+.section{padding:64px 0;position:relative}
+.section::before{content:'';position:absolute;right:10px;top:10px;width:80px;height:80px;background:rgba(236,72,153,.08);border-radius:18px;transform:rotate(24deg)}
+.section::after{content:'';position:absolute;left:20px;bottom:10px;width:56px;height:56px;background:rgba(59,130,246,.08);border-radius:18px;transform:rotate(-18deg)}
+.section-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1}
+.section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#0d9488;margin-bottom:12px}
+h2{font-size:clamp(30px,4vw,42px);font-weight:800;line-height:1.05;margin-bottom:18px;color:#0f172a}
+.section-copy{font-size:16px;color:#475569;max-width:760px;margin-bottom:28px;line-height:1.8}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.feature-card{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:26px;box-shadow:0 18px 45px rgba(15,23,42,.08);transition:transform .18s}
+.feature-card:hover{transform:translateY(-4px)}
+.feature-card h3{font-size:18px;font-weight:800;margin-bottom:12px;color:#0f172a}
+.feature-card p{font-size:15px;color:#475569;line-height:1.75}
+.feature-card ul{list-style:none;padding-left:0;margin-top:14px}
+.feature-card li{position:relative;padding-left:22px;margin-bottom:12px;color:#475569;line-height:1.75}
+.feature-card li::before{content:'•';position:absolute;left:0;top:0;color:#0d9488;font-size:20px;line-height:1}
+.empty-state{background:#fff;border:2px dashed #cbd5e1;border-radius:22px;padding:40px 30px;text-align:center;color:#334155}
+.empty-state h3{font-size:26px;margin-bottom:12px}
+.empty-state p{font-size:15px;color:#64748b;max-width:460px;margin:0 auto}
+.footer{padding:40px 24px 32px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:14px}
+.footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#0f172a}
+@media(max-width:900px){.nav-inner{flex-wrap:wrap;height:auto;padding:18px 24px}.hero-actions{justify-content:flex-start}.summary-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="page-nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">ShahoSuite</a>
+    <div class="nav-links">
+      <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
+      <a href="/landlord/tenants.html" class="nav-link">Tenant Management</a>
+      <a href="/landlord/properties.html" class="nav-link">Properties</a>
+      <a href="/landlord/rent-tracker.html" class="nav-link">Rent Tracker</a>
+      <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-btns">
+      <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-badge">Rent Tracker</span>
+      <h1>Rent Tracker for UK Landlords</h1>
+      <p class="hero-sub">Monitor rent, tenants, leases and compliance from one landlord dashboard built for property owners, agents and HMO managers.</p>
+      <div class="hero-actions">
+        <a href="https://app.shahosuite.com/register" class="btn-primary">Start free trial</a>
+        <a href="mailto:admin@shahosuite.com" class="btn-secondary">Book a demo</a>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="summary-icon">🏠</div>
+          <div class="summary-label">Properties</div>
+          <div class="summary-value">Total properties in your portfolio</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon">💰</div>
+          <div class="summary-label">Monthly Income</div>
+          <div class="summary-value">Expected rent across active tenancies</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon">⚠️</div>
+          <div class="summary-label">In Arrears</div>
+          <div class="summary-value">Tenancies with overdue rent payments</div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-icon">🔧</div>
+          <div class="summary-label">Open Issues</div>
+          <div class="summary-value">Outstanding maintenance or compliance tasks</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="search">
+    <div class="section-inner">
+      <div class="section-tag">Search</div>
+      <h2>Search by address, postcode, property type, or tenant name…</h2>
+      <p class="section-copy">Find the right property or tenancy quickly and keep your landlord dashboard moving.</p>
+    </div>
+  </section>
+
+  <section class="section" id="add-property">
+    <div class="section-inner">
+      <div class="section-tag">Add Property</div>
+      <h2>Add Property</h2>
+      <p class="section-copy">Capture every essential detail for a new rental asset and keep your portfolio ready for lettings.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Basic Info</h3>
+          <ul>
+            <li><strong>Address</strong> – Full property address</li>
+            <li><strong>Postcode</strong> – UK postcode</li>
+            <li><strong>Property Type</strong> – Select the type of property</li>
+            <li><strong>Status</strong> – Current letting status</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>Financial</h3>
+          <ul>
+            <li><strong>Monthly Rent (£)</strong> – Standard monthly rent</li>
+            <li><strong>Bills Included</strong> – Specify if bills are included</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>Property Details</h3>
+          <ul>
+            <li><strong>Bedrooms</strong> – Number of bedrooms</li>
+            <li><strong>Bathrooms</strong> – Number of bathrooms</li>
+            <li><strong>Furnished</strong> – Furnishing status</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h3>Building</h3>
+          <ul>
+            <li><strong>Floor</strong> – Floor number (if applicable)</li>
+            <li><strong>Total Floors</strong> – Total floors in building</li>
+            <li><strong>Parking</strong> – Parking availability</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Location Tags</h3>
+          <p>Select features that describe the property’s location and appeal.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Notes</h3>
+          <p>Add internal notes or useful details about the property.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="property-card">
+    <div class="section-inner">
+      <div class="section-tag">Property Card</div>
+      <h2>Property Card (List View)</h2>
+      <p class="section-copy">A clear property card makes it easy to scan portfolio health, rent status, and current issues.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Top line</h3>
+          <p><strong>📍 Address</strong></p>
+          <p>Postcode · Bedrooms · Property Type</p>
+        </div>
+        <div class="feature-card">
+          <h3>Right side price</h3>
+          <p><strong>£X/month</strong></p>
+        </div>
+        <div class="feature-card">
+          <h3>Health Status Labels</h3>
+          <ul>
+            <li>✅ Healthy → No issues detected</li>
+            <li>⚠️ Attention needed → Issues require action</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="detail-panel">
+    <div class="section-inner">
+      <div class="section-tag">Detail Panel</div>
+      <h2>Property Detail Panel</h2>
+      <p class="section-copy">Show the property summary, shared spaces, rent status and quick tenant details in one panel.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Header</h3>
+          <p><strong>Address</strong><br />Postcode · Bedrooms · Type · £X/month</p>
+        </div>
+        <div class="feature-card">
+          <h3>Shared Spaces</h3>
+          <p>Shared areas or access details for this property.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rent-month">
+    <div class="section-inner">
+      <div class="section-tag">Rent This Month</div>
+      <h2>Rent This Month</h2>
+      <p class="section-copy">Display whether rent has been paid or is outstanding, with a clear payment action.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>If paid</h3>
+          <p>✅ Rent received for this period</p>
+        </div>
+        <div class="feature-card">
+          <h3>If unpaid</h3>
+          <p>⚠️ Rent outstanding — action required</p>
+        </div>
+        <div class="feature-card">
+          <h3>Button</h3>
+          <p><strong>Mark as Paid</strong> → Save payment and update status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tenants-section">
+    <div class="section-inner">
+      <div class="section-tag">Tenants</div>
+      <h2>Tenants</h2>
+      <p class="section-copy">Keep tenant records visible and landlord-focused, with status and move-in details for each tenancy.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Empty state</h3>
+          <p>No tenants linked to this property.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Tenant row</h3>
+          <ul>
+            <li>Name</li>
+            <li>Contact details</li>
+            <li>Status (Active / Former)</li>
+            <li>Move-in date</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tenancies-section">
+    <div class="section-inner">
+      <div class="section-tag">Tenancies</div>
+      <h2>Tenancies</h2>
+      <p class="section-copy">Tenancies track lease terms, rent and duration so landlords always see what is active, expiring or expired.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Status Labels</h3>
+          <ul>
+            <li><strong>Active</strong> → Lease ongoing</li>
+            <li><strong>Expiring</strong> → Ending soon</li>
+            <li><strong>Expired</strong> → Lease ended</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="maintenance-section">
+    <div class="section-inner">
+      <div class="section-tag">Maintenance</div>
+      <h2>Maintenance</h2>
+      <p class="section-copy">Track repairs, contractors and progress from the same landlord dashboard.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Status Labels</h3>
+          <ul>
+            <li>Reported</li>
+            <li>In progress</li>
+            <li>Completed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certificates-section">
+    <div class="section-inner">
+      <div class="section-tag">Certificates & Compliance</div>
+      <h2>Certificates & Compliance</h2>
+      <p class="section-copy">Store safety certificates and compliance records so landlords can see expiring items at a glance.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Status Labels</h3>
+          <ul>
+            <li>Valid</li>
+            <li>Expiring soon</li>
+            <li>Expired</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="viewings-section">
+    <div class="section-inner">
+      <div class="section-tag">Viewings & Inspections</div>
+      <h2>Viewings & Inspections</h2>
+      <p class="section-copy">Track property viewings and inspections in the same workflow, with dates and follow-up notes.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Empty state</h3>
+          <p>No upcoming viewings scheduled.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="empty-portfolio">
+    <div class="section-inner">
+      <div class="section-tag">Portfolio</div>
+      <h2>No properties yet</h2>
+      <p class="section-copy">Add your first property to start tracking tenants, rent and compliance from one landlord dashboard.</p>
+      <div class="empty-state">
+        <p>Start tracking rent, leases and maintenance in a landlord-friendly workspace that keeps every property on one page.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/landlord-suite.html">Landlord Suite</a>
+    <a href="/landlord/tenants.html">Tenant Management</a>
+    <a href="/pricing.html">Pricing</a>
+  </div>
+  <div>© 2026 Shaho Solutions Limited. Built for UK landlords.</div>
+</footer>
+</body>
+</html>
