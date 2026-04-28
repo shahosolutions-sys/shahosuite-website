@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ShahoSuite Landlord Tenants Module — UK Tenant Management Software</title>
-<meta name="description" content="ShahoSuite Landlord Tenants Module helps UK landlords manage tenant profiles, leases, rent status, statements, compliance and communication from one secure platform." />
+<title>Tenant Management Software for UK Landlords — ShahoSuite</title>
+<meta name="description" content="ShahoSuite helps UK landlords track tenants, rent, leases and compliance in one landlord-focused tenant management software platform." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Shaho Solutions Limited" />
 <meta name="geo.region" content="GB" />
@@ -13,15 +13,15 @@
 <meta name="ICBM" content="50.8198, -1.0880" />
 <link rel="canonical" href="https://www.shahosuite.com/landlord/tenants.html" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ShahoSuite Landlord Tenants Module — UK Tenant Management" />
-<meta property="og:description" content="Manage tenant profiles, leases, rent statements and compliance in one secure UK-built landlord module. Built for UK landlords on Microsoft Azure UK." />
+<meta property="og:title" content="Tenant Management Software for UK Landlords — ShahoSuite" />
+<meta property="og:description" content="Track tenants, rent, leases and compliance in one landlord-focused UK platform. ShahoSuite is built for property owners, agents and HMO managers." />
 <meta property="og:url" content="https://www.shahosuite.com/landlord/tenants.html" />
 <meta property="og:image" content="https://www.shahosuite.com/og-image.png" />
 <meta property="og:site_name" content="ShahoSuite" />
 <meta property="og:locale" content="en_GB" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ShahoSuite Landlord Tenants Module — UK Landlord Software" />
-<meta name="twitter:description" content="Tenant management for UK landlords with lease lifecycle, rent tracking, statements, GDPR-compliant profiles, and property-linked workflows." />
+<meta name="twitter:title" content="Tenant Management Software for UK Landlords — ShahoSuite" />
+<meta name="twitter:description" content="Track tenants, rent and leases from one UK landlord software platform. ShahoSuite delivers rent tracking, lease management and compliance for landlords." />
 <meta name="twitter:image" content="https://www.shahosuite.com/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,6 +76,16 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bot
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:14px}
 .footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#0f172a}
+.hero, .section{position:relative;overflow:hidden}
+.hero-deco, .section-ornament{position:absolute;pointer-events:none;transform-style:preserve-3d}
+.hero-deco{width:32px;height:32px;border-radius:16px;background:linear-gradient(145deg,rgba(13,148,136,.98),rgba(6,95,70,.85));box-shadow:0 18px 35px rgba(15,23,42,.18);animation:float-vertical 6s ease-in-out infinite}
+.hero-deco--one{top:24px;left:24px}
+.hero-deco--two{top:110px;right:20px;width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,rgba(59,130,246,.95),rgba(37,99,235,.8));box-shadow:0 16px 28px rgba(15,23,42,.16);animation:float-vertical 5.5s ease-in-out infinite reverse}
+.section-ornament{width:18px;height:18px;border-radius:8px;background:linear-gradient(120deg,rgba(16,185,129,.95),rgba(6,95,70,.6));box-shadow:0 10px 20px rgba(15,23,42,.14);animation:float-vertical 7s ease-in-out infinite}
+.section-ornament--one{top:22px;right:26px}
+.section-ornament--two{bottom:20px;left:18px;width:20px;height:20px;border-radius:10px;background:linear-gradient(120deg,rgba(59,130,246,.95),rgba(37,99,235,.7));box-shadow:0 10px 24px rgba(15,23,42,.14)}
+.section-ornament--three{top:24px;left:16px;width:16px;height:16px;border-radius:4px;background:linear-gradient(120deg,rgba(236,72,153,.94),rgba(219,39,119,.7));box-shadow:0 10px 18px rgba(15,23,42,.12);animation:float-vertical 8s ease-in-out infinite reverse}
+@keyframes float-vertical{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,10px,0)}}
 @keyframes hero-shift{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(18deg)}}
 @media(max-width:900px){.nav-centre{display:none}}@media(max-width:700px){.hero{padding:90px 18px 50px}.hero-inner{max-width:100%}.feature-grid{grid-template-columns:1fr}}
 </style>
@@ -85,9 +95,9 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bot
   <div class="nav-inner">
     <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" /></a>
     <div class="nav-links">
-      <a href="#suites" class="nav-link">Suites</a>
-      <a href="#modules" class="nav-link">Modules</a>
-      <a href="#trust" class="nav-link">Trust</a>
+      <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
+      <a href="/landlord/tenants.html" class="nav-link">Tenant Management</a>
+      <a href="#features" class="nav-link">Features</a>
       <a href="/pricing.html" class="nav-link">Pricing</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
@@ -100,73 +110,147 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bot
 <main>
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">Landlord Landlord Module</div>
-      <h1>Tenant management built for modern UK landlords</h1>
-      <p class="hero-sub">Keep tenant profiles, leases, rent status, documents and communication in one secure, GDPR-ready landlord module on Azure UK.</p>
+      <div class="hero-badge">Landlord Software</div>
+      <div class="hero-deco hero-deco--one"></div>
+      <div class="hero-deco hero-deco--two"></div>
+      <h1>Tenant Management Software for UK Landlords</h1>
+      <p class="hero-sub">Track tenants, rent, leases and landlord compliance from one secure UK platform built for property owners and letting agents.</p>
       <div class="hero-actions">
-        <a href="https://app.shahosuite.com/register" class="btn-primary">Start free trial</a>
-        <a href="mailto:admin@shahosuite.com" class="btn-secondary">Book a demo</a>
+        <a href="https://app.shahosuite.com/register" class="btn-primary">Start a free trial</a>
+        <a href="mailto:admin@shahosuite.com" class="btn-secondary">Talk to sales</a>
       </div>
       <div class="stats">
         <div class="stat-card">
-          <div class="stat-number">UK</div>
-          <div class="stat-label">Designed for UK landlord compliance</div>
+          <div class="stat-number">Built for UK</div>
+          <div class="stat-label">Hosted on Azure UK</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">Lease</div>
-          <div class="stat-label">Track tenancy terms and renewals</div>
+          <div class="stat-number">2X</div>
+          <div class="stat-label">Faster rent tracking</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">Rent</div>
-          <div class="stat-label">Monitor payment status in real time</div>
+          <div class="stat-number">Compliance</div>
+          <div class="stat-label">Right to rent & GDPR ready</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="overview">
     <div class="section-inner">
-      <div class="section-tag">Tenant Module</div>
-      <h2>One place for tenant lifecycle, notes, statements and compliance</h2>
-      <p class="section-copy">ShahoSuite gives landlords a clean tenant dashboard, automatic rent status, digital lease references, and property-linked tenant histories. Simplify notices, access requests, and GDPR-ready records with one UK-focused landlord module.</p>
+      <div class="section-ornament section-ornament--one"></div>
+      <div class="section-tag">Overview</div>
+      <h2>Track tenants, rent, and leases in one place</h2>
+      <p class="section-copy">ShahoSuite gives UK landlords a single workspace to manage tenant records, payment status, lease dates and compliance checks without separate spreadsheets or tenant portals.</p>
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-ornament section-ornament--two"></div>
+      <div class="section-tag">How it works</div>
+      <h2>How it works</h2>
+      <p class="section-copy">Set up each property and tenancy once, then use the dashboard to update rent payments, move-in details, lease renewals and compliance logs in a few clicks.</p>
       <div class="feature-grid">
         <article class="feature-card">
-          <h3>Tenant profiles</h3>
-          <p>Store tenant details, rent history, documents and notes for every tenancy in a searchable portfolio.</p>
+          <h3>1. Add properties and tenancies</h3>
+          <p>Create landlord records for each property, associate tenants, and import lease terms in seconds.</p>
         </article>
         <article class="feature-card">
-          <h3>Lease lifecycle</h3>
-          <p>Manage active agreements, renewals, move-in and move-out dates from one landlord-friendly screen.</p>
+          <h3>2. Track rent and lease status</h3>
+          <p>Monitor due dates, receive alerts for missed payments, and keep lease end dates visible to avoid gaps.</p>
         </article>
+        <article class="feature-card">
+          <h3>3. Stay compliant</h3>
+          <p>Keep right-to-rent checks, tenant documents and GDPR notes organised with UK-focused compliance workflows.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-inner">
+      <div class="section-ornament section-ornament--three"></div>
+      <div class="section-tag">Features</div>
+      <h2>Features</h2>
+      <p class="section-copy">ShahoSuite is designed for landlords, with rent tracking, tenant CRM, lease management, maintenance handoff, and audit-ready compliance records.</p>
+      <div class="feature-grid">
         <article class="feature-card">
           <h3>Rent tracking</h3>
-          <p>See due dates, payments, arrears and statements at a glance so you can act quickly.</p>
+          <p>See what is overdue, paid, and scheduled so you can reduce arrears and improve cash flow.</p>
         </article>
         <article class="feature-card">
-          <h3>Compliance reports</h3>
-          <p>Keep audit-ready tenant records, right to rent checks, and GDPR notes organised for every property.</p>
+          <h3>Tenant CRM</h3>
+          <p>Manage tenant profiles, tenancy histories, documents and communications from one landlord dashboard.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Lease management</h3>
+          <p>Keep lease start and end dates, renewal reminders and notice deadlines visible at a glance.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Compliance records</h3>
+          <p>Store right-to-rent checks, GDPR notes and property compliance data in one secure UK-ready system.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Property-linked workflows</h3>
+          <p>Connect tenants to properties and maintenance requests so every record stays organised.</p>
+        </article>
+        <article class="feature-card">
+          <h3>UK hosting</h3>
+          <p>Hosted on Microsoft Azure UK for better performance and trusted data residency.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="benefits">
     <div class="section-inner">
-      <div class="section-tag">Why it works</div>
-      <h2>Built for landlords who need clarity and control</h2>
-      <p class="section-copy">This module is part of ShahoSuite’s landlord platform, so tenant workflows link directly to properties, leases, rent, maintenance and accounts. No separate spreadsheets, no lost emails, no duplicated tenant records.</p>
+      <div class="section-ornament section-ornament--one"></div>
+      <div class="section-tag">Benefits</div>
+      <h2>Benefits for landlords</h2>
+      <p class="section-copy">The right tenant software gives you control over rent, compliance and property performance so you can manage more homes with less risk.</p>
       <div class="feature-grid">
         <article class="feature-card">
-          <h3>Property-linked data</h3>
-          <p>Each tenant is connected to a property and a lease, so all details stay in context.</p>
+          <h3>Reduce arrears</h3>
+          <p>Automated rent monitoring helps you spot late payments before they become a problem.</p>
         </article>
         <article class="feature-card">
-          <h3>Instant statements</h3>
-          <p>Generate rent and payment summaries for tenants and agents in seconds.</p>
+          <h3>Stay compliant</h3>
+          <p>UK landlord workflows keep right-to-rent and GDPR documentation organised and easy to review.</p>
         </article>
         <article class="feature-card">
-          <h3>Secure UK hosting</h3>
-          <p>Hosted on Microsoft Azure UK with GDPR-aware controls and fast UK performance.</p>
+          <h3>Save time</h3>
+          <p>Eliminate spreadsheets, duplicate records and manual chase work with one landlord platform.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Manage HMOs easily</h3>
+          <p>Keep multiple tenants, rooms and lease details aligned for shared houses and portfolios.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faqs">
+    <div class="section-inner">
+      <div class="section-ornament section-ornament--two"></div>
+      <div class="section-tag">FAQs</div>
+      <h2>FAQs</h2>
+      <div class="faq-list">
+        <article class="feature-card">
+          <h3>How do landlords track rent in the UK?</h3>
+          <p>ShahoSuite tracks due dates, payments, arrears and statements in one place, so UK landlords can see tenancy cash flow and chase quickly.</p>
+        </article>
+        <article class="feature-card">
+          <h3>What is the best tenant management software?</h3>
+          <p>For UK landlords, software that combines tenant records, rent tracking, lease timelines and compliance is the best choice. ShahoSuite is built for that landlord intent.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Can I manage HMO tenants with this software?</h3>
+          <p>Yes. ShahoSuite links tenants to properties and rooms, making shared house and HMO tenancy management simpler for landlords.</p>
+        </article>
+        <article class="feature-card">
+          <h3>How do I stay compliant with tenant checks?</h3>
+          <p>Use the compliance records section to store right-to-rent checks, tenant documents and GDPR notes alongside each tenancy.</p>
         </article>
       </div>
     </div>
