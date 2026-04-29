@@ -45,11 +45,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .hero-inner p{font-size:17px;color:#111;max-width:660px;margin:0 auto 30px;line-height:1.8}
 @media(max-width:700px){.hero{padding:0 20px 50px}.hero-inner{top:32vh}.feature-grid{grid-template-columns:1fr}}
 
-.ghost-buttons{position:fixed;inset:0;z-index:210;pointer-events:none;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:24px;gap:20px}
-.ghost-btn{pointer-events:none;opacity:0;transform:translateY(20px);transition:opacity .35s ease,transform .35s ease;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;border-radius:30px;font-size:15px;font-weight:800;color:#fff;background:#111;box-shadow:0 18px 45px rgba(15,23,42,.18);text-decoration:none}
-.ghost-btn.visible{opacity:1;transform:translateY(0);pointer-events:auto}
-.center-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,20px);}
-.bottom-btn{position:relative;bottom:0;}
+.hero{position:relative;z-index:2;text-align:center;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;background:transparent}
+.hero-inner{position:relative;color:#111;z-index:2;max-width:880px}
+.hero-title{font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1.02;letter-spacing:-0.05em;color:#0f172a;max-width:860px;margin:0 auto}
+.hero-cursor{display:inline-block;width:16px;animation:blink 1s steps(2,end) infinite;vertical-align:middle;margin-left:4px;color:#0f172a}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
 .section{padding:56px 28px}
 .section-inner{max-width:980px;margin:0 auto}
@@ -116,14 +116,9 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
 </nav>
 <main>
   <canvas id="bg"></canvas>
-  <div class="ghost-buttons">
-    <a href="/index.html" class="ghost-btn bottom-btn">Home</a>
-    <a href="/index.html" class="ghost-btn center-btn">Close</a>
-  </div>
   <section class="hero">
     <div class="hero-inner">
-      <h1>All in One Business Operation System</h1>
-      <p>Color pulse system</p>
+      <h1 class="hero-title"><span id="typewriter"></span><span class="hero-cursor">|</span></h1>
     </div>
   </section>
   <section class="section" id="features">
@@ -196,108 +191,135 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
 </footer>
 <script>
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let W = window.innerWidth;
+let H = window.innerHeight;
+canvas.width = W;
+canvas.height = H;
 
-const POINTS = 240;
-const MAX_DIST = 120;
+const particles = [];
+const mouse = { x: W / 2, y: H / 2 };
+const ghost = {
+  active: false,
+  alpha: 0,
+  start: 0,
+  fadeIn: 1000,
+  hold: 5000,
+  fadeOut: 1000
+};
 
-let points = [];
-let startTime = Date.now();
-
-function createPoints() {
-  points = [];
-
-  for (let i = 0; i < POINTS; i++) {
-    points.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
+window.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+  for (let i = 0; i < 3; i++) {
+    particles.push({
+      x: mouse.x + (Math.random() - 0.5) * 20,
+      y: mouse.y + (Math.random() - 0.5) * 20,
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
-      offset: Math.random() * 1000
+      life: 1,
+      size: Math.random() * 2 + 0.8
     });
   }
+});
+
+window.addEventListener('resize', () => {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+});
+
+function createGhost() {
+  ghost.active = true;
+  ghost.start = Date.now();
 }
 
-createPoints();
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(255,255,255,0.12)';
+  ctx.fillRect(0, 0, W, H);
 
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach((p, idx) => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life -= 0.016;
 
-  const time = Date.now() - startTime;
+    if (p.life <= 0) {
+      particles.splice(idx, 1);
+      return;
+    }
 
-  const fadeIn = 2000;
-  const hold = 4000;
-  const fadeOut = 3000;
-
-  let alpha = 0;
-
-  if (time < fadeIn) {
-    alpha = time / fadeIn;
-  } else if (time < fadeIn + hold) {
-    alpha = 1;
-  } else if (time < fadeIn + hold + fadeOut) {
-    alpha = 1 - (time - (fadeIn + hold)) / fadeOut;
-  } else {
-    alpha = 0;
-  }
-
-  points.forEach(p => {
-    p.x += p.vx + Math.sin(time * 0.001 + p.offset) * 0.1;
-    p.y += p.vy + Math.cos(time * 0.001 + p.offset) * 0.1;
-
-    if (p.x < 0) p.x = canvas.width;
-    if (p.x > canvas.width) p.x = 0;
-    if (p.y < 0) p.y = canvas.height;
-    if (p.y > canvas.height) p.y = 0;
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(15,23,42,${p.life * 0.18})`;
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
   });
 
-  for (let i = 0; i < points.length; i++) {
-    for (let j = i + 1; j < points.length; j++) {
-      const a = points[i];
-      const b = points[j];
+  if (ghost.active) {
+    const elapsed = Date.now() - ghost.start;
+    if (elapsed < ghost.fadeIn) {
+      ghost.alpha = elapsed / ghost.fadeIn;
+    } else if (elapsed < ghost.fadeIn + ghost.hold) {
+      ghost.alpha = 1;
+    } else if (elapsed < ghost.fadeIn + ghost.hold + ghost.fadeOut) {
+      ghost.alpha = 1 - (elapsed - ghost.fadeIn - ghost.hold) / ghost.fadeOut;
+    } else {
+      ghost.active = false;
+      ghost.alpha = 0;
+    }
 
-      const dx = a.x - b.x;
-      const dy = a.y - b.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+    if (ghost.active) {
+      const nodes = [];
+      for (let i = 0; i < 100; i++) {
+        nodes.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          dx: (Math.random() - 0.5) * 0.2,
+          dy: (Math.random() - 0.5) * 0.2
+        });
+      }
 
-      if (dist < MAX_DIST) {
-        let linkAlpha = (1 - dist / MAX_DIST) * alpha;
-        ctx.strokeStyle = `rgba(0,0,0,${linkAlpha})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i];
+          const b = nodes[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 140) {
+            ctx.strokeStyle = `rgba(0,0,0,${(1 - dist / 140) * 0.18 * ghost.alpha})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
       }
     }
   }
 
-  if (time < fadeIn + hold + fadeOut + 1000) {
-    requestAnimationFrame(animate);
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+const text = 'Property & Lettings Suite';
+let index = 0;
+const typeEl = document.getElementById('typewriter');
+
+function typeWriter() {
+  if (index <= text.length) {
+    typeEl.textContent = text.slice(0, index);
+    index += 1;
+    setTimeout(typeWriter, 120);
+  } else {
+    createGhost();
   }
 }
 
-animate();
-
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  createPoints();
-});
-
-const bottomBtn = document.querySelector('.ghost-btn.bottom-btn');
-const centerBtn = document.querySelector('.ghost-btn.center-btn');
-
-if (bottomBtn) {
-  setTimeout(() => bottomBtn.classList.add('visible'), 4000);
-}
-if (centerBtn) {
-  setTimeout(() => centerBtn.classList.add('visible'), 7000);
-}
+typeWriter();
 </script>
 </body>
 </html>
