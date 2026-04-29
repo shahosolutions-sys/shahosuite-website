@@ -39,15 +39,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
 .btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{position:relative;z-index:2;text-align:center;padding:110px 28px 60px;overflow:hidden;background:transparent}
-.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:2}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 24px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:rgba(255,255,255,.92);border:1px solid rgba(15,23,42,.08)}
-.hero-sub{font-size:17px;color:#111;max-width:660px;margin:0 auto 30px;line-height:1.8}
-@media(max-width:700px){.hero{padding:120px 20px 50px}.hero-sub{margin-bottom:24px}.feature-grid{grid-template-columns:1fr}}
-h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
-.hero-sub{font-size:17px;color:#334155;max-width:660px;margin:0 auto 30px;line-height:1.8}
-.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:36px}
-.hero-actions .btn-login{background:rgba(255,255,255,.95);border:1px solid #d1d5db;box-shadow:0 4px 0 rgba(209,213,219,.55)}
+.hero{position:relative;z-index:2;text-align:center;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:0;overflow:hidden;background:transparent}
+.hero-inner{position:relative;top:40vh;color:#111;z-index:2}
+.hero-inner h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
+.hero-inner p{font-size:17px;color:#111;max-width:660px;margin:0 auto 30px;line-height:1.8}
+@media(max-width:700px){.hero{padding:0 20px 50px}.hero-inner{top:32vh}.feature-grid{grid-template-columns:1fr}}
+
 .section{padding:56px 28px}
 .section-inner{max-width:980px;margin:0 auto}
 .section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#10b981}
@@ -115,13 +112,8 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
   <canvas id="bg"></canvas>
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">Landlord Suite</div>
-      <h1>🏘️ The ShahoSuite Landlord Suite: At a Glance</h1>
-      <p class="hero-sub">We have engineered this suite to handle the “Triple Burden” of modern landlording: Compliance, Cashflow, and Communication.</p>
-      <div class="hero-actions">
-        <a href="https://app.shahosuite.com/register" class="btn-signup">Start Free</a>
-        <a href="#features" class="btn-login">See the suite</a>
-      </div>
+      <h1>All in One Business Operation System</h1>
+      <p>Color pulse system</p>
     </div>
   </section>
   <section class="section" id="features">
@@ -194,66 +186,67 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
 </footer>
 <script>
-const canvas = document.getElementById('bg');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-const colors = [
-  '#ff0055',
-  '#ff9900',
-  '#ffee00',
-  '#00cc66',
-  '#0099ff',
-  '#6600ff'
-];
+const size = 40;
+let squares = [];
 
-let lines = [];
-for (let i = 0; i < 6; i++) {
-  lines.push({
-    y: (canvas.height / 6) * i + 100,
-    xOffset: Math.random() * 1000,
-    speed: 0.5 + Math.random() * 0.5,
-    alpha: 0.2 + Math.random() * 0.2
-  });
-}
+function createGrid() {
+  squares = [];
 
-function drawLine(line) {
-  const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-  colors.forEach((c, i) => {
-    gradient.addColorStop(i / colors.length, c);
-  });
-
-  ctx.strokeStyle = gradient;
-  ctx.globalAlpha = line.alpha;
-  ctx.shadowBlur = 30;
-  ctx.shadowColor = 'rgba(0,0,0,0.1)';
-  ctx.lineWidth = 3;
-
-  ctx.beginPath();
-  for (let x = 0; x < canvas.width; x += 10) {
-    const wave = Math.sin((x + line.xOffset) * 0.01) * 20;
-    ctx.lineTo(x, line.y + wave);
+  for (let y = 0; y < canvas.height; y += size) {
+    for (let x = 0; x < canvas.width; x += size) {
+      squares.push({
+        x,
+        y,
+        alpha: 0,
+        delay: Math.random() * 4000,
+        hueOffset: Math.random() * 360
+      });
+    }
   }
-  ctx.stroke();
-  ctx.globalAlpha = 1;
 }
+
+createGrid();
+
+let startTime = Date.now();
+const cycleDuration = 10000;
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  lines.forEach(line => {
-    line.xOffset += line.speed;
-    line.alpha = 0.15 + Math.sin(Date.now() * 0.001 + line.y) * 0.1;
-    drawLine(line);
+
+  const time = (Date.now() - startTime) % cycleDuration;
+
+  squares.forEach(sq => {
+    let fadeIn = Math.min(time / 2000, 1);
+
+    let fadeOut = 1;
+    if (time > 4000 + sq.delay) {
+      fadeOut = Math.max(1 - (time - (4000 + sq.delay)) / 2000, 0);
+    }
+
+    sq.alpha = fadeIn * fadeOut;
+
+    let hue = (time * 0.05 + sq.hueOffset) % 360;
+
+    ctx.fillStyle = `hsla(${hue}, 80%, 60%, ${sq.alpha})`;
+    ctx.fillRect(sq.x, sq.y, size - 2, size - 2);
   });
+
   requestAnimationFrame(animate);
 }
+
 animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  createGrid();
+});
 </script>
 </body>
 </html>
