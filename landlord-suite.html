@@ -18,8 +18,9 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7}
+body{position:relative;font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
+canvas{position:fixed;top:0;left:0;z-index:1;width:100%;height:100%}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);border-bottom:1px solid #e5e7eb;}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo img{height:54px;width:auto;display:block}
@@ -38,25 +39,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
 .btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{padding:110px 28px 60px;background:linear-gradient(160deg,#ecfdf5 0%,#ffffff 55%,#eff6ff 100%);text-align:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.hero-dot{position:absolute;border-radius:50%;filter:blur(1px);opacity:.55;mix-blend-mode:screen}
-.hero-dot-1{width:120px;height:120px;background:rgba(16,185,129,.22);top:12%;left:8%;animation:float-1 9s ease-in-out infinite}
-.hero-dot-2{width:90px;height:90px;background:rgba(14,165,233,.22);top:28%;right:10%;animation:float-2 10s ease-in-out infinite}
-.hero-dot-3{width:150px;height:150px;background:rgba(236,72,153,.18);bottom:16%;left:16%;animation:float-3 11s ease-in-out infinite}
-.hero-dot-4{width:70px;height:70px;background:rgba(249,115,22,.24);bottom:22%;right:22%;animation:float-4 8.5s ease-in-out infinite}
-.hero-ghost{position:absolute;border-radius:50%;opacity:.15;pointer-events:none;filter:blur(4px)}
-.hero-ghost-1{width:300px;height:300px;background:radial-gradient(circle at 30% 30%,rgba(16,185,129,.18),transparent 55%);top:18%;left:-15%;animation:ghost-move 16s ease-in-out infinite}
-.hero-ghost-2{width:220px;height:220px;background:radial-gradient(circle at 40% 40%,rgba(14,165,233,.18),transparent 55%);top:8%;right:-10%;animation:ghost-move 14s ease-in-out infinite}
-.hero-ghost-3{width:260px;height:260px;background:radial-gradient(circle at 50% 50%,rgba(236,72,153,.14),transparent 55%);bottom:10%;left:12%;animation:ghost-move 18s ease-in-out infinite}
-.hero-floor{position:absolute;left:50%;bottom:-24px;width:320px;height:100px;background:radial-gradient(circle at 50% 40%,rgba(15,23,42,.14),transparent 55%);border-radius:50%;transform:translateX(-50%);filter:blur(9px);opacity:.42}
-.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 24px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:#fff;border:1px solid rgba(15,23,42,.08)}
-@keyframes float-1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(14px,18px) scale(1.06)}}
-@keyframes float-2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,14px) scale(1.1)}}
-@keyframes float-3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(16px,-14px) scale(1.05)}}
-@keyframes float-4{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12px,-16px) scale(1.08)}}
-@keyframes ghost-move{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(18px,-12px) scale(1.02)}}
+.hero{position:relative;z-index:2;text-align:center;padding:110px 28px 60px;overflow:hidden;background:transparent}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 24px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:rgba(255,255,255,.92);border:1px solid rgba(15,23,42,.08)}
+.hero-sub{font-size:17px;color:#111;max-width:660px;margin:0 auto 30px;line-height:1.8}
+@media(max-width:700px){.hero{padding:120px 20px 50px}.hero-sub{margin-bottom:24px}.feature-grid{grid-template-columns:1fr}}
 h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
 .hero-sub{font-size:17px;color:#334155;max-width:660px;margin:0 auto 30px;line-height:1.8}
 .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:36px}
@@ -125,17 +112,8 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
   </div>
 </nav>
 <main>
+  <canvas id="bg"></canvas>
   <section class="hero">
-    <div class="hero-bg">
-      <span class="hero-dot hero-dot-1"></span>
-      <span class="hero-dot hero-dot-2"></span>
-      <span class="hero-dot hero-dot-3"></span>
-      <span class="hero-dot hero-dot-4"></span>
-      <span class="hero-ghost hero-ghost-1"></span>
-      <span class="hero-ghost hero-ghost-2"></span>
-      <span class="hero-ghost hero-ghost-3"></span>
-      <span class="hero-floor"></span>
-    </div>
     <div class="hero-inner">
       <div class="hero-badge">Landlord Suite</div>
       <h1>🏘️ The ShahoSuite Landlord Suite: At a Glance</h1>
@@ -215,5 +193,67 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
   </div>
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
 </footer>
+<script>
+const canvas = document.getElementById('bg');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const colors = [
+  '#ff0055',
+  '#ff9900',
+  '#ffee00',
+  '#00cc66',
+  '#0099ff',
+  '#6600ff'
+];
+
+let lines = [];
+for (let i = 0; i < 6; i++) {
+  lines.push({
+    y: (canvas.height / 6) * i + 100,
+    xOffset: Math.random() * 1000,
+    speed: 0.5 + Math.random() * 0.5,
+    alpha: 0.2 + Math.random() * 0.2
+  });
+}
+
+function drawLine(line) {
+  const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  colors.forEach((c, i) => {
+    gradient.addColorStop(i / colors.length, c);
+  });
+
+  ctx.strokeStyle = gradient;
+  ctx.globalAlpha = line.alpha;
+  ctx.shadowBlur = 30;
+  ctx.shadowColor = 'rgba(0,0,0,0.1)';
+  ctx.lineWidth = 3;
+
+  ctx.beginPath();
+  for (let x = 0; x < canvas.width; x += 10) {
+    const wave = Math.sin((x + line.xOffset) * 0.01) * 20;
+    ctx.lineTo(x, line.y + wave);
+  }
+  ctx.stroke();
+  ctx.globalAlpha = 1;
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  lines.forEach(line => {
+    line.xOffset += line.speed;
+    line.alpha = 0.15 + Math.sin(Date.now() * 0.001 + line.y) * 0.1;
+    drawLine(line);
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 </body>
 </html>
