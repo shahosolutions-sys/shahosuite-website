@@ -192,32 +192,27 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const size = 24;
+const POINTS = 240;
+const MAX_DIST = 120;
 
-let squares = [];
+let points = [];
 let startTime = Date.now();
 
-function createGrid() {
-  squares = [];
+function createPoints() {
+  points = [];
 
-  let index = 0;
-
-  for (let y = 0; y < canvas.height; y += size * 2.5) {
-    for (let x = 0; x < canvas.width; x += size * 2.5) {
-      squares.push({
-        x,
-        y,
-        index,
-        hueOffset: Math.random() * 360,
-        phase: Math.random() * Math.PI * 2
-      });
-
-      index++;
-    }
+  for (let i = 0; i < POINTS; i++) {
+    points.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      offset: Math.random() * 1000
+    });
   }
 }
 
-createGrid();
+createPoints();
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -225,48 +220,53 @@ function animate() {
   const time = Date.now() - startTime;
 
   const fadeIn = 2000;
-  const visible = 4000;
-  const fadeOut = 4000;
+  const hold = 4000;
+  const fadeOut = 3000;
 
-  squares.forEach(sq => {
-    let appearDelay = sq.index * 3;
-    let t = time - appearDelay;
+  let alpha = 0;
 
-    let alpha = 0;
+  if (time < fadeIn) {
+    alpha = time / fadeIn;
+  } else if (time < fadeIn + hold) {
+    alpha = 1;
+  } else if (time < fadeIn + hold + fadeOut) {
+    alpha = 1 - (time - (fadeIn + hold)) / fadeOut;
+  } else {
+    alpha = 0;
+  }
 
-    if (t < 0) {
-      alpha = 0;
-    } else if (t < fadeIn) {
-      alpha = t / fadeIn;
-    } else if (t < fadeIn + visible) {
-      alpha = 1;
-    } else if (t < fadeIn + visible + fadeOut) {
-      alpha = 1 - (t - (fadeIn + visible)) / fadeOut;
-    } else {
-      alpha = 0;
-    }
+  points.forEach(p => {
+    p.x += p.vx + Math.sin(time * 0.001 + p.offset) * 0.1;
+    p.y += p.vy + Math.cos(time * 0.001 + p.offset) * 0.1;
 
-    if (alpha <= 0) return;
-
-    let driftX = Math.sin(time * 0.0003 + sq.phase) * 1;
-    let driftY = Math.cos(time * 0.0003 + sq.phase) * 1;
-
-    let hue = (sq.hueOffset + time * 0.01) % 360;
-
-    ctx.shadowBlur = 20;
-    ctx.shadowColor = `hsla(${hue}, 70%, 70%, ${alpha * 0.3})`;
-
-    ctx.fillStyle = `hsla(${hue}, 80%, 75%, ${alpha * 0.25})`;
-
-    ctx.fillRect(
-      sq.x + driftX,
-      sq.y + driftY,
-      size * 0.8,
-      size * 0.8
-    );
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
   });
 
-  if (time < 11000) {
+  for (let i = 0; i < points.length; i++) {
+    for (let j = i + 1; j < points.length; j++) {
+      const a = points[i];
+      const b = points[j];
+
+      const dx = a.x - b.x;
+      const dy = a.y - b.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < MAX_DIST) {
+        let linkAlpha = (1 - dist / MAX_DIST) * alpha;
+        ctx.strokeStyle = `rgba(0,0,0,${linkAlpha})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+    }
+  }
+
+  if (time < fadeIn + hold + fadeOut + 1000) {
     requestAnimationFrame(animate);
   }
 }
@@ -276,7 +276,7 @@ animate();
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  createGrid();
+  createPoints();
 });
 </script>
 </body>
