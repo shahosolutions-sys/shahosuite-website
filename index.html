@@ -175,6 +175,11 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .cs-chips{display:flex;gap:7px;flex-wrap:wrap}
 .cs-chip{padding:4px 12px;border-radius:50px;font-size:12px;font-weight:700;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b}
 
+.ghost-panel{position:relative;max-width:980px;margin:24px auto 0;padding:0 28px;pointer-events:none;opacity:0;transform:scale(0.92);transition:opacity .35s ease,transform .35s ease}
+.ghost-panel.visible{opacity:.24;transform:scale(1)}
+.ghost-canvas{position:relative;width:100%;height:180px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 45px rgba(15,23,42,.1)}
+.ghost-canvas canvas{width:100%;height:100%;display:block}
+
 /* ══ TRUST ══ */
 .trust-section{background:#fff}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -403,6 +408,12 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   </div>
 </section>
 
+<section class="section ghost-panel" aria-hidden="true">
+  <div class="ghost-canvas">
+    <canvas id="ghost-canvas"></canvas>
+  </div>
+</section>
+
 <!-- ══ TRUST ══ -->
 <section class="section trust-section" id="trust">
   <div class="si">
@@ -611,6 +622,84 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true') }
   });
 });
+
+(function(){
+  const panel = document.querySelector('.ghost-panel');
+  const canvas = document.getElementById('ghost-canvas');
+  if(!panel || !canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, points = [];
+  const POINTS = 240;
+  const MAX_DIST = 120;
+  let startTime;
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    points = [];
+    for (let i = 0; i < POINTS; i++) {
+      points.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        offset: Math.random() * 1000
+      });
+    }
+  }
+
+  function draw() {
+    const time = Date.now() - startTime;
+    if (time > 3000) return;
+
+    ctx.clearRect(0, 0, W, H);
+    const fadeIn = 400;
+    const visible = 1400;
+    const fadeOut = 1200;
+    let alpha = 0;
+    if (time < fadeIn) alpha = time / fadeIn;
+    else if (time < fadeIn + visible) alpha = 1;
+    else alpha = Math.max(1 - (time - (fadeIn + visible)) / fadeOut, 0);
+
+    points.forEach(p => {
+      p.x += p.vx + Math.sin(time * 0.001 + p.offset) * 0.1;
+      p.y += p.vy + Math.cos(time * 0.001 + p.offset) * 0.1;
+      if (p.x < 0) p.x = W;
+      if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H;
+      if (p.y > H) p.y = 0;
+    });
+
+    for (let i = 0; i < points.length; i++) {
+      for (let j = i + 1; j < points.length; j++) {
+        const a = points[i];
+        const b = points[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < MAX_DIST) {
+          ctx.strokeStyle = `rgba(0,0,0,${(1 - dist / MAX_DIST) * alpha * 0.22})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  setTimeout(() => {
+    panel.classList.add('visible');
+    startTime = Date.now();
+    draw();
+    setTimeout(() => panel.classList.remove('visible'), 3000);
+  }, 3000);
+})();
 </script>
 
 </body>

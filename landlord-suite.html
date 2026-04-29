@@ -45,6 +45,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .hero-inner p{font-size:17px;color:#111;max-width:660px;margin:0 auto 30px;line-height:1.8}
 @media(max-width:700px){.hero{padding:0 20px 50px}.hero-inner{top:32vh}.feature-grid{grid-template-columns:1fr}}
 
+.ghost-buttons{position:fixed;inset:0;z-index:210;pointer-events:none;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding:24px;gap:20px}
+.ghost-btn{pointer-events:none;opacity:0;transform:translateY(20px);transition:opacity .35s ease,transform .35s ease;display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;border-radius:30px;font-size:15px;font-weight:800;color:#fff;background:#111;box-shadow:0 18px 45px rgba(15,23,42,.18);text-decoration:none}
+.ghost-btn.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.center-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,20px);}
+.bottom-btn{position:relative;bottom:0;}
+
 .section{padding:56px 28px}
 .section-inner{max-width:980px;margin:0 auto}
 .section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#10b981}
@@ -110,6 +116,10 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
 </nav>
 <main>
   <canvas id="bg"></canvas>
+  <div class="ghost-buttons">
+    <a href="/index.html" class="ghost-btn bottom-btn">Home</a>
+    <a href="/index.html" class="ghost-btn center-btn">Close</a>
+  </div>
   <section class="hero">
     <div class="hero-inner">
       <h1>All in One Business Operation System</h1>
@@ -278,6 +288,16 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
   createPoints();
 });
+
+const bottomBtn = document.querySelector('.ghost-btn.bottom-btn');
+const centerBtn = document.querySelector('.ghost-btn.center-btn');
+
+if (bottomBtn) {
+  setTimeout(() => bottomBtn.classList.add('visible'), 4000);
+}
+if (centerBtn) {
+  setTimeout(() => centerBtn.classList.add('visible'), 7000);
+}
 </script>
 </body>
 </html>
