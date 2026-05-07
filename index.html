@@ -99,48 +99,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 @keyframes t-roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ══ HERO ══ */
-.hero{position:relative;overflow:hidden;padding:100px 28px 80px;text-align:center;background:#fafbff}
-#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.5}
-.hero::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:
-    radial-gradient(ellipse 55% 45% at 18% 28%, rgba(99,102,241,0.1), transparent),
-    radial-gradient(ellipse 45% 40% at 82% 22%, rgba(16,185,129,0.09), transparent),
-    radial-gradient(ellipse 50% 42% at 50% 82%, rgba(236,72,153,0.08), transparent)
-}
-.hero-inner{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.hero{position:relative;overflow:hidden;padding:108px 28px 88px;text-align:center;background:linear-gradient(180deg,#fbfcff 0%,#f8fbff 45%,#ffffff 100%)}
+#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.58}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 52% 42% at 20% 22%,rgba(59,130,246,.16),transparent),radial-gradient(ellipse 46% 38% at 82% 18%,rgba(14,165,233,.14),transparent),radial-gradient(ellipse 42% 38% at 50% 88%,rgba(16,185,129,.12),transparent)}
+.hero::after{content:'';position:absolute;inset:auto -10% -18% -10%;height:58%;z-index:0;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.88) 45%,#fff 100%)}
+.hero-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
 
-.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#0f172a;background:rgba(255,255,255,0.9);border:1px solid rgba(15,23,42,0.1);box-shadow:0 2px 10px rgba(0,0,0,0.07);margin-bottom:22px;animation:badge-float 4s ease-in-out infinite}
-@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.b-dot{width:7px;height:7px;border-radius:50%;background:#10b981;animation:b-pulse 2s infinite}
-@keyframes b-pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#0f172a;background:rgba(255,255,255,0.88);border:1px solid rgba(15,23,42,0.1);box-shadow:0 8px 24px rgba(15,23,42,0.08);margin-bottom:22px;animation:badge-float 5s ease-in-out infinite}
+@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.b-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.16);animation:b-pulse 2.3s infinite}
+@keyframes b-pulse{0%,100%{opacity:1}50%{opacity:0.45}}
 
-h1{font-size:clamp(32px,5.5vw,60px);font-weight:900;line-height:1.04;letter-spacing:-0.04em;margin-bottom:16px;color:#0f172a}
-.h1-grad{
-  background:linear-gradient(120deg,#0f172a 0%,#6366f1 30%,#f59e0b 60%,#ef4444 100%);
-  background-size:200% 200%;background-clip:text;-webkit-background-clip:text;color:transparent;
-  animation:g-shift 7s ease-in-out infinite
-}
+h1{font-size:clamp(34px,5.8vw,64px);font-weight:900;line-height:1.03;letter-spacing:-0.045em;margin-bottom:18px;color:#0f172a;text-wrap:balance}
+.h1-grad{background:linear-gradient(115deg,#0f172a 4%,#2563eb 32%,#0ea5e9 56%,#10b981 84%);background-size:220% 220%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:g-shift 6.5s ease-in-out infinite}
+.h1-accent{color:#1e293b;text-shadow:0 2px 0 rgba(255,255,255,.65)}
 @keyframes g-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-.hero-sub{font-size:17px;color:#475569;max-width:520px;margin:0 auto 36px;line-height:1.75}
+.hero-sub{font-size:17px;color:#475569;max-width:560px;margin:0 auto 38px;line-height:1.8}
 
 /* Two big path buttons */
-.hero-paths{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
-.path-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:14px;font-size:15px;font-weight:800;transition:all 0.2s}
-.pb-wholesale{background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 6px 0 #334155}
-.pb-wholesale:hover{transform:translateY(-3px);box-shadow:0 9px 0 #334155}
+.hero-paths{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:42px}
+.path-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:14px;font-size:15px;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s;position:relative;overflow:hidden}
+.path-btn::before{content:'';position:absolute;inset:0;transform:translateY(-105%);background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0));transition:transform .25s}
+.path-btn:hover::before{transform:translateY(0)}
+.pb-wholesale{background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.18)}
+.pb-wholesale:hover{transform:translateY(-3px);box-shadow:0 9px 0 #334155,0 20px 36px rgba(15,23,42,.24)}
 .pb-wholesale:active{transform:translateY(4px);box-shadow:0 2px 0 #334155}
-.pb-landlord{background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #d1d5db}
-.pb-landlord:hover{transform:translateY(-3px);box-shadow:0 9px 0 #d1d5db}
+.pb-landlord{background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #d1d5db,0 14px 28px rgba(15,23,42,.09)}
+.pb-landlord:hover{transform:translateY(-3px);box-shadow:0 9px 0 #d1d5db,0 18px 34px rgba(15,23,42,.14)}
 .pb-landlord:active{transform:translateY(4px);box-shadow:0 2px 0 #d1d5db}
 
-/* Stats */
-.stats{display:flex;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;box-shadow:0 4px 0 #e2e8f0,0 8px 24px rgba(0,0,0,0.05)}
-.stat{flex:1;min-width:100px;padding:16px 12px;text-align:center;border-right:1px solid #e2e8f0}
-.stat:last-child{border-right:none}
-.stat-n{font-size:24px;font-weight:900;letter-spacing:-1px}
-.stat-l{font-size:10px;color:#64748b;margin-top:2px;font-weight:600}
-.sn1{color:#6366f1}.sn2{color:#10b981}.sn3{color:#f59e0b}.sn4{color:#ef4444}
+/* KPI cards */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:10px;max-width:860px;margin:0 auto;perspective:1000px}
+.stat{min-width:0;padding:16px 14px;text-align:left;border-radius:16px;border:1px solid #e2e8f0;background:linear-gradient(145deg,#ffffff 0%,#f8fbff 100%);box-shadow:0 8px 20px rgba(15,23,42,.08),inset 0 1px 0 rgba(255,255,255,.8);transition:transform .26s ease,box-shadow .26s ease,border-color .26s ease;transform-style:preserve-3d;will-change:transform}
+.stat:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,23,42,.13);border-color:#cbd5e1}
+.stat-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.stat-pill{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;padding:0 8px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.4px}
+.sp1{background:rgba(37,99,235,.11);color:#1d4ed8}.sp2{background:rgba(16,185,129,.11);color:#059669}.sp3{background:rgba(245,158,11,.15);color:#d97706}.sp4{background:rgba(239,68,68,.12);color:#dc2626}
+.stat-n{font-size:26px;font-weight:900;letter-spacing:-1px;line-height:1.1}
+.stat-l{font-size:11px;color:#64748b;margin-top:4px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
+.stat-s{font-size:11px;color:#94a3b8;margin-top:6px}
+.sn1{color:#2563eb}.sn2{color:#0f766e}.sn3{color:#b45309}.sn4{color:#be123c}
 
 /* ══ SHARED ══ */
 .section{padding:72px 28px}
@@ -256,14 +255,16 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .nav-links{display:none}
   .suite-grid,.price-grid{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(2,minmax(150px,1fr));max-width:520px}
 }
 @media(max-width:560px){
-  .stats{flex-direction:column}
-  .stat{border-right:none;border-bottom:1px solid #e2e8f0}
-  .stat:last-child{border-bottom:none}
+  .stats{grid-template-columns:1fr;max-width:320px}
+  .stat{padding:15px 14px}
   .trust-grid{grid-template-columns:1fr}
   .hero-paths{flex-direction:column;align-items:center}
   .path-btn{width:100%;justify-content:center}
+  .hero{padding:98px 20px 70px}
+  .hero-sub{font-size:16px}
 }
 </style>
 </head>
@@ -319,7 +320,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
     <h1>
       <span class="h1-grad">All-in-One CRM &amp; ERP</span><br/>
-      Business Management Platform<br/>for UK Small Businesses
+      <span class="h1-accent">Business Management Platform</span><br/>for UK Small Businesses
     </h1>
 
     <p class="hero-sub">
@@ -336,11 +337,39 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       </a>
     </div>
 
-    <div class="stats">
-      <div class="stat"><div class="stat-n sn1">19+</div><div class="stat-l">Modules</div></div>
-      <div class="stat"><div class="stat-n sn2">£50</div><div class="stat-l">Per month</div></div>
-      <div class="stat"><div class="stat-n sn3">Azure</div><div class="stat-l">UK hosted</div></div>
-      <div class="stat"><div class="stat-n sn4">GDPR</div><div class="stat-l">Ready</div></div>
+    <div class="stats" id="kpi-cards">
+      <article class="stat" data-tilt>
+        <div class="stat-top">
+          <div class="stat-n sn1">19+</div>
+          <span class="stat-pill sp1">LIVE</span>
+        </div>
+        <div class="stat-l">Modules</div>
+        <div class="stat-s">Sales, CRM, Ops, Finance</div>
+      </article>
+      <article class="stat" data-tilt>
+        <div class="stat-top">
+          <div class="stat-n sn2">£50</div>
+          <span class="stat-pill sp2">FLAT</span>
+        </div>
+        <div class="stat-l">Per month</div>
+        <div class="stat-s">No contracts, cancel anytime</div>
+      </article>
+      <article class="stat" data-tilt>
+        <div class="stat-top">
+          <div class="stat-n sn3">Azure</div>
+          <span class="stat-pill sp3">UK</span>
+        </div>
+        <div class="stat-l">Cloud hosted</div>
+        <div class="stat-s">99.9% uptime architecture</div>
+      </article>
+      <article class="stat" data-tilt>
+        <div class="stat-top">
+          <div class="stat-n sn4">GDPR</div>
+          <span class="stat-pill sp4">SAFE</span>
+        </div>
+        <div class="stat-l">Compliance ready</div>
+        <div class="stat-s">Audit log and role controls</div>
+      </article>
     </div>
 
   </div>
@@ -558,58 +587,119 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
 <!-- ══ SCRIPTS ══ -->
 <script>
-// Rainbow flowing wave canvas
+// Hero connected squares + soft 3D motion
 (function(){
   const canvas = document.getElementById('hero-canvas');
   if(!canvas) return;
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx = canvas.getContext('2d');
-  let W, H, lines = [];
-  const COLORS = ['#6366f1','#10b981','#f59e0b','#ec4899','#0ea5e9','#8b5cf6'];
+  const COLORS = ['#93c5fd','#60a5fa','#6ee7b7','#67e8f9','#a5b4fc'];
+  const MAX_DIST = 128;
+  let W, H, nodes = [];
+  const total = reduced ? 54 : 110;
 
   function resize(){
-    W = canvas.width  = canvas.offsetWidth;
+    W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
-    lines = [];
-    for(let i = 0; i < 8; i++){
-      lines.push({
-        y:      H * 0.08 + (H * 0.84 * i / 7),
-        offset: Math.random() * 2000,
-        speed:  0.15 + Math.random() * 0.25,
-        amp:    18 + Math.random() * 30,
-        color:  COLORS[i % COLORS.length]
+    nodes = [];
+    for(let i = 0; i < total; i++){
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * (reduced ? 0.12 : 0.28),
+        vy: (Math.random() - 0.5) * (reduced ? 0.12 : 0.28),
+        s: 4 + Math.random() * 4,
+        c: COLORS[Math.floor(Math.random() * COLORS.length)],
+        p: Math.random() * Math.PI * 2
       });
     }
   }
 
   function draw(){
     ctx.clearRect(0, 0, W, H);
-    const t = performance.now();
-    lines.forEach((line, li) => {
-      line.offset += line.speed;
-      const grad = ctx.createLinearGradient(0, 0, W, 0);
-      COLORS.forEach((c, ci) => grad.addColorStop(ci / (COLORS.length - 1), c));
-      ctx.strokeStyle = grad;
-      ctx.globalAlpha = 0.1 + Math.sin(t * 0.0006 + li * 0.8) * 0.055;
-      ctx.lineWidth   = 1.8 + Math.sin(t * 0.0009 + li) * 0.8;
-      ctx.shadowBlur  = 16;
-      ctx.shadowColor = line.color;
-      ctx.beginPath();
-      for(let x = 0; x <= W; x += 5){
-        const w1 = Math.sin((x + line.offset) * 0.009) * line.amp;
-        const w2 = Math.sin((x + line.offset * 0.55) * 0.016) * (line.amp * 0.38);
-        const y  = line.y + w1 + w2;
-        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    const t = performance.now() * 0.001;
+
+    for(let i = 0; i < nodes.length; i++){
+      const n = nodes[i];
+      n.x += n.vx;
+      n.y += n.vy;
+      if(n.x < -12) n.x = W + 12;
+      if(n.x > W + 12) n.x = -12;
+      if(n.y < -12) n.y = H + 12;
+      if(n.y > H + 12) n.y = -12;
+    }
+
+    for(let i = 0; i < nodes.length; i++){
+      for(let j = i + 1; j < nodes.length; j++){
+        const a = nodes[i];
+        const b = nodes[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if(dist < MAX_DIST){
+          const alpha = (1 - dist / MAX_DIST) * 0.2;
+          ctx.strokeStyle = `rgba(71,85,105,${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
       }
-      ctx.stroke();
-    });
+    }
+
+    for(let i = 0; i < nodes.length; i++){
+      const n = nodes[i];
+      const pulse = 0.68 + Math.sin(t * 0.9 + n.p) * 0.26;
+      const size = n.s * pulse;
+      const radius = 2;
+      ctx.globalAlpha = 0.58;
+      ctx.fillStyle = n.c;
+      ctx.beginPath();
+      ctx.moveTo(n.x - size / 2 + radius, n.y - size / 2);
+      ctx.lineTo(n.x + size / 2 - radius, n.y - size / 2);
+      ctx.quadraticCurveTo(n.x + size / 2, n.y - size / 2, n.x + size / 2, n.y - size / 2 + radius);
+      ctx.lineTo(n.x + size / 2, n.y + size / 2 - radius);
+      ctx.quadraticCurveTo(n.x + size / 2, n.y + size / 2, n.x + size / 2 - radius, n.y + size / 2);
+      ctx.lineTo(n.x - size / 2 + radius, n.y + size / 2);
+      ctx.quadraticCurveTo(n.x - size / 2, n.y + size / 2, n.x - size / 2, n.y + size / 2 - radius);
+      ctx.lineTo(n.x - size / 2, n.y - size / 2 + radius);
+      ctx.quadraticCurveTo(n.x - size / 2, n.y - size / 2, n.x - size / 2 + radius, n.y - size / 2);
+      ctx.closePath();
+      ctx.fill();
+    }
+
     ctx.globalAlpha = 1;
-    ctx.shadowBlur  = 0;
-    requestAnimationFrame(draw);
+    if(!reduced) requestAnimationFrame(draw);
   }
 
   resize();
   window.addEventListener('resize', resize);
-  draw();
+  if(reduced) draw();
+  else requestAnimationFrame(draw);
+})();
+
+// KPI 3D tilt interaction
+(function(){
+  const cards = document.querySelectorAll('#kpi-cards [data-tilt]');
+  if(!cards.length) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rx = ((y / rect.height) - 0.5) * -8;
+      const ry = ((x / rect.width) - 0.5) * 10;
+      card.style.transform = `translateY(-4px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
 })();
 
 // FAQ accordion
