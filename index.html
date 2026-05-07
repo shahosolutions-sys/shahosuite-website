@@ -148,14 +148,23 @@ h1{font-size:clamp(34px,5.8vw,64px);font-weight:900;line-height:1.03;letter-spac
 h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a}
 .sdesc{font-size:14.5px;color:#64748b;max-width:540px;margin-bottom:28px;line-height:1.75}
 
+/* ══ TYPEWRITER HEADING ══ */
+.suite-heading-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#6366f1;animation:heading-type 2.8s steps(22,end) forwards;overflow:hidden;white-space:nowrap;width:0}
+.suite-heading-title{display:block;font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a;animation:heading-type-h 1.8s steps(50,end) 0.5s forwards;overflow:hidden;white-space:nowrap;width:0}
+@keyframes heading-type{0%{width:0}100%{width:22ch}}
+@keyframes heading-type-h{0%{width:0}100%{width:100%}}
+
 /* ══ SUITE CARDS ══ */
-.suite-section{background:#f8fafc}
-.suite-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.suite-card{background:#fff;border-radius:22px;padding:34px 30px;border:2px solid #e2e8f0;box-shadow:0 6px 0 #e2e8f0,0 12px 32px rgba(0,0,0,0.06);transition:all 0.2s;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.suite-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--top);border-radius:22px 22px 0 0}
-.suite-card:hover{transform:translateY(-5px);border-color:var(--bdr);box-shadow:0 10px 0 var(--shc),0 20px 48px rgba(0,0,0,0.1)}
-.sc-w{--top:linear-gradient(90deg,#0f172a,#6366f1);--bdr:#c7d2fe;--shc:#ddd6fe}
-.sc-l{--top:linear-gradient(90deg,#1e40af,#c9a84c);--bdr:#dbeafe;--shc:#bfdbfe}
+.suite-section{background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)}
+.suite-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;perspective:1200px}
+.suite-card{background:linear-gradient(135deg,#ffffff 0%,#f9fbff 50%,#f3f9ff 100%);border-radius:22px;padding:34px 30px;border:1px solid rgba(206,215,226,0.6);box-shadow:0 10px 32px rgba(15,23,42,0.06),inset 0 1px 0 rgba(255,255,255,0.8);transition:all 0.28s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden;display:flex;flex-direction:column;transform-style:preserve-3d}
+.suite-card::before{content:'';position:absolute;inset:-100% -40%;z-index:-1;background:linear-gradient(120deg,var(--grad-color,#2563eb),transparent);filter:blur(40px);opacity:0;animation:suite-glow 6s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.suite-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--top);border-radius:22px 22px 0 0;opacity:0.8}
+.suite-card:hover{transform:translateY(-8px) rotateX(5deg);border-color:rgba(206,215,226,0.9);box-shadow:0 16px 48px rgba(15,23,42,0.12),inset 0 1px 0 rgba(255,255,255,0.8)}
+.suite-card:hover::before{opacity:0.4}
+.sc-w{--top:linear-gradient(90deg,#0f172a,#6366f1);--grad-color:rgba(99,102,241,0.3);--delay:0s}
+.sc-l{--top:linear-gradient(90deg,#1e40af,#c9a84c);--grad-color:rgba(34,197,94,0.25);--delay:0.2s}
+@keyframes suite-glow{0%,100%{transform:translateX(-10%) translateY(-10%)}50%{transform:translateX(10%) translateY(10%)}}
 .sc-icon{font-size:38px;margin-bottom:12px;display:block}
 .sc-name{font-size:19px;font-weight:900;margin-bottom:8px;letter-spacing:-0.5px}
 .sc-desc{font-size:13.5px;color:#64748b;line-height:1.7;margin-bottom:18px}
@@ -220,6 +229,8 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .suite-grid{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:repeat(2,minmax(150px,1fr));max-width:520px}
+  .suite-heading-tag{animation:heading-type 2.2s steps(22,end) forwards}
+  .suite-heading-title{white-space:normal;width:100%}
 }
 @media(max-width:560px){
   .stats{grid-template-columns:1fr;max-width:320px}
@@ -229,6 +240,8 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .path-btn{width:100%;justify-content:center}
   .hero{padding:98px 20px 70px}
   .hero-sub{font-size:16px}
+  .suite-heading-tag{width:100%;animation:none;white-space:nowrap}
+  .suite-heading-title{width:100%;animation:none;white-space:normal}
 }
 </style>
 </head>
@@ -342,8 +355,8 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <!-- ══ SUITE CARDS ══ -->
 <section class="section suite-section" id="suites">
   <div class="si">
-    <span class="stag" style="color:#6366f1;">Choose Your Suite</span>
-    <h2>Two specialist suites. One simple subscription.</h2>
+    <span class="suite-heading-tag">Choose Your Suite</span>
+    <h2 class="suite-heading-title">Two specialist suites. One simple subscription.</h2>
     <p class="sdesc">Both suites run on Microsoft Azure UK. Both are £50/month. Both include full GDPR compliance, staff access, audit log and support. Pick your industry.</p>
 
     <div class="suite-grid">
