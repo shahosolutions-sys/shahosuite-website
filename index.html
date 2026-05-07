@@ -252,6 +252,8 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .cta-btn-secondary:hover{transform:translateY(-3px);box-shadow:0 9px 0 #d1d5db,0 18px 34px rgba(15,23,42,.14)}
 .cta-btn-secondary:hover::before{transform:translateY(0)}
 
+
+
 /* ══ FOOTER ══ */
 footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:10px}
@@ -523,6 +525,9 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
 </main>
 
+<!-- ══ BACKGROUND MUSIC (auto-play once after 7s) ══ -->
+<audio id="bg-music" src="/Sha_Ho_Suite_The_Business_Flow.mp3" preload="auto"></audio>
+
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-links">
@@ -762,6 +767,16 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   }, {threshold:0.2});
 
   obs.observe(demo);
+})();
+
+// Auto-play background music once after 7 seconds
+(function(){
+  var a = document.getElementById('bg-music');
+  if(!a) return;
+  setTimeout(function(){
+    a.volume = 0.5;
+    a.play().catch(function(){});
+  }, 7000);
 })();
 
 // FAQ accordion
