@@ -177,10 +177,7 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .cta-navy{background:#1e40af;color:#fff;box-shadow:0 4px 0 #1e3a8a}
 .cta-navy:hover{transform:translateY(-2px);box-shadow:0 6px 0 #1e3a8a}
 
-.ghost-panel{position:relative;max-width:980px;margin:24px auto 0;padding:0 28px;pointer-events:none;opacity:0;transform:scale(0.92);transition:opacity .35s ease,transform .35s ease}
-.ghost-panel.visible{opacity:.24;transform:scale(1)}
-.ghost-canvas{position:relative;width:100%;height:180px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 45px rgba(15,23,42,.1)}
-.ghost-canvas canvas{width:100%;height:100%;display:block}
+
 
 /* ══ TRUST ══ */
 .trust-section{background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%)}
@@ -217,6 +214,26 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-item.open .faq-a{max-height:180px}
 
+/* ══ CTA SECTION ══ */
+.cta-section{position:relative;overflow:hidden;padding:88px 28px;background:#ffffff;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
+#cta-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.cta-glow{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 20% 25%, rgba(37,99,235,0.08), transparent 42%),radial-gradient(circle at 80% 30%, rgba(15,23,42,0.06), transparent 45%),radial-gradient(circle at 50% 80%, rgba(201,168,106,0.05), transparent 50%)}
+.cta-noise{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.cta-inner{position:relative;z-index:1;max-width:780px;margin:0 auto;text-align:center}
+.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:800;color:#fff;background:rgba(15,23,42,0.9);border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 24px rgba(15,23,42,0.12);margin-bottom:20px;animation:badge-float 5s ease-in-out infinite}
+.cta-badge .b-dot{background:#22c55e}
+.cta-title{font-size:clamp(28px,4.2vw,48px);font-weight:900;letter-spacing:-1px;margin-bottom:16px;color:#0f172a;text-wrap:balance}
+.cta-desc{font-size:17px;color:#475569;max-width:540px;margin:0 auto 32px;line-height:1.8}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:16px 34px;border-radius:12px;font-size:15px;font-weight:800;background:#0f172a;color:#fff;border:none;cursor:pointer;transition:transform .22s,box-shadow .22s;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.18);position:relative;overflow:hidden}
+.cta-btn-primary::before{content:'';position:absolute;inset:0;transform:translateY(-105%);background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0));transition:transform .25s}
+.cta-btn-primary:hover{transform:translateY(-3px);box-shadow:0 9px 0 #334155,0 20px 36px rgba(15,23,42,.24)}
+.cta-btn-primary:hover::before{transform:translateY(0)}
+.cta-btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:16px 34px;border-radius:12px;font-size:15px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;cursor:pointer;transition:transform .22s,box-shadow .22s;box-shadow:0 6px 0 #d1d5db,0 14px 28px rgba(15,23,42,.09);position:relative;overflow:hidden}
+.cta-btn-secondary::before{content:'';position:absolute;inset:0;transform:translateY(-105%);background:linear-gradient(180deg,rgba(15,23,42,.1),rgba(15,23,42,0));transition:transform .25s}
+.cta-btn-secondary:hover{transform:translateY(-3px);box-shadow:0 9px 0 #d1d5db,0 18px 34px rgba(15,23,42,.14)}
+.cta-btn-secondary:hover::before{transform:translateY(0)}
+
 /* ══ FOOTER ══ */
 footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:10px}
@@ -242,6 +259,9 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .hero-sub{font-size:16px}
   .suite-heading-tag{width:100%;animation:none;white-space:nowrap}
   .suite-heading-title{width:100%;animation:none;white-space:normal}
+  .cta-section{padding:72px 20px}
+  .cta-btns{flex-direction:column;align-items:center}
+  .cta-btn-primary, .cta-btn-secondary{width:100%;max-width:320px}
 }
 </style>
 </head>
@@ -402,12 +422,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   </div>
 </section>
 
-<section class="section ghost-panel" aria-hidden="true">
-  <div class="ghost-canvas">
-    <canvas id="ghost-canvas"></canvas>
-  </div>
-</section>
-
 <!-- ══ TRUST ══ -->
 <section class="section trust-section" id="trust">
   <div class="si">
@@ -450,6 +464,25 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <a href="/terms.html"   class="az-pill">📄 Terms</a>
   <a href="/privacy.html" class="az-pill">🛡️ Privacy</a>
 </div>
+
+<!-- ══ CTA SECTION ══ -->
+<section class="cta-section">
+  <canvas id="cta-canvas"></canvas>
+  <div class="cta-glow"></div>
+  <div class="cta-noise"></div>
+  <div class="cta-inner">
+    <div class="cta-badge">
+      <span class="b-dot"></span>
+      Ready to transform your business?
+    </div>
+    <h2 class="cta-title">Start your free trial today</h2>
+    <p class="cta-desc">No credit card required. No setup fees. Full access to all features. Cancel anytime.</p>
+    <div class="cta-btns">
+      <a href="https://app.shahosuite.com/register" class="cta-btn-primary">Sign up free →</a>
+      <a href="mailto:admin@shahosuite.com" class="cta-btn-secondary">Schedule a demo</a>
+    </div>
+  </div>
+</section>
 
 <!-- ══ FAQ ══ -->
 <section class="section faq-section" id="faq">
@@ -645,6 +678,49 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   });
 })();
 
+// CTA animated grid background
+(function(){
+  const canvas = document.getElementById('cta-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, offset = 0;
+
+  function resize(){
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    const grid = 70;
+    offset += 0.12;
+    ctx.strokeStyle = 'rgba(15,23,42,0.05)';
+    ctx.lineWidth = 1;
+
+    /* vertical lines */
+    for(let x = -grid; x < w + grid; x += grid){
+      ctx.beginPath();
+      ctx.moveTo(x + (offset % grid), 0);
+      ctx.lineTo(x + (offset % grid), h);
+      ctx.stroke();
+    }
+
+    /* horizontal lines */
+    for(let y = -grid; y < h + grid; y += grid){
+      ctx.beginPath();
+      ctx.moveTo(0, y + (offset % grid));
+      ctx.lineTo(w, y + (offset % grid));
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  draw();
+})();
+
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -655,84 +731,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true') }
   });
 });
-
-(function(){
-  const panel = document.querySelector('.ghost-panel');
-  const canvas = document.getElementById('ghost-canvas');
-  if(!panel || !canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, points = [];
-  const POINTS = 240;
-  const MAX_DIST = 120;
-  let startTime;
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    points = [];
-    for (let i = 0; i < POINTS; i++) {
-      points.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        offset: Math.random() * 1000
-      });
-    }
-  }
-
-  function draw() {
-    const time = Date.now() - startTime;
-    if (time > 3000) return;
-
-    ctx.clearRect(0, 0, W, H);
-    const fadeIn = 400;
-    const visible = 1400;
-    const fadeOut = 1200;
-    let alpha = 0;
-    if (time < fadeIn) alpha = time / fadeIn;
-    else if (time < fadeIn + visible) alpha = 1;
-    else alpha = Math.max(1 - (time - (fadeIn + visible)) / fadeOut, 0);
-
-    points.forEach(p => {
-      p.x += p.vx + Math.sin(time * 0.001 + p.offset) * 0.1;
-      p.y += p.vy + Math.cos(time * 0.001 + p.offset) * 0.1;
-      if (p.x < 0) p.x = W;
-      if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H;
-      if (p.y > H) p.y = 0;
-    });
-
-    for (let i = 0; i < points.length; i++) {
-      for (let j = i + 1; j < points.length; j++) {
-        const a = points[i];
-        const b = points[j];
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < MAX_DIST) {
-          ctx.strokeStyle = `rgba(0,0,0,${(1 - dist / MAX_DIST) * alpha * 0.22})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-  setTimeout(() => {
-    panel.classList.add('visible');
-    startTime = Date.now();
-    draw();
-    setTimeout(() => panel.classList.remove('visible'), 3000);
-  }, 3000);
-})();
 </script>
 
 </body>
