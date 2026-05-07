@@ -124,16 +124,21 @@ h1{font-size:clamp(34px,5.8vw,64px);font-weight:900;line-height:1.03;letter-spac
 .hero-paths{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:42px}
 .path-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:14px;font-size:15px;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s,color .22s,border-color .22s;position:relative;overflow:hidden}
 .path-btn::before{content:'';position:absolute;inset:0;transform:translateY(-105%);background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0));transition:transform .25s}
+.path-btn::after{content:'';position:absolute;inset:-28% -36%;background:linear-gradient(120deg,rgba(255,255,255,.42),rgba(255,255,255,0) 46%,rgba(255,255,255,.32));mix-blend-mode:screen;transform:translateX(-62%) rotate(8deg);opacity:.42;pointer-events:none}
 .path-btn:hover::before{transform:translateY(0)}
-.pb-wholesale{background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.18);animation:amp-flash 3.8s ease-in-out infinite}
+.pb-wholesale{background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.18);animation:amp-left 6.4s ease-in-out infinite}
 .pb-wholesale:hover{transform:translateY(-3px);box-shadow:0 9px 0 #334155,0 20px 36px rgba(15,23,42,.24)}
 .pb-wholesale:active{transform:translateY(4px);box-shadow:0 2px 0 #334155}
-.pb-landlord{background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #d1d5db,0 14px 28px rgba(15,23,42,.09);animation:amp-flash 3.8s ease-in-out infinite reverse}
+.pb-landlord{background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #d1d5db,0 14px 28px rgba(15,23,42,.09);animation:amp-right 6.4s ease-in-out infinite}
 .pb-landlord:hover{transform:translateY(-3px);box-shadow:0 9px 0 #d1d5db,0 18px 34px rgba(15,23,42,.14)}
 .pb-landlord:active{transform:translateY(4px);box-shadow:0 2px 0 #d1d5db}
-@keyframes amp-flash{
-  0%,100%{background:#0f172a;color:#ffffff;border-color:#0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.2),0 0 26px rgba(37,99,235,.12)}
+@keyframes amp-left{
+  0%,100%{background:#0f172a;color:#ffffff;border-color:#0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.2),0 0 26px rgba(15,23,42,.18)}
   50%{background:#ffffff;color:#0f172a;border-color:#0f172a;box-shadow:0 6px 0 #d1d5db,0 16px 30px rgba(15,23,42,.12),0 0 24px rgba(255,255,255,.95)}
+}
+@keyframes amp-right{
+  0%,100%{background:#ffffff;color:#0f172a;border-color:#0f172a;box-shadow:0 6px 0 #d1d5db,0 16px 30px rgba(15,23,42,.12),0 0 24px rgba(255,255,255,.95)}
+  50%{background:#0f172a;color:#ffffff;border-color:#0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.2),0 0 26px rgba(15,23,42,.18)}
 }
 @media (prefers-reduced-motion: reduce){
   .pb-wholesale,.pb-landlord{animation:none}
@@ -348,6 +353,19 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <!-- ══ SUITE CARDS ══ -->
 <section class="section suite-section" id="suites">
   <div class="si">
+    <div class="suite-demo-shell" id="suite-demo-shell">
+      <div class="suite-demo-head">
+        <div>
+          <div class="suite-demo-kicker">Live Product Walkthrough Preview</div>
+          <div class="suite-demo-title">Property &amp; Lettings navigation flow demo (slower auto replay)</div>
+        </div>
+        <span class="suite-demo-pill">Animated Preview • Loop</span>
+      </div>
+      <div class="suite-demo-frame">
+        <iframe src="/suite-landlord-demo.html" title="ShahoSuite Property and Lettings Demo" loading="lazy"></iframe>
+      </div>
+    </div>
+
     <span class="suite-heading-tag">Choose Your Suite</span>
     <h2 class="suite-heading-title">Two specialist suites. One simple subscription.</h2>
     <p class="sdesc">Both suites run on Microsoft Azure UK. Both are £50/month. Both include full GDPR compliance, staff access, audit log and support. Pick your industry.</p>
@@ -390,19 +408,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <a href="/landlord.html" class="sc-cta cta-navy">Explore Property &amp; Lettings →</a>
       </article>
 
-    </div>
-
-    <div class="suite-demo-shell" id="suite-demo-shell">
-      <div class="suite-demo-head">
-        <div>
-          <div class="suite-demo-kicker">Live Product Walkthrough</div>
-          <div class="suite-demo-title">Property &amp; Lettings navigation flow demo</div>
-        </div>
-        <span class="suite-demo-pill">Animated Demo</span>
-      </div>
-      <div class="suite-demo-frame">
-        <iframe src="/suite-landlord-demo.html" title="ShahoSuite Property and Lettings Demo" loading="lazy"></iframe>
-      </div>
     </div>
 
   </div>
