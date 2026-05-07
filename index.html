@@ -254,6 +254,13 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 
 
 
+/* ══ MUSIC LINK ══ */
+.music-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#475569;background:rgba(255,255,255,0.72);border:1px solid rgba(15,23,42,0.1);box-shadow:0 4px 14px rgba(15,23,42,0.07);cursor:pointer;transition:all 0.18s;font-family:'DM Sans',sans-serif}
+.music-link:hover{color:#0f172a;background:rgba(255,255,255,0.92);box-shadow:0 6px 20px rgba(15,23,42,0.12);transform:translateY(-1px)}
+.music-link.playing{color:#6366f1;border-color:rgba(99,102,241,0.3)}
+.ml-dot{width:7px;height:7px;border-radius:50%;background:#6366f1;flex-shrink:0;animation:ml-pulse 1.8s ease-in-out infinite}
+@keyframes ml-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+
 /* ══ FOOTER ══ */
 footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:10px}
@@ -362,6 +369,13 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <a href="/landlord.html" class="path-btn pb-landlord">
         🏘️ Property &amp; Lettings &amp; Landlord Suite
       </a>
+    </div>
+
+    <div style="margin-top:0;text-align:center">
+      <button class="music-link" id="music-link-btn" aria-label="Listen to ShahoSuite Music">
+        <span class="ml-dot"></span>
+        🎵 Listen to ShahoSuite Music
+      </button>
     </div>
 
   </div>
@@ -769,14 +783,31 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   obs.observe(demo);
 })();
 
-// Auto-play background music once after 7 seconds
+// Music: auto-play once after 7s + button toggle
 (function(){
   var a = document.getElementById('bg-music');
+  var btn = document.getElementById('music-link-btn');
   if(!a) return;
-  setTimeout(function(){
+  var played = false;
+  function startMusic(){
     a.volume = 0.5;
-    a.play().catch(function(){});
-  }, 7000);
+    a.play().then(function(){
+      played = true;
+      if(btn){ btn.classList.add('playing'); btn.innerHTML = '<span class="ml-dot"></span>⏸ Pause ShahoSuite Music'; }
+    }).catch(function(){});
+  }
+  setTimeout(startMusic, 7000);
+  if(btn){
+    btn.addEventListener('click', function(){
+      if(!a.paused){
+        a.pause();
+        btn.classList.remove('playing');
+        btn.innerHTML = '<span class="ml-dot"></span>🎵 Listen to ShahoSuite Music';
+      } else {
+        startMusic();
+      }
+    });
+  }
 })();
 
 // FAQ accordion
