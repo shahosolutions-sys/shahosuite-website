@@ -38,24 +38,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
 .btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{padding:120px 28px 80px;background:linear-gradient(160deg,#eff6ff 0%,#ffffff 55%,#f0fdf4 100%);text-align:center;position:relative;overflow:hidden}
-.hero-inner{max-width:860px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px;background:#fff;border:1px solid rgba(15,23,42,.08)}
-h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:20px}
-.hero-sub{font-size:17px;color:#475569;max-width:620px;margin:0 auto 28px;line-height:1.75}
+/* ── hero rainbow ── */
+.hero{padding:120px 28px 88px;background:linear-gradient(160deg,#eff6ff 0%,#ffffff 55%,#f0fdf4 100%);text-align:center;position:relative;overflow:hidden}
+#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:50px;font-size:12px;font-weight:800;margin-bottom:22px;background:rgba(255,255,255,0.88);border:1px solid rgba(15,23,42,0.1);box-shadow:0 8px 24px rgba(15,23,42,0.08);animation:badge-float 5s ease-in-out infinite}
+@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.b-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.16);animation:b-pulse 2.3s infinite;display:inline-block}
+@keyframes b-pulse{0%,100%{opacity:1}50%{opacity:0.45}}
+h1{font-size:clamp(34px,5.5vw,56px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:20px;color:#0f172a}
+.h1-grad{display:block;background:linear-gradient(115deg,#0f172a 4%,#f97316 32%,#fb923c 56%,#10b981 84%);background-size:220% 220%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:g-shift 6.5s ease-in-out infinite}
+@keyframes g-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{font-size:17px;color:#475569;max-width:620px;margin:0 auto 36px;line-height:1.75}
 .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155,0 14px 28px rgba(15,23,42,.18);transition:transform .2s,box-shadow .2s}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 8px 0 #334155,0 18px 32px rgba(15,23,42,.24)}
+.btn-hero-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db,0 12px 24px rgba(15,23,42,.09);transition:transform .2s,box-shadow .2s}
+.btn-hero-secondary:hover{transform:translateY(-3px);box-shadow:0 8px 0 #d1d5db,0 16px 30px rgba(15,23,42,.14)}
+/* ── sections ── */
 .section{padding:72px 28px}
 .section-inner{max-width:1100px;margin:0 auto}
 .section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#f97316}
 h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;color:#0f172a}
 .section-sub{font-size:16px;color:#64748b;max-width:700px;margin-bottom:32px;line-height:1.75}
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.feature-card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:26px;box-shadow:0 8px 24px rgba(15,23,42,.06)}
-.feature-card h3{font-size:18px;font-weight:800;margin-bottom:14px}
-.feature-card p{font-size:15px;color:#475569;line-height:1.75}
-.cta{padding:60px 28px 80px;background:linear-gradient(180deg,#f0f9ff 0%,#eff6ff 100%);text-align:center}
-.cta a{display:inline-block;padding:15px 28px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
-.cta a:hover{transform:translateY(-2px)}
+.feature-card{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(248,252,255,.95));border:1px solid rgba(190,205,223,0.8);border-radius:20px;padding:28px;box-shadow:0 12px 32px rgba(15,23,42,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .28s ease,box-shadow .28s ease}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,23,42,.12)}
+.feature-card h3{font-size:17px;font-weight:800;margin-bottom:12px;color:#0f172a}
+.feature-card p{font-size:14.5px;color:#475569;line-height:1.75}
+/* ── CTA ── */
+.cta{position:relative;overflow:hidden;padding:72px 28px 80px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
+#cta-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.cta-inner-wrap{position:relative;z-index:1}
+.cta a{display:inline-flex;align-items:center;justify-content:center;padding:15px 32px;border-radius:12px;background:#0f172a;color:#fff;font-size:15px;font-weight:800;border:none;box-shadow:0 5px 0 #334155,0 14px 28px rgba(15,23,42,.18);transition:transform .2s,box-shadow .2s}
+.cta a:hover{transform:translateY(-3px);box-shadow:0 8px 0 #334155,0 18px 32px rgba(15,23,42,.24)}
+.cta h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1px;margin-bottom:14px;color:#0f172a}
+.cta p{font-size:16px;color:#475569;max-width:560px;margin:0 auto 28px;line-height:1.8}
 .footer{padding:44px 28px 32px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:14px}
 .footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
@@ -94,20 +112,21 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
-      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
       <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
     </div>
   </div>
 </nav>
 <main>
   <section class="hero">
+    <canvas id="hero-canvas"></canvas>
     <div class="hero-inner">
-      <div class="hero-badge">Wholesale & Retail Suite</div>
-      <h1>Wholesale and retail trading software for UK businesses</h1>
+      <div class="hero-badge"><span class="b-dot"></span> 🛍️ Wholesale &amp; Trade Suite — UK Built</div>
+      <h1><span class="h1-grad">Wholesale &amp; Trade Suite</span><br/>for UK Businesses</h1>
       <p class="hero-sub">Manage inventory, orders, invoices, suppliers and retail analytics with a single industry-specific suite built for UK wholesalers and retailers.</p>
       <div class="hero-actions">
-        <a href="/pricing.html" class="btn-signup">Start Free</a>
-        <a href="#features" class="btn-login">Explore Modules</a>
+        <a href="https://app.shahosuite.com/register" class="btn-hero-primary">🚀 Start Free Trial</a>
+        <a href="#features" class="btn-hero-secondary">Explore Modules ↓</a>
       </div>
     </div>
   </section>
@@ -136,10 +155,11 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
     </div>
   </section>
   <section class="cta">
-    <div class="section-inner">
-      <h2>Start your Wholesale & Retail Suite today</h2>
-      <p>One platform for inventory, orders, invoices and suppliers — built for UK businesses on Microsoft Azure.</p>
-      <a href="https://app.shahosuite.com/register">Start Free</a>
+    <canvas id="cta-canvas"></canvas>
+    <div class="section-inner cta-inner-wrap">
+      <h2>Start your Wholesale &amp; Trade Suite today</h2>
+      <p>One platform for inventory, orders, invoices and suppliers — built for UK businesses on Microsoft Azure UK.</p>
+      <a href="https://app.shahosuite.com/register">🚀 Start Free Trial →</a>
     </div>
   </section>
 </main>
@@ -151,9 +171,79 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
     <a href="/beauty-salon-suite.html">Beauty Salon</a>
     <a href="/pricing.html">Pricing</a>
     <a href="mailto:admin@shahosuite.com">Contact</a>
-    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+    <a href="https://app.shahosuite.com/login">Login</a>
   </div>
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
 </footer>
+<script>
+// Rainbow flow hero background
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const colors = ['#ff0055','#ff9900','#ffee00','#00cc66','#0099ff','#6600ff'];
+  let W, H, lines = [];
+  function init(){
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    lines = [];
+    for(let i = 0; i < 7; i++){
+      lines.push({
+        y: (H / 7) * i + H * 0.06,
+        xOffset: Math.random() * 1000,
+        speed: 0.35 + Math.random() * 0.45,
+        alpha: 0.1 + Math.random() * 0.14
+      });
+    }
+  }
+  function drawLine(line){
+    const g = ctx.createLinearGradient(0, 0, W, 0);
+    colors.forEach((c,i) => g.addColorStop(i / colors.length, c));
+    ctx.strokeStyle = g;
+    ctx.globalAlpha = line.alpha;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    for(let x = 0; x <= W; x += 8){
+      const wave = Math.sin((x + line.xOffset) * 0.01) * 24;
+      if(x === 0) ctx.moveTo(x, line.y + wave);
+      else ctx.lineTo(x, line.y + wave);
+    }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+  function animate(){
+    ctx.clearRect(0, 0, W, H);
+    lines.forEach(line => {
+      line.xOffset += line.speed;
+      line.alpha = 0.09 + Math.sin(Date.now() * 0.0009 + line.y * 0.012) * 0.09;
+      drawLine(line);
+    });
+    requestAnimationFrame(animate);
+  }
+  init();
+  window.addEventListener('resize', init);
+  animate();
+})();
+
+// CTA animated grid background
+(function(){
+  const canvas = document.getElementById('cta-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, offset = 0;
+  function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    const grid = 70; offset += 0.12;
+    ctx.strokeStyle = 'rgba(15,23,42,0.05)'; ctx.lineWidth = 1;
+    for(let x = -grid; x < w + grid; x += grid){ ctx.beginPath(); ctx.moveTo(x + (offset % grid), 0); ctx.lineTo(x + (offset % grid), h); ctx.stroke(); }
+    for(let y = -grid; y < h + grid; y += grid){ ctx.beginPath(); ctx.moveTo(0, y + (offset % grid)); ctx.lineTo(w, y + (offset % grid)); ctx.stroke(); }
+    requestAnimationFrame(draw);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  draw();
+})();
+</script>
 </body>
 </html>

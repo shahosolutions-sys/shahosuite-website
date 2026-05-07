@@ -20,7 +20,6 @@
 html{scroll-behavior:smooth}
 body{position:relative;font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-canvas{position:fixed;top:0;left:0;z-index:1;width:100%;height:100%}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);border-bottom:1px solid #e5e7eb;}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo img{height:54px;width:auto;display:block}
@@ -39,17 +38,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
 .btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{position:relative;z-index:2;text-align:center;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:0;overflow:hidden;background:transparent}
-.hero-inner{position:relative;top:40vh;color:#111;z-index:2}
-.hero-inner h1{font-size:clamp(34px,5.5vw,56px);font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
-.hero-inner p{font-size:17px;color:#111;max-width:660px;margin:0 auto 30px;line-height:1.8}
-@media(max-width:700px){.hero{padding:0 20px 50px}.hero-inner{top:32vh}.feature-grid{grid-template-columns:1fr}}
-
-.hero{position:relative;z-index:2;text-align:center;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;background:transparent}
-.hero-inner{position:relative;color:#111;z-index:2;max-width:880px}
-.hero-title{font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1.02;letter-spacing:-0.05em;color:#0f172a;max-width:860px;margin:0 auto}
-.hero-cursor{display:inline-block;width:16px;animation:blink 1s steps(2,end) infinite;vertical-align:middle;margin-left:4px;color:#0f172a}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero{padding:120px 28px 88px;background:linear-gradient(160deg,#f0fdf4 0%,#ffffff 55%,#eff6ff 100%);text-align:center;position:relative;overflow:hidden}
+#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:50px;font-size:12px;font-weight:800;margin-bottom:22px;background:rgba(255,255,255,0.88);border:1px solid rgba(15,23,42,0.1);box-shadow:0 8px 24px rgba(15,23,42,0.08);animation:badge-float 5s ease-in-out infinite}
+@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.b-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.16);animation:b-pulse 2.3s infinite;display:inline-block}
+@keyframes b-pulse{0%,100%{opacity:1}50%{opacity:0.45}}
+h1{font-size:clamp(34px,5.5vw,56px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:20px;color:#0f172a}
+.h1-grad{display:block;background:linear-gradient(115deg,#0f172a 4%,#0ea5e9 32%,#10b981 62%,#0284c7 88%);background-size:220% 220%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:g-shift 6.5s ease-in-out infinite}
+@keyframes g-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{font-size:17px;color:#475569;max-width:660px;margin:0 auto 36px;line-height:1.75}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.btn-hero-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155,0 14px 28px rgba(15,23,42,.18);transition:transform .2s,box-shadow .2s}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 8px 0 #334155,0 18px 32px rgba(15,23,42,.24)}
+.btn-hero-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db;transition:transform .2s,box-shadow .2s}
+.btn-hero-secondary:hover{transform:translateY(-3px);box-shadow:0 8px 0 #d1d5db}
 
 .section{padding:56px 28px}
 .section-inner{max-width:980px;margin:0 auto}
@@ -57,16 +61,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,
 h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-bottom:18px;color:#0f172a}
 .section-sub{font-size:16px;color:#475569;max-width:680px;margin-bottom:24px;line-height:1.8}
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.feature-card{background:#fff;border:1px solid #e2e8f0;border-radius:22px;padding:26px;box-shadow:0 18px 45px rgba(15,23,42,.08);transition:transform .18s}
-.feature-card:hover{transform:translateY(-4px)}
-.feature-card h3{font-size:18px;font-weight:800;margin-bottom:14px}
-.feature-card p{font-size:15px;color:#475569;line-height:1.75}
+.feature-card{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(248,252,255,.95));border:1px solid rgba(190,205,223,0.8);border-radius:20px;padding:28px;box-shadow:0 12px 32px rgba(15,23,42,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .28s ease,box-shadow .28s ease}
+.feature-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,23,42,.12)}
+.feature-card h3{font-size:17px;font-weight:800;margin-bottom:14px;color:#0f172a}
+.feature-card p{font-size:14.5px;color:#475569;line-height:1.75}
 .feature-card ul{margin-top:14px;list-style:none;padding-left:0}
 .feature-card li{margin-bottom:10px;padding-left:22px;position:relative;color:#475569;line-height:1.75}
-.feature-card li::before{content:'•';position:absolute;left:0;top:0;color:#10b981;font-size:20px;line-height:1}
-.cta{padding:60px 28px 60px;background:linear-gradient(180deg,#f7fee7 0%,#ecfdf5 100%);text-align:center}
-.cta a{display:inline-block;padding:15px 32px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
-.cta a:hover{transform:translateY(-2px)}
+.feature-card li::before{content:'✓';position:absolute;left:0;top:0;color:#10b981;font-size:13px;font-weight:900}
+.cta{position:relative;overflow:hidden;padding:72px 28px 80px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
+#cta-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.cta-inner-wrap{position:relative;z-index:1}
+.cta a{display:inline-flex;align-items:center;justify-content:center;padding:15px 32px;border-radius:12px;background:#0f172a;color:#fff;font-size:15px;font-weight:800;box-shadow:0 5px 0 #334155;transition:transform .2s,box-shadow .2s}
+.cta a:hover{transform:translateY(-3px);box-shadow:0 8px 0 #334155}
+.cta h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1px;margin-bottom:14px;color:#0f172a}
+.cta p{font-size:16px;color:#475569;max-width:560px;margin:0 auto 28px;line-height:1.8}
 @media(max-width:900px){.nav-centre{display:none}}
 @media(max-width:700px){.hero{padding:100px 20px 50px}.hero-sub{margin-bottom:24px}.feature-grid{grid-template-columns:1fr}}
 .cta{padding:60px 28px 80px;background:linear-gradient(180deg,#f7fee7 0%,#ecfdf5 100%);text-align:center}
@@ -109,16 +117,22 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
-      <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login" class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
       <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
     </div>
   </div>
 </nav>
 <main>
-  <canvas id="bg"></canvas>
   <section class="hero">
+    <canvas id="hero-canvas"></canvas>
     <div class="hero-inner">
-      <h1 class="hero-title"><span id="typewriter"></span><span class="hero-cursor">|</span></h1>
+      <div class="hero-badge"><span class="b-dot"></span> 🏨 Property &amp; Lettings Suite — UK Landlords</div>
+      <h1><span class="h1-grad">Property &amp; Lettings Suite</span><br/>for UK Landlords</h1>
+      <p class="hero-sub">Your legal and financial bodyguard for UK landlording. From the first tenancy to the final tax return, run your entire portfolio on Microsoft Azure UK.</p>
+      <div class="hero-actions">
+        <a href="https://app.shahosuite.com/register" class="btn-hero-primary">🚀 Start Free Trial</a>
+        <a href="#features" class="btn-hero-secondary">Explore Features ↓</a>
+      </div>
     </div>
   </section>
   <section class="section" id="features">
@@ -171,10 +185,11 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
     </div>
   </section>
   <section class="cta">
-    <div class="section-inner">
+    <canvas id="cta-canvas"></canvas>
+    <div class="section-inner cta-inner-wrap">
       <h2>Your legal and financial bodyguard for UK landlording</h2>
       <p>From the first tenancy agreement to the final tax return, ShahoSuite combines professional rent accounting with high-stakes compliance tracking.</p>
-      <a href="https://app.shahosuite.com/register">Run your portfolio safely</a>
+      <a href="https://app.shahosuite.com/register">💼 Run your portfolio safely →</a>
     </div>
   </section>
 </main>
@@ -186,140 +201,79 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-b
     <a href="/beauty-salon-suite.html">Beauty Salon</a>
     <a href="/pricing.html">Pricing</a>
     <a href="mailto:admin@shahosuite.com">Contact</a>
-    <a href="https://shahosuitefrontstorage.z33.web.core.windows.net/login">Login</a>
+    <a href="https://app.shahosuite.com/login">Login</a>
   </div>
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
 </footer>
 <script>
-const canvas = document.getElementById('bg');
-const ctx = canvas.getContext('2d');
-
-let W = window.innerWidth;
-let H = window.innerHeight;
-canvas.width = W;
-canvas.height = H;
-
-const particles = [];
-const mouse = { x: W / 2, y: H / 2 };
-const ghost = {
-  active: false,
-  alpha: 0,
-  start: 0,
-  fadeIn: 1000,
-  hold: 5000,
-  fadeOut: 1000
-};
-
-window.addEventListener('mousemove', e => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-  for (let i = 0; i < 3; i++) {
-    particles.push({
-      x: mouse.x + (Math.random() - 0.5) * 20,
-      y: mouse.y + (Math.random() - 0.5) * 20,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      life: 1,
-      size: Math.random() * 2 + 0.8
-    });
-  }
-});
-
-window.addEventListener('resize', () => {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-});
-
-function createGhost() {
-  ghost.active = true;
-  ghost.start = Date.now();
-}
-
-function draw() {
-  ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = 'rgba(255,255,255,0.12)';
-  ctx.fillRect(0, 0, W, H);
-
-  particles.forEach((p, idx) => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.life -= 0.016;
-
-    if (p.life <= 0) {
-      particles.splice(idx, 1);
-      return;
+// Rainbow flow hero background
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const colors = ['#ff0055','#ff9900','#ffee00','#00cc66','#0099ff','#6600ff'];
+  let W, H, lines = [];
+  function init(){
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    lines = [];
+    for(let i = 0; i < 7; i++){
+      lines.push({
+        y: (H / 7) * i + H * 0.06,
+        xOffset: Math.random() * 1000,
+        speed: 0.35 + Math.random() * 0.45,
+        alpha: 0.1 + Math.random() * 0.14
+      });
     }
-
+  }
+  function drawLine(line){
+    const g = ctx.createLinearGradient(0, 0, W, 0);
+    colors.forEach((c,i) => g.addColorStop(i / colors.length, c));
+    ctx.strokeStyle = g;
+    ctx.globalAlpha = line.alpha;
+    ctx.lineWidth = 2.5;
     ctx.beginPath();
-    ctx.fillStyle = `rgba(15,23,42,${p.life * 0.18})`;
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
-  if (ghost.active) {
-    const elapsed = Date.now() - ghost.start;
-    if (elapsed < ghost.fadeIn) {
-      ghost.alpha = elapsed / ghost.fadeIn;
-    } else if (elapsed < ghost.fadeIn + ghost.hold) {
-      ghost.alpha = 1;
-    } else if (elapsed < ghost.fadeIn + ghost.hold + ghost.fadeOut) {
-      ghost.alpha = 1 - (elapsed - ghost.fadeIn - ghost.hold) / ghost.fadeOut;
-    } else {
-      ghost.active = false;
-      ghost.alpha = 0;
+    for(let x = 0; x <= W; x += 8){
+      const wave = Math.sin((x + line.xOffset) * 0.01) * 24;
+      if(x === 0) ctx.moveTo(x, line.y + wave);
+      else ctx.lineTo(x, line.y + wave);
     }
-
-    if (ghost.active) {
-      const nodes = [];
-      for (let i = 0; i < 100; i++) {
-        nodes.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          dx: (Math.random() - 0.5) * 0.2,
-          dy: (Math.random() - 0.5) * 0.2
-        });
-      }
-
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i];
-          const b = nodes[j];
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 140) {
-            ctx.strokeStyle = `rgba(0,0,0,${(1 - dist / 140) * 0.18 * ghost.alpha})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
-        }
-      }
-    }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
   }
-
-  requestAnimationFrame(draw);
-}
-
-draw();
-
-const text = 'Property & Lettings Suite';
-let index = 0;
-const typeEl = document.getElementById('typewriter');
-
-function typeWriter() {
-  if (index <= text.length) {
-    typeEl.textContent = text.slice(0, index);
-    index += 1;
-    setTimeout(typeWriter, 120);
-  } else {
-    createGhost();
+  function animate(){
+    ctx.clearRect(0, 0, W, H);
+    lines.forEach(line => {
+      line.xOffset += line.speed;
+      line.alpha = 0.09 + Math.sin(Date.now() * 0.0009 + line.y * 0.012) * 0.09;
+      drawLine(line);
+    });
+    requestAnimationFrame(animate);
   }
-}
+  init();
+  window.addEventListener('resize', init);
+  animate();
+})();
 
-typeWriter();
+// CTA animated grid background
+(function(){
+  const canvas = document.getElementById('cta-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, offset = 0;
+  function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    const grid = 70; offset += 0.12;
+    ctx.strokeStyle = 'rgba(15,23,42,0.05)'; ctx.lineWidth = 1;
+    for(let x = -grid; x < w + grid; x += grid){ ctx.beginPath(); ctx.moveTo(x + (offset % grid), 0); ctx.lineTo(x + (offset % grid), h); ctx.stroke(); }
+    for(let y = -grid; y < h + grid; y += grid){ ctx.beginPath(); ctx.moveTo(0, y + (offset % grid)); ctx.lineTo(w, y + (offset % grid)); ctx.stroke(); }
+    requestAnimationFrame(draw);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  draw();
+})();
 </script>
 </body>
 </html>
