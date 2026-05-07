@@ -158,23 +158,25 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 @keyframes heading-type-h{0%{width:0}100%{width:100%}}
 
 /* ══ SUITE CARDS ══ */
-.suite-section{background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)}
-.suite-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;perspective:1200px}
-.suite-card{background:linear-gradient(135deg,#ffffff 0%,#f9fbff 50%,#f3f9ff 100%);border-radius:22px;padding:34px 30px;border:1px solid rgba(206,215,226,0.6);box-shadow:0 10px 32px rgba(15,23,42,0.06),inset 0 1px 0 rgba(255,255,255,0.8);transition:all 0.28s cubic-bezier(0.34,1.56,0.64,1);position:relative;overflow:hidden;display:flex;flex-direction:column;transform-style:preserve-3d}
-.suite-card::before{content:'';position:absolute;inset:-100% -40%;z-index:-1;background:linear-gradient(120deg,var(--grad-color,#2563eb),transparent);filter:blur(40px);opacity:0;animation:suite-glow 6s ease-in-out infinite;animation-delay:var(--delay,0s)}
-.suite-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--top);border-radius:22px 22px 0 0;opacity:0.8}
-.suite-card:hover{transform:translateY(-8px) rotateX(5deg);border-color:rgba(206,215,226,0.9);box-shadow:0 16px 48px rgba(15,23,42,0.12),inset 0 1px 0 rgba(255,255,255,0.8)}
-.suite-card:hover::before{opacity:0.4}
-.sc-w{--top:linear-gradient(90deg,#0f172a,#6366f1);--grad-color:rgba(99,102,241,0.3);--delay:0s}
-.sc-l{--top:linear-gradient(90deg,#1e40af,#c9a84c);--grad-color:rgba(34,197,94,0.25);--delay:0.2s}
+.suite-section{position:relative;overflow:hidden;background:radial-gradient(circle at 12% 8%,rgba(59,130,246,.14),transparent 38%),radial-gradient(circle at 84% 16%,rgba(14,165,233,.12),transparent 40%),linear-gradient(180deg,#f3f8ff 0%,#ffffff 62%,#f8fbff 100%)}
+.suite-section::before{content:'';position:absolute;inset:-2px;background:repeating-linear-gradient(120deg,rgba(148,163,184,.08) 0 1px,transparent 1px 48px);pointer-events:none;opacity:.45}
+.suite-section::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 120%,rgba(15,23,42,.08),transparent 40%)}
+.suite-section .si{position:relative;z-index:1}
+.suite-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;perspective:1200px}
+.suite-card{background:linear-gradient(145deg,rgba(255,255,255,.96) 0%,rgba(248,252,255,.95) 56%,rgba(241,248,255,.94) 100%);border-radius:24px;padding:34px 30px;border:1px solid rgba(190,205,223,0.8);box-shadow:0 14px 38px rgba(15,23,42,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .3s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;transform-style:preserve-3d}
+.suite-card::before{content:'';position:absolute;inset:-90% -32%;z-index:-1;background:linear-gradient(120deg,var(--grad-color,#2563eb),transparent 58%);filter:blur(44px);opacity:.45;animation:suite-glow 8s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.suite-card::after{content:'';position:absolute;inset:0;border-radius:24px;border:1px solid rgba(255,255,255,.65);pointer-events:none}
+.suite-card:hover{transform:translateY(-10px) rotateX(5deg) rotateY(-2deg);border-color:rgba(151,174,204,.85);box-shadow:0 22px 52px rgba(15,23,42,0.14),inset 0 1px 0 rgba(255,255,255,1)}
+.sc-w{--grad-color:rgba(99,102,241,0.34);--delay:0s}
+.sc-l{--grad-color:rgba(14,165,233,0.3);--delay:0.3s}
 @keyframes suite-glow{0%,100%{transform:translateX(-10%) translateY(-10%)}50%{transform:translateX(10%) translateY(10%)}}
-.sc-icon{font-size:38px;margin-bottom:12px;display:block}
-.sc-name{font-size:19px;font-weight:900;margin-bottom:8px;letter-spacing:-0.5px}
-.sc-desc{font-size:13.5px;color:#64748b;line-height:1.7;margin-bottom:18px}
+.sc-icon{font-size:34px;margin-bottom:14px;display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(236,246,255,.96));border:1px solid rgba(173,192,214,.5);box-shadow:0 10px 24px rgba(15,23,42,.08)}
+.sc-name{font-size:20px;font-weight:900;margin-bottom:8px;letter-spacing:-0.6px}
+.sc-desc{font-size:14px;color:#526275;line-height:1.75;margin-bottom:18px}
 .sc-list{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:7px}
-.sc-list li{font-size:13px;color:#334155;display:flex;align-items:flex-start;gap:8px;line-height:1.55}
-.sc-list li::before{content:'✓';flex-shrink:0;width:16px;height:16px;border-radius:50%;background:rgba(16,185,129,0.12);color:#10b981;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;margin-top:1px}
-.sc-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:11px;font-size:13.5px;font-weight:800;transition:all 0.18s}
+.sc-list li{font-size:13.2px;color:#233244;display:flex;align-items:flex-start;gap:8px;line-height:1.55;padding:6px 9px;border-radius:10px;background:rgba(255,255,255,.68);border:1px solid rgba(219,232,245,.75)}
+.sc-list li::before{content:'✓';flex-shrink:0;width:16px;height:16px;border-radius:50%;background:rgba(16,185,129,0.14);color:#059669;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;margin-top:1px}
+.sc-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;font-size:13.5px;font-weight:800;transition:all 0.18s;width:100%}
 .cta-dark{background:#0f172a;color:#fff;box-shadow:0 4px 0 #334155}
 .cta-dark:hover{transform:translateY(-2px);box-shadow:0 6px 0 #334155}
 .cta-navy{background:#1e40af;color:#fff;box-shadow:0 4px 0 #1e3a8a}
@@ -215,7 +217,11 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 @keyframes az-p{0%,100%{opacity:1}50%{opacity:0.3}}
 
 /* ══ FAQ ══ */
-.faq-section{background:#fff}
+.faq-section{position:relative;overflow:hidden;background:linear-gradient(180deg,#f5faff 0%,#eef6ff 52%,#f5faff 100%);border-top:1px solid #dbe7f4;border-bottom:1px solid #dbe7f4}
+#faq-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.faq-glow{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle at 16% 24%, rgba(37,99,235,0.10), transparent 42%),radial-gradient(circle at 82% 30%, rgba(14,165,233,0.09), transparent 45%),radial-gradient(circle at 48% 84%, rgba(99,102,241,0.07), transparent 52%)}
+.faq-noise{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.faq-section .si{position:relative;z-index:1}
 .faq-list{max-width:680px;margin-top:28px}
 .faq-item{border-bottom:1px solid #e2e8f0}
 .faq-q{width:100%;background:none;border:none;text-align:left;padding:16px 0;font-size:14px;font-weight:700;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'DM Sans',sans-serif}
@@ -261,17 +267,26 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .suite-heading-title{white-space:normal;width:100%}
 }
 @media(max-width:560px){
+  .nav-inner{padding:0 12px;height:64px;gap:10px}
+  .logo img{height:36px}
+  .ticker{margin-top:64px}
+  .nav-btns{gap:6px}
+  .btn-login,.btn-signup{padding:7px 11px;font-size:12px}
   .trust-grid{grid-template-columns:1fr}
   .hero-paths{flex-direction:column;align-items:center}
   .path-btn{width:100%;justify-content:center}
   .hero{padding:98px 20px 70px}
+  h1{font-size:clamp(30px,9.6vw,44px);line-height:1.06}
   .hero-sub{font-size:16px}
   .suite-heading-tag{width:100%;animation:none;white-space:nowrap}
   .suite-heading-title{width:100%;animation:none;white-space:normal}
+  .suite-card{padding:24px 20px}
+  .suite-demo-frame{height:min(62vh,430px)}
   .suite-demo-shell{padding:10px}
   .suite-demo-head{align-items:flex-start;flex-direction:column}
-  .suite-demo-frame{height:470px}
   .cta-section{padding:72px 20px}
+  .cta-title{font-size:clamp(24px,8vw,34px)}
+  .cta-desc{font-size:15px;line-height:1.7}
   .cta-btns{flex-direction:column;align-items:center}
   .cta-btn-primary, .cta-btn-secondary{width:100%;max-width:320px}
 }
@@ -284,7 +299,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <div class="nav-inner">
     <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite — Business Software UK" width="168" height="44" /></a>
     <div class="nav-links">
-      <a href="/wholesale.html"            class="nav-link">Wholesale &amp; Trade</a>
+      <a href="https://www.shahosuite.com/wholesale-suite.html" class="nav-link">Wholesale &amp; Trade</a>
       <a href="/landlord.html"             class="nav-link">Property &amp; Lettings</a>
       <a href="/pricing.html"              class="nav-link">Pricing</a>
       <a href="#trust"                     class="nav-link">Trust</a>
@@ -339,7 +354,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     </p>
 
     <div class="hero-paths">
-      <a href="/wholesale.html" class="path-btn pb-wholesale">
+      <a href="/wholesale-suite.html" class="path-btn pb-wholesale">
         🛍️ Grocery Wholesale &amp; Cash &amp; carry Suite
       </a>
       <a href="/landlord.html" class="path-btn pb-landlord">
@@ -383,7 +398,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
           <li>Orders, invoices and credit notes</li>
           <li>Accounting, analytics and audit log</li>
         </ul>
-        <a href="/wholesale.html" class="sc-cta cta-dark">Explore Wholesale &amp; Trade →</a>
+        <a href="/wholesale-suite.html" class="sc-cta cta-dark">Explore Wholesale &amp; Trade →</a>
       </article>
 
       <!-- Property & Lettings -->
@@ -462,13 +477,16 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <p class="cta-desc">No credit card required. No setup fees. Full access to all features. Cancel anytime.</p>
     <div class="cta-btns">
       <a href="https://app.shahosuite.com/register" class="cta-btn-primary">Sign up free →</a>
-      <a href="mailto:admin@shahosuite.com" class="cta-btn-secondary">Schedule a demo</a>
+      <a href="https://app.shahosuite.com/book/3/" class="cta-btn-secondary">Schedule a demo</a>
     </div>
   </div>
 </section>
 
 <!-- ══ FAQ ══ -->
 <section class="section faq-section" id="faq">
+  <canvas id="faq-canvas"></canvas>
+  <div class="faq-glow"></div>
+  <div class="faq-noise"></div>
   <div class="si">
     <span class="stag" style="color:#8b5cf6;">FAQ</span>
     <h2>Common questions</h2>
@@ -508,7 +526,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-links">
-    <a href="/wholesale.html">Wholesale &amp; Trade</a>
+    <a href="/wholesale-suite.html">Wholesale &amp; Trade</a>
     <a href="/landlord.html">Property &amp; Lettings</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/gdpr.html">GDPR</a>
@@ -530,11 +548,12 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   if(!canvas) return;
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const smallScreen = window.matchMedia('(max-width: 560px)').matches;
   const ctx = canvas.getContext('2d');
   const COLORS = ['#93c5fd','#60a5fa','#6ee7b7','#67e8f9','#a5b4fc'];
   const MAX_DIST = 128;
   let W, H, nodes = [];
-  const total = reduced ? 54 : 110;
+  const total = reduced ? 54 : (smallScreen ? 58 : 110);
 
   function resize(){
     W = canvas.width = canvas.offsetWidth;
@@ -667,6 +686,47 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     }
 
     /* horizontal lines */
+    for(let y = -grid; y < h + grid; y += grid){
+      ctx.beginPath();
+      ctx.moveTo(0, y + (offset % grid));
+      ctx.lineTo(w, y + (offset % grid));
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  draw();
+})();
+
+// FAQ moving grid background
+(function(){
+  const canvas = document.getElementById('faq-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, offset = 0;
+
+  function resize(){
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    const grid = 76;
+    offset += 0.08;
+    ctx.strokeStyle = 'rgba(37,99,235,0.06)';
+    ctx.lineWidth = 1;
+
+    for(let x = -grid; x < w + grid; x += grid){
+      ctx.beginPath();
+      ctx.moveTo(x + (offset % grid), 0);
+      ctx.lineTo(x + (offset % grid), h);
+      ctx.stroke();
+    }
+
     for(let y = -grid; y < h + grid; y += grid){
       ctx.beginPath();
       ctx.moveTo(0, y + (offset % grid));
