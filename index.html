@@ -122,27 +122,22 @@ h1{font-size:clamp(34px,5.8vw,64px);font-weight:900;line-height:1.03;letter-spac
 
 /* Two big path buttons */
 .hero-paths{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:42px}
-.path-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:14px;font-size:15px;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s;position:relative;overflow:hidden}
+.path-btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:14px;font-size:15px;font-weight:800;transition:transform .22s,box-shadow .22s,background .22s,color .22s,border-color .22s;position:relative;overflow:hidden}
 .path-btn::before{content:'';position:absolute;inset:0;transform:translateY(-105%);background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0));transition:transform .25s}
 .path-btn:hover::before{transform:translateY(0)}
-.pb-wholesale{background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.18)}
+.pb-wholesale{background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.18);animation:amp-flash 3.8s ease-in-out infinite}
 .pb-wholesale:hover{transform:translateY(-3px);box-shadow:0 9px 0 #334155,0 20px 36px rgba(15,23,42,.24)}
 .pb-wholesale:active{transform:translateY(4px);box-shadow:0 2px 0 #334155}
-.pb-landlord{background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #d1d5db,0 14px 28px rgba(15,23,42,.09)}
+.pb-landlord{background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #d1d5db,0 14px 28px rgba(15,23,42,.09);animation:amp-flash 3.8s ease-in-out infinite reverse}
 .pb-landlord:hover{transform:translateY(-3px);box-shadow:0 9px 0 #d1d5db,0 18px 34px rgba(15,23,42,.14)}
 .pb-landlord:active{transform:translateY(4px);box-shadow:0 2px 0 #d1d5db}
-
-/* KPI cards */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:10px;max-width:860px;margin:0 auto;perspective:1000px}
-.stat{min-width:0;padding:16px 14px;text-align:left;border-radius:16px;border:1px solid #e2e8f0;background:linear-gradient(145deg,#ffffff 0%,#f8fbff 100%);box-shadow:0 8px 20px rgba(15,23,42,.08),inset 0 1px 0 rgba(255,255,255,.8);transition:transform .26s ease,box-shadow .26s ease,border-color .26s ease;transform-style:preserve-3d;will-change:transform}
-.stat:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,23,42,.13);border-color:#cbd5e1}
-.stat-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.stat-pill{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:22px;padding:0 8px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.4px}
-.sp1{background:rgba(37,99,235,.11);color:#1d4ed8}.sp2{background:rgba(16,185,129,.11);color:#059669}.sp3{background:rgba(245,158,11,.15);color:#d97706}.sp4{background:rgba(239,68,68,.12);color:#dc2626}
-.stat-n{font-size:26px;font-weight:900;letter-spacing:-1px;line-height:1.1}
-.stat-l{font-size:11px;color:#64748b;margin-top:4px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
-.stat-s{font-size:11px;color:#94a3b8;margin-top:6px}
-.sn1{color:#2563eb}.sn2{color:#0f766e}.sn3{color:#b45309}.sn4{color:#be123c}
+@keyframes amp-flash{
+  0%,100%{background:#0f172a;color:#ffffff;border-color:#0f172a;box-shadow:0 6px 0 #334155,0 16px 30px rgba(15,23,42,.2),0 0 26px rgba(37,99,235,.12)}
+  50%{background:#ffffff;color:#0f172a;border-color:#0f172a;box-shadow:0 6px 0 #d1d5db,0 16px 30px rgba(15,23,42,.12),0 0 24px rgba(255,255,255,.95)}
+}
+@media (prefers-reduced-motion: reduce){
+  .pb-wholesale,.pb-landlord{animation:none}
+}
 
 /* ══ SHARED ══ */
 .section{padding:72px 28px}
@@ -179,6 +174,15 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .cta-dark:hover{transform:translateY(-2px);box-shadow:0 6px 0 #334155}
 .cta-navy{background:#1e40af;color:#fff;box-shadow:0 4px 0 #1e3a8a}
 .cta-navy:hover{transform:translateY(-2px);box-shadow:0 6px 0 #1e3a8a}
+
+.suite-demo-shell{margin-top:28px;background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%);border:1px solid #dbe7f4;border-radius:18px;padding:14px;box-shadow:0 16px 34px rgba(15,23,42,.08);transform:translateY(26px) scale(.86);opacity:0;transition:transform .9s cubic-bezier(.22,1,.36,1),opacity .9s ease}
+.suite-demo-shell.visible{transform:translateY(0) scale(1);opacity:1}
+.suite-demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px}
+.suite-demo-kicker{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#0f766e}
+.suite-demo-title{font-size:13px;font-weight:700;color:#1e293b}
+.suite-demo-pill{font-size:10px;font-weight:800;color:#0f172a;background:#fff;border:1px solid #dbe7f4;border-radius:999px;padding:4px 10px}
+.suite-demo-frame{width:100%;height:640px;border:1px solid #dbe7f4;border-radius:12px;overflow:hidden;background:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.85)}
+.suite-demo-frame iframe{width:100%;height:100%;border:0;display:block}
 
 
 
@@ -248,13 +252,10 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .nav-links{display:none}
   .suite-grid{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
-  .stats{grid-template-columns:repeat(2,minmax(150px,1fr));max-width:520px}
   .suite-heading-tag{animation:heading-type 2.2s steps(22,end) forwards}
   .suite-heading-title{white-space:normal;width:100%}
 }
 @media(max-width:560px){
-  .stats{grid-template-columns:1fr;max-width:320px}
-  .stat{padding:15px 14px}
   .trust-grid{grid-template-columns:1fr}
   .hero-paths{flex-direction:column;align-items:center}
   .path-btn{width:100%;justify-content:center}
@@ -262,6 +263,9 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .hero-sub{font-size:16px}
   .suite-heading-tag{width:100%;animation:none;white-space:nowrap}
   .suite-heading-title{width:100%;animation:none;white-space:normal}
+  .suite-demo-shell{padding:10px}
+  .suite-demo-head{align-items:flex-start;flex-direction:column}
+  .suite-demo-frame{height:470px}
   .cta-section{padding:72px 20px}
   .cta-btns{flex-direction:column;align-items:center}
   .cta-btn-primary, .cta-btn-secondary{width:100%;max-width:320px}
@@ -325,52 +329,17 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     </h1>
 
     <p class="hero-sub">
-      Two specialist suites. One platform. One price.<br/>
+      Two specialist suites. One platform.<br/>
       Choose the suite built for your industry — and get started today.
     </p>
 
     <div class="hero-paths">
       <a href="/wholesale.html" class="path-btn pb-wholesale">
-        🛍️ Wholesale &amp; Trade Suite
+        🛍️ Grocery Wholesale &amp; Cash &amp; carry Suite
       </a>
       <a href="/landlord.html" class="path-btn pb-landlord">
-        🏘️ Property &amp; Lettings Suite
+        🏘️ Property &amp; Lettings &amp; Landlord Suite
       </a>
-    </div>
-
-    <div class="stats" id="kpi-cards">
-      <article class="stat" data-tilt>
-        <div class="stat-top">
-          <div class="stat-n sn1">19+</div>
-          <span class="stat-pill sp1">LIVE</span>
-        </div>
-        <div class="stat-l">Modules</div>
-        <div class="stat-s">Sales, CRM, Ops, Finance</div>
-      </article>
-      <article class="stat" data-tilt>
-        <div class="stat-top">
-          <div class="stat-n sn2">£50</div>
-          <span class="stat-pill sp2">FLAT</span>
-        </div>
-        <div class="stat-l">Per month</div>
-        <div class="stat-s">No contracts, cancel anytime</div>
-      </article>
-      <article class="stat" data-tilt>
-        <div class="stat-top">
-          <div class="stat-n sn3">Azure</div>
-          <span class="stat-pill sp3">UK</span>
-        </div>
-        <div class="stat-l">Cloud hosted</div>
-        <div class="stat-s">99.9% uptime architecture</div>
-      </article>
-      <article class="stat" data-tilt>
-        <div class="stat-top">
-          <div class="stat-n sn4">GDPR</div>
-          <span class="stat-pill sp4">SAFE</span>
-        </div>
-        <div class="stat-l">Compliance ready</div>
-        <div class="stat-s">Audit log and role controls</div>
-      </article>
     </div>
 
   </div>
@@ -421,6 +390,19 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <a href="/landlord.html" class="sc-cta cta-navy">Explore Property &amp; Lettings →</a>
       </article>
 
+    </div>
+
+    <div class="suite-demo-shell" id="suite-demo-shell">
+      <div class="suite-demo-head">
+        <div>
+          <div class="suite-demo-kicker">Live Product Walkthrough</div>
+          <div class="suite-demo-title">Property &amp; Lettings navigation flow demo</div>
+        </div>
+        <span class="suite-demo-pill">Animated Demo</span>
+      </div>
+      <div class="suite-demo-frame">
+        <iframe src="/suite-landlord-demo.html" title="ShahoSuite Property and Lettings Demo" loading="lazy"></iframe>
+      </div>
     </div>
 
   </div>
@@ -638,28 +620,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   else requestAnimationFrame(draw);
 })();
 
-// KPI 3D tilt interaction
-(function(){
-  const cards = document.querySelectorAll('#kpi-cards [data-tilt]');
-  if(!cards.length) return;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduced) return;
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rx = ((y / rect.height) - 0.5) * -8;
-      const ry = ((x / rect.width) - 0.5) * 10;
-      card.style.transform = `translateY(-4px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-})();
-
 // Trust cards 3D + 2D motion anime
 (function(){
   const cards = document.querySelectorAll('[data-tilt-trust]');
@@ -723,6 +683,28 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   resize();
   window.addEventListener('resize', resize);
   draw();
+})();
+
+// Suite demo scroll reveal (small to full)
+(function(){
+  const demo = document.getElementById('suite-demo-shell');
+  if(!demo) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){
+    demo.classList.add('visible');
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        demo.classList.add('visible');
+        obs.disconnect();
+      }
+    });
+  }, {threshold:0.2});
+
+  obs.observe(demo);
 })();
 
 // FAQ accordion

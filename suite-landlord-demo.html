@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShahoSuite Navigation Demo</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.wrap { position: relative; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; width: 100%; max-width: 960px; background: white; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+.screen { display: none; flex-direction: row; min-height: 500px; background: white; }
+.screen.active { display: flex; }
+.sb { width: 168px; min-width: 168px; background: #f8f9fa; border-right: 1px solid #e9ecef; font-size: 12px; }
+.sb-logo { padding: 12px 16px; font-weight: 700; font-size: 14px; color: #1a1a2e; border-bottom: 1px solid #e9ecef; }
+.sb-sec { padding: 9px 12px 3px; font-size: 9px; color: #94a3b8; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+.sb-it { display: flex; align-items: center; gap: 8px; padding: 6px 16px; color: #64748b; font-size: 12px; cursor: pointer; }
+.sb-it.on { background: white; color: #7c3aed; font-weight: 600; border-left: 2.5px solid #7c3aed; }
+.sb-it i { font-size: 15px; }
+.br { background: #ef4444; color: white; font-size: 9px; font-weight: 700; border-radius: 10px; padding: 1px 5px; margin-left: 4px; }
+.main { flex: 1; overflow: hidden; background: white; display: flex; flex-direction: column; }
+.banner { background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%); padding: 20px 24px 18px; position: relative; flex-shrink: 0; }
+.btn-w { background: white; color: #0f766e; font-size: 11px; font-weight: 700; padding: 7px 13px; border-radius: 7px; border: none; cursor: pointer; }
+.content { padding: 16px 20px; flex: 1; overflow: hidden; }
+.sg { display: grid; gap: 9px; margin-bottom: 14px; }
+.sc { border-radius: 10px; padding: 11px 14px; color: white; }
+.sl { font-size: 8px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em; }
+.sv { font-size: 20px; font-weight: 700; margin: 4px 0 2px; }
+.ss { font-size: 8px; opacity: 0.75; }
+.blue{background:#3b82f6;} .green{background:#22c55e;} .red{background:#ef4444;} .dkg{background:#16a34a;} .purp{background:#8b5cf6;} .amb{background:#f59e0b;} .teal{background:#0d9488;}
+.pg { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.pc { background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 11px; font-size: 11px; }
+.pc.up{border-top:3px solid #ef4444;} .pc.ok{border-top:3px solid #22c55e;} .pc.vo{border-top:3px solid #94a3b8;} .pc.wa{border-top:3px solid #f59e0b;}
+.pn { font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 5px; }
+.bdg { display: inline-block; font-size: 8px; padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-right: 3px; }
+.bh{background:#dbeafe;color:#1e40af;} .bf{background:#ede9fe;color:#5b21b6;} .bu{background:#fee2e2;color:#991b1b;}
+.ba{background:#fee2e2;color:#991b1b;font-size:8px;padding:2px 5px;border-radius:4px;font-weight:700;}
+.bk{background:#dcfce7;color:#166534;font-size:8px;padding:2px 5px;border-radius:4px;font-weight:700;}
+.bt{background:#f1f5f9;color:#475569;font-size:8px;padding:2px 5px;border-radius:4px;}
+.bc{background:#fef9c3;color:#854d0e;font-size:8px;padding:2px 5px;border-radius:4px;font-weight:700;}
+.trow { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; border-bottom: 0.5px solid #f1f5f9; font-size: 10px; color: #475569; }
+.wb { background: #fefce8; border: 1px solid #fde047; border-radius: 7px; padding: 10px 12px; margin-bottom: 11px; display: flex; gap: 9px; }
+.wb i { color: #ca8a04; font-size: 15px; margin-top: 1px; }
+.wt { font-weight: 700; font-size: 11px; color: #854d0e; }
+.ws { font-size: 10px; color: #92400e; margin-top: 2px; }
+.sb2 { border: 1px solid #e2e8f0; border-radius: 7px; padding: 6px 10px; font-size: 11px; color: #94a3b8; background: white; }
+.av { width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10px; color: white; flex-shrink: 0; }
+.tn2 { font-weight: 600; color: #1e293b; font-size: 11px; }
+.rg { color: #16a34a; font-weight: 600; font-size: 11px; }
+.nt { color: #94a3b8; font-size: 10px; }
+.nc { background: #fee2e2; color: #991b1b; font-size: 8px; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+.bs { font-size: 8px; font-weight: 700; padding: 3px 7px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; margin: 1px 0; }
+.bst{background:#7c3aed;color:white;} .bpo{background:#2563eb;color:white;} .bed{background:#1e293b;color:white;}
+.ac { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.tt { width: 100%; border-collapse: collapse; font-size: 10px; }
+.tt th { text-align: left; padding: 5px 7px; color: #94a3b8; font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0; }
+.tt td { padding: 8px 7px; border-bottom: 0.5px solid #f1f5f9; vertical-align: middle; }
+.rb { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 7px; padding: 10px 12px; margin-bottom: 8px; display: flex; gap: 9px; }
+.rb i { color: #dc2626; font-size: 15px; margin-top: 1px; }
+.rt { font-weight: 700; font-size: 11px; color: #991b1b; }
+.rs { font-size: 9px; color: #7f1d1d; margin-top: 2px; }
+.renewbar { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 7px; padding: 9px 12px; margin-bottom: 11px; }
+.renew-btns { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.rbtn { font-size: 9px; font-weight: 700; padding: 3px 9px; border-radius: 5px; border: none; cursor: pointer; }
+.rbtn.exp { background: #dc2626; color: white; }
+.rbtn.days { background: #7c3aed; color: white; }
+.st-ended { background: #fee2e2; color: #991b1b; font-size: 8px; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
+.st-expired { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; font-size: 8px; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
+.dps { background: #dcfce7; color: #166534; font-size: 8px; padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+.mydep { background: #dcfce7; color: #166534; font-size: 8px; padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+.ledit{background:#f97316;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
+.lrenew{background:#7c3aed;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
+.lpdf{background:#2563eb;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
+.lend{background:#ef4444;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
+.cursor { width: 14px; height: 14px; background: rgba(255,255,255,0.95); border: 2px solid #1e293b; border-radius: 50%; position: absolute; pointer-events: none; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+.ripple { width: 24px; height: 24px; border: 2px solid #7c3aed; border-radius: 50%; position: absolute; pointer-events: none; z-index: 99; opacity: 0; transform: scale(0); }
+.hl { background: rgba(124,58,237,0.1) !important; }
+.controls { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.controls button { font-size: 13px; padding: 8px 18px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; cursor: pointer; font-weight: 600; color: #1e293b; }
+.controls button:hover { background: #f8f9fa; }
+#status { font-size: 13px; color: #64748b; }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+  <div id="cur" class="cursor" style="left:40px;top:40px;display:none;"></div>
+  <div id="rip" class="ripple"></div>
+
+  <!-- S1: Dashboard -->
+  <div id="s1" class="screen active">
+    <div class="sb">
+      <div class="sb-logo">ShahoSuite</div>
+      <div class="sb-sec">Main</div>
+      <div class="sb-it on"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
+      <div class="sb-sec">Portfolio</div>
+      <div id="n-props" class="sb-it"><i class="ti ti-building"></i> Properties</div>
+      <div class="sb-it"><i class="ti ti-users"></i> Tenants</div>
+      <div class="sb-it"><i class="ti ti-file-text"></i> Leases</div>
+      <div class="sb-sec">Money</div>
+      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
+      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
+      <div class="sb-sec">Compliance</div>
+      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
+      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+    </div>
+    <div class="main">
+      <div class="banner">
+        <div style="font-size:9px;color:rgba(255,255,255,0.75);margin-bottom:2px;">GOOD MORNING</div>
+        <div style="font-size:20px;font-weight:700;color:white;">Lord Suite</div>
+        <div style="position:absolute;top:16px;right:20px;font-size:11px;color:rgba(255,255,255,0.8);">Thursday, 7 May 2026</div>
+      </div>
+      <div class="content">
+        <div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:3px;">2 properties - rent unpaid</div>
+        <div style="font-size:11px;color:#ef4444;margin-bottom:11px;">2 properties - rent unpaid</div>
+        <div class="sg" style="grid-template-columns:repeat(5,1fr);">
+          <div class="sc blue"><div class="sl">Occupancy</div><div class="sv">57%</div><div class="ss">4 of 7 let</div></div>
+          <div class="sc green"><div class="sl">Collected</div><div class="sv" style="font-size:15px;">GBP3,545</div><div class="ss">65% of GBP5,475</div></div>
+          <div class="sc red"><div class="sl">Outstanding</div><div class="sv" style="font-size:15px;">GBP1,930</div><div class="ss">3 not paid</div></div>
+          <div class="sc dkg"><div class="sl">Open Jobs</div><div class="sv">0</div><div class="ss">No open jobs</div></div>
+          <div class="sc purp"><div class="sl">Expiring Certs</div><div class="sv">7</div><div class="ss">Within 60 days</div></div>
+        </div>
+        <div class="pg">
+          <div class="pc up"><div style="margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bdg bu">X UNPAID</span></div><div class="pn">33</div><div style="color:#64748b;font-size:10px;">1 Room - <span style="color:#f97316;font-weight:600;">1 of 3 rented</span></div></div>
+          <div class="pc vo"><div style="margin-bottom:4px;"><span class="bdg bf">FLAT</span><span class="bt">VOID</span></div><div class="pn">19 Albert</div><div style="color:#64748b;font-size:10px;">0 of 1 rented</div></div>
+          <div class="pc up"><div style="margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bdg bu">X UNPAID</span></div><div class="pn">1 Micheal Road</div><div style="color:#64748b;font-size:10px;"><span style="color:#f97316;font-weight:600;">2 of 5 rented</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: Properties -->
+  <div id="s2" class="screen">
+    <div class="sb">
+      <div class="sb-logo">ShahoSuite</div>
+      <div class="sb-sec">Main</div>
+      <div class="sb-it"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
+      <div class="sb-sec">Portfolio</div>
+      <div class="sb-it on"><i class="ti ti-building"></i> Properties</div>
+      <div id="n-ten2" class="sb-it"><i class="ti ti-users"></i> Tenants</div>
+      <div class="sb-it"><i class="ti ti-file-text"></i> Leases</div>
+      <div class="sb-sec">Money</div>
+      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
+      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
+      <div class="sb-sec">Compliance</div>
+      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
+      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+    </div>
+    <div class="main">
+      <div class="banner" style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:20px;font-weight:700;color:white;">Properties</div><div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;">Your portfolio - click any property to view details &amp; edit</div></div>
+        <div class="btn-w">+ Add Property</div>
+      </div>
+      <div class="content">
+        <div class="sg" style="grid-template-columns:repeat(5,1fr);">
+          <div class="sc blue"><div class="sl">Properties</div><div class="sv">7</div><div class="ss">in portfolio</div></div>
+          <div class="sc purp"><div class="sl">Monthly Income</div><div class="sv" style="font-size:14px;">GBP5,475</div><div class="ss">total rent roll</div></div>
+          <div class="sc amb"><div class="sl">Void Units</div><div class="sv">3</div><div class="ss">not let</div></div>
+          <div class="sc red"><div class="sl">In Arrears</div><div class="sv">3</div><div class="ss">overdue rent</div></div>
+          <div class="sc blue"><div class="sl">Open Issues</div><div class="sv">0</div><div class="ss">no open jobs</div></div>
+        </div>
+        <div class="pg">
+          <div class="pc ok"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bf">FLAT</span><span class="bk">Healthy</span></div><div class="pn">19 Albert</div><div style="color:#64748b;font-size:10px;">PO54SX - 3bd</div><div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="color:#94a3b8;font-size:9px;">- Void -</span><span class="bt">To Let</span></div></div>
+          <div class="pc up"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="ba">Arrears</span></div><div class="pn">33</div><div style="color:#64748b;font-size:10px;">PO13ZA - 3bd</div><div class="trow"><span>PA</span><span style="font-weight:600;color:#1e293b;font-size:10px;">GBP1,000 <span class="ba">Arr</span></span></div></div>
+          <div class="pc up"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="ba">Arrears</span></div><div class="pn">1 Micheal Road</div><div class="trow"><span>CC</span><span style="font-weight:600;font-size:10px;">GBP430 <span class="ba">Arr</span></span></div><div class="trow"><span>Whash Whashi</span><span style="font-weight:600;font-size:10px;">GBP1,000 <span class="ba">Arr</span></span></div></div>
+          <div class="pc vo"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bk">Healthy</span></div><div class="pn">46 Green Road</div><div style="color:#64748b;font-size:10px;">PO54ZX - 6bd</div><div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="color:#94a3b8;font-size:9px;">- Void -</span><span class="bt">To Let</span></div></div>
+          <div class="pc vo"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bf">FLAT</span><span class="bk">Healthy</span></div><div class="pn">369 London Road</div><div style="color:#64748b;font-size:10px;">PA45ZA - 5bd</div><div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="color:#94a3b8;font-size:9px;">- Void -</span><span class="bt">To Let</span></div></div>
+          <div class="pc wa"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bc">1 cert expiring</span></div><div class="pn">182 Old Road</div><div class="trow"><span>Fiona Algebra</span><span style="color:#16a34a;font-weight:600;font-size:10px;">GBP750</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: Tenants -->
+  <div id="s3" class="screen">
+    <div class="sb">
+      <div class="sb-logo">ShahoSuite</div>
+      <div class="sb-sec">Main</div>
+      <div class="sb-it"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
+      <div class="sb-sec">Portfolio</div>
+      <div class="sb-it"><i class="ti ti-building"></i> Properties</div>
+      <div class="sb-it on"><i class="ti ti-users"></i> Tenants</div>
+      <div id="n-lease3" class="sb-it"><i class="ti ti-file-text"></i> Leases</div>
+      <div class="sb-sec">Money</div>
+      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
+      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
+      <div class="sb-sec">Compliance</div>
+      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
+      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+    </div>
+    <div class="main">
+      <div class="banner" style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:20px;font-weight:700;color:white;">Tenants</div><div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;">Tenants linked to properties - see monthly rent and lease dates at a glance</div></div>
+        <div style="display:flex;gap:8px;">
+          <div style="background:rgba(255,255,255,0.2);color:white;font-size:10px;font-weight:600;padding:6px 11px;border-radius:6px;border:1px solid rgba(255,255,255,0.4);">Export CSV</div>
+          <div class="btn-w">+ Add Tenant</div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="wb"><i class="ti ti-alert-triangle"></i><div><div class="wt">Right to Rent checks outstanding</div><div class="ws">UK landlords must verify every tenant's right to rent in England. Edit tenants to record check date and document type.</div></div></div>
+        <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;">
+          <div class="sb2" style="flex:1;">Search by name, email, phone, property or room...</div>
+          <div class="sb2">All (8)</div>
+          <div style="font-size:10px;color:#94a3b8;">8 shown</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4: Leases -->
+  <div id="s4" class="screen">
+    <div class="sb">
+      <div class="sb-logo">ShahoSuite</div>
+      <div class="sb-sec">Main</div>
+      <div class="sb-it"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
+      <div class="sb-sec">Portfolio</div>
+      <div class="sb-it"><i class="ti ti-building"></i> Properties</div>
+      <div class="sb-it"><i class="ti ti-users"></i> Tenants</div>
+      <div class="sb-it on"><i class="ti ti-file-text"></i> Leases</div>
+      <div class="sb-sec">Money</div>
+      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
+      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
+      <div class="sb-sec">Compliance</div>
+      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
+      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+    </div>
+    <div class="main">
+      <div class="banner" style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:20px;font-weight:700;color:white;">Tenancies</div><div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;">Assured Shorthold Tenancy agreements &amp; renewals</div></div>
+        <div class="btn-w">+ New Tenancy</div>
+      </div>
+      <div class="content">
+        <div class="sg" style="grid-template-columns:repeat(4,1fr);margin-bottom:12px;">
+          <div class="sc green"><div class="sl">Active Tenancies</div><div class="sv">4</div><div class="ss">current agreements</div></div>
+          <div class="sc teal"><div class="sl">Monthly Income</div><div class="sv" style="font-size:16px;">GBP3,045</div><div class="ss">total rent roll</div></div>
+          <div class="sc amb"><div class="sl">Expiring <=60D</div><div class="sv">0</div><div class="ss">none upcoming</div></div>
+          <div class="sc red"><div class="sl">Expired</div><div class="sv">1</div><div class="ss">act immediately</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <button onclick="runAnim()">Replay Animation</button>
+  <span id="status">Loading...</span>
+</div>
+
+<script>
+const cur=document.getElementById('cur'),rip=document.getElementById('rip'),statusEl=document.getElementById('status'),wrap=document.getElementById('wrap');
+function gc(el){const wr=wrap.getBoundingClientRect(),er=el.getBoundingClientRect();return{x:er.left-wr.left+er.width/2,y:er.top-wr.top+er.height/2};}
+function sc(x,y){cur.style.left=(x-7)+'px';cur.style.top=(y-7)+'px';}
+function mv(fx,fy,tx,ty,ms){return new Promise(r=>{const s=performance.now();function step(n){let t=Math.min((n-s)/ms,1);t=t<0.5?2*t*t:-1+(4-2*t)*t;sc(fx+(tx-fx)*t,fy+(ty-fy)*t);t<1?requestAnimationFrame(step):r();}requestAnimationFrame(step);});}
+function dl(ms){return new Promise(r=>setTimeout(r,ms));}
+function doRip(x,y){rip.style.left=(x-12)+'px';rip.style.top=(y-12)+'px';rip.style.opacity='1';rip.style.transform='scale(0)';rip.style.transition='transform 0.3s ease-out,opacity 0.3s ease-out';requestAnimationFrame(()=>{rip.style.transform='scale(1.6)';rip.style.opacity='0';});}
+function show(id){['s1','s2','s3','s4'].forEach(s=>{document.getElementById(s).style.display=s===id?'flex':'none';});}
+async function runAnim(){
+  document.querySelector('.controls button').disabled=true;
+  show('s1');await dl(100);
+  sc(100,60);cur.style.display='block';
+  await dl(600);
+  statusEl.textContent='Moving to Properties...';
+  const p1=gc(document.getElementById('n-props'));
+  await mv(100,60,p1.x,p1.y,900);
+  document.getElementById('n-props').classList.add('hl');
+  statusEl.textContent='Hovering Properties...';
+  await dl(500);doRip(p1.x,p1.y);statusEl.textContent='Clicking Properties...';await dl(350);
+  show('s2');document.getElementById('n-props').classList.remove('hl');await dl(100);
+  statusEl.textContent='Moving to Tenants...';
+  const p2=gc(document.getElementById('n-ten2'));
+  await mv(p1.x,p1.y,p2.x,p2.y,800);
+  document.getElementById('n-ten2').classList.add('hl');
+  statusEl.textContent='Hovering Tenants...';
+  await dl(500);doRip(p2.x,p2.y);statusEl.textContent='Clicking Tenants...';await dl(350);
+  show('s3');document.getElementById('n-ten2').classList.remove('hl');await dl(100);
+  statusEl.textContent='Moving to Leases...';
+  const p3=gc(document.getElementById('n-lease3'));
+  await mv(p2.x,p2.y,p3.x,p3.y,800);
+  document.getElementById('n-lease3').classList.add('hl');
+  statusEl.textContent='Hovering Leases...';
+  await dl(500);doRip(p3.x,p3.y);statusEl.textContent='Clicking Leases...';await dl(350);
+  show('s4');document.getElementById('n-lease3').classList.remove('hl');
+  cur.style.display='none';
+  statusEl.textContent='Done - all 4 screens navigated';
+  document.querySelector('.controls button').disabled=false;
+}
+window.onload = () => runAnim();
+</script>
+</body>
+</html>
