@@ -242,14 +242,12 @@ body { background: #f1f5f9; display: flex; flex-direction: column; align-items: 
 </div>
 
 <div class="controls">
-  <button onclick="runAnim()">Replay Animation</button>
-  <span id="status">Preview loading...</span>
+  <button onclick="runAnim()">▶ Replay Animation</button>
+  <span id="status">Loading...</span>
 </div>
 
 <script>
 const cur=document.getElementById('cur'),rip=document.getElementById('rip'),statusEl=document.getElementById('status'),wrap=document.getElementById('wrap');
-const SPEED=1.45;
-let running=false;
 function gc(el){const wr=wrap.getBoundingClientRect(),er=el.getBoundingClientRect();return{x:er.left-wr.left+er.width/2,y:er.top-wr.top+er.height/2};}
 function sc(x,y){cur.style.left=(x-7)+'px';cur.style.top=(y-7)+'px';}
 function mv(fx,fy,tx,ty,ms){return new Promise(r=>{const s=performance.now();function step(n){let t=Math.min((n-s)/ms,1);t=t<0.5?2*t*t:-1+(4-2*t)*t;sc(fx+(tx-fx)*t,fy+(ty-fy)*t);t<1?requestAnimationFrame(step):r();}requestAnimationFrame(step);});}
@@ -257,42 +255,36 @@ function dl(ms){return new Promise(r=>setTimeout(r,ms));}
 function doRip(x,y){rip.style.left=(x-12)+'px';rip.style.top=(y-12)+'px';rip.style.opacity='1';rip.style.transform='scale(0)';rip.style.transition='transform 0.3s ease-out,opacity 0.3s ease-out';requestAnimationFrame(()=>{rip.style.transform='scale(1.6)';rip.style.opacity='0';});}
 function show(id){['s1','s2','s3','s4'].forEach(s=>{document.getElementById(s).style.display=s===id?'flex':'none';});}
 async function runAnim(){
-  if(running) return;
-  running=true;
   document.querySelector('.controls button').disabled=true;
-  show('s1');await dl(100*SPEED);
+  show('s1');await dl(100);
   sc(100,60);cur.style.display='block';
-  await dl(600*SPEED);
-  statusEl.textContent='Preview: moving to Properties...';
+  await dl(600);
+  statusEl.textContent='Moving to Properties...';
   const p1=gc(document.getElementById('n-props'));
-  await mv(100,60,p1.x,p1.y,900*SPEED);
+  await mv(100,60,p1.x,p1.y,900);
   document.getElementById('n-props').classList.add('hl');
-  statusEl.textContent='Preview: hovering Properties...';
-  await dl(500*SPEED);doRip(p1.x,p1.y);statusEl.textContent='Preview: clicking Properties...';await dl(350*SPEED);
-  show('s2');document.getElementById('n-props').classList.remove('hl');await dl(100*SPEED);
-  statusEl.textContent='Preview: moving to Tenants...';
+  statusEl.textContent='Hovering Properties...';
+  await dl(500);doRip(p1.x,p1.y);statusEl.textContent='Clicking Properties...';await dl(350);
+  show('s2');document.getElementById('n-props').classList.remove('hl');await dl(100);
+  statusEl.textContent='Moving to Tenants...';
   const p2=gc(document.getElementById('n-ten2'));
-  await mv(p1.x,p1.y,p2.x,p2.y,800*SPEED);
+  await mv(p1.x,p1.y,p2.x,p2.y,800);
   document.getElementById('n-ten2').classList.add('hl');
-  statusEl.textContent='Preview: hovering Tenants...';
-  await dl(500*SPEED);doRip(p2.x,p2.y);statusEl.textContent='Preview: clicking Tenants...';await dl(350*SPEED);
-  show('s3');document.getElementById('n-ten2').classList.remove('hl');await dl(100*SPEED);
-  statusEl.textContent='Preview: moving to Leases...';
+  statusEl.textContent='Hovering Tenants...';
+  await dl(500);doRip(p2.x,p2.y);statusEl.textContent='Clicking Tenants...';await dl(350);
+  show('s3');document.getElementById('n-ten2').classList.remove('hl');await dl(100);
+  statusEl.textContent='Moving to Leases...';
   const p3=gc(document.getElementById('n-lease3'));
-  await mv(p2.x,p2.y,p3.x,p3.y,800*SPEED);
+  await mv(p2.x,p2.y,p3.x,p3.y,800);
   document.getElementById('n-lease3').classList.add('hl');
-  statusEl.textContent='Preview: hovering Leases...';
-  await dl(500*SPEED);doRip(p3.x,p3.y);statusEl.textContent='Preview: clicking Leases...';await dl(350*SPEED);
+  statusEl.textContent='Hovering Leases...';
+  await dl(500);doRip(p3.x,p3.y);statusEl.textContent='Clicking Leases...';await dl(350);
   show('s4');document.getElementById('n-lease3').classList.remove('hl');
   cur.style.display='none';
-  statusEl.textContent='Preview done - replaying automatically...';
+  statusEl.textContent='Done ✓ — all 4 screens navigated';
   document.querySelector('.controls button').disabled=false;
-  running=false;
 }
-window.onload = () => {
-  runAnim();
-  setInterval(() => runAnim(), 13000);
-};
+window.onload = () => runAnim();
 </script>
 </body>
 </html>
