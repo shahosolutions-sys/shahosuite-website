@@ -168,24 +168,26 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .cta-navy{background:#1e40af;color:#fff;box-shadow:0 4px 0 #1e3a8a}
 .cta-navy:hover{transform:translateY(-2px);box-shadow:0 6px 0 #1e3a8a}
 
-/* Coming soon chips */
-.cs-strip{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 22px;margin-top:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.cs-lbl{font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-.cs-chips{display:flex;gap:7px;flex-wrap:wrap}
-.cs-chip{padding:4px 12px;border-radius:50px;font-size:12px;font-weight:700;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b}
-
 .ghost-panel{position:relative;max-width:980px;margin:24px auto 0;padding:0 28px;pointer-events:none;opacity:0;transform:scale(0.92);transition:opacity .35s ease,transform .35s ease}
 .ghost-panel.visible{opacity:.24;transform:scale(1)}
 .ghost-canvas{position:relative;width:100%;height:180px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 45px rgba(15,23,42,.1)}
 .ghost-canvas canvas{width:100%;height:100%;display:block}
 
 /* ══ TRUST ══ */
-.trust-section{background:#fff}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.trust-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:22px 18px;text-align:center}
-.trust-icon{font-size:26px;margin-bottom:10px;display:block}
-.trust-card h3{font-size:14px;font-weight:800;margin-bottom:6px}
-.trust-card p{font-size:12.5px;color:#64748b;line-height:1.65}
+.trust-section{background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;perspective:1200px}
+.trust-card{position:relative;isolation:isolate;background:linear-gradient(145deg,#ffffff 0%,#f9fcff 62%,#f0f9ff 100%);border:1px solid #dbe7f4;border-radius:18px;padding:24px 18px;text-align:center;box-shadow:0 10px 28px rgba(15,23,42,.08),inset 0 1px 0 rgba(255,255,255,.9);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;transform-style:preserve-3d;overflow:hidden}
+.trust-card::before{content:'';position:absolute;inset:-120% -40%;z-index:-1;background:linear-gradient(130deg,rgba(59,130,246,.22),rgba(16,185,129,.16),rgba(14,165,233,.2),rgba(59,130,246,.2));filter:blur(30px);opacity:.68;animation:trust-flow 10s linear infinite}
+.trust-card::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.72),rgba(255,255,255,0) 38%);mix-blend-mode:screen}
+.trust-card:hover{transform:translateY(-8px) rotateX(6deg) rotateY(-4deg);border-color:#bcd2e8;box-shadow:0 18px 36px rgba(15,23,42,.14)}
+.trust-icon{font-size:26px;margin-bottom:10px;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.75);border:1px solid rgba(148,163,184,.32);box-shadow:0 6px 16px rgba(15,23,42,.08)}
+.trust-card h3{position:relative;z-index:1;font-size:14px;font-weight:800;margin-bottom:7px;color:#0f172a}
+.trust-card p{position:relative;z-index:1;font-size:12.5px;color:#526275;line-height:1.66}
+.tc1::before{animation-duration:9.5s}
+.tc2::before{animation-duration:10.8s;filter:blur(34px);background:linear-gradient(130deg,rgba(16,185,129,.22),rgba(34,197,94,.14),rgba(14,165,233,.2),rgba(16,185,129,.2))}
+.tc3::before{animation-duration:11.3s;background:linear-gradient(130deg,rgba(99,102,241,.22),rgba(59,130,246,.14),rgba(14,165,233,.22),rgba(99,102,241,.2))}
+.tc4::before{animation-duration:10.1s;background:linear-gradient(130deg,rgba(245,158,11,.2),rgba(251,191,36,.15),rgba(59,130,246,.2),rgba(245,158,11,.2))}
+@keyframes trust-flow{0%{transform:translateX(-10%) translateY(-8%) rotate(0deg)}50%{transform:translateX(8%) translateY(6%) rotate(180deg)}100%{transform:translateX(-10%) translateY(-8%) rotate(360deg)}}
 
 /* Azure bar */
 .azure-bar{background:#0f172a;padding:20px 28px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
@@ -193,44 +195,6 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .az-pill:hover{background:rgba(255,255,255,0.12)}
 .az-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;animation:az-p 2s infinite}
 @keyframes az-p{0%,100%{opacity:1}50%{opacity:0.3}}
-
-/* ══ PRICING ══ */
-.pricing-section{background:#f8fafc}
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto}
-.price-card{border-radius:22px;padding:30px 26px}
-.pc-biz{background:#fff;border:2px solid #6366f1;box-shadow:0 7px 0 #4338ca,0 16px 40px rgba(99,102,241,0.12)}
-.pc-land{background:#0a1628;border:2px solid #1e40af;box-shadow:0 7px 0 #1e3a8a,0 16px 40px rgba(30,64,175,0.2)}
-.pc-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;color:#fff;font-weight:800;margin-bottom:12px}
-.pb-biz{background:linear-gradient(90deg,#6366f1,#10b981)}
-.pb-land{background:linear-gradient(90deg,#1e40af,#c9a84c)}
-.pc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.pc-biz .pc-label{color:#94a3b8}.pc-land .pc-label{color:rgba(255,255,255,0.35)}
-.pc-price{font-size:50px;font-weight:900;letter-spacing:-3px;line-height:1}
-.pc-price sup{font-size:19px;vertical-align:top;margin-top:7px;display:inline-block}
-.pc-price sub{font-size:14px;font-weight:500;letter-spacing:0}
-.pc-biz .pc-price{color:#0f172a}.pc-biz .pc-price sub{color:#64748b}
-.pc-land .pc-price{color:#fff}.pc-land .pc-price sub{color:rgba(255,255,255,0.45)}
-.pc-note{font-size:13px;margin:10px 0 14px;line-height:1.6;padding-bottom:14px;border-bottom:1px solid}
-.pc-biz .pc-note{color:#475569;border-color:#f1f5f9}
-.pc-land .pc-note{color:rgba(255,255,255,0.5);border-color:rgba(255,255,255,0.07)}
-.pc-list{list-style:none;margin-bottom:20px}
-.pc-list li{padding:6px 0;font-size:13px;display:flex;align-items:flex-start;gap:7px;border-bottom:1px solid}
-.pc-biz .pc-list li{color:#334155;border-color:#f8fafc}
-.pc-land .pc-list li{color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.06)}
-.pc-list li::before{content:'✓';flex-shrink:0;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;margin-top:2px}
-.pc-biz .pc-list li::before{background:rgba(16,185,129,0.12);color:#10b981}
-.pc-land .pc-list li::before{background:rgba(201,168,76,0.15);color:#c9a84c}
-.pc-btn{display:block;width:100%;padding:13px;border-radius:11px;font-size:14px;font-weight:800;text-align:center;border:none;font-family:'DM Sans',sans-serif;cursor:pointer;color:#fff;background:linear-gradient(90deg,#6366f1,#10b981,#f59e0b,#ec4899,#6366f1);background-size:300% 100%;animation:btn-s 6s ease-in-out infinite;box-shadow:0 4px 0 #4338ca;transition:transform 0.15s,box-shadow 0.15s}
-.pc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 #4338ca}
-.pc-btn:active{transform:translateY(4px);box-shadow:0 0 0 #4338ca}
-.land-btn{background:linear-gradient(90deg,#1e40af,#c9a84c,#1e40af);background-size:300% 100%;box-shadow:0 4px 0 #1e3a8a}
-.land-btn:hover{box-shadow:0 6px 0 #1e3a8a}
-@keyframes btn-s{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.pc-staff{margin-top:12px;padding:10px 12px;border-radius:10px;font-size:11.5px;line-height:1.55}
-.pc-biz .pc-staff{background:#f8fafc;border:1px solid #e2e8f0;color:#475569}
-.pc-land .pc-staff{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.45)}
-.pc-staff strong{color:#0f172a}.pc-land .pc-staff strong{color:rgba(255,255,255,0.75)}
-.pc-staff a{color:#6366f1;font-weight:700}.pc-land .pc-staff a{color:#c9a84c}
 
 /* ══ FAQ ══ */
 .faq-section{background:#fff}
@@ -253,7 +217,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 /* ══ RESPONSIVE ══ */
 @media(max-width:880px){
   .nav-links{display:none}
-  .suite-grid,.price-grid{grid-template-columns:1fr}
+  .suite-grid{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:repeat(2,minmax(150px,1fr));max-width:520px}
 }
@@ -422,18 +386,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
     </div>
 
-    <!-- Coming soon -->
-    <div class="cs-strip">
-      <span class="cs-lbl">🚀 Coming next</span>
-      <div class="cs-chips">
-        <span class="cs-chip">💇 Health &amp; Beauty</span>
-        <span class="cs-chip">🔧 Technical Mechanics</span>
-        <span class="cs-chip">🏗️ Construction</span>
-        <span class="cs-chip">🏠 Care Home</span>
-        <span class="cs-chip">🧹 Cleaning Business</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -450,22 +402,22 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <h2>Secure UK software — Azure-hosted &amp; GDPR-ready</h2>
     <p class="sdesc">Registered UK company. UK data centres. Every document you need to trust ShahoSuite with your business.</p>
     <div class="trust-grid">
-      <div class="trust-card">
+      <div class="trust-card tc1" data-tilt-trust>
         <span class="trust-icon">☁️</span>
         <h3>Microsoft Azure UK</h3>
         <p>Hosted in Azure UK South &amp; West. 99.9% uptime SLA. Your data never leaves the United Kingdom.</p>
       </div>
-      <div class="trust-card">
+      <div class="trust-card tc2" data-tilt-trust>
         <span class="trust-icon">🔒</span>
         <h3>GDPR Ready</h3>
         <p>Full UK GDPR compliance. Role-based access. Complete audit log. Data deleted within 30 days of cancellation.</p>
       </div>
-      <div class="trust-card">
+      <div class="trust-card tc3" data-tilt-trust>
         <span class="trust-icon">🏢</span>
         <h3>UK Registered</h3>
         <p>Shaho Solutions Limited — Co. No. 16017117 — registered in England &amp; Wales. Real company, real accountability.</p>
       </div>
-      <div class="trust-card">
+      <div class="trust-card tc4" data-tilt-trust>
         <span class="trust-icon">📍</span>
         <h3>Built in Portsmouth</h3>
         <p>Proudly built and operated from Portsmouth, Hampshire. UK customers, UK market, UK standards — from day one.</p>
@@ -485,50 +437,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <a href="/terms.html"   class="az-pill">📄 Terms</a>
   <a href="/privacy.html" class="az-pill">🛡️ Privacy</a>
 </div>
-
-<!-- ══ PRICING ══ -->
-<section class="section pricing-section" id="pricing">
-  <div class="si">
-    <span class="stag" style="color:#f43f5e;">Pricing</span>
-    <h2>One flat price. No surprises.</h2>
-    <p class="sdesc">Both suites are £50/month. Full access. No per-module fees. No long-term contracts.</p>
-    <div class="price-grid">
-
-      <div class="price-card pc-biz">
-        <div class="pc-badge pb-biz">Wholesale &amp; Trade Suite</div>
-        <div class="pc-label">Director Account</div>
-        <div class="pc-price"><sup>£</sup>50<sub>/mo</sub></div>
-        <div class="pc-note">Full access to all wholesale &amp; trade modules. One admin. Invite unlimited staff.</div>
-        <ul class="pc-list">
-          <li>All modules — CRM, orders, invoices, accounting</li>
-          <li>Unlimited customers, products &amp; invoices</li>
-          <li>Analytics, P&amp;L and full audit log</li>
-          <li>Microsoft Azure UK — GDPR-ready</li>
-          <li>Email support within 24 hours</li>
-        </ul>
-        <a href="https://app.shahosuite.com/register" class="pc-btn">Start Wholesale — £50/month →</a>
-        <div class="pc-staff">+ <strong>£15/month per staff member</strong>. <a href="/pricing.html">Full pricing →</a></div>
-      </div>
-
-      <div class="price-card pc-land">
-        <div class="pc-badge pb-land">Property &amp; Lettings Suite</div>
-        <div class="pc-label">Director Account</div>
-        <div class="pc-price"><sup>£</sup>50<sub>/mo</sub></div>
-        <div class="pc-note">Complete property portfolio management. Rent, maintenance, compliance — all covered.</div>
-        <ul class="pc-list">
-          <li>Properties, Tenants, Leases &amp; Rent Tracker</li>
-          <li>Maintenance jobs &amp; compliance certificates</li>
-          <li>HMO management &amp; PDF tenancy generator</li>
-          <li>Microsoft Azure UK — GDPR-ready</li>
-          <li>Email support within 24 hours</li>
-        </ul>
-        <a href="https://app.shahosuite.com/register" class="pc-btn land-btn">Start Property — £50/month →</a>
-        <div class="pc-staff">+ <strong>£15/month per staff member</strong>. <a href="/landlord.html">See full suite →</a></div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ══ FAQ ══ -->
 <section class="section faq-section" id="faq">
@@ -695,6 +603,28 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       const rx = ((y / rect.height) - 0.5) * -8;
       const ry = ((x / rect.width) - 0.5) * 10;
       card.style.transform = `translateY(-4px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+})();
+
+// Trust cards 3D + 2D motion anime
+(function(){
+  const cards = document.querySelectorAll('[data-tilt-trust]');
+  if(!cards.length) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rx = ((y / rect.height) - 0.5) * -7;
+      const ry = ((x / rect.width) - 0.5) * 8;
+      card.style.transform = `translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg)`;
     });
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
