@@ -3,86 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ShahoSuite Navigation Demo</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<title>ShahoSuite Property &amp; Lettings Demo</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-.wrap { position: relative; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; width: 100%; max-width: 960px; background: white; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
-.screen { display: none; flex-direction: row; min-height: 500px; background: white; }
-.screen.active { display: flex; }
-.sb { width: 168px; min-width: 168px; background: #f8f9fa; border-right: 1px solid #e9ecef; font-size: 12px; }
-.sb-logo { padding: 12px 16px; font-weight: 700; font-size: 14px; color: #1a1a2e; border-bottom: 1px solid #e9ecef; }
-.sb-sec { padding: 9px 12px 3px; font-size: 9px; color: #94a3b8; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
-.sb-it { display: flex; align-items: center; gap: 8px; padding: 6px 16px; color: #64748b; font-size: 12px; cursor: pointer; }
-.sb-it.on { background: white; color: #7c3aed; font-weight: 600; border-left: 2.5px solid #7c3aed; }
-.sb-it i { font-size: 15px; }
-.br { background: #ef4444; color: white; font-size: 9px; font-weight: 700; border-radius: 10px; padding: 1px 5px; margin-left: 4px; }
-.main { flex: 1; overflow: hidden; background: white; display: flex; flex-direction: column; }
-.banner { background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%); padding: 20px 24px 18px; position: relative; flex-shrink: 0; }
-.btn-w { background: white; color: #0f766e; font-size: 11px; font-weight: 700; padding: 7px 13px; border-radius: 7px; border: none; cursor: pointer; }
-.content { padding: 16px 20px; flex: 1; overflow: hidden; }
-.sg { display: grid; gap: 9px; margin-bottom: 14px; }
-.sc { border-radius: 10px; padding: 11px 14px; color: white; }
-.sl { font-size: 8px; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em; }
-.sv { font-size: 20px; font-weight: 700; margin: 4px 0 2px; }
-.ss { font-size: 8px; opacity: 0.75; }
-.blue{background:#3b82f6;} .green{background:#22c55e;} .red{background:#ef4444;} .dkg{background:#16a34a;} .purp{background:#8b5cf6;} .amb{background:#f59e0b;} .teal{background:#0d9488;}
-.pg { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-.pc { background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 11px; font-size: 11px; }
-.pc.up{border-top:3px solid #ef4444;} .pc.ok{border-top:3px solid #22c55e;} .pc.vo{border-top:3px solid #94a3b8;} .pc.wa{border-top:3px solid #f59e0b;}
-.pn { font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 5px; }
-.bdg { display: inline-block; font-size: 8px; padding: 2px 6px; border-radius: 4px; font-weight: 700; margin-right: 3px; }
-.bh{background:#dbeafe;color:#1e40af;} .bf{background:#ede9fe;color:#5b21b6;} .bu{background:#fee2e2;color:#991b1b;}
-.ba{background:#fee2e2;color:#991b1b;font-size:8px;padding:2px 5px;border-radius:4px;font-weight:700;}
-.bk{background:#dcfce7;color:#166534;font-size:8px;padding:2px 5px;border-radius:4px;font-weight:700;}
-.bt{background:#f1f5f9;color:#475569;font-size:8px;padding:2px 5px;border-radius:4px;}
-.bc{background:#fef9c3;color:#854d0e;font-size:8px;padding:2px 5px;border-radius:4px;font-weight:700;}
-.trow { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; border-bottom: 0.5px solid #f1f5f9; font-size: 10px; color: #475569; }
-.wb { background: #fefce8; border: 1px solid #fde047; border-radius: 7px; padding: 10px 12px; margin-bottom: 11px; display: flex; gap: 9px; }
-.wb i { color: #ca8a04; font-size: 15px; margin-top: 1px; }
-.wt { font-weight: 700; font-size: 11px; color: #854d0e; }
-.ws { font-size: 10px; color: #92400e; margin-top: 2px; }
-.sb2 { border: 1px solid #e2e8f0; border-radius: 7px; padding: 6px 10px; font-size: 11px; color: #94a3b8; background: white; }
-.av { width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 10px; color: white; flex-shrink: 0; }
-.tn2 { font-weight: 600; color: #1e293b; font-size: 11px; }
-.rg { color: #16a34a; font-weight: 600; font-size: 11px; }
-.nt { color: #94a3b8; font-size: 10px; }
-.nc { background: #fee2e2; color: #991b1b; font-size: 8px; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
-.bs { font-size: 8px; font-weight: 700; padding: 3px 7px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; margin: 1px 0; }
-.bst{background:#7c3aed;color:white;} .bpo{background:#2563eb;color:white;} .bed{background:#1e293b;color:white;}
-.ac { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-.tt { width: 100%; border-collapse: collapse; font-size: 10px; }
-.tt th { text-align: left; padding: 5px 7px; color: #94a3b8; font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0; }
-.tt td { padding: 8px 7px; border-bottom: 0.5px solid #f1f5f9; vertical-align: middle; }
-.rb { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 7px; padding: 10px 12px; margin-bottom: 8px; display: flex; gap: 9px; }
-.rb i { color: #dc2626; font-size: 15px; margin-top: 1px; }
-.rt { font-weight: 700; font-size: 11px; color: #991b1b; }
-.rs { font-size: 9px; color: #7f1d1d; margin-top: 2px; }
-.renewbar { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 7px; padding: 9px 12px; margin-bottom: 11px; }
-.renew-btns { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-.rbtn { font-size: 9px; font-weight: 700; padding: 3px 9px; border-radius: 5px; border: none; cursor: pointer; }
-.rbtn.exp { background: #dc2626; color: white; }
-.rbtn.days { background: #7c3aed; color: white; }
-.st-ended { background: #fee2e2; color: #991b1b; font-size: 8px; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
-.st-expired { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; font-size: 8px; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
-.dps { background: #dcfce7; color: #166534; font-size: 8px; padding: 1px 5px; border-radius: 3px; font-weight: 700; }
-.mydep { background: #dcfce7; color: #166534; font-size: 8px; padding: 1px 5px; border-radius: 3px; font-weight: 700; }
-.ledit{background:#f97316;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
-.lrenew{background:#7c3aed;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
-.lpdf{background:#2563eb;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
-.lend{background:#ef4444;color:white;font-size:8px;padding:2px 7px;border-radius:4px;font-weight:700;border:none;}
-.cursor { width: 14px; height: 14px; background: rgba(255,255,255,0.95); border: 2px solid #1e293b; border-radius: 50%; position: absolute; pointer-events: none; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
-.ripple { width: 24px; height: 24px; border: 2px solid #7c3aed; border-radius: 50%; position: absolute; pointer-events: none; z-index: 99; opacity: 0; transform: scale(0); }
-.hl { background: rgba(124,58,237,0.1) !important; }
-.controls { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
-.controls button { font-size: 13px; padding: 8px 18px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; cursor: pointer; font-weight: 600; color: #1e293b; }
-.controls button:hover { background: #f8f9fa; }
-#status { font-size: 13px; color: #64748b; }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0a0f1e;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+.wrap{position:relative;border-radius:14px;overflow:hidden;width:100%;max-width:960px;background:white;box-shadow:0 24px 80px rgba(0,0,0,.55);}
+.screen{display:none;flex-direction:row;min-height:520px;}.screen.active{display:flex;}
+.sb{width:176px;min-width:176px;background:#0f172a;display:flex;flex-direction:column;flex-shrink:0;}
+.sb-logo{padding:13px 15px 12px;font-weight:800;font-size:13px;color:white;border-bottom:1px solid rgba(255,255,255,.07);}
+.sb-logo span{color:#a78bfa;}
+.sb-scroll{flex:1;overflow-y:auto;padding-bottom:16px;}
+.sb-scroll::-webkit-scrollbar{width:0;}
+.sb-sec{padding:11px 13px 3px;font-size:8.5px;color:#334155;letter-spacing:.1em;text-transform:uppercase;font-weight:700;}
+.sb-it{display:flex;align-items:center;gap:8px;padding:6px 13px;color:#64748b;font-size:11.5px;cursor:pointer;border-left:2.5px solid transparent;white-space:nowrap;}
+.sb-it.on{background:rgba(124,58,237,.18);color:#c4b5fd;font-weight:700;border-left-color:#7c3aed;}
+.sb-it:hover:not(.on){background:rgba(255,255,255,.04);color:#94a3b8;}
+.sb-ico{font-size:13px;flex-shrink:0;line-height:1;}
+.br{background:#ef4444;color:white;font-size:8px;font-weight:800;border-radius:10px;padding:1px 5px;margin-left:auto;flex-shrink:0;}
+.main{flex:1;overflow:hidden;background:#f8fafc;display:flex;flex-direction:column;min-width:0;}
+.banner{padding:17px 20px 15px;flex-shrink:0;position:relative;}
+.b-eyebrow{font-size:8.5px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.09em;font-weight:700;margin-bottom:4px;}
+.b-title{font-size:18px;font-weight:800;color:white;letter-spacing:-.3px;line-height:1.2;}
+.b-desc{font-size:10px;color:rgba(255,255,255,.7);margin-top:4px;}
+.b-date{position:absolute;top:14px;right:16px;font-size:9.5px;color:rgba(255,255,255,.55);}
+.b-row{display:flex;justify-content:space-between;align-items:flex-start;}
+.btn-w{background:white;color:#0f172a;font-size:10px;font-weight:700;padding:6px 13px;border-radius:7px;border:none;cursor:pointer;flex-shrink:0;}
+.content{padding:13px 17px;flex:1;overflow:hidden;}
+.sg{display:grid;gap:7px;margin-bottom:11px;}
+.sc{border-radius:9px;padding:10px 12px;color:white;flex-shrink:0;}
+.sl{font-size:7.5px;opacity:.8;text-transform:uppercase;letter-spacing:.07em;font-weight:700;}
+.sv{font-size:18px;font-weight:800;margin:3px 0 2px;letter-spacing:-.5px;}
+.ss{font-size:8px;opacity:.72;}
+.c-navy{background:#0f172a;}.c-blue{background:#1d4ed8;}.c-green{background:#15803d;}
+.c-red{background:#dc2626;}.c-purp{background:#7c3aed;}.c-amb{background:#b45309;}
+.c-teal{background:#0d9488;}.c-slate{background:#475569;}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.pc{background:white;border:1px solid #e2e8f0;border-radius:9px;padding:11px;font-size:11px;}
+.pc.up{border-top:3px solid #dc2626;}.pc.ok{border-top:3px solid #15803d;}
+.pc.vo{border-top:3px solid #94a3b8;}.pc.wa{border-top:3px solid #b45309;}
+.pn{font-weight:700;font-size:12.5px;color:#0f172a;margin:4px 0 3px;}
+.pt{font-size:9px;color:#64748b;margin-bottom:5px;}
+.bdg{display:inline-block;font-size:7.5px;padding:2px 5px;border-radius:4px;font-weight:700;margin-right:2px;}
+.bh{background:#dbeafe;color:#1e40af;}.bf{background:#ede9fe;color:#5b21b6;}
+.bg-err{background:#fee2e2;color:#991b1b;}.bg-warn{background:#fef3c7;color:#92400e;}
+.st{display:inline-block;font-size:8px;padding:2px 6px;border-radius:4px;font-weight:700;}
+.st-ok{background:#dcfce7;color:#166534;}.st-err{background:#fee2e2;color:#991b1b;}
+.st-warn{background:#fef3c7;color:#92400e;}.st-mute{background:#f1f5f9;color:#64748b;}
+.st-purp{background:#ede9fe;color:#5b21b6;}.st-blue{background:#dbeafe;color:#1e40af;}
+.tt{width:100%;border-collapse:collapse;font-size:10px;}
+.tt th{text-align:left;padding:5px 8px;color:#94a3b8;font-size:7.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid #e2e8f0;background:#f8fafc;}
+.tt td{padding:7px 8px;border-bottom:.5px solid #f1f5f9;vertical-align:middle;color:#334155;}
+.tt tr:last-child td{border-bottom:none;}
+.trow{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:.5px solid #f8fafc;font-size:10px;color:#475569;}
+.trow:last-child{border-bottom:none;}
+.alert{border-radius:8px;padding:9px 12px;margin-bottom:10px;display:flex;gap:9px;align-items:flex-start;}
+.alert.err{background:#fef2f2;border:1px solid #fca5a5;}
+.alert.warn{background:#fffbeb;border:1px solid #fde68a;}
+.alert.good{background:#f0fdf4;border:1px solid #bbf7d0;}
+.alert-ico{font-size:15px;flex-shrink:0;margin-top:1px;}
+.alert-title{font-weight:700;font-size:10.5px;color:#0f172a;margin-bottom:2px;}
+.alert-desc{font-size:9px;color:#64748b;line-height:1.4;}
+.cert-row{display:flex;align-items:center;justify-content:space-between;padding:8px 11px;background:white;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:6px;}
+.cert-name{font-weight:600;font-size:10.5px;color:#0f172a;}
+.cert-prop{font-size:9px;color:#64748b;margin-top:1px;}
+.rent-row{display:flex;align-items:center;gap:9px;padding:8px 11px;background:white;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:6px;}
+.rent-row.danger{border-color:#fca5a5;}
+.av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:9.5px;color:white;flex-shrink:0;}
+.rent-info{flex:1;min-width:0;}
+.rent-name{font-weight:700;font-size:10.5px;color:#0f172a;}
+.rent-prop{font-size:9px;color:#64748b;margin-top:1px;}
+.rent-right{text-align:right;flex-shrink:0;}
+.rent-amt{font-weight:800;font-size:13px;color:#0f172a;}
+.rent-due{font-size:8px;color:#94a3b8;margin-top:1px;}
+.sec-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;}
+.sec-title{font-size:11.5px;font-weight:700;color:#0f172a;}
+.sec-action{font-size:9.5px;color:#7c3aed;font-weight:700;cursor:pointer;}
+.prog-wrap{background:#e2e8f0;border-radius:4px;height:6px;overflow:hidden;margin-bottom:12px;}
+.prog{height:100%;border-radius:4px;}
+.cursor{width:12px;height:12px;background:rgba(255,255,255,.95);border:2px solid #0f172a;border-radius:50%;position:absolute;pointer-events:none;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.35);}
+.ripple{width:22px;height:22px;border:2px solid #7c3aed;border-radius:50%;position:absolute;pointer-events:none;z-index:199;opacity:0;transform:scale(0);}
+.hl{background:rgba(124,58,237,.22)!important;color:#c4b5fd!important;}
+.controls{display:flex;align-items:center;gap:12px;margin-top:14px;}
+.controls button{font-size:12px;padding:8px 20px;border:none;border-radius:8px;background:#7c3aed;cursor:pointer;font-weight:700;color:white;}
+.controls button:disabled{opacity:.5;cursor:not-allowed;}
+#status{font-size:11.5px;color:#64748b;}
 </style>
 </head>
 <body>
-
 <div class="wrap" id="wrap">
   <div id="cur" class="cursor" style="left:40px;top:40px;display:none;"></div>
   <div id="rip" class="ripple"></div>
@@ -90,40 +97,69 @@ body { background: #f1f5f9; display: flex; flex-direction: column; align-items: 
   <!-- S1: Dashboard -->
   <div id="s1" class="screen active">
     <div class="sb">
-      <div class="sb-logo">ShahoSuite</div>
-      <div class="sb-sec">Main</div>
-      <div class="sb-it on"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
-      <div class="sb-sec">Portfolio</div>
-      <div id="n-props" class="sb-it"><i class="ti ti-building"></i> Properties</div>
-      <div class="sb-it"><i class="ti ti-users"></i> Tenants</div>
-      <div class="sb-it"><i class="ti ti-file-text"></i> Leases</div>
-      <div class="sb-sec">Money</div>
-      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
-      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
-      <div class="sb-sec">Compliance</div>
-      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
-      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+      <div class="sb-logo">Shaho<span>Suite</span></div>
+      <div class="sb-scroll">
+        <div class="sb-sec">Main</div>
+        <div class="sb-it on"><span class="sb-ico">&#x1F3E0;</span> Dashboard</div>
+        <div class="sb-sec">Portfolio</div>
+        <div id="n1-props" class="sb-it"><span class="sb-ico">&#x1F3D8;&#xFE0F;</span> Properties</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F464;</span> Tenants</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C4;</span> Leases</div>
+        <div class="sb-sec">Money</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B7;</span> Rent Tracker <span class="br">2</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B0;</span> Accounting</div>
+        <div class="sb-sec">Compliance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F6E0;&#xFE0F;</span> Maintenance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C1;</span> Docs &amp; Certs <span class="br">7</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C5;</span> Viewings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E6;</span> Inventory</div>
+        <div class="sb-sec">Team</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F9D1;&#x200D;&#x1F4BC;</span> Staff</div>
+        <div class="sb-sec">System</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E8;</span> Messages</div>
+        <div class="sb-it"><span class="sb-ico">&#x2699;&#xFE0F;</span> Settings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4CB;</span> Audit Log</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3A7;</span> Support</div>
+      </div>
     </div>
     <div class="main">
-      <div class="banner">
-        <div style="font-size:9px;color:rgba(255,255,255,0.75);margin-bottom:2px;">GOOD MORNING</div>
-        <div style="font-size:20px;font-weight:700;color:white;">Lord Suite</div>
-        <div style="position:absolute;top:16px;right:20px;font-size:11px;color:rgba(255,255,255,0.8);">Thursday, 7 May 2026</div>
+      <div class="banner" style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 55%,#334155 100%);">
+        <div class="b-date">Thu, 8 May 2026</div>
+        <div class="b-eyebrow">Good morning, Shaho</div>
+        <div class="b-title">&#x1F3E0; Property Dashboard</div>
+        <div class="b-desc">7 properties &middot; 4 active tenancies &middot; 2 urgent rent alerts</div>
       </div>
       <div class="content">
-        <div style="font-size:14px;font-weight:600;color:#1e293b;margin-bottom:3px;">2 properties - rent unpaid</div>
-        <div style="font-size:11px;color:#ef4444;margin-bottom:11px;">2 properties - rent unpaid</div>
+        <div class="alert err">
+          <span class="alert-ico">&#x1F534;</span>
+          <div>
+            <div class="alert-title">2 rents overdue &mdash; act today</div>
+            <div class="alert-desc">33 Harbour View (&pound;430) &amp; 1 Michael Road &ndash; Room 3 (&pound;1,000) are 7 days late. Send a reminder or log a call.</div>
+          </div>
+        </div>
         <div class="sg" style="grid-template-columns:repeat(5,1fr);">
-          <div class="sc blue"><div class="sl">Occupancy</div><div class="sv">57%</div><div class="ss">4 of 7 let</div></div>
-          <div class="sc green"><div class="sl">Collected</div><div class="sv" style="font-size:15px;">GBP3,545</div><div class="ss">65% of GBP5,475</div></div>
-          <div class="sc red"><div class="sl">Outstanding</div><div class="sv" style="font-size:15px;">GBP1,930</div><div class="ss">3 not paid</div></div>
-          <div class="sc dkg"><div class="sl">Open Jobs</div><div class="sv">0</div><div class="ss">No open jobs</div></div>
-          <div class="sc purp"><div class="sl">Expiring Certs</div><div class="sv">7</div><div class="ss">Within 60 days</div></div>
+          <div class="sc c-blue"><div class="sl">Occupancy</div><div class="sv">57%</div><div class="ss">4 of 7 let</div></div>
+          <div class="sc c-green"><div class="sl">Collected</div><div class="sv" style="font-size:14px;">&pound;3,545</div><div class="ss">this month</div></div>
+          <div class="sc c-red"><div class="sl">Overdue</div><div class="sv" style="font-size:14px;">&pound;1,930</div><div class="ss">2 tenants</div></div>
+          <div class="sc c-purp"><div class="sl">Certs Due</div><div class="sv">7</div><div class="ss">within 60 days</div></div>
+          <div class="sc c-teal"><div class="sl">Viewings</div><div class="sv">3</div><div class="ss">this week</div></div>
         </div>
         <div class="pg">
-          <div class="pc up"><div style="margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bdg bu">X UNPAID</span></div><div class="pn">33</div><div style="color:#64748b;font-size:10px;">1 Room - <span style="color:#f97316;font-weight:600;">1 of 3 rented</span></div></div>
-          <div class="pc vo"><div style="margin-bottom:4px;"><span class="bdg bf">FLAT</span><span class="bt">VOID</span></div><div class="pn">19 Albert</div><div style="color:#64748b;font-size:10px;">0 of 1 rented</div></div>
-          <div class="pc up"><div style="margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bdg bu">X UNPAID</span></div><div class="pn">1 Micheal Road</div><div style="color:#64748b;font-size:10px;"><span style="color:#f97316;font-weight:600;">2 of 5 rented</span></div></div>
+          <div class="pc up">
+            <div style="display:flex;justify-content:space-between;"><span class="bdg bh">HMO</span><span class="st st-err">Arrears</span></div>
+            <div class="pn">33 Harbour View</div><div class="pt">PO13ZA &middot; 3 rooms</div>
+            <div class="trow"><span>&pound;430 outstanding</span><span class="bdg bg-err">Unpaid</span></div>
+          </div>
+          <div class="pc vo">
+            <div style="display:flex;justify-content:space-between;"><span class="bdg bf">FLAT</span><span class="st st-mute">Void</span></div>
+            <div class="pn">19 Albert Road</div><div class="pt">PO5 4SX &middot; 1 bed</div>
+            <div style="font-size:9px;color:#94a3b8;margin-top:5px;">No tenant &mdash; marketing active</div>
+          </div>
+          <div class="pc wa">
+            <div style="display:flex;justify-content:space-between;"><span class="bdg bh">HMO</span><span class="st st-warn">Cert expiring</span></div>
+            <div class="pn">182 Old Portsmouth Rd</div><div class="pt">PO8 2RP &middot; 4 rooms</div>
+            <div class="trow"><span>Fiona Algebra</span><span style="color:#15803d;font-weight:700;">&pound;750</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -132,159 +168,302 @@ body { background: #f1f5f9; display: flex; flex-direction: column; align-items: 
   <!-- S2: Properties -->
   <div id="s2" class="screen">
     <div class="sb">
-      <div class="sb-logo">ShahoSuite</div>
-      <div class="sb-sec">Main</div>
-      <div class="sb-it"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
-      <div class="sb-sec">Portfolio</div>
-      <div class="sb-it on"><i class="ti ti-building"></i> Properties</div>
-      <div id="n-ten2" class="sb-it"><i class="ti ti-users"></i> Tenants</div>
-      <div class="sb-it"><i class="ti ti-file-text"></i> Leases</div>
-      <div class="sb-sec">Money</div>
-      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
-      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
-      <div class="sb-sec">Compliance</div>
-      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
-      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+      <div class="sb-logo">Shaho<span>Suite</span></div>
+      <div class="sb-scroll">
+        <div class="sb-sec">Main</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3E0;</span> Dashboard</div>
+        <div class="sb-sec">Portfolio</div>
+        <div class="sb-it on"><span class="sb-ico">&#x1F3D8;&#xFE0F;</span> Properties</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F464;</span> Tenants</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C4;</span> Leases</div>
+        <div class="sb-sec">Money</div>
+        <div id="n2-rent" class="sb-it"><span class="sb-ico">&#x1F4B7;</span> Rent Tracker <span class="br">2</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B0;</span> Accounting</div>
+        <div class="sb-sec">Compliance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F6E0;&#xFE0F;</span> Maintenance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C1;</span> Docs &amp; Certs <span class="br">7</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C5;</span> Viewings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E6;</span> Inventory</div>
+        <div class="sb-sec">Team</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F9D1;&#x200D;&#x1F4BC;</span> Staff</div>
+        <div class="sb-sec">System</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E8;</span> Messages</div>
+        <div class="sb-it"><span class="sb-ico">&#x2699;&#xFE0F;</span> Settings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4CB;</span> Audit Log</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3A7;</span> Support</div>
+      </div>
     </div>
     <div class="main">
-      <div class="banner" style="display:flex;justify-content:space-between;align-items:center;">
-        <div><div style="font-size:20px;font-weight:700;color:white;">Properties</div><div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;">Your portfolio - click any property to view details &amp; edit</div></div>
-        <div class="btn-w">+ Add Property</div>
+      <div class="banner" style="background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 60%,#3b82f6 100%);">
+        <div class="b-row">
+          <div><div class="b-eyebrow">Portfolio</div><div class="b-title">&#x1F3D8;&#xFE0F; Properties</div><div class="b-desc">7 properties &middot; &pound;5,475/mo rent roll &middot; 3 void units</div></div>
+          <button class="btn-w">+ Add Property</button>
+        </div>
       </div>
       <div class="content">
-        <div class="sg" style="grid-template-columns:repeat(5,1fr);">
-          <div class="sc blue"><div class="sl">Properties</div><div class="sv">7</div><div class="ss">in portfolio</div></div>
-          <div class="sc purp"><div class="sl">Monthly Income</div><div class="sv" style="font-size:14px;">GBP5,475</div><div class="ss">total rent roll</div></div>
-          <div class="sc amb"><div class="sl">Void Units</div><div class="sv">3</div><div class="ss">not let</div></div>
-          <div class="sc red"><div class="sl">In Arrears</div><div class="sv">3</div><div class="ss">overdue rent</div></div>
-          <div class="sc blue"><div class="sl">Open Issues</div><div class="sv">0</div><div class="ss">no open jobs</div></div>
+        <div class="sg" style="grid-template-columns:repeat(5,1fr);margin-bottom:10px;">
+          <div class="sc c-navy"><div class="sl">Portfolio</div><div class="sv">7</div><div class="ss">properties</div></div>
+          <div class="sc c-purp"><div class="sl">Rent Roll</div><div class="sv" style="font-size:13px;">&pound;5,475</div><div class="ss">per month</div></div>
+          <div class="sc c-red"><div class="sl">Arrears</div><div class="sv">2</div><div class="ss">overdue</div></div>
+          <div class="sc c-amb"><div class="sl">Void</div><div class="sv">3</div><div class="ss">not let</div></div>
+          <div class="sc c-teal"><div class="sl">Certs Due</div><div class="sv">7</div><div class="ss">&le;60 days</div></div>
         </div>
         <div class="pg">
-          <div class="pc ok"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bf">FLAT</span><span class="bk">Healthy</span></div><div class="pn">19 Albert</div><div style="color:#64748b;font-size:10px;">PO54SX - 3bd</div><div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="color:#94a3b8;font-size:9px;">- Void -</span><span class="bt">To Let</span></div></div>
-          <div class="pc up"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="ba">Arrears</span></div><div class="pn">33</div><div style="color:#64748b;font-size:10px;">PO13ZA - 3bd</div><div class="trow"><span>PA</span><span style="font-weight:600;color:#1e293b;font-size:10px;">GBP1,000 <span class="ba">Arr</span></span></div></div>
-          <div class="pc up"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="ba">Arrears</span></div><div class="pn">1 Micheal Road</div><div class="trow"><span>CC</span><span style="font-weight:600;font-size:10px;">GBP430 <span class="ba">Arr</span></span></div><div class="trow"><span>Whash Whashi</span><span style="font-weight:600;font-size:10px;">GBP1,000 <span class="ba">Arr</span></span></div></div>
-          <div class="pc vo"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bk">Healthy</span></div><div class="pn">46 Green Road</div><div style="color:#64748b;font-size:10px;">PO54ZX - 6bd</div><div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="color:#94a3b8;font-size:9px;">- Void -</span><span class="bt">To Let</span></div></div>
-          <div class="pc vo"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bf">FLAT</span><span class="bk">Healthy</span></div><div class="pn">369 London Road</div><div style="color:#64748b;font-size:10px;">PA45ZA - 5bd</div><div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="color:#94a3b8;font-size:9px;">- Void -</span><span class="bt">To Let</span></div></div>
-          <div class="pc wa"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span class="bdg bh">HMO</span><span class="bc">1 cert expiring</span></div><div class="pn">182 Old Road</div><div class="trow"><span>Fiona Algebra</span><span style="color:#16a34a;font-weight:600;font-size:10px;">GBP750</span></div></div>
+          <div class="pc up"><div style="display:flex;justify-content:space-between;"><span class="bdg bh">HMO</span><span class="st st-err">Arrears</span></div><div class="pn">33 Harbour View</div><div class="pt">PO13ZA &middot; 3 rooms</div><div class="trow"><span>1 of 3 occupied</span><span class="bdg bg-err">&pound;430 owed</span></div></div>
+          <div class="pc vo"><div style="display:flex;justify-content:space-between;"><span class="bdg bf">FLAT</span><span class="st st-mute">Void</span></div><div class="pn">19 Albert Road</div><div class="pt">PO5 4SX &middot; 1 bed</div><div style="font-size:9px;color:#94a3b8;margin-top:6px;">Viewing booked &mdash; 9 May</div></div>
+          <div class="pc up"><div style="display:flex;justify-content:space-between;"><span class="bdg bh">HMO</span><span class="st st-err">Arrears</span></div><div class="pn">1 Michael Road</div><div class="pt">PO1 3AB &middot; 5 rooms</div><div class="trow"><span>2 of 5 rented</span><span class="bdg bg-err">&pound;1,000 owed</span></div></div>
+          <div class="pc ok"><div style="display:flex;justify-content:space-between;"><span class="bdg bh">HMO</span><span class="st st-ok">Healthy</span></div><div class="pn">46 Green Road</div><div class="pt">PO5 4ZX &middot; 6 rooms</div><div class="trow"><span>Fiona &middot; &pound;750/mo</span><span style="color:#15803d;font-weight:700;">&#x2713; Paid</span></div></div>
+          <div class="pc vo"><div style="display:flex;justify-content:space-between;"><span class="bdg bf">FLAT</span><span class="st st-mute">Void</span></div><div class="pn">369 London Road</div><div class="pt">PA4 5ZA &middot; 5 rooms</div><div style="font-size:9px;color:#94a3b8;margin-top:6px;">Marketing &mdash; no applications</div></div>
+          <div class="pc wa"><div style="display:flex;justify-content:space-between;"><span class="bdg bh">HMO</span><span class="st st-warn">Cert due</span></div><div class="pn">182 Old Portsmouth</div><div class="pt">PO8 2RP &middot; 4 rooms</div><div class="trow"><span>&pound;750/mo</span><span style="color:#b45309;font-weight:600;font-size:9px;">Gas cert May '26</span></div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- S3: Tenants -->
+  <!-- S3: Rent Tracker -->
   <div id="s3" class="screen">
     <div class="sb">
-      <div class="sb-logo">ShahoSuite</div>
-      <div class="sb-sec">Main</div>
-      <div class="sb-it"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
-      <div class="sb-sec">Portfolio</div>
-      <div class="sb-it"><i class="ti ti-building"></i> Properties</div>
-      <div class="sb-it on"><i class="ti ti-users"></i> Tenants</div>
-      <div id="n-lease3" class="sb-it"><i class="ti ti-file-text"></i> Leases</div>
-      <div class="sb-sec">Money</div>
-      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
-      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
-      <div class="sb-sec">Compliance</div>
-      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
-      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+      <div class="sb-logo">Shaho<span>Suite</span></div>
+      <div class="sb-scroll">
+        <div class="sb-sec">Main</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3E0;</span> Dashboard</div>
+        <div class="sb-sec">Portfolio</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3D8;&#xFE0F;</span> Properties</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F464;</span> Tenants</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C4;</span> Leases</div>
+        <div class="sb-sec">Money</div>
+        <div class="sb-it on"><span class="sb-ico">&#x1F4B7;</span> Rent Tracker <span class="br">2</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B0;</span> Accounting</div>
+        <div class="sb-sec">Compliance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F6E0;&#xFE0F;</span> Maintenance</div>
+        <div id="n3-certs" class="sb-it"><span class="sb-ico">&#x1F4C1;</span> Docs &amp; Certs <span class="br">7</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C5;</span> Viewings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E6;</span> Inventory</div>
+        <div class="sb-sec">Team</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F9D1;&#x200D;&#x1F4BC;</span> Staff</div>
+        <div class="sb-sec">System</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E8;</span> Messages</div>
+        <div class="sb-it"><span class="sb-ico">&#x2699;&#xFE0F;</span> Settings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4CB;</span> Audit Log</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3A7;</span> Support</div>
+      </div>
     </div>
     <div class="main">
-      <div class="banner" style="display:flex;justify-content:space-between;align-items:center;">
-        <div><div style="font-size:20px;font-weight:700;color:white;">Tenants</div><div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;">Tenants linked to properties - see monthly rent and lease dates at a glance</div></div>
-        <div style="display:flex;gap:8px;">
-          <div style="background:rgba(255,255,255,0.2);color:white;font-size:10px;font-weight:600;padding:6px 11px;border-radius:6px;border:1px solid rgba(255,255,255,0.4);">Export CSV</div>
-          <div class="btn-w">+ Add Tenant</div>
+      <div class="banner" style="background:linear-gradient(135deg,#166534 0%,#15803d 55%,#16a34a 100%);">
+        <div class="b-row">
+          <div><div class="b-eyebrow">Money</div><div class="b-title">&#x1F4B7; Rent Tracker</div><div class="b-desc">May 2026 &middot; &pound;3,545 collected of &pound;5,475 due &middot; 65%</div></div>
+          <button class="btn-w">Mark as Paid</button>
         </div>
       </div>
       <div class="content">
-        <div class="wb"><i class="ti ti-alert-triangle"></i><div><div class="wt">Right to Rent checks outstanding</div><div class="ws">UK landlords must verify every tenant's right to rent in England. Edit tenants to record check date and document type.</div></div></div>
-        <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;">
-          <div class="sb2" style="flex:1;">Search by name, email, phone, property or room...</div>
-          <div class="sb2">All (8)</div>
-          <div style="font-size:10px;color:#94a3b8;">8 shown</div>
+        <div class="sg" style="grid-template-columns:repeat(4,1fr);margin-bottom:8px;">
+          <div class="sc c-green"><div class="sl">Collected</div><div class="sv" style="font-size:15px;">&pound;3,545</div><div class="ss">65% of due</div></div>
+          <div class="sc c-red"><div class="sl">Outstanding</div><div class="sv" style="font-size:15px;">&pound;1,930</div><div class="ss">2 tenants</div></div>
+          <div class="sc c-blue"><div class="sl">Paid On Time</div><div class="sv">4</div><div class="ss">this month</div></div>
+          <div class="sc c-amb"><div class="sl">Overdue</div><div class="sv">2</div><div class="ss">7+ days late</div></div>
+        </div>
+        <div class="prog-wrap"><div class="prog" style="width:65%;background:linear-gradient(90deg,#15803d,#22c55e);"></div></div>
+        <div class="sec-h"><div class="sec-title">&#x26A0;&#xFE0F; Overdue &mdash; Act Now</div><div class="sec-action">&#x1F4E7; Send Reminder</div></div>
+        <div class="rent-row danger">
+          <div class="av" style="background:#dc2626;">CC</div>
+          <div class="rent-info"><div class="rent-name">C. Crompton</div><div class="rent-prop">33 Harbour View &middot; Room 2</div></div>
+          <div class="rent-right"><div class="rent-amt" style="color:#dc2626;">&pound;430</div><div class="rent-due">Due 1 May &mdash; 7 days late</div></div>
+          <span class="st st-err" style="margin-left:8px;flex-shrink:0;">Overdue</span>
+        </div>
+        <div class="rent-row danger">
+          <div class="av" style="background:#7c3aed;">WW</div>
+          <div class="rent-info"><div class="rent-name">W. Washim</div><div class="rent-prop">1 Michael Road &middot; Room 3</div></div>
+          <div class="rent-right"><div class="rent-amt" style="color:#dc2626;">&pound;1,000</div><div class="rent-due">Due 1 May &mdash; 7 days late</div></div>
+          <span class="st st-err" style="margin-left:8px;flex-shrink:0;">Overdue</span>
+        </div>
+        <div class="sec-h" style="margin-top:8px;"><div class="sec-title">&#x2705; Paid This Month</div></div>
+        <div class="rent-row">
+          <div class="av" style="background:#15803d;">FA</div>
+          <div class="rent-info"><div class="rent-name">Fiona Algebra</div><div class="rent-prop">182 Old Portsmouth Rd &middot; Room 1</div></div>
+          <div class="rent-right"><div class="rent-amt">&pound;750</div><div class="rent-due">Paid 1 May</div></div>
+          <span class="st st-ok" style="margin-left:8px;flex-shrink:0;">Paid</span>
+        </div>
+        <div class="rent-row">
+          <div class="av" style="background:#1d4ed8;">JM</div>
+          <div class="rent-info"><div class="rent-name">J. Muller</div><div class="rent-prop">46 Green Road &middot; Room 4</div></div>
+          <div class="rent-right"><div class="rent-amt">&pound;650</div><div class="rent-due">Paid 2 May</div></div>
+          <span class="st st-ok" style="margin-left:8px;flex-shrink:0;">Paid</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- S4: Leases -->
+  <!-- S4: Docs & Certs -->
   <div id="s4" class="screen">
     <div class="sb">
-      <div class="sb-logo">ShahoSuite</div>
-      <div class="sb-sec">Main</div>
-      <div class="sb-it"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
-      <div class="sb-sec">Portfolio</div>
-      <div class="sb-it"><i class="ti ti-building"></i> Properties</div>
-      <div class="sb-it"><i class="ti ti-users"></i> Tenants</div>
-      <div class="sb-it on"><i class="ti ti-file-text"></i> Leases</div>
-      <div class="sb-sec">Money</div>
-      <div class="sb-it"><i class="ti ti-coin"></i> Rent Tracker <span class="br">2</span></div>
-      <div class="sb-it"><i class="ti ti-calculator"></i> Accounting</div>
-      <div class="sb-sec">Compliance</div>
-      <div class="sb-it"><i class="ti ti-tool"></i> Maintenance</div>
-      <div class="sb-it"><i class="ti ti-certificate"></i> Docs &amp; Certs <span class="br">7</span></div>
+      <div class="sb-logo">Shaho<span>Suite</span></div>
+      <div class="sb-scroll">
+        <div class="sb-sec">Main</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3E0;</span> Dashboard</div>
+        <div class="sb-sec">Portfolio</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3D8;&#xFE0F;</span> Properties</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F464;</span> Tenants</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C4;</span> Leases</div>
+        <div class="sb-sec">Money</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B7;</span> Rent Tracker <span class="br">2</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B0;</span> Accounting</div>
+        <div class="sb-sec">Compliance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F6E0;&#xFE0F;</span> Maintenance</div>
+        <div class="sb-it on"><span class="sb-ico">&#x1F4C1;</span> Docs &amp; Certs <span class="br">7</span></div>
+        <div id="n4-view" class="sb-it"><span class="sb-ico">&#x1F4C5;</span> Viewings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E6;</span> Inventory</div>
+        <div class="sb-sec">Team</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F9D1;&#x200D;&#x1F4BC;</span> Staff</div>
+        <div class="sb-sec">System</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E8;</span> Messages</div>
+        <div class="sb-it"><span class="sb-ico">&#x2699;&#xFE0F;</span> Settings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4CB;</span> Audit Log</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3A7;</span> Support</div>
+      </div>
     </div>
     <div class="main">
-      <div class="banner" style="display:flex;justify-content:space-between;align-items:center;">
-        <div><div style="font-size:20px;font-weight:700;color:white;">Tenancies</div><div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:3px;">Assured Shorthold Tenancy agreements &amp; renewals</div></div>
-        <div class="btn-w">+ New Tenancy</div>
+      <div class="banner" style="background:linear-gradient(135deg,#5b21b6 0%,#7c3aed 55%,#8b5cf6 100%);">
+        <div class="b-row">
+          <div><div class="b-eyebrow">Compliance</div><div class="b-title">&#x1F4C1; Docs &amp; Certs</div><div class="b-desc">7 certificates expiring within 60 days &mdash; action required</div></div>
+          <button class="btn-w">+ Upload Cert</button>
+        </div>
       </div>
       <div class="content">
-        <div class="sg" style="grid-template-columns:repeat(4,1fr);margin-bottom:12px;">
-          <div class="sc green"><div class="sl">Active Tenancies</div><div class="sv">4</div><div class="ss">current agreements</div></div>
-          <div class="sc teal"><div class="sl">Monthly Income</div><div class="sv" style="font-size:16px;">GBP3,045</div><div class="ss">total rent roll</div></div>
-          <div class="sc amb"><div class="sl">Expiring <=60D</div><div class="sv">0</div><div class="ss">none upcoming</div></div>
-          <div class="sc red"><div class="sl">Expired</div><div class="sv">1</div><div class="ss">act immediately</div></div>
+        <div class="alert err">
+          <span class="alert-ico">&#x26A0;&#xFE0F;</span>
+          <div>
+            <div class="alert-title">7 certificates expiring &mdash; UK legal requirement</div>
+            <div class="alert-desc">Gas Safety (annual), EICR (5-yr), EPC (10-yr) and Legionella must be valid at all times. Fines up to &pound;30,000 for non-compliance.</div>
+          </div>
         </div>
+        <div class="cert-row" style="border-left:3px solid #dc2626;">
+          <div><div class="cert-name">&#x1F525; Gas Safety Certificate</div><div class="cert-prop">182 Old Portsmouth Rd &middot; All rooms</div></div>
+          <div style="text-align:right;"><span class="st st-err">Expires 22 May 2026</span><div style="font-size:8.5px;color:#dc2626;margin-top:3px;">&#x23F0; 14 days &mdash; book engineer now</div></div>
+        </div>
+        <div class="cert-row" style="border-left:3px solid #b45309;">
+          <div><div class="cert-name">&#x26A1; EICR Electrical Report</div><div class="cert-prop">33 Harbour View &middot; 3 rooms</div></div>
+          <div style="text-align:right;"><span class="st st-warn">Expires 4 Jun 2026</span><div style="font-size:8.5px;color:#b45309;margin-top:3px;">27 days left</div></div>
+        </div>
+        <div class="cert-row" style="border-left:3px solid #b45309;">
+          <div><div class="cert-name">&#x1F3E0; EPC Energy Report</div><div class="cert-prop">19 Albert Road &middot; 1 bed flat</div></div>
+          <div style="text-align:right;"><span class="st st-warn">Expires 11 Jun 2026</span><div style="font-size:8.5px;color:#b45309;margin-top:3px;">34 days &mdash; needed to re-let</div></div>
+        </div>
+        <div class="cert-row" style="border-left:3px solid #1d4ed8;">
+          <div><div class="cert-name">&#x1F4A7; Legionella Risk Assessment</div><div class="cert-prop">1 Michael Road &middot; 5 rooms</div></div>
+          <div style="text-align:right;"><span class="st st-blue">Expires 1 Jul 2026</span><div style="font-size:8.5px;color:#1d4ed8;margin-top:3px;">54 days left</div></div>
+        </div>
+        <div class="cert-row" style="border-left:3px solid #15803d;">
+          <div><div class="cert-name">&#x1F525; Gas Safety Certificate</div><div class="cert-prop">46 Green Road &middot; 6 rooms</div></div>
+          <div style="text-align:right;"><span class="st st-ok">Valid &mdash; Jan 2027</span><div style="font-size:8.5px;color:#15803d;margin-top:3px;">&#x2713; 8 months remaining</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5: Viewings -->
+  <div id="s5" class="screen">
+    <div class="sb">
+      <div class="sb-logo">Shaho<span>Suite</span></div>
+      <div class="sb-scroll">
+        <div class="sb-sec">Main</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3E0;</span> Dashboard</div>
+        <div class="sb-sec">Portfolio</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3D8;&#xFE0F;</span> Properties</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F464;</span> Tenants</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C4;</span> Leases</div>
+        <div class="sb-sec">Money</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B7;</span> Rent Tracker <span class="br">2</span></div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4B0;</span> Accounting</div>
+        <div class="sb-sec">Compliance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F6E0;&#xFE0F;</span> Maintenance</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4C1;</span> Docs &amp; Certs <span class="br">7</span></div>
+        <div class="sb-it on"><span class="sb-ico">&#x1F4C5;</span> Viewings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E6;</span> Inventory</div>
+        <div class="sb-sec">Team</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F9D1;&#x200D;&#x1F4BC;</span> Staff</div>
+        <div class="sb-sec">System</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4E8;</span> Messages</div>
+        <div class="sb-it"><span class="sb-ico">&#x2699;&#xFE0F;</span> Settings</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F4CB;</span> Audit Log</div>
+        <div class="sb-it"><span class="sb-ico">&#x1F3A7;</span> Support</div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="banner" style="background:linear-gradient(135deg,#0d9488 0%,#0f766e 55%,#134e4a 100%);">
+        <div class="b-row">
+          <div><div class="b-eyebrow">Compliance</div><div class="b-title">&#x1F4C5; Viewings</div><div class="b-desc">4 upcoming viewings &middot; 1 offer received this week</div></div>
+          <button class="btn-w">+ Book Viewing</button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="alert good">
+          <span class="alert-ico">&#x1F389;</span>
+          <div>
+            <div class="alert-title">Offer received &mdash; 19 Albert Road</div>
+            <div class="alert-desc">Sarah Thompson offered &pound;750/mo. Confirm to begin tenancy onboarding &mdash; right-to-rent check, deposit, AST agreement.</div>
+          </div>
+        </div>
+        <div class="sg" style="grid-template-columns:repeat(4,1fr);margin-bottom:10px;">
+          <div class="sc c-teal"><div class="sl">This Week</div><div class="sv">4</div><div class="ss">viewings booked</div></div>
+          <div class="sc c-green"><div class="sl">Offer Received</div><div class="sv">1</div><div class="ss">awaiting confirm</div></div>
+          <div class="sc c-blue"><div class="sl">Confirmed</div><div class="sv">2</div><div class="ss">upcoming</div></div>
+          <div class="sc c-slate"><div class="sl">Enquiries</div><div class="sv">1</div><div class="ss">awaiting reply</div></div>
+        </div>
+        <table class="tt">
+          <thead><tr><th>Property</th><th>Applicant</th><th>Date &amp; Time</th><th>Agent</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><span class="bdg bf">FLAT</span> 19 Albert Road</td><td><strong>Sarah Thompson</strong></td><td>Mon 9 May &middot; 10:00</td><td>Shaho M.</td><td><span class="st st-ok">Offer Made</span></td></tr>
+            <tr><td><span class="bdg bh">HMO</span> 1 Michael Road</td><td>David Park</td><td>Tue 10 May &middot; 14:30</td><td>Shaho M.</td><td><span class="st st-purp">Confirmed</span></td></tr>
+            <tr><td><span class="bdg bh">HMO</span> 46 Green Road</td><td>Amara Diallo</td><td>Wed 11 May &middot; 11:00</td><td>Jane S.</td><td><span class="st st-purp">Confirmed</span></td></tr>
+            <tr><td><span class="bdg bf">FLAT</span> 369 London Road</td><td>Tom Greer</td><td>Thu 12 May &middot; 15:00</td><td>Shaho M.</td><td><span class="st st-mute">Enquiry</span></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
 
 <div class="controls">
-  <button onclick="runAnim()">▶ Replay Animation</button>
-  <span id="status">Loading...</span>
+  <button id="replay-btn" onclick="runAnim()">&#x25B6; Replay Animation</button>
+  <span id="status">Loading&hellip;</span>
 </div>
-
 <script>
 const cur=document.getElementById('cur'),rip=document.getElementById('rip'),statusEl=document.getElementById('status'),wrap=document.getElementById('wrap');
+const SCREENS=['s1','s2','s3','s4','s5'];
+function show(id){SCREENS.forEach(s=>{document.getElementById(s).style.display=s===id?'flex':'none';});}
 function gc(el){const wr=wrap.getBoundingClientRect(),er=el.getBoundingClientRect();return{x:er.left-wr.left+er.width/2,y:er.top-wr.top+er.height/2};}
-function sc(x,y){cur.style.left=(x-7)+'px';cur.style.top=(y-7)+'px';}
+function sc(x,y){cur.style.left=(x-6)+'px';cur.style.top=(y-6)+'px';}
 function mv(fx,fy,tx,ty,ms){return new Promise(r=>{const s=performance.now();function step(n){let t=Math.min((n-s)/ms,1);t=t<0.5?2*t*t:-1+(4-2*t)*t;sc(fx+(tx-fx)*t,fy+(ty-fy)*t);t<1?requestAnimationFrame(step):r();}requestAnimationFrame(step);});}
 function dl(ms){return new Promise(r=>setTimeout(r,ms));}
-function doRip(x,y){rip.style.left=(x-12)+'px';rip.style.top=(y-12)+'px';rip.style.opacity='1';rip.style.transform='scale(0)';rip.style.transition='transform 0.3s ease-out,opacity 0.3s ease-out';requestAnimationFrame(()=>{rip.style.transform='scale(1.6)';rip.style.opacity='0';});}
-function show(id){['s1','s2','s3','s4'].forEach(s=>{document.getElementById(s).style.display=s===id?'flex':'none';});}
+function doRip(x,y){rip.style.left=(x-11)+'px';rip.style.top=(y-11)+'px';rip.style.transition='none';rip.style.opacity='1';rip.style.transform='scale(0)';requestAnimationFrame(()=>{rip.style.transition='transform .35s ease-out,opacity .35s ease-out';rip.style.transform='scale(1.8)';rip.style.opacity='0';});}
 async function runAnim(){
-  document.querySelector('.controls button').disabled=true;
-  show('s1');await dl(100);
-  sc(100,60);cur.style.display='block';
-  await dl(600);
-  statusEl.textContent='Moving to Properties...';
-  const p1=gc(document.getElementById('n-props'));
-  await mv(100,60,p1.x,p1.y,900);
-  document.getElementById('n-props').classList.add('hl');
-  statusEl.textContent='Hovering Properties...';
-  await dl(500);doRip(p1.x,p1.y);statusEl.textContent='Clicking Properties...';await dl(350);
-  show('s2');document.getElementById('n-props').classList.remove('hl');await dl(100);
-  statusEl.textContent='Moving to Tenants...';
-  const p2=gc(document.getElementById('n-ten2'));
-  await mv(p1.x,p1.y,p2.x,p2.y,800);
-  document.getElementById('n-ten2').classList.add('hl');
-  statusEl.textContent='Hovering Tenants...';
-  await dl(500);doRip(p2.x,p2.y);statusEl.textContent='Clicking Tenants...';await dl(350);
-  show('s3');document.getElementById('n-ten2').classList.remove('hl');await dl(100);
-  statusEl.textContent='Moving to Leases...';
-  const p3=gc(document.getElementById('n-lease3'));
-  await mv(p2.x,p2.y,p3.x,p3.y,800);
-  document.getElementById('n-lease3').classList.add('hl');
-  statusEl.textContent='Hovering Leases...';
-  await dl(500);doRip(p3.x,p3.y);statusEl.textContent='Clicking Leases...';await dl(350);
-  show('s4');document.getElementById('n-lease3').classList.remove('hl');
-  cur.style.display='none';
-  statusEl.textContent='Done ✓ — all 4 screens navigated';
-  document.querySelector('.controls button').disabled=false;
+  document.getElementById('replay-btn').disabled=true;
+  show('s1');await dl(100);sc(90,55);cur.style.display='block';
+  statusEl.textContent='Dashboard — 2 rents overdue, 7 certs expiring';await dl(900);
+  const n1=document.getElementById('n1-props'),p1=gc(n1);
+  statusEl.textContent='Going to Properties…';
+  await mv(90,55,p1.x,p1.y,950);n1.classList.add('hl');await dl(380);doRip(p1.x,p1.y);
+  statusEl.textContent='Clicking Properties…';await dl(300);n1.classList.remove('hl');
+  show('s2');await dl(100);statusEl.textContent='Properties — 7 in portfolio, 3 void, 2 in arrears';await dl(900);
+  const n2=document.getElementById('n2-rent'),p2=gc(n2);
+  statusEl.textContent='Going to Rent Tracker…';
+  await mv(p1.x,p1.y,p2.x,p2.y,900);n2.classList.add('hl');await dl(380);doRip(p2.x,p2.y);
+  statusEl.textContent='Clicking Rent Tracker…';await dl(300);n2.classList.remove('hl');
+  show('s3');await dl(100);statusEl.textContent='Rent Tracker — £1,930 overdue from 2 tenants';await dl(900);
+  const n3=document.getElementById('n3-certs'),p3=gc(n3);
+  statusEl.textContent='Going to Docs & Certs…';
+  await mv(p2.x,p2.y,p3.x,p3.y,900);n3.classList.add('hl');await dl(380);doRip(p3.x,p3.y);
+  statusEl.textContent='Clicking Docs & Certs…';await dl(300);n3.classList.remove('hl');
+  show('s4');await dl(100);statusEl.textContent='Docs & Certs — 7 expiring, gas cert urgent (14 days)';await dl(900);
+  const n4=document.getElementById('n4-view'),p4=gc(n4);
+  statusEl.textContent='Going to Viewings…';
+  await mv(p3.x,p3.y,p4.x,p4.y,900);n4.classList.add('hl');await dl(380);doRip(p4.x,p4.y);
+  statusEl.textContent='Clicking Viewings…';await dl(300);n4.classList.remove('hl');
+  show('s5');await dl(100);cur.style.display='none';
+  statusEl.textContent='✓ Demo complete — 5 screens navigated';
+  document.getElementById('replay-btn').disabled=false;
 }
-window.onload = () => runAnim();
+window.onload=()=>runAnim();
 </script>
 </body>
 </html>
