@@ -3,276 +3,251 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ShahoSuite Landlord Suite — UK Property Management Software</title>
-<meta name="description" content="ShahoSuite Landlord Suite is designed for UK landlords with property, tenant, rent, maintenance and compliance management." />
+<title>Landlord Suite — UK Property Management BOS | ShahoSuite</title>
+<meta name="description" content="ShahoSuite Landlord Suite is operational software for UK landlords and letting agents — properties, tenants, rent tracking, compliance certificates and maintenance on one BOS platform." />
 <meta name="robots" content="index, follow" />
+<meta name="author" content="Shaho Solutions Limited" />
+<meta name="geo.region" content="GB" />
 <link rel="canonical" href="https://www.shahosuite.com/landlord-suite.html" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="ShahoSuite Landlord Suite — UK Property Management Software" />
-<meta property="og:description" content="ShahoSuite Landlord Suite is designed for UK landlords with property, tenant, rent, maintenance and compliance management." />
+<meta property="og:description" content="Run UK property and landlord management on ShahoSuite BOS. Apply for access — we respond within one working day." />
 <meta property="og:url" content="https://www.shahosuite.com/landlord-suite.html" />
-<meta property="og:image" content="https://www.shahosuite.com/og-image.png" />
+<meta property="og:image" content="https://www.shahosuite.com/logo.png" />
+<meta property="og:locale" content="en_GB" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"ShahoSuite Landlord Suite",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Web",
+  "url":"https://www.shahosuite.com/landlord-suite.html",
+  "description":"Operational software for UK landlords, letting agents and property managers on the ShahoSuite Business Operating System.",
+  "isPartOf":{"@type":"SoftwareApplication","name":"ShahoSuite","url":"https://www.shahosuite.com"},
+  "provider":{"@type":"Organization","name":"Shaho Solutions Limited","identifier":"16017117"}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{position:relative;font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.7;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.96);backdrop-filter:blur(18px);border-bottom:1px solid #e5e7eb;}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo img{height:54px;width:auto;display:block}
-.nav-centre{display:flex;align-items:center;gap:4px}
-.nav-link{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:600;color:#374151;display:flex;align-items:center;gap:5px;transition:all .15s}
-.nav-link:hover{background:#f8fafc;color:#0f172a}
-.nav-dropdown{position:relative}
-.nav-dropdown>.nav-link::after{content:'▾';font-size:10px;opacity:0.6;transition:transform .2s}
-.nav-dropdown:hover>.nav-link::after{transform:rotate(180deg)}
-.dropdown-menu{position:absolute;top:56px;left:0;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:12px;width:260px;box-shadow:0 20px 60px rgba(0,0,0,0.12);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;display:grid;gap:4px;z-index:300}
-.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:all;transform:translateY(0)}
-.dd-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:#374151;transition:background .15s}
-.dd-item:hover{background:#f8fafc}
-.nav-btns{display:flex;gap:8px}
-.btn-login{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:600;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all .15s}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(15,23,42,0.08);box-shadow:0 1px 0 rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.04)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo img{height:44px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all 0.15s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{background:#ecfeff;color:#0e7490}
+.nav-btns{display:flex;gap:8px;align-items:center}
+.btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
-.btn-signup{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:700;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #374151;transition:all .15s}
+.btn-signup{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:800;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #334155;transition:all 0.15s;white-space:nowrap}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{padding:120px 28px 88px;background:linear-gradient(160deg,#f0fdf4 0%,#ffffff 55%,#eff6ff 100%);text-align:center;position:relative;overflow:hidden}
-#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.hero-inner{position:relative;z-index:2;max-width:880px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:50px;font-size:12px;font-weight:800;margin-bottom:22px;background:rgba(255,255,255,0.88);border:1px solid rgba(15,23,42,0.1);box-shadow:0 8px 24px rgba(15,23,42,0.08);animation:badge-float 5s ease-in-out infinite}
-@keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.b-dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,0.16);animation:b-pulse 2.3s infinite;display:inline-block}
-@keyframes b-pulse{0%,100%{opacity:1}50%{opacity:0.45}}
-h1{font-size:clamp(34px,5.5vw,56px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:20px;color:#0f172a}
-.h1-grad{display:block;background:linear-gradient(115deg,#0f172a 4%,#0ea5e9 32%,#10b981 62%,#0284c7 88%);background-size:220% 220%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:g-shift 6.5s ease-in-out infinite}
-@keyframes g-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.hero-sub{font-size:17px;color:#475569;max-width:660px;margin:0 auto 36px;line-height:1.75}
-.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
-.btn-hero-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155,0 14px 28px rgba(15,23,42,.18);transition:transform .2s,box-shadow .2s}
-.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 8px 0 #334155,0 18px 32px rgba(15,23,42,.24)}
-.btn-hero-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db;transition:transform .2s,box-shadow .2s}
-.btn-hero-secondary:hover{transform:translateY(-3px);box-shadow:0 8px 0 #d1d5db}
-
-.section{padding:56px 28px}
-.section-inner{max-width:980px;margin:0 auto}
-.section-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;color:#10b981}
-h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;margin-bottom:18px;color:#0f172a}
-.section-sub{font-size:16px;color:#475569;max-width:680px;margin-bottom:24px;line-height:1.8}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.feature-card{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(248,252,255,.95));border:1px solid rgba(190,205,223,0.8);border-radius:20px;padding:28px;box-shadow:0 12px 32px rgba(15,23,42,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .28s ease,box-shadow .28s ease}
-.feature-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,23,42,.12)}
-.feature-card h3{font-size:17px;font-weight:800;margin-bottom:14px;color:#0f172a}
-.feature-card p{font-size:14.5px;color:#475569;line-height:1.75}
-.feature-card ul{margin-top:14px;list-style:none;padding-left:0}
-.feature-card li{margin-bottom:10px;padding-left:22px;position:relative;color:#475569;line-height:1.75}
-.feature-card li::before{content:'✓';position:absolute;left:0;top:0;color:#10b981;font-size:13px;font-weight:900}
-.cta{position:relative;overflow:hidden;padding:72px 28px 80px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
-#cta-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.cta-inner-wrap{position:relative;z-index:1}
-.cta a{display:inline-flex;align-items:center;justify-content:center;padding:15px 32px;border-radius:12px;background:#0f172a;color:#fff;font-size:15px;font-weight:800;box-shadow:0 5px 0 #334155;transition:transform .2s,box-shadow .2s}
-.cta a:hover{transform:translateY(-3px);box-shadow:0 8px 0 #334155}
-.cta h2{font-size:clamp(24px,3.8vw,38px);font-weight:900;letter-spacing:-1px;margin-bottom:14px;color:#0f172a}
-.cta p{font-size:16px;color:#475569;max-width:560px;margin:0 auto 28px;line-height:1.8}
-@media(max-width:900px){.nav-centre{display:none}}
-@media(max-width:700px){.hero{padding:100px 20px 50px}.hero-sub{margin-bottom:24px}.feature-grid{grid-template-columns:1fr}}
-.cta{padding:60px 28px 80px;background:linear-gradient(180deg,#f7fee7 0%,#ecfdf5 100%);text-align:center}
-.cta a{display:inline-block;padding:15px 28px;border-radius:999px;background:#0f172a;color:#fff;font-weight:700;transition:transform .15s}
-.cta a:hover{transform:translateY(-2px)}
-.footer{padding:44px 28px 32px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
-.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:14px}
-.footer-links a{color:#64748b;text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:#6366f1}
-@media(max-width:900px){.nav-centre{display:none}}@media(max-width:640px){.feature-grid{grid-template-columns:1fr}}
+.hero{position:relative;overflow:hidden;padding:108px 28px 80px;text-align:center;background:linear-gradient(180deg,#f0fdfa 0%,#ecfeff 42%,#ffffff 100%);margin-top:72px}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 20% 22%,rgba(14,165,233,.14),transparent),radial-gradient(ellipse 44% 36% at 82% 20%,rgba(16,185,129,.1),transparent)}
+#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.52}
+.hero-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#0e7490;background:rgba(255,255,255,0.9);border:1px solid rgba(14,165,233,0.2);margin-bottom:22px}
+.b-dot{width:8px;height:8px;border-radius:50%;background:#0ea5e9;box-shadow:0 0 0 4px rgba(14,165,233,0.16)}
+h1{font-size:clamp(32px,5.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:18px;color:#0f172a;text-wrap:balance}
+.h1-grad{display:block;background:linear-gradient(115deg,#0f172a 4%,#0284c7 36%,#0ea5e9 58%,#10b981 86%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-sub{font-size:17px;color:#475569;max-width:580px;margin:0 auto 32px;line-height:1.8}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.btn-primary{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155;transition:transform .2s,box-shadow .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 0 #334155}
+.btn-secondary{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db;transition:transform .2s}
+.btn-secondary:hover{transform:translateY(-2px)}
+.section{padding:72px 28px}
+.si{max-width:1100px;margin:0 auto}
+.stag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#0284c7;display:block}
+h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;color:#0f172a}
+.sdesc{font-size:14.5px;color:#64748b;max-width:620px;margin-bottom:28px;line-height:1.75}
+.demo-shell{margin-bottom:40px;background:linear-gradient(180deg,#f8fbff,#fff);border:1px solid #dbe7f4;border-radius:18px;padding:14px;box-shadow:0 14px 32px rgba(15,23,42,.07)}
+.demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.demo-kicker{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#0e7490}
+.demo-title{font-size:13px;font-weight:700;color:#1e293b}
+.demo-pill{font-size:10px;font-weight:800;color:#0f172a;background:#fff;border:1px solid #dbe7f4;border-radius:999px;padding:4px 10px}
+.demo-frame{width:100%;height:min(58vh,560px);border:1px solid #dbe7f4;border-radius:12px;overflow:hidden;background:#fff}
+.demo-frame iframe{width:100%;height:100%;border:0;display:block}
+.outcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.outcome-card{background:linear-gradient(145deg,#fff,rgba(236,254,255,.85));border:1px solid rgba(125,211,252,.4);border-radius:18px;padding:24px;box-shadow:0 10px 28px rgba(15,23,42,.06)}
+.outcome-card h3{font-size:15px;font-weight:800;margin-bottom:8px;color:#0f172a}
+.outcome-card p{font-size:13.5px;color:#475569;line-height:1.65}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+.who-pill{padding:14px 18px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13.5px;font-weight:600;color:#334155;text-align:center}
+.bos-bar{background:#0f172a;color:rgba(255,255,255,.75);padding:20px 28px;text-align:center;font-size:13.5px}
+.bos-bar a{color:#38bdf8;font-weight:700}
+.bos-bar a:hover{text-decoration:underline}
+.cta-section{position:relative;overflow:hidden;padding:80px 28px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
+#cta-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.6}
+.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:50px;font-size:11px;font-weight:800;color:#0e7490;background:#ecfeff;border:1px solid rgba(14,165,233,.25);margin-bottom:16px}
+.cta-title{font-size:clamp(24px,3.8vw,38px);font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.cta-desc{font-size:16px;color:#475569;margin-bottom:28px;line-height:1.75}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:10px}
+.footer-links a{color:#64748b;transition:color .2s;padding:2px 4px}
+.footer-links a:hover{color:#0f172a}
+@media(max-width:880px){.nav-links{display:none}}
+@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}.demo-frame{height:min(52vh,400px)}}
 </style>
 </head>
 <body>
+
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite logo" width="180" height="54" /></a>
-    <div class="nav-centre">
-      <div class="nav-dropdown">
-        <a href="#features" class="nav-link">Modules</a>
-        <div class="dropdown-menu">
-          <a href="/dashboard.html" class="dd-item"><span class="dd-emoji">🏠</span><span class="dd-name">Dashboard</span></a>
-          <a href="/customers.html" class="dd-item"><span class="dd-emoji">👤</span><span class="dd-name">Customers</span></a>
-          <a href="/products.html" class="dd-item"><span class="dd-emoji">📦</span><span class="dd-name">Products</span></a>
-          <a href="/invoices.html" class="dd-item"><span class="dd-emoji">🧾</span><span class="dd-name">Invoices</span></a>
-          <a href="/orders.html" class="dd-item"><span class="dd-emoji">🛒</span><span class="dd-name">Orders</span></a>
-          <a href="/suppliers.html" class="dd-item"><span class="dd-emoji">🏭</span><span class="dd-name">Suppliers</span></a>
-        </div>
-      </div>
+    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" width="168" height="44" /></a>
+    <div class="nav-links">
+      <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
+      <a href="/landlord-suite.html" class="nav-link active">Landlord Suite</a>
       <a href="/pricing.html" class="nav-link">Pricing</a>
-      <div class="nav-dropdown">
-        <a href="#suites" class="nav-link">Suites</a>
-        <div class="dropdown-menu">
-          <a href="/wholesale-suite.html" class="dd-item"><span class="dd-emoji">🛍️</span><span class="dd-name">Wholesale & Retail</span></a>
-          <a href="/landlord-suite.html" class="dd-item"><span class="dd-emoji">🏠</span><span class="dd-name">Landlord</span></a>
-          <a href="/beauty-salon-suite.html" class="dd-item"><span class="dd-emoji">💇</span><span class="dd-name">Beauty Salon</span></a>
-          <a href="#coming-soon" class="dd-item"><span class="dd-emoji">🚀</span><span class="dd-name">More Suites Coming Soon</span></a>
-        </div>
-      </div>
-      <a href="#features" class="nav-link">Features</a>
+      <a href="/#trust" class="nav-link">Trust</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
       <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
-      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Apply for access</a>
     </div>
   </div>
 </nav>
+
 <main>
-  <section class="hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-inner">
-      <div class="hero-badge"><span class="b-dot"></span> 🏨 Property &amp; Lettings Suite — UK Landlords</div>
-      <h1><span class="h1-grad">Property &amp; Lettings Suite</span><br/>for UK Landlords</h1>
-      <p class="hero-sub">Your legal and financial bodyguard for UK landlording. From the first tenancy to the final tax return, run your entire portfolio on Microsoft Azure UK.</p>
-      <div class="hero-actions">
-        <a href="https://app.shahosuite.com/register" class="btn-hero-primary">🚀 Start Free Trial</a>
-        <a href="#features" class="btn-hero-secondary">Explore Features ↓</a>
-      </div>
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="b-dot"></span> Part of ShahoSuite BOS — Property &amp; landlord management</div>
+    <h1><span class="h1-grad">Landlord Suite</span><br/>for UK property management</h1>
+    <p class="hero-sub">Operational software for landlords and letting agents — properties, tenants, rent, compliance and maintenance on one system. Built on the ShahoSuite Business Operating System, hosted on Azure UK.</p>
+    <div class="hero-actions">
+      <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access →</a>
+      <a href="#preview" class="btn-secondary">See preview ↓</a>
     </div>
-  </section>
-  <section class="section" id="features">
-    <div class="section-inner">
-      <div class="section-tag">What this suite does</div>
-      <h2>Landlord workflow, simplified</h2>
-      <p class="section-sub">Built for the UK landlord, ShahoSuite is your legal and financial bodyguard. From tenancy onboarding to final tax return, run your entire portfolio on the UK’s most secure business engine.</p>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>1. Properties & Portfolio 360°</h3>
-          <ul>
-            <li>Unit-level tracking for homes, flats and HMOs</li>
-            <li>Virtual filing cabinet for plans, insurance and deeds</li>
-            <li>Portfolio view for rent performance and status</li>
-          </ul>
-        </div>
-        <div class="feature-card">
-          <h3>2. The Smart Rent Tracker</h3>
-          <ul>
-            <li>Real-time paid, arrears, partial and void status</li>
-            <li>Void period analytics to protect your yield</li>
-            <li>Automated ledger entries into accounting</li>
-          </ul>
-        </div>
-        <div class="feature-card">
-          <h3>3. Tenant & Lease Lifecycle</h3>
-          <ul>
-            <li>GDPR-compliant tenant profiles and communication records</li>
-            <li>Lease guard for contracts, notices and deposits</li>
-            <li>Move-in/out checklists that keep every tenancy clean</li>
-          </ul>
-        </div>
-        <div class="feature-card">
-          <h3>4. The Compliance Vault</h3>
-          <ul>
-            <li>Track Gas Safety, EPC and EICR certificates</li>
-            <li>Smart alerts before certificates expire</li>
-            <li>One-click audit history for council inspections</li>
-          </ul>
-        </div>
-        <div class="feature-card">
-          <h3>5. Operations & Maintenance</h3>
-          <ul>
-            <li>Job logging for repairs and contractor assignments</li>
-            <li>Cost tracking linked to property P&L</li>
-            <li>Record resolved issues to prove Gold Standard service</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="cta">
-    <canvas id="cta-canvas"></canvas>
-    <div class="section-inner cta-inner-wrap">
-      <h2>Your legal and financial bodyguard for UK landlording</h2>
-      <p>From the first tenancy agreement to the final tax return, ShahoSuite combines professional rent accounting with high-stakes compliance tracking.</p>
-      <a href="https://app.shahosuite.com/register">💼 Run your portfolio safely →</a>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <div class="footer-links">
-    <a href="/index.html">Home</a>
-    <a href="/wholesale-suite.html">Wholesale & Retail</a>
-    <a href="/landlord-suite.html">Landlord</a>
-    <a href="/beauty-salon-suite.html">Beauty Salon</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="mailto:admin@shahosuite.com">Contact</a>
-    <a href="https://app.shahosuite.com/login">Login</a>
   </div>
-  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England & Wales — Portsmouth, Hampshire, UK</p>
+</section>
+
+<section class="section" id="preview">
+  <div class="si">
+    <div class="demo-shell">
+      <div class="demo-head">
+        <div>
+          <div class="demo-kicker">Product preview</div>
+          <div class="demo-title">Landlord Suite — navigation flow</div>
+        </div>
+        <span class="demo-pill">Demo</span>
+      </div>
+      <div class="demo-frame">
+        <iframe src="/suite-landlord-demo.html" title="ShahoSuite Landlord Suite demo" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <span class="stag">What you can run</span>
+    <h2>Everything landlord management needs</h2>
+    <p class="sdesc">From tenancy to compliance — the outcomes that matter, without listing every screen in the system.</p>
+    <div class="outcome-grid">
+      <div class="outcome-card"><h3>Properties, tenants &amp; leases</h3><p>Portfolio view with tenant records, lease dates and unit-level detail.</p></div>
+      <div class="outcome-card"><h3>Rent tracking &amp; accounting</h3><p>Paid, arrears and void periods linked to your accounts.</p></div>
+      <div class="outcome-card"><h3>Compliance &amp; certificates</h3><p>Gas Safety, EPC and EICR tracked with alerts before expiry.</p></div>
+      <div class="outcome-card"><h3>Maintenance &amp; viewings</h3><p>Log repairs, schedule viewings and keep a record of work done.</p></div>
+      <div class="outcome-card"><h3>Team messaging &amp; support</h3><p>Staff access and in-system communication for your letting team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#f8fafc;padding-top:56px;padding-bottom:56px">
+  <div class="si">
+    <span class="stag" style="color:#10b981">Who it is for</span>
+    <h2>Built for UK property operations</h2>
+    <p class="sdesc">If you manage rental property for income — this suite is for you.</p>
+    <div class="who-grid">
+      <div class="who-pill">Private landlords</div>
+      <div class="who-pill">Letting agents</div>
+      <div class="who-pill">Property managers</div>
+      <div class="who-pill">HMO operators</div>
+    </div>
+  </div>
+</section>
+
+<div class="bos-bar">
+  Landlord Suite runs on <a href="/">ShahoSuite BOS</a> — the same UK platform as Wholesale Suite. Run a cash and carry or grocery business? <a href="/wholesale-suite.html">See Wholesale Suite →</a>
+</div>
+
+<section class="cta-section">
+  <canvas id="cta-canvas"></canvas>
+  <div class="cta-inner">
+    <div class="cta-badge"><span class="b-dot"></span> Limited applications</div>
+    <h2 class="cta-title">Apply for Landlord Suite access</h2>
+    <p class="cta-desc">We review every application and respond within one working day. Approved clients receive demo access and onboarding from our UK team.</p>
+    <div class="cta-btns">
+      <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access →</a>
+      <a href="https://app.shahosuite.com/book/3/" class="btn-secondary">Request a demo</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/wholesale-suite.html">Wholesale Suite</a>
+    <a href="/landlord-suite.html">Landlord Suite</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="https://app.shahosuite.com/register">Apply for access</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/security.html">Security</a>
+    <a href="https://app.shahosuite.com/login">Log in</a>
+  </div>
+  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p>
 </footer>
+
 <script>
-// Rainbow flow hero background
 (function(){
   const canvas = document.getElementById('hero-canvas');
   if(!canvas) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const small = window.matchMedia('(max-width: 560px)').matches;
   const ctx = canvas.getContext('2d');
-  const colors = ['#ff0055','#ff9900','#ffee00','#00cc66','#0099ff','#6600ff'];
-  let W, H, lines = [];
-  function init(){
+  const COLORS = ['#7dd3fc','#38bdf8','#0ea5e9','#6ee7b7','#a5b4fc'];
+  const MAX_DIST = small ? 96 : 118;
+  let W, H, nodes = [];
+  const total = reduced ? 36 : (small ? 40 : 64);
+  function resize(){
     W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
-    lines = [];
-    for(let i = 0; i < 7; i++){
-      lines.push({
-        y: (H / 7) * i + H * 0.06,
-        xOffset: Math.random() * 1000,
-        speed: 0.35 + Math.random() * 0.45,
-        alpha: 0.1 + Math.random() * 0.14
-      });
+    nodes = [];
+    for(let i = 0; i < total; i++){
+      nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.12,vy:(Math.random()-0.5)*0.12,s:3.5+Math.random()*3.5,c:COLORS[i%COLORS.length],p:Math.random()*Math.PI*2});
     }
   }
-  function drawLine(line){
-    const g = ctx.createLinearGradient(0, 0, W, 0);
-    colors.forEach((c,i) => g.addColorStop(i / colors.length, c));
-    ctx.strokeStyle = g;
-    ctx.globalAlpha = line.alpha;
-    ctx.lineWidth = 2.5;
-    ctx.beginPath();
-    for(let x = 0; x <= W; x += 8){
-      const wave = Math.sin((x + line.xOffset) * 0.01) * 24;
-      if(x === 0) ctx.moveTo(x, line.y + wave);
-      else ctx.lineTo(x, line.y + wave);
-    }
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-  }
-  function animate(){
-    ctx.clearRect(0, 0, W, H);
-    lines.forEach(line => {
-      line.xOffset += line.speed;
-      line.alpha = 0.09 + Math.sin(Date.now() * 0.0009 + line.y * 0.012) * 0.09;
-      drawLine(line);
-    });
-    requestAnimationFrame(animate);
-  }
-  init();
-  window.addEventListener('resize', init);
-  animate();
-})();
-
-// CTA animated grid background
-(function(){
-  const canvas = document.getElementById('cta-canvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let w, h, offset = 0;
-  function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
   function draw(){
-    ctx.clearRect(0, 0, w, h);
-    const grid = 70; offset += 0.12;
-    ctx.strokeStyle = 'rgba(15,23,42,0.05)'; ctx.lineWidth = 1;
-    for(let x = -grid; x < w + grid; x += grid){ ctx.beginPath(); ctx.moveTo(x + (offset % grid), 0); ctx.lineTo(x + (offset % grid), h); ctx.stroke(); }
-    for(let y = -grid; y < h + grid; y += grid){ ctx.beginPath(); ctx.moveTo(0, y + (offset % grid)); ctx.lineTo(w, y + (offset % grid)); ctx.stroke(); }
-    requestAnimationFrame(draw);
+    ctx.clearRect(0,0,W,H);
+    const t = performance.now()*0.001;
+    nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<-12)n.x=W+12;if(n.x>W+12)n.x=-12;if(n.y<-12)n.y=H+12;if(n.y>H+12)n.y=-12;});
+    for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){
+      const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<MAX_DIST){ctx.strokeStyle=`rgba(14,165,233,${(1-d/MAX_DIST)*0.16})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke();}
+    }
+    nodes.forEach(n=>{const pulse=0.7+Math.sin(t*0.7+n.p)*0.22;ctx.globalAlpha=0.55;ctx.fillStyle=n.c;ctx.beginPath();ctx.arc(n.x,n.y,n.s*pulse*0.35,0,Math.PI*2);ctx.fill();});
+    ctx.globalAlpha=1;
+    if(!reduced) requestAnimationFrame(draw);
   }
-  resize();
-  window.addEventListener('resize', resize);
-  draw();
+  resize(); window.addEventListener('resize',resize);
+  if(reduced) draw(); else requestAnimationFrame(draw);
+})();
+(function(){
+  const c=document.getElementById('cta-canvas'); if(!c)return;
+  const ctx=c.getContext('2d'); let w,h,o=0;
+  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;}
+  function draw(){ctx.clearRect(0,0,w,h);o+=0.06;const g=70;ctx.strokeStyle='rgba(14,165,233,0.05)';ctx.lineWidth=1;
+    for(let x=-g;x<w+g;x+=g){ctx.beginPath();ctx.moveTo(x+(o%g),0);ctx.lineTo(x+(o%g),h);ctx.stroke();}
+    for(let y=-g;y<h+g;y+=g){ctx.beginPath();ctx.moveTo(0,y+(o%g));ctx.lineTo(w,y+(o%g));ctx.stroke();}
+    requestAnimationFrame(draw);}
+  resize();window.addEventListener('resize',resize);draw();
 })();
 </script>
 </body>
