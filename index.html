@@ -91,14 +91,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px);box-shadow:0 5px 0 #334155}
 
 /* ══ TICKER ══ */
-.ticker{background:#0f172a;height:40px;overflow:hidden;display:flex;align-items:center;margin-top:72px}
-.t-label{flex-shrink:0;background:#fff;color:#0f172a;font-size:10px;font-weight:800;padding:0 16px;height:100%;display:flex;align-items:center;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
-.t-fade{flex-shrink:0;width:28px;height:100%;background:linear-gradient(90deg,#0f172a,transparent)}
-.t-track{display:flex;align-items:center;white-space:nowrap;animation:t-roll 44s linear infinite}
+.ticker{background:#0f172a;height:40px;overflow:hidden;display:flex;align-items:center;margin-top:72px;position:relative}
+.t-label{flex-shrink:0;background:#fff;color:#0f172a;font-size:10px;font-weight:800;padding:0 16px;height:100%;display:flex;align-items:center;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;position:relative;z-index:4;box-shadow:6px 0 14px rgba(15,23,42,.35)}
+.t-scroll-wrap{flex:1;overflow:hidden;position:relative;height:100%;display:flex;align-items:center}
+.t-fade{position:absolute;left:0;top:0;bottom:0;width:32px;z-index:2;background:linear-gradient(90deg,#0f172a 20%,transparent);pointer-events:none}
+.t-track{display:flex;align-items:center;white-space:nowrap;animation:t-roll 180s linear infinite;padding-left:8px}
 .t-track:hover{animation-play-state:paused}
-.ti{padding:0 22px;font-size:12px;color:rgba(255,255,255,0.65);font-weight:500}
+.ti{padding:0 20px;font-size:11.5px;color:rgba(255,255,255,0.72);font-weight:500}
 .ti strong{color:#fff;font-weight:800}
-.ts{color:rgba(255,255,255,0.18);font-size:14px}
+.ts{color:rgba(255,255,255,0.2);font-size:14px}
 @keyframes t-roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ══ HERO ══ */
@@ -132,11 +133,8 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 
 /* ══ TYPEWRITER HEADING ══ */
 .suite-heading-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#6366f1;display:block}
-.suite-heading-title{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a;display:block;overflow:hidden;white-space:nowrap;width:0;border-right:3px solid #0f172a;animation:type-in 2.4s steps(36,end) 0.4s forwards,cursor-blink 0.8s step-end 2.8s 4}
-@keyframes type-in{from{width:0}to{width:100%}}
-@keyframes cursor-blink{0%,100%{border-right-color:#0f172a}50%{border-right-color:transparent}}
-@media(prefers-reduced-motion:reduce){.suite-heading-title{width:auto;white-space:normal;border-right:none;animation:none}}
-@media(max-width:560px){.suite-heading-title{white-space:normal;width:auto;border-right:none;animation:none}}
+.suite-heading-title{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a;display:block;min-height:1.2em}
+.suite-heading-title .tw-cursor{display:none}
 
 /* ══ SUITE CARDS ══ */
 .suite-section{position:relative;overflow:hidden;background:radial-gradient(circle at 12% 8%,rgba(59,130,246,.14),transparent 38%),radial-gradient(circle at 84% 16%,rgba(14,165,233,.12),transparent 40%),linear-gradient(180deg,#f3f8ff 0%,#ffffff 62%,#f8fbff 100%)}
@@ -158,26 +156,31 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .sc-list{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:7px}
 .sc-list li{font-size:13.2px;color:#233244;display:flex;align-items:flex-start;gap:8px;line-height:1.55;padding:6px 9px;border-radius:10px;background:rgba(255,255,255,.68);border:1px solid rgba(219,232,245,.75)}
 .sc-list li::before{content:'✓';flex-shrink:0;width:16px;height:16px;border-radius:50%;background:rgba(16,185,129,0.14);color:#059669;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;margin-top:1px}
-.sc-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;font-size:13.5px;font-weight:800;transition:all 0.18s;width:100%;letter-spacing:-.01em}
-.cta-royalblue{background:#003087;color:#fff;box-shadow:0 4px 0 #002266}
-.cta-royalblue:hover{transform:translateY(-2px);box-shadow:0 6px 0 #002266;background:#00378f}
-.cta-royalgreen{background:#065f46;color:#fff;box-shadow:0 4px 0 #044035}
-.cta-royalgreen:hover{transform:translateY(-2px);box-shadow:0 6px 0 #044035;background:#076f52}
+.sc-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;font-size:13.5px;font-weight:800;transition:transform .22s,box-shadow .22s;width:100%;letter-spacing:-.01em;position:relative;overflow:hidden;border:none;color:#fff}
+.sc-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,var(--btn-a),var(--btn-b),var(--btn-c),var(--btn-a));background-size:300% 300%;animation:btn-grad 5s ease infinite;z-index:0}
+.sc-cta span{position:relative;z-index:1}
+@keyframes btn-grad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.cta-royalblue{--btn-a:#003087;--btn-b:#1d4ed8;--btn-c:#2563eb;box-shadow:0 5px 0 #002266,0 8px 22px rgba(0,48,135,.28)}
+.cta-royalblue:hover{transform:translateY(-3px);box-shadow:0 8px 0 #002266,0 14px 28px rgba(0,48,135,.32)}
+.cta-royalgreen{--btn-a:#065f46;--btn-b:#059669;--btn-c:#10b981;box-shadow:0 5px 0 #044035,0 8px 22px rgba(6,95,70,.28)}
+.cta-royalgreen:hover{transform:translateY(-3px);box-shadow:0 8px 0 #044035,0 14px 28px rgba(6,95,70,.32)}
+@media(prefers-reduced-motion:reduce){.sc-cta::before{animation:none}}
 
 /* ══ TRUST ══ */
 .trust-section{position:relative;overflow:hidden;background:#060a12;padding:80px 28px 72px}
 #trust-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .trust-section .si{position:relative;z-index:1}
-.trust-section h2{color:#fff;font-size:clamp(24px,3.2vw,32px)}
+.trust-section h2{color:#fff;font-size:clamp(22px,3vw,30px);min-height:2.6em;line-height:1.35;max-width:680px;transition:opacity .6s ease}
+.trust-section h2.is-fading{opacity:0}
 .trust-section .sdesc{color:rgba(255,255,255,.45);max-width:440px;font-size:14px}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:56px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px}
 .trust-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 18px;text-align:center;transition:border-color .2s,background .2s}
 .trust-card:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
 .trust-icon{font-size:20px;margin-bottom:10px;display:block}
 .trust-card h3{font-size:13px;font-weight:800;margin-bottom:6px;color:#fff}
 .trust-card p{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.55}
 /* ══ APPLY (inside trust) ══ */
-.trust-apply{border-top:1px solid rgba(255,255,255,.08);padding-top:52px;text-align:center}
+.trust-apply{padding-top:48px;text-align:center}
 .trust-apply h2{color:#fff;font-size:clamp(20px,3vw,28px);font-weight:800;margin-bottom:8px;letter-spacing:-.04em}
 .trust-apply p{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:24px}
 .trust-apply-btn{display:inline-flex;padding:13px 36px;border-radius:10px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 0 rgba(255,255,255,.25)}
@@ -185,12 +188,7 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 
 /* ══ FAQ ══ */
 .faq-section{background:#fff;border-top:1px solid #e5e7eb}
-.faq-layout{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
-.faq-list{margin-top:28px}
-.faq-img-col{position:sticky;top:90px;padding-top:28px}
-.faq-img-col img{width:100%;border-radius:14px;box-shadow:0 12px 40px rgba(15,23,42,.12);border:1px solid #e2e8f0;display:block}
-.faq-img-caption{font-size:11px;color:#94a3b8;text-align:center;margin-top:8px}
-@media(max-width:900px){.faq-layout{grid-template-columns:1fr}.faq-img-col{display:none}}
+.faq-list{margin-top:28px;max-width:720px}
 .faq-item{border-bottom:1px solid #e2e8f0}
 .faq-q{width:100%;background:none;border:none;text-align:left;padding:16px 0;font-size:14px;font-weight:700;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'DM Sans',sans-serif}
 .faq-q:hover{color:#6366f1}
@@ -268,16 +266,45 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <!-- ══ TICKER ══ -->
 <div class="ticker" aria-hidden="true">
   <div class="t-label">ShahoSuite</div>
-  <div class="t-fade"></div>
-  <div class="t-track">
-    <span class="ti">💡 <strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
-    <span class="ti">🛍️ <strong>Wholesale Suite</strong> — cash &amp; carry, grocery, B2B wholesale</span><span class="ts">·</span>
-    <span class="ti">🏘️ <strong>Landlord Suite</strong> — property &amp; landlord management</span><span class="ts">·</span>
-    <span class="ti">🇬🇧 <strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
-    <span class="ti">💡 <strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
-    <span class="ti">🛍️ <strong>Wholesale Suite</strong> — cash &amp; carry, grocery, B2B wholesale</span><span class="ts">·</span>
-    <span class="ti">🏘️ <strong>Landlord Suite</strong> — property &amp; landlord management</span><span class="ts">·</span>
-    <span class="ti">🇬🇧 <strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
+  <div class="t-scroll-wrap">
+    <div class="t-fade"></div>
+    <div class="t-track">
+      <span class="ti">💡 <strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
+      <span class="ti">🇬🇧 <strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
+      <span class="ti">🛍️ <strong>Wholesale Suite</strong> — cash &amp; carry, grocery, B2B wholesale</span><span class="ts">·</span>
+      <span class="ti">👤 <strong>Customers &amp; CRM</strong> — trade accounts, contacts and history</span><span class="ts">·</span>
+      <span class="ti">📦 <strong>Stock &amp; suppliers</strong> — products, POs and stock movements</span><span class="ts">·</span>
+      <span class="ti">🛒 <strong>Orders &amp; invoicing</strong> — sales orders, invoices and credit notes</span><span class="ts">·</span>
+      <span class="ti">💰 <strong>Finance &amp; analytics</strong> — accounting and performance insights</span><span class="ts">·</span>
+      <span class="ti">📅 <strong>Booking &amp; messaging</strong> — appointments, SMS/email and support</span><span class="ts">·</span>
+      <span class="ti">🧑‍💼 <strong>Team &amp; audit</strong> — role-based staff access and audit trail</span><span class="ts">·</span>
+      <span class="ti">🏘️ <strong>Landlord Suite</strong> — property, lettings and compliance</span><span class="ts">·</span>
+      <span class="ti">🏘️ <strong>Portfolio &amp; leases</strong> — properties, tenants and sales pipeline</span><span class="ts">·</span>
+      <span class="ti">💷 <strong>Rent &amp; accounting</strong> — rent tracker, arrears and finance</span><span class="ts">·</span>
+      <span class="ti">📁 <strong>Compliance &amp; certs</strong> — Gas, EPC, EICR and documents</span><span class="ts">·</span>
+      <span class="ti">🛠️ <strong>Maintenance</strong> — jobs, contractors and property upkeep</span><span class="ts">·</span>
+      <span class="ti">📅 <strong>Viewings &amp; inventory</strong> — inspections, check-ins and inventory</span><span class="ts">·</span>
+      <span class="ti">📨 <strong>Team &amp; messaging</strong> — staff, tenant messages and support</span><span class="ts">·</span>
+      <span class="ti">📋 <strong>Settings &amp; audit</strong> — business settings and activity history</span><span class="ts">·</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ti">💡 <strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
+      <span class="ti">🇬🇧 <strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
+      <span class="ti">🛍️ <strong>Wholesale Suite</strong> — cash &amp; carry, grocery, B2B wholesale</span><span class="ts">·</span>
+      <span class="ti">👤 <strong>Customers &amp; CRM</strong> — trade accounts, contacts and history</span><span class="ts">·</span>
+      <span class="ti">📦 <strong>Stock &amp; suppliers</strong> — products, POs and stock movements</span><span class="ts">·</span>
+      <span class="ti">🛒 <strong>Orders &amp; invoicing</strong> — sales orders, invoices and credit notes</span><span class="ts">·</span>
+      <span class="ti">💰 <strong>Finance &amp; analytics</strong> — accounting and performance insights</span><span class="ts">·</span>
+      <span class="ti">📅 <strong>Booking &amp; messaging</strong> — appointments, SMS/email and support</span><span class="ts">·</span>
+      <span class="ti">🧑‍💼 <strong>Team &amp; audit</strong> — role-based staff access and audit trail</span><span class="ts">·</span>
+      <span class="ti">🏘️ <strong>Landlord Suite</strong> — property, lettings and compliance</span><span class="ts">·</span>
+      <span class="ti">🏘️ <strong>Portfolio &amp; leases</strong> — properties, tenants and sales pipeline</span><span class="ts">·</span>
+      <span class="ti">💷 <strong>Rent &amp; accounting</strong> — rent tracker, arrears and finance</span><span class="ts">·</span>
+      <span class="ti">📁 <strong>Compliance &amp; certs</strong> — Gas, EPC, EICR and documents</span><span class="ts">·</span>
+      <span class="ti">🛠️ <strong>Maintenance</strong> — jobs, contractors and property upkeep</span><span class="ts">·</span>
+      <span class="ti">📅 <strong>Viewings &amp; inventory</strong> — inspections, check-ins and inventory</span><span class="ts">·</span>
+      <span class="ti">📨 <strong>Team &amp; messaging</strong> — staff, tenant messages and support</span><span class="ts">·</span>
+      <span class="ti">📋 <strong>Settings &amp; audit</strong> — business settings and activity history</span><span class="ts">·</span>
+    </div>
   </div>
 </div>
 
@@ -311,8 +338,8 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <canvas id="suite-canvas"></canvas>
   <div class="si">
     <span class="suite-heading-tag">ShahoSuite BOS</span>
-    <h2 class="suite-heading-title" aria-label="Two suites. One operating system.">Two suites. One operating system.</h2>
-    <p class="sdesc">Two of the most intelligent business management systems in the UK — 100% cloud, built for directors who move fast.</p>
+    <h2 class="suite-heading-title" id="suite-typewriter" aria-label="Two suites. One operating system."></h2>
+    <p class="sdesc">At this moment we provide two focused systems — wholesale operations and landlord management, 100% cloud, built in the UK.</p>
 
     <div class="suite-grid">
 
@@ -320,16 +347,16 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <article class="suite-card sc-w">
         <span class="sc-icon">🛍️</span>
         <div class="sc-name">Wholesale Suite</div>
-        <p class="sc-desc">Wholesale software for UK cash &amp; carry, grocery wholesalers and B2B distributors — run trade accounts, stock, purchase orders, invoices, accounting and a B2B/B2C online shop from one dashboard, with staff access and a full audit trail.</p>
-        <a href="/wholesale-suite.html" class="sc-cta cta-royalblue">Explore Wholesale Suite →</a>
+        <p class="sc-desc">Wholesale software for UK cash &amp; carry, grocery wholesalers and B2B distributors — run trade accounts, stock, purchase orders, invoices and accounting from one dashboard. Track food expiry dates, manage booking and messaging, with staff access and a full audit trail.</p>
+        <a href="/wholesale-suite.html" class="sc-cta cta-royalblue"><span>Explore Wholesale Suite →</span></a>
       </article>
 
       <!-- Landlord Suite -->
       <article class="suite-card sc-l">
         <span class="sc-icon">🏘️</span>
         <div class="sc-name">Landlord Suite</div>
-        <p class="sc-desc">Property management software for UK landlords and letting agents — manage properties, tenants and leases, track rent and accounting, stay on top of compliance certificates (Gas, EPC, EICR), and handle maintenance and viewings with your team.</p>
-        <a href="/landlord-suite.html" class="sc-cta cta-royalgreen">Explore Landlord Suite →</a>
+        <p class="sc-desc">Property management software for UK landlords and letting agents — manage properties, tenants and leases, track rent and accounting, stay on top of compliance certificates (Gas, EPC, EICR), and handle maintenance and viewings with your team. Free tenant portal included, with automated email reminders to tenants.</p>
+        <a href="/landlord-suite.html" class="sc-cta cta-royalgreen"><span>Explore Landlord Suite →</span></a>
       </article>
 
     </div>
@@ -342,7 +369,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <canvas id="trust-canvas"></canvas>
   <div class="si">
     <span class="stag" style="color:#22c55e;">Trust &amp; Security</span>
-    <h2>Secure UK software</h2>
+    <h2 id="trust-typewriter"></h2>
     <p class="sdesc">Azure UK hosted. GDPR-ready. Registered UK company.</p>
     <div class="trust-grid">
       <div class="trust-card">
@@ -380,8 +407,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <!-- ══ FAQ ══ -->
 <section class="section faq-section" id="faq">
   <div class="si">
-    <div class="faq-layout">
-    <div class="faq-col">
     <span class="stag" style="color:#8b5cf6;">FAQ</span>
     <h2>Common questions</h2>
     <div class="faq-list">
@@ -416,18 +441,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <div class="faq-a"><p>If you run a cash and carry, grocery or wholesale operation — choose Wholesale Suite. If you manage rental properties or lettings — choose Landlord Suite. Both sit on the same platform and cost the same.</p></div>
       </div>
 
-    </div><!-- /faq-list -->
-    </div><!-- /faq-col -->
-
-    <div class="faq-img-col">
-      <img src="/images/wholesale-dashboard-demo.png"
-           alt="Wholesale Suite dashboard — demo data"
-           width="840" height="520"
-           loading="lazy" />
-      <p class="faq-img-caption">Wholesale Suite — demo data shown</p>
     </div>
-
-    </div><!-- /faq-layout -->
   </div>
 </section>
 
@@ -565,7 +579,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   else requestAnimationFrame(draw);
 })();
 
-// Trust — deep layered starfield (smooth, rear)
+// Trust — deep layered starfield (slow, brighter)
 (function(){
   const c = document.getElementById('trust-canvas');
   if(!c) return;
@@ -573,11 +587,11 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   const ctx = c.getContext('2d');
   let W, H;
   const layers = [
-    { count: 40, speed: 0.008,  maxR: 0.6, alpha: 0.12, parallax: 0.15 },
-    { count: 70, speed: 0.015,  maxR: 1.0, alpha: 0.22, parallax: 0.35 },
-    { count: 45, speed: 0.004,  maxR: 1.6, alpha: 0.08, parallax: 0.08 }
+    { count: 50, speed: 0.002,  maxR: 0.7, alpha: 0.28, parallax: 0.06 },
+    { count: 85, speed: 0.004,  maxR: 1.2, alpha: 0.37, parallax: 0.12 },
+    { count: 35, speed: 0.001,  maxR: 1.8, alpha: 0.22, parallax: 0.03 }
   ];
-  let stars = [], t = 0;
+  let stars = [], t = 0, shooters = [], lastShoot = 0;
 
   function build(){
     W = c.width = c.offsetWidth;
@@ -588,64 +602,129 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         stars.push({
           x: Math.random() * W,
           y: Math.random() * H,
-          r: 0.2 + Math.random() * L.maxR,
+          r: 0.25 + Math.random() * L.maxR,
           base: Math.random() * Math.PI * 2,
-          layer: li,
-          drift: (Math.random() - 0.5) * 0.06
+          layer: li
         });
       }
     });
   }
 
-  // Shooting stars — occasional fast streak
-  let shooters = [];
-  function maybeSpawn(){
+  function spawnShooter(){
     if(reduced) return;
-    if(Math.random() < 0.012 && shooters.length < 2){
-      const startX = Math.random() * W * 0.6;
-      const startY = Math.random() * H * 0.4;
-      shooters.push({ x:startX, y:startY, len:80+Math.random()*60, vx:5+Math.random()*4, vy:2+Math.random()*2, life:1 });
-    }
+    const startX = Math.random() * W * 0.55;
+    const startY = Math.random() * H * 0.35;
+    shooters.push({ x:startX, y:startY, len:90+Math.random()*50, vx:4+Math.random()*2.5, vy:1.5+Math.random()*1.5, life:1 });
   }
 
   function draw(){
     ctx.clearRect(0, 0, W, H);
     for(const s of stars){
       const L = layers[s.layer];
-      const twinkle = 0.55 + 0.45 * Math.sin(t * L.speed * 60 + s.base);
-      const px = s.x + Math.sin(t * L.speed + s.base) * 8 * L.parallax;
-      const py = s.y + Math.cos(t * L.speed * 0.7 + s.base) * 6 * L.parallax;
+      const twinkle = 0.6 + 0.4 * Math.sin(t * L.speed * 40 + s.base);
+      const px = s.x + Math.sin(t * L.speed + s.base) * 4 * L.parallax;
+      const py = s.y + Math.cos(t * L.speed * 0.6 + s.base) * 3 * L.parallax;
       ctx.globalAlpha = L.alpha * twinkle;
-      ctx.fillStyle = '#e2e8f0';
+      ctx.fillStyle = '#f1f5f9';
       ctx.beginPath();
       ctx.arc(px, py, s.r, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    maybeSpawn();
+    const now = performance.now();
+    if(!reduced && now - lastShoot > 7000){
+      spawnShooter();
+      lastShoot = now;
+    }
+
     for(let i = shooters.length - 1; i >= 0; i--){
       const sh = shooters[i];
-      sh.x += sh.vx; sh.y += sh.vy; sh.life -= 0.012;
-      const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.len, sh.y - sh.len * (sh.vy/sh.vx));
-      grad.addColorStop(0, `rgba(255,255,255,${0.5 * sh.life})`);
+      sh.x += sh.vx; sh.y += sh.vy; sh.life -= 0.008;
+      const angle = sh.vy / sh.vx;
+      const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.len, sh.y - sh.len * angle);
+      grad.addColorStop(0, `rgba(255,255,255,${0.65 * sh.life})`);
       grad.addColorStop(1, 'rgba(255,255,255,0)');
       ctx.strokeStyle = grad;
-      ctx.lineWidth = 1.4;
+      ctx.lineWidth = 1.6;
       ctx.beginPath();
       ctx.moveTo(sh.x, sh.y);
-      ctx.lineTo(sh.x - sh.len, sh.y - sh.len * (sh.vy/sh.vx));
+      ctx.lineTo(sh.x - sh.len, sh.y - sh.len * angle);
       ctx.stroke();
-      if(sh.life <= 0 || sh.x > W + 60 || sh.y > H + 60) shooters.splice(i, 1);
+      if(sh.life <= 0 || sh.x > W + 80 || sh.y > H + 80) shooters.splice(i, 1);
     }
 
     ctx.globalAlpha = 1;
-    if(!reduced) t += 0.0012;
+    if(!reduced) t += 0.00035;
     requestAnimationFrame(draw);
   }
 
   build();
   window.addEventListener('resize', build);
   draw();
+})();
+
+// Typewriter — suite heading (slow, no cursor)
+(function(){
+  const el = document.getElementById('suite-typewriter');
+  if(!el) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const text = 'Two suites. One operating system.';
+  if(reduced){ el.textContent = text; return; }
+
+  let i = 0;
+  function tick(){
+    if(i <= text.length){
+      el.textContent = text.slice(0, i);
+      i++;
+      setTimeout(tick, 78);
+    }
+  }
+  setTimeout(tick, 600);
+})();
+
+// Typewriter — trust security messages (type → wait → fade → next)
+(function(){
+  const el = document.getElementById('trust-typewriter');
+  if(!el) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const lines = [
+    'Hosted on Microsoft Azure UK — your data never leaves the United Kingdom.',
+    'Updated with the latest UK GDPR rules, security standards and best practice.',
+    'Role-based access, encrypted connections, and a full audit trail on every action.',
+    'We build the future of UK business management — secure, reliable, cloud-native.',
+    'Bring your autonomy — your data, your business, your control.',
+    'Protect your legacy with software built for serious UK operators.',
+    'Registered UK company · Co. No. 16017117 · Portsmouth built from day one.'
+  ];
+  if(reduced){ el.textContent = lines[0]; return; }
+
+  let idx = 0;
+
+  function typeLine(line, cb){
+    let i = 0;
+    el.classList.remove('is-fading');
+    el.textContent = '';
+    function step(){
+      if(i <= line.length){
+        el.textContent = line.slice(0, i);
+        i++;
+        setTimeout(step, 42);
+      } else {
+        setTimeout(cb, 3000);
+      }
+    }
+    step();
+  }
+
+  function fadeThenNext(){
+    el.classList.add('is-fading');
+    setTimeout(() => {
+      idx = (idx + 1) % lines.length;
+      typeLine(lines[idx], fadeThenNext);
+    }, 650);
+  }
+
+  typeLine(lines[0], fadeThenNext);
 })();
 
 // Suite section — ghost squares appearing one by one
