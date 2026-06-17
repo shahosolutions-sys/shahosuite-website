@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Wholesale Suite — Cash &amp; Carry &amp; Grocery BOS | ShahoSuite UK</title>
-<meta name="description" content="ShahoSuite Wholesale Suite is operational software for UK cash and carry, grocery wholesalers and B2B distributors — stock, orders, invoices, trade accounts and online shop on one BOS platform." />
+<meta name="description" content="ShahoSuite Wholesale Suite is operational software for UK cash and carry, grocery wholesalers and B2B distributors — stock, orders, invoices, trade accounts, expiry tracking and booking on one BOS platform." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Shaho Solutions Limited" />
 <meta name="geo.region" content="GB" />
@@ -67,8 +67,8 @@ h1{font-size:clamp(32px,5.5vw,58px);font-weight:900;line-height:1.05;letter-spac
 .preview-kicker{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#ea580c}
 .preview-title{font-size:13px;font-weight:700;color:#1e293b}
 .preview-pill{font-size:10px;font-weight:800;color:#9a3412;background:#fff7ed;border:1px solid rgba(249,115,22,.3);border-radius:999px;padding:4px 10px}
-.preview-frame{border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#f1f5f9;line-height:0}
-.preview-frame img{width:100%;height:auto;display:block;object-fit:cover;object-position:18% top;max-height:min(62vh,620px)}
+.preview-frame{border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#f1f5f9;line-height:0;aspect-ratio:16/9}
+.preview-frame object{width:100%;height:100%;display:block;pointer-events:none}
 .preview-note{font-size:12px;color:#64748b;text-align:center;margin-top:12px}
 .section{padding:72px 28px}
 .si{max-width:1100px;margin:0 auto}
@@ -96,7 +96,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 .footer-links a{color:#64748b;transition:color .2s;padding:2px 4px}
 .footer-links a:hover{color:#0f172a}
 @media(max-width:880px){.nav-links{display:none}}
-@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}.preview-frame img{object-position:12% top;max-height:min(48vh,420px)}}
+@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}}
 </style>
 </head>
 <body>
@@ -142,9 +142,9 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <span class="preview-pill">Demo data</span>
     </div>
     <div class="preview-frame">
-      <img src="/images/wholesale-dashboard-demo.png" alt="ShahoSuite Wholesale Suite dashboard showing revenue, orders, invoices, stock alerts and customer analytics — demo data" width="1200" height="675" loading="lazy" />
+      <object data="/images/wholesale-dashboard.svg" type="image/svg+xml" aria-label="ShahoSuite Wholesale Suite dashboard — demo data">Wholesale dashboard preview</object>
     </div>
-    <p class="preview-note">Screenshot uses demo data only. Your live account shows your own customers, stock and figures.</p>
+    <p class="preview-note">Animated preview uses demo data only. Your live account shows your own customers, stock and figures.</p>
   </div>
 </section>
 
@@ -158,7 +158,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <div class="outcome-card"><h3>Stock, suppliers &amp; purchase orders</h3><p>Track inventory, supplier orders and expiry dates before stock goes to waste.</p></div>
       <div class="outcome-card"><h3>Orders, invoices &amp; credit notes</h3><p>From order to invoice to credit note — linked and auditable.</p></div>
       <div class="outcome-card"><h3>Accounting &amp; analytics</h3><p>See margins, sales performance and financial summaries on one dashboard.</p></div>
-      <div class="outcome-card"><h3>B2B and B2C online shop</h3><p>Let trade customers and retail buyers order through your connected shop.</p></div>
+      <div class="outcome-card"><h3>Booking &amp; messaging</h3><p>Appointments, SMS and email to customers — support built into the suite.</p></div>
       <div class="outcome-card"><h3>Team access &amp; audit trail</h3><p>Staff permissions and a full log of who changed what.</p></div>
     </div>
   </div>

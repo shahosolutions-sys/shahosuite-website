@@ -71,8 +71,8 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1px;margin-b
 .demo-kicker{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#0e7490}
 .demo-title{font-size:13px;font-weight:700;color:#1e293b}
 .demo-pill{font-size:10px;font-weight:800;color:#0f172a;background:#fff;border:1px solid #dbe7f4;border-radius:999px;padding:4px 10px}
-.demo-frame{width:100%;height:min(58vh,560px);border:1px solid #dbe7f4;border-radius:12px;overflow:hidden;background:#fff}
-.demo-frame iframe{width:100%;height:100%;border:0;display:block}
+.demo-frame{width:100%;aspect-ratio:16/9;border:1px solid #dbe7f4;border-radius:12px;overflow:hidden;background:#f1f5f9;line-height:0}
+.demo-frame object{width:100%;height:100%;display:block;pointer-events:none}
 .outcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .outcome-card{background:linear-gradient(145deg,#fff,rgba(236,254,255,.85));border:1px solid rgba(125,211,252,.4);border-radius:18px;padding:24px;box-shadow:0 10px 28px rgba(15,23,42,.06)}
 .outcome-card h3{font-size:15px;font-weight:800;margin-bottom:8px;color:#0f172a}
@@ -94,7 +94,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 .footer-links a{color:#64748b;transition:color .2s;padding:2px 4px}
 .footer-links a:hover{color:#0f172a}
 @media(max-width:880px){.nav-links{display:none}}
-@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}.demo-frame{height:min(52vh,400px)}}
+@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}}
 </style>
 </head>
 <body>
@@ -136,12 +136,12 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <div class="demo-head">
         <div>
           <div class="demo-kicker">Product preview</div>
-          <div class="demo-title">Landlord Suite — navigation flow</div>
+          <div class="demo-title">Landlord Suite — Properties module</div>
         </div>
-        <span class="demo-pill">Demo</span>
+        <span class="demo-pill">Demo data</span>
       </div>
       <div class="demo-frame">
-        <iframe src="/suite-landlord-demo.html" title="ShahoSuite Landlord Suite demo" loading="lazy"></iframe>
+        <object data="/images/landlord-properties.svg" type="image/svg+xml" aria-label="ShahoSuite Landlord Suite properties dashboard — demo data">Landlord properties preview</object>
       </div>
     </div>
 
@@ -153,7 +153,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <div class="outcome-card"><h3>Rent tracking &amp; accounting</h3><p>Paid, arrears and void periods linked to your accounts.</p></div>
       <div class="outcome-card"><h3>Compliance &amp; certificates</h3><p>Gas Safety, EPC and EICR tracked with alerts before expiry.</p></div>
       <div class="outcome-card"><h3>Maintenance &amp; viewings</h3><p>Log repairs, schedule viewings and keep a record of work done.</p></div>
-      <div class="outcome-card"><h3>Team messaging &amp; support</h3><p>Staff access and in-system communication for your letting team.</p></div>
+      <div class="outcome-card"><h3>Free tenant portal &amp; reminders</h3><p>Tenant portal included — automated email reminders for rent and compliance.</p></div>
     </div>
   </div>
 </section>
