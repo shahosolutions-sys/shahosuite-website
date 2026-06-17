@@ -82,7 +82,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .logo img{height:44px;width:auto;display:block}
 .logo{transition:opacity 0.15s}.logo:hover{opacity:0.82}
 .nav-links{display:flex;align-items:center;gap:2px}
-.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all 0.15s;white-space:nowrap}
+.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#0f172a;transition:all 0.15s;white-space:nowrap}
 .nav-link:hover{background:#f1f5f9;color:#0f172a}
 .nav-btns{display:flex;gap:8px;align-items:center}
 .btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
@@ -114,24 +114,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 
 h1{font-size:clamp(30px,5.2vw,56px);font-weight:900;line-height:1.08;letter-spacing:-0.04em;margin-bottom:20px;color:#0f172a;text-wrap:balance}
 .h1-line{display:block}
-.h1-accent{background:linear-gradient(100deg,#1d4ed8 0%,#0ea5e9 30%,#10b981 55%,#22c55e 75%,#1d4ed8 100%);background-size:280% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:h1-flow 9s ease-in-out infinite}
+.h1-accent{background:linear-gradient(100deg,#1e3a8a 0%,#2563eb 22%,#c8102e 46%,#059669 68%,#1e3a8a 100%);background-size:300% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:h1-flow 10s ease-in-out infinite}
 @keyframes h1-flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .h1-platform{font-size:0.72em;font-weight:800;color:#64748b;letter-spacing:-0.02em;margin-top:6px}
 
-.hero-sub{font-size:16px;color:#64748b;max-width:560px;margin:0 auto 18px;line-height:1.8}
-.hero-sub .em{font-weight:700;color:#334155}
-.hero-limited{font-size:13.5px;font-weight:700;color:#dc2626;max-width:520px;margin:0 auto 32px;line-height:1.6;display:flex;align-items:center;justify-content:center;gap:7px}
-.hero-limited .ll-dot{width:7px;height:7px;border-radius:50%;background:#dc2626;flex-shrink:0;animation:ll-pulse 1.8s ease-in-out infinite}
-@keyframes ll-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
-
-.hero-paths{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.path-btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:10px;font-size:14px;font-weight:700;transition:transform .18s,box-shadow .18s,border-color .18s}
-.pb-wholesale{background:#0f172a;color:#fff;border:1px solid #0f172a;background-image:linear-gradient(110deg,#0f172a 0%,#1e3a8a 50%,#0f172a 100%);background-size:200% 100%;animation:btn-sheen 7s ease-in-out infinite}
-.pb-wholesale:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,23,42,.22)}
-.pb-landlord{background:#fff;color:#0f172a;border:1px solid #cbd5e1}
-.pb-landlord:hover{transform:translateY(-2px);border-color:#94a3b8;box-shadow:0 8px 24px rgba(15,23,42,.08)}
-@keyframes btn-sheen{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@media (prefers-reduced-motion: reduce){.path-btn,.pb-wholesale,.h1-accent,.b-flag,.hero-limited .ll-dot{animation:none}}
+.hero-sub{font-size:16px;color:#64748b;max-width:520px;margin:0 auto 28px;line-height:1.75}
+.hero-apply-btn{display:inline-flex;align-items:center;padding:14px 34px;border-radius:12px;font-size:15px;font-weight:800;background:#0f172a;color:#fff;border:1.5px solid #0f172a;box-shadow:0 4px 0 #334155;transition:transform .18s,box-shadow .18s;letter-spacing:-.01em}
+.hero-apply-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #334155}
+@media (prefers-reduced-motion: reduce){.h1-accent,.b-flag{animation:none}}
 
 /* ══ SHARED ══ */
 .section{padding:72px 28px}
@@ -142,7 +132,11 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 
 /* ══ TYPEWRITER HEADING ══ */
 .suite-heading-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#6366f1;display:block}
-.suite-heading-title{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a;display:block}
+.suite-heading-title{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px;color:#0f172a;display:block;overflow:hidden;white-space:nowrap;width:0;border-right:3px solid #0f172a;animation:type-in 2.4s steps(36,end) 0.4s forwards,cursor-blink 0.8s step-end 2.8s 4}
+@keyframes type-in{from{width:0}to{width:100%}}
+@keyframes cursor-blink{0%,100%{border-right-color:#0f172a}50%{border-right-color:transparent}}
+@media(prefers-reduced-motion:reduce){.suite-heading-title{width:auto;white-space:normal;border-right:none;animation:none}}
+@media(max-width:560px){.suite-heading-title{white-space:normal;width:auto;border-right:none;animation:none}}
 
 /* ══ SUITE CARDS ══ */
 .suite-section{position:relative;overflow:hidden;background:radial-gradient(circle at 12% 8%,rgba(59,130,246,.14),transparent 38%),radial-gradient(circle at 84% 16%,rgba(14,165,233,.12),transparent 40%),linear-gradient(180deg,#f3f8ff 0%,#ffffff 62%,#f8fbff 100%)}
@@ -164,35 +158,39 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .sc-list{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:7px}
 .sc-list li{font-size:13.2px;color:#233244;display:flex;align-items:flex-start;gap:8px;line-height:1.55;padding:6px 9px;border-radius:10px;background:rgba(255,255,255,.68);border:1px solid rgba(219,232,245,.75)}
 .sc-list li::before{content:'✓';flex-shrink:0;width:16px;height:16px;border-radius:50%;background:rgba(16,185,129,0.14);color:#059669;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;margin-top:1px}
-.sc-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;font-size:13.5px;font-weight:800;transition:all 0.18s;width:100%}
-.cta-dark{background:#0f172a;color:#fff;box-shadow:0 4px 0 #334155}
-.cta-dark:hover{transform:translateY(-2px);box-shadow:0 6px 0 #334155}
-.cta-navy{background:#1e40af;color:#fff;box-shadow:0 4px 0 #1e3a8a}
-.cta-navy:hover{transform:translateY(-2px);box-shadow:0 6px 0 #1e3a8a}
+.sc-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;font-size:13.5px;font-weight:800;transition:all 0.18s;width:100%;letter-spacing:-.01em}
+.cta-royalblue{background:#003087;color:#fff;box-shadow:0 4px 0 #002266}
+.cta-royalblue:hover{transform:translateY(-2px);box-shadow:0 6px 0 #002266;background:#00378f}
+.cta-royalgreen{background:#065f46;color:#fff;box-shadow:0 4px 0 #044035}
+.cta-royalgreen:hover{transform:translateY(-2px);box-shadow:0 6px 0 #044035;background:#076f52}
 
 /* ══ TRUST ══ */
-.trust-section{position:relative;overflow:hidden;background:#060a12;padding:80px 28px 0}
+.trust-section{position:relative;overflow:hidden;background:#060a12;padding:80px 28px 72px}
 #trust-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .trust-section .si{position:relative;z-index:1}
 .trust-section h2{color:#fff;font-size:clamp(24px,3.2vw,32px)}
 .trust-section .sdesc{color:rgba(255,255,255,.45);max-width:440px;font-size:14px}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:56px}
 .trust-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 18px;text-align:center;transition:border-color .2s,background .2s}
 .trust-card:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
 .trust-icon{font-size:20px;margin-bottom:10px;display:block}
 .trust-card h3{font-size:13px;font-weight:800;margin-bottom:6px;color:#fff}
 .trust-card p{font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.55}
-
-/* Azure bar */
-.azure-bar{background:#050810;padding:13px 28px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;border-top:1px solid rgba(255,255,255,.06)}
-.az-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:4px 11px;font-size:11px;font-weight:600;color:rgba(255,255,255,.68);text-decoration:none;transition:background .15s}
-.az-pill:hover{background:rgba(255,255,255,.13)}
-.az-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;display:inline-block;animation:az-p 2s infinite}
-@keyframes az-p{0%,100%{opacity:1}50%{opacity:0.3}}
+/* ══ APPLY (inside trust) ══ */
+.trust-apply{border-top:1px solid rgba(255,255,255,.08);padding-top:52px;text-align:center}
+.trust-apply h2{color:#fff;font-size:clamp(20px,3vw,28px);font-weight:800;margin-bottom:8px;letter-spacing:-.04em}
+.trust-apply p{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:24px}
+.trust-apply-btn{display:inline-flex;padding:13px 36px;border-radius:10px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 0 rgba(255,255,255,.25)}
+.trust-apply-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(255,255,255,.2)}
 
 /* ══ FAQ ══ */
-.faq-section{background:#f8fafc;border-top:1px solid #e5e7eb}
-.faq-list{max-width:680px;margin-top:28px}
+.faq-section{background:#fff;border-top:1px solid #e5e7eb}
+.faq-layout{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.faq-list{margin-top:28px}
+.faq-img-col{position:sticky;top:90px;padding-top:28px}
+.faq-img-col img{width:100%;border-radius:14px;box-shadow:0 12px 40px rgba(15,23,42,.12);border:1px solid #e2e8f0;display:block}
+.faq-img-caption{font-size:11px;color:#94a3b8;text-align:center;margin-top:8px}
+@media(max-width:900px){.faq-layout{grid-template-columns:1fr}.faq-img-col{display:none}}
 .faq-item{border-bottom:1px solid #e2e8f0}
 .faq-q{width:100%;background:none;border:none;text-align:left;padding:16px 0;font-size:14px;font-weight:700;color:#0f172a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'DM Sans',sans-serif}
 .faq-q:hover{color:#6366f1}
@@ -202,15 +200,6 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-item.open .faq-a{max-height:220px}
 
-/* ══ APPLY STRIP ══ */
-.apply-strip{padding:56px 28px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
-.apply-inner{max-width:520px;margin:0 auto}
-.apply-strip h2{font-size:clamp(20px,3vw,28px);font-weight:800;margin-bottom:8px;color:#0f172a}
-.apply-strip p{font-size:14px;color:#64748b;margin-bottom:20px}
-.apply-btn{display:inline-flex;padding:13px 32px;border-radius:10px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;transition:transform .18s,box-shadow .18s}
-.apply-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,.15)}
-.apply-link{display:inline-block;margin-left:16px;font-size:14px;font-weight:600;color:#64748b}
-.apply-link:hover{color:#0f172a}
 
 
 
@@ -249,15 +238,10 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .nav-btns{gap:6px}
   .btn-login,.btn-signup{padding:7px 11px;font-size:12px}
   .trust-grid{grid-template-columns:1fr}
-  .hero-paths{flex-direction:column;align-items:center}
-  .path-btn{width:100%;justify-content:center}
   .hero{padding:98px 20px 70px}
   h1{font-size:clamp(30px,9.6vw,44px);line-height:1.06}
   .hero-sub{font-size:15px}
-  .hero-limited{font-size:12.5px}
   .suite-card{padding:24px 20px}
-  .apply-strip{padding:48px 20px}
-  .apply-link{display:block;margin:14px 0 0}
 }
 </style>
 </head>
@@ -286,14 +270,14 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <div class="t-label">ShahoSuite</div>
   <div class="t-fade"></div>
   <div class="t-track">
-    <span class="ti"><strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
-    <span class="ti"><strong>Wholesale Suite</strong> — cash &amp; carry, grocery, wholesale</span><span class="ts">·</span>
-    <span class="ti"><strong>Landlord Suite</strong> — property &amp; landlord management</span><span class="ts">·</span>
-    <span class="ti"><strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
-    <span class="ti"><strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
-    <span class="ti"><strong>Wholesale Suite</strong> — cash &amp; carry, grocery, wholesale</span><span class="ts">·</span>
-    <span class="ti"><strong>Landlord Suite</strong> — property &amp; landlord management</span><span class="ts">·</span>
-    <span class="ti"><strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
+    <span class="ti">💡 <strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
+    <span class="ti">🛍️ <strong>Wholesale Suite</strong> — cash &amp; carry, grocery, B2B wholesale</span><span class="ts">·</span>
+    <span class="ti">🏘️ <strong>Landlord Suite</strong> — property &amp; landlord management</span><span class="ts">·</span>
+    <span class="ti">🇬🇧 <strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
+    <span class="ti">💡 <strong>CRM + ERP BOS</strong> — business management operating system</span><span class="ts">·</span>
+    <span class="ti">🛍️ <strong>Wholesale Suite</strong> — cash &amp; carry, grocery, B2B wholesale</span><span class="ts">·</span>
+    <span class="ti">🏘️ <strong>Landlord Suite</strong> — property &amp; landlord management</span><span class="ts">·</span>
+    <span class="ti">🇬🇧 <strong>Azure UK</strong> — GDPR-aware · Portsmouth built</span><span class="ts">·</span>
   </div>
 </div>
 
@@ -315,20 +299,9 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <span class="h1-line h1-platform">Operating System Platform</span>
     </h1>
 
-    <p class="hero-sub">
-      One platform, two suites. <span class="em">🛍️ Wholesale Suite</span> — stock, purchase orders, invoices.
-      <span class="em">🏘️ Landlord Suite</span> — rent tracking, compliance, maintenance.
-    </p>
+    <p class="hero-sub">Smart, minimal, 100% cloud. Built to grow your business on one platform.</p>
 
-    <p class="hero-limited">
-      <span class="ll-dot"></span>
-      ShahoSuite registration is limited at this stage — apply now and secure your seat.
-    </p>
-
-    <div class="hero-paths">
-      <a href="/wholesale-suite.html" class="path-btn pb-wholesale">🛍️ Wholesale Suite</a>
-      <a href="/landlord-suite.html" class="path-btn pb-landlord">🏘️ Landlord Suite</a>
-    </div>
+    <a href="https://app.shahosuite.com/register" class="hero-apply-btn">Apply for access →</a>
 
   </div>
 </section>
@@ -338,8 +311,8 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   <canvas id="suite-canvas"></canvas>
   <div class="si">
     <span class="suite-heading-tag">ShahoSuite BOS</span>
-    <h2 class="suite-heading-title">Two suites. One operating system.</h2>
-    <p class="sdesc">Dedicated UK software to run your business — wholesale operations or landlord management on one platform.</p>
+    <h2 class="suite-heading-title" aria-label="Two suites. One operating system.">Two suites. One operating system.</h2>
+    <p class="sdesc">Two of the most intelligent business management systems in the UK — 100% cloud, built for directors who move fast.</p>
 
     <div class="suite-grid">
 
@@ -348,7 +321,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <span class="sc-icon">🛍️</span>
         <div class="sc-name">Wholesale Suite</div>
         <p class="sc-desc">Wholesale software for UK cash &amp; carry, grocery wholesalers and B2B distributors — run trade accounts, stock, purchase orders, invoices, accounting and a B2B/B2C online shop from one dashboard, with staff access and a full audit trail.</p>
-        <a href="/wholesale-suite.html" class="sc-cta cta-dark">Explore Wholesale Suite →</a>
+        <a href="/wholesale-suite.html" class="sc-cta cta-royalblue">Explore Wholesale Suite →</a>
       </article>
 
       <!-- Landlord Suite -->
@@ -356,7 +329,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <span class="sc-icon">🏘️</span>
         <div class="sc-name">Landlord Suite</div>
         <p class="sc-desc">Property management software for UK landlords and letting agents — manage properties, tenants and leases, track rent and accounting, stay on top of compliance certificates (Gas, EPC, EICR), and handle maintenance and viewings with your team.</p>
-        <a href="/landlord-suite.html" class="sc-cta cta-navy">Explore Landlord Suite →</a>
+        <a href="/landlord-suite.html" class="sc-cta cta-royalgreen">Explore Landlord Suite →</a>
       </article>
 
     </div>
@@ -393,31 +366,22 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <p>Portsmouth, Hampshire. UK-first from day one.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Azure bar -->
-<div class="azure-bar">
-  <a href="/security.html" class="az-pill"><span class="az-dot"></span>Azure UK</a>
-  <a href="/security.html" class="az-pill"><span class="az-dot"></span>99.9% Uptime</a>
-  <a href="/gdpr.html"     class="az-pill"><span class="az-dot"></span>GDPR Ready</a>
-  <span                   class="az-pill">🏢 Co. 16017117</span>
-  <a href="/terms.html"   class="az-pill">📄 Terms</a>
-  <a href="/privacy.html" class="az-pill">🛡️ Privacy</a>
-</div>
+    <!-- Apply for access — inside trust dark section -->
+    <div class="trust-apply">
+      <h2>Apply for access</h2>
+      <p>Registration is limited at this stage. We review and respond within one working day.</p>
+      <a href="https://app.shahosuite.com/register" class="trust-apply-btn">Apply →</a>
+    </div>
 
-<!-- ══ APPLY ══ -->
-<section class="apply-strip">
-  <div class="apply-inner">
-    <h2>Apply for access</h2>
-    <p>Registration is limited at this stage. Reviewed within one working day.</p>
-    <a href="https://app.shahosuite.com/register" class="apply-btn">Apply →</a>
   </div>
 </section>
 
 <!-- ══ FAQ ══ -->
 <section class="section faq-section" id="faq">
   <div class="si">
+    <div class="faq-layout">
+    <div class="faq-col">
     <span class="stag" style="color:#8b5cf6;">FAQ</span>
     <h2>Common questions</h2>
     <div class="faq-list">
@@ -452,7 +416,18 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
         <div class="faq-a"><p>If you run a cash and carry, grocery or wholesale operation — choose Wholesale Suite. If you manage rental properties or lettings — choose Landlord Suite. Both sit on the same platform and cost the same.</p></div>
       </div>
 
+    </div><!-- /faq-list -->
+    </div><!-- /faq-col -->
+
+    <div class="faq-img-col">
+      <img src="/images/wholesale-dashboard-demo.png"
+           alt="Wholesale Suite dashboard — demo data"
+           width="840" height="520"
+           loading="lazy" />
+      <p class="faq-img-caption">Wholesale Suite — demo data shown</p>
     </div>
+
+    </div><!-- /faq-layout -->
   </div>
 </section>
 
