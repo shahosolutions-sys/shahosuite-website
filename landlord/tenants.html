@@ -45,6 +45,18 @@ a{color:inherit;text-decoration:none}
 .btn-login:hover{transform:translateY(-1px)}
 .btn-signup{background:#0f172a;color:#fff;border:1px solid #0f172a}
 .btn-signup:hover{transform:translateY(-1px)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer;text-decoration:none}
+.nav-link:hover{background:#f1f5f9;color:#0f172a}
+.nav-dropdown{position:relative}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 20px 50px rgba(15,23,42,.12);padding:16px 18px;grid-template-columns:1fr 1fr;gap:20px;z-index:300}
+.nav-dropdown:hover .nav-drop-panel,.nav-dropdown:focus-within .nav-drop-panel{display:grid}
+.drop-head{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #f1f5f9}
+.drop-head.ll{color:#059669}
+.drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0;text-decoration:none}
+.drop-col a:hover{color:#0f172a}
+@media(max-width:880px){.nav-links{display:none}}
+
 .hero{padding:140px 24px 80px;background:linear-gradient(160deg,#ecfdf5 0%,#ffffff 55%,#eff6ff 100%);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(16,185,129,.12),transparent 35%),radial-gradient(circle at 75% 25%,rgba(14,165,233,.10),transparent 30%),radial-gradient(circle at 50% 85%,rgba(236,72,153,.08),transparent 28%);opacity:.9;filter:blur(1px);animation:hero-shift 18s ease-in-out infinite}
 .hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto;text-align:center}
@@ -93,22 +105,39 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bot
 <body>
 <nav class="page-nav">
   <div class="nav-inner">
-    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" /></a>
+    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" width="168" height="44" style="height:42px;width:auto;display:block" /></a>
     <div class="nav-links">
+      <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
-      <a href="/landlord/tenants.html" class="nav-link">Tenant Management</a>
-      <a href="/landlord/properties.html" class="nav-link">Properties</a>
-      <a href="/landlord/certificates.html" class="nav-link">Certificates</a>
-      <a href="/landlord/accounting.html" class="nav-link">Accounting</a>
-      <a href="/landlord/inventory.html" class="nav-link">Inventory</a>
-      <a href="/landlord/viewings.html" class="nav-link">Viewings</a>
-      <a href="#features" class="nav-link">Features</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
+        <div class="nav-drop-panel">
+          <div class="drop-col">
+            <span class="drop-head ll">Landlord Suite</span>
+            <a href="/landlord/properties.html">Properties</a>
+            <a href="/landlord/tenants.html">Tenants</a>
+            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
+            <a href="/landlord/accounting.html">Accounting</a>
+            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
+            <a href="/landlord/viewings.html">Viewings</a>
+            <a href="/landlord/inventory.html">Inventory</a>
+            <a href="/landlord-suite.html">All landlord modules →</a>
+          </div>
+          <div class="drop-col">
+            <span class="drop-head">Wholesale Suite</span>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/customers.html">Customers</a>
+            <a href="/products.html">Products</a>
+            <a href="/wholesale-suite.html">All wholesale modules →</a>
+          </div>
+        </div>
+      </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
       <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
-      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Apply for access</a>
     </div>
   </div>
 </nav>
@@ -121,7 +150,7 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bot
       <h1>Tenant Management Software for UK Landlords</h1>
       <p class="hero-sub">Track tenants, rent, leases and landlord compliance from one secure UK platform built for property owners and letting agents.</p>
       <div class="hero-actions">
-        <a href="https://app.shahosuite.com/register" class="btn-primary">Start a free trial</a>
+        <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access</a>
         <a href="mailto:admin@shahosuite.com" class="btn-secondary">Talk to sales</a>
       </div>
       <div class="stats">
@@ -262,14 +291,15 @@ h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1px;margin-bot
   </section>
 </main>
 
-<footer class="footer">
-  <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="/landlord-suite.html">Landlord Suite</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="mailto:admin@shahosuite.com">Contact</a>
-  </div>
-  <div>© 2026 Shaho Solutions Limited. Built for UK landlords.</div>
-</footer>
+<footer><div class="footer-links">
+  <a href="/">Home</a>
+  <a href="/wholesale-suite.html">Wholesale Suite</a>
+  <a href="/landlord-suite.html">Landlord Suite</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="https://app.shahosuite.com/register">Apply for access</a>
+  <a href="https://app.shahosuite.com/privacy">Privacy</a>
+  <a href="https://app.shahosuite.com/terms">Terms</a>
+  <a href="mailto:admin@shahosuite.com">Contact</a>
+</div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p></footer>
 </body>
 </html>

@@ -44,6 +44,18 @@ img{max-width:100%;display:block}
 .btn-login{background:#fff;color:#0f172a;border:1px solid #d1d5db}
 .btn-signup{background:#0d9488;color:#fff;border:1px solid #0d9488}
 .btn-login:hover,.btn-signup:hover{transform:translateY(-1px)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer;text-decoration:none}
+.nav-link:hover{background:#f1f5f9;color:#0f172a}
+.nav-dropdown{position:relative}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 20px 50px rgba(15,23,42,.12);padding:16px 18px;grid-template-columns:1fr 1fr;gap:20px;z-index:300}
+.nav-dropdown:hover .nav-drop-panel,.nav-dropdown:focus-within .nav-drop-panel{display:grid}
+.drop-head{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #f1f5f9}
+.drop-head.ll{color:#059669}
+.drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0;text-decoration:none}
+.drop-col a:hover{color:#0f172a}
+@media(max-width:880px){.nav-links{display:none}}
+
 main{padding:120px 24px 64px}
 .hero{position:relative;overflow:hidden;padding:84px 24px 70px;background:linear-gradient(160deg,#def7ec 0%,#ffffff 54%,#eff6ff 100%)}
 .hero::before{content:'';position:absolute;left:-30px;top:10%;width:170px;height:170px;background:rgba(16,185,129,.16);border-radius:50%;filter:blur(18px);animation:float 7s ease-in-out infinite}
@@ -95,21 +107,39 @@ h2{font-size:clamp(30px,4vw,42px);font-weight:800;letter-spacing:-0.03em;margin-
 <body>
 <nav class="page-nav">
   <div class="nav-inner">
-    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" /></a>
+    <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" width="168" height="44" style="height:42px;width:auto;display:block" /></a>
     <div class="nav-links">
+      <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
-      <a href="/landlord/tenants.html" class="nav-link">Tenant Management</a>
-      <a href="/landlord/properties.html" class="nav-link">Properties</a>
-      <a href="/landlord/certificates.html" class="nav-link">Certificates</a>
-      <a href="/landlord/accounting.html" class="nav-link">Accounting</a>
-      <a href="/landlord/inventory.html" class="nav-link">Inventory</a>
-      <a href="/landlord/viewings.html" class="nav-link">Viewings</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
+        <div class="nav-drop-panel">
+          <div class="drop-col">
+            <span class="drop-head ll">Landlord Suite</span>
+            <a href="/landlord/properties.html">Properties</a>
+            <a href="/landlord/tenants.html">Tenants</a>
+            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
+            <a href="/landlord/accounting.html">Accounting</a>
+            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
+            <a href="/landlord/viewings.html">Viewings</a>
+            <a href="/landlord/inventory.html">Inventory</a>
+            <a href="/landlord-suite.html">All landlord modules →</a>
+          </div>
+          <div class="drop-col">
+            <span class="drop-head">Wholesale Suite</span>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/customers.html">Customers</a>
+            <a href="/products.html">Products</a>
+            <a href="/wholesale-suite.html">All wholesale modules →</a>
+          </div>
+        </div>
+      </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
       <a href="https://app.shahosuite.com/login" class="btn-login">Log in</a>
-      <a href="https://app.shahosuite.com/register" class="btn-signup">Sign up</a>
+      <a href="https://app.shahosuite.com/register" class="btn-signup">Apply for access</a>
     </div>
   </div>
 </nav>
@@ -120,7 +150,7 @@ h2{font-size:clamp(30px,4vw,42px);font-weight:800;letter-spacing:-0.03em;margin-
       <h1>UK landlord accounting with rent income, expenses and property profit all in one dashboard</h1>
       <p class="hero-sub">Capture rent payments, maintenance costs, tax year totals and net profit per property in a landlord tool built for UK portfolios.</p>
       <div class="hero-actions">
-        <a href="https://app.shahosuite.com/register" class="btn-primary">Start a free trial</a>
+        <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access</a>
         <a href="mailto:admin@shahosuite.com" class="btn-secondary">Talk to sales</a>
       </div>
     </div>
@@ -256,20 +286,19 @@ h2{font-size:clamp(30px,4vw,42px);font-weight:800;letter-spacing:-0.03em;margin-
       <div class="section-tag">Ready</div>
       <h2>Back your landlord portfolio with better accounting</h2>
       <p class="section-copy">ShahoSuite gives UK landlords a single home for rent income, property costs and net profit performance — so you can make decisions with confidence.</p>
-      <a href="https://app.shahosuite.com/register" class="btn-primary">Start a free trial</a>
+      <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access</a>
     </div>
   </section>
 </main>
-<footer style="padding:40px 24px 32px;text-align:center;font-size:13px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff">
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:14px">
-    <a href="/landlord-suite.html">Landlord Suite</a>
-    <a href="/landlord/tenants.html">Tenant Management</a>
-    <a href="/landlord/properties.html">Properties</a>
-    <a href="/landlord/certificates.html">Certificates</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="mailto:admin@shahosuite.com">Contact</a>
-  </div>
-  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Registered in England &amp; Wales — Portsmouth, Hampshire, UK</p>
-</footer>
+<footer><div class="footer-links">
+  <a href="/">Home</a>
+  <a href="/wholesale-suite.html">Wholesale Suite</a>
+  <a href="/landlord-suite.html">Landlord Suite</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="https://app.shahosuite.com/register">Apply for access</a>
+  <a href="https://app.shahosuite.com/privacy">Privacy</a>
+  <a href="https://app.shahosuite.com/terms">Terms</a>
+  <a href="mailto:admin@shahosuite.com">Contact</a>
+</div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p></footer>
 </body>
 </html>
