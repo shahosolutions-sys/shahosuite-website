@@ -3,30 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Landlord Suite — UK Property Management BOS | ShahoSuite</title>
-<meta name="description" content="ShahoSuite Landlord Suite is operational software for UK landlords and letting agents — properties, tenants, rent tracking, compliance certificates and maintenance on one BOS platform." />
+<title>Landlord Suite — UK Property Management Software | ShahoSuite</title>
+<meta name="description" content="ShahoSuite Landlord Suite — portfolio, tenants, leases, rent tracker, compliance certs, maintenance and free tenant portal. Automated reminders. Minimum clicks. Apply for access." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Shaho Solutions Limited" />
 <meta name="geo.region" content="GB" />
 <link rel="canonical" href="https://www.shahosuite.com/landlord-suite.html" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ShahoSuite Landlord Suite — UK Property Management Software" />
-<meta property="og:description" content="Run UK property and landlord management on ShahoSuite BOS. Apply for access — we respond within one working day." />
+<meta property="og:title" content="ShahoSuite Landlord Suite — UK Property Management" />
+<meta property="og:description" content="UK property management in one place — automated cert, lease and rent reminders. Tenant portal included. Apply for access." />
 <meta property="og:url" content="https://www.shahosuite.com/landlord-suite.html" />
 <meta property="og:image" content="https://www.shahosuite.com/logo.png" />
 <meta property="og:locale" content="en_GB" />
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"SoftwareApplication",
-  "name":"ShahoSuite Landlord Suite",
-  "applicationCategory":"BusinessApplication",
-  "operatingSystem":"Web",
-  "url":"https://www.shahosuite.com/landlord-suite.html",
-  "description":"Operational software for UK landlords, letting agents and property managers on the ShahoSuite Business Operating System.",
-  "isPartOf":{"@type":"SoftwareApplication","name":"ShahoSuite","url":"https://www.shahosuite.com"},
-  "provider":{"@type":"Organization","name":"Shaho Solutions Limited","identifier":"16017117"}
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ShahoSuite Landlord Suite","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.shahosuite.com/landlord-suite.html","description":"UK landlord and property management software with automated compliance and rent reminders.","isPartOf":{"@type":"SoftwareApplication","name":"ShahoSuite","url":"https://www.shahosuite.com"},"provider":{"@type":"Organization","name":"Shaho Solutions Limited","identifier":"16017117"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,65 +26,87 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.6;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(15,23,42,0.08);box-shadow:0 1px 0 rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.04)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(15,23,42,.08);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo img{height:44px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:2px}
-.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all 0.15s;white-space:nowrap}
-.nav-link:hover,.nav-link.active{background:#ecfeff;color:#0e7490}
+.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer}
+.nav-link:hover,.nav-link.active{background:#ecfdf5;color:#047857}
+.nav-dropdown{position:relative}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 20px 50px rgba(15,23,42,.12);padding:16px 18px;grid-template-columns:1fr 1fr;gap:20px;z-index:300}
+.nav-dropdown:hover .nav-drop-panel,.nav-dropdown:focus-within .nav-drop-panel{display:grid}
+.drop-head{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#059669;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #f1f5f9}
+.drop-head.wh{color:#2563eb}
+.drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0}
+.drop-col a:hover{color:#0f172a}
 .nav-btns{display:flex;gap:8px;align-items:center}
-.btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
-.btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
-.btn-signup{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:800;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #334155;transition:all 0.15s;white-space:nowrap}
-.btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{position:relative;overflow:hidden;padding:108px 28px 80px;text-align:center;background:linear-gradient(180deg,#f0fdfa 0%,#ecfeff 42%,#ffffff 100%);margin-top:72px}
-.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 20% 22%,rgba(14,165,233,.14),transparent),radial-gradient(ellipse 44% 36% at 82% 20%,rgba(16,185,129,.1),transparent)}
-#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.52}
+.btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db}
+.btn-signup{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:800;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #334155;white-space:nowrap}
+.hero{position:relative;overflow:hidden;padding:108px 28px 72px;text-align:center;background:linear-gradient(180deg,#ecfdf5 0%,#fff 55%);margin-top:72px}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 20% 20%,rgba(5,150,105,.1),transparent)}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.45}
 .hero-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#0e7490;background:rgba(255,255,255,0.9);border:1px solid rgba(14,165,233,0.2);margin-bottom:22px}
-.b-dot{width:8px;height:8px;border-radius:50%;background:#0ea5e9;box-shadow:0 0 0 4px rgba(14,165,233,0.16)}
-h1{font-size:clamp(32px,5.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:18px;color:#0f172a;text-wrap:balance}
-.h1-grad{display:block;background:linear-gradient(115deg,#0f172a 4%,#0284c7 36%,#0ea5e9 58%,#10b981 86%);background-clip:text;-webkit-background-clip:text;color:transparent}
-.hero-sub{font-size:17px;color:#475569;max-width:580px;margin:0 auto 32px;line-height:1.8}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#047857;background:#fff;border:1px solid #a7f3d0;margin-bottom:22px}
+.b-dot{width:8px;height:8px;border-radius:50%;background:#10b981}
+h1{font-size:clamp(32px,5.5vw,56px);font-weight:900;line-height:1.06;letter-spacing:-.04em;margin-bottom:16px}
+.h1-grad{background:linear-gradient(115deg,#065f46,#059669,#0ea5e9);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-sub{font-size:17px;color:#475569;max-width:620px;margin:0 auto 28px;line-height:1.75}
 .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-.btn-primary{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155;transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 0 #334155}
-.btn-secondary{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db;transition:transform .2s}
-.btn-secondary:hover{transform:translateY(-2px)}
+.btn-primary{display:inline-flex;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155}
+.btn-secondary{display:inline-flex;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db}
+.value-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:920px;margin:0 auto;padding:0 28px 48px}
+.value-pill{padding:10px 16px;border-radius:999px;font-size:12.5px;font-weight:700;color:#334155;background:#f8fafc;border:1px solid #e2e8f0}
 .section{padding:72px 28px}
 .si{max-width:1100px;margin:0 auto}
-.stag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#0284c7;display:block}
-h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;color:#0f172a}
-.sdesc{font-size:14.5px;color:#64748b;max-width:620px;margin-bottom:28px;line-height:1.75}
-.demo-shell{margin-bottom:40px;background:linear-gradient(180deg,#f8fbff,#fff);border:1px solid #dbe7f4;border-radius:18px;padding:14px;box-shadow:0 14px 32px rgba(15,23,42,.07)}
+.stag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#059669;display:block}
+h2{font-size:clamp(22px,3.5vw,34px);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.sdesc{font-size:14.5px;color:#64748b;max-width:680px;margin-bottom:32px;line-height:1.75}
+.demo-shell{margin-bottom:48px;background:linear-gradient(180deg,#f8fbff,#fff);border:1px solid #dbe7f4;border-radius:18px;padding:14px;box-shadow:0 14px 32px rgba(15,23,42,.07)}
 .demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
-.demo-kicker{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#0e7490}
+.demo-kicker{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;color:#047857}
 .demo-title{font-size:13px;font-weight:700;color:#1e293b}
 .demo-pill{font-size:10px;font-weight:800;color:#0f172a;background:#fff;border:1px solid #dbe7f4;border-radius:999px;padding:4px 10px}
 .demo-frame{width:100%;height:min(58vh,560px);border:1px solid #dbe7f4;border-radius:12px;overflow:hidden;background:#fff}
 .demo-frame iframe{width:100%;height:100%;border:0;display:block}
-.outcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.outcome-card{background:linear-gradient(145deg,#fff,rgba(236,254,255,.85));border:1px solid rgba(125,211,252,.4);border-radius:18px;padding:24px;box-shadow:0 10px 28px rgba(15,23,42,.06)}
-.outcome-card h3{font-size:15px;font-weight:800;margin-bottom:8px;color:#0f172a}
-.outcome-card p{font-size:13.5px;color:#475569;line-height:1.65}
-.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
-.who-pill{padding:14px 18px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13.5px;font-weight:600;color:#334155;text-align:center}
+.mod-group{margin-bottom:40px}
+.mod-group-head{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#94a3b8;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #f1f5f9}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.mod-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;transition:border-color .2s,box-shadow .2s}
+.mod-card:hover{border-color:#cbd5e1;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.mod-card h3{font-size:15px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.mod-ico{font-size:16px}
+.mod-card p{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:8px}
+.mod-opts{font-size:11.5px;color:#475569;line-height:1.55;padding-top:8px;border-top:1px solid #f1f5f9}
+.mod-opts strong{font-weight:700;color:#334155}
+.mod-auto{font-size:11px;font-weight:700;color:#059669;margin-top:8px}
+.mod-card a.mod-more{font-size:11px;font-weight:800;color:#059669;margin-top:8px;display:inline-block}
+.auto-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.auto-table th,.auto-table td{padding:12px 14px;text-align:left;border-bottom:1px solid #e2e8f0}
+.auto-table th{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#64748b;background:#f8fafc}
+.plan-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:12px}
+.plan-table th,.plan-table td{padding:10px 12px;border:1px solid #e2e8f0;text-align:center}
+.plan-table th{background:#f8fafc;font-weight:800;font-size:10px;text-transform:uppercase}
+.plan-table td:first-child{text-align:left;font-weight:600}
+.portal-box{background:linear-gradient(135deg,#ecfdf5,#eff6ff);border:1px solid #bbf7d0;border-radius:18px;padding:28px;margin-top:16px}
+.portal-box h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.portal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
+.portal-tab{background:#fff;border:1px solid #d1fae5;border-radius:12px;padding:14px;font-size:12.5px}
+.portal-tab strong{display:block;font-size:13px;margin-bottom:4px;color:#0f172a}
+.legal-note{font-size:12px;color:#64748b;margin-top:24px;padding:14px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;line-height:1.6}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.who-pill{padding:14px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;font-weight:600;text-align:center;color:#334155}
 .bos-bar{background:#0f172a;color:rgba(255,255,255,.75);padding:20px 28px;text-align:center;font-size:13.5px}
-.bos-bar a{color:#38bdf8;font-weight:700}
-.bos-bar a:hover{text-decoration:underline}
-.cta-section{position:relative;overflow:hidden;padding:80px 28px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
-#cta-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.6}
-.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
-.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:50px;font-size:11px;font-weight:800;color:#0e7490;background:#ecfeff;border:1px solid rgba(14,165,233,.25);margin-bottom:16px}
-.cta-title{font-size:clamp(24px,3.8vw,38px);font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.bos-bar a{color:#34d399;font-weight:700}
+.cta-section{padding:80px 28px;text-align:center;background:#f8fafc;border-top:1px solid #e5e7eb}
+.cta-inner{max-width:640px;margin:0 auto}
+.cta-title{font-size:clamp(24px,3.8vw,36px);font-weight:900;margin-bottom:12px}
 .cta-desc{font-size:16px;color:#475569;margin-bottom:28px;line-height:1.75}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:10px}
-.footer-links a{color:#64748b;transition:color .2s;padding:2px 4px}
+.footer-links a{color:#64748b}
 .footer-links a:hover{color:#0f172a}
-@media(max-width:880px){.nav-links{display:none}}
-@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}.demo-frame{height:min(52vh,400px)}}
+@media(max-width:880px){.nav-links{display:none}.nav-drop-panel{min-width:280px;grid-template-columns:1fr;left:0;transform:none}}
+@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 56px}.demo-frame{height:min(52vh,400px)}.auto-table,.plan-table{font-size:11px}}
 </style>
 </head>
 <body>
@@ -105,6 +117,35 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <div class="nav-links">
       <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link active">Landlord Suite</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
+        <div class="nav-drop-panel">
+          <div class="drop-col">
+            <span class="drop-head">Landlord Suite</span>
+            <a href="/landlord/properties.html">Properties</a>
+            <a href="/landlord/tenants.html">Tenants</a>
+            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
+            <a href="/landlord/accounting.html">Accounting</a>
+            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
+            <a href="/landlord/viewings.html">Viewings</a>
+            <a href="/landlord/inventory.html">Inventory</a>
+            <a href="/staff.html">Staff</a>
+            <a href="/settings.html">Settings</a>
+            <a href="/audit-log.html">Audit Log</a>
+          </div>
+          <div class="drop-col">
+            <span class="drop-head wh">Wholesale Suite</span>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/customers.html">Customers</a>
+            <a href="/products.html">Products</a>
+            <a href="/orders.html">Orders</a>
+            <a href="/invoices.html">Invoices</a>
+            <a href="/accounting.html">Accounting</a>
+            <a href="/analytics.html">Analytics</a>
+            <a href="/wholesale-suite.html">All wholesale modules →</a>
+          </div>
+        </div>
+      </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
       <a href="/#trust" class="nav-link">Trust</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
@@ -120,15 +161,22 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <section class="hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-inner">
-    <div class="hero-badge"><span class="b-dot"></span> Part of ShahoSuite BOS — Property &amp; landlord management</div>
-    <h1><span class="h1-grad">Landlord Suite</span><br/>for UK property management</h1>
-    <p class="hero-sub">Operational software for landlords and letting agents — properties, tenants, rent, compliance and maintenance on one system. Built on the ShahoSuite Business Operating System, hosted on Azure UK.</p>
+    <div class="hero-badge"><span class="b-dot"></span> Suite 02 — Property · ShahoSuite BOS</div>
+    <h1><span class="h1-grad">Landlord Suite</span><br/>UK property management in one place</h1>
+    <p class="hero-sub">Portfolio, tenants, leases, rent, compliance and maintenance — with automated reminders so nothing slips. Minimum clicks. Smart, intelligent, autonomous.</p>
     <div class="hero-actions">
       <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access →</a>
       <a href="#preview" class="btn-secondary">See preview ↓</a>
     </div>
   </div>
 </section>
+
+<div class="value-row">
+  <span class="value-pill">⚡ Minimum clicks</span>
+  <span class="value-pill">🤖 Automated reminders</span>
+  <span class="value-pill">🏠 Free tenant portal</span>
+  <span class="value-pill">🇬🇧 UK compliance built-in</span>
+</div>
 
 <section class="section" id="preview">
   <div class="si">
@@ -145,24 +193,96 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       </div>
     </div>
 
-    <span class="stag">What you can run</span>
-    <h2>Everything landlord management needs</h2>
-    <p class="sdesc">From tenancy to compliance — the outcomes that matter, without listing every screen in the system.</p>
-    <div class="outcome-grid">
-      <div class="outcome-card"><h3>Properties, tenants &amp; leases</h3><p>Portfolio view with tenant records, lease dates and unit-level detail.</p></div>
-      <div class="outcome-card"><h3>Rent tracking &amp; accounting</h3><p>Paid, arrears and void periods linked to your accounts.</p></div>
-      <div class="outcome-card"><h3>Compliance &amp; certificates</h3><p>Gas Safety, EPC and EICR tracked with alerts before expiry.</p></div>
-      <div class="outcome-card"><h3>Maintenance &amp; viewings</h3><p>Log repairs, schedule viewings and keep a record of work done.</p></div>
-      <div class="outcome-card"><h3>Free tenant portal &amp; reminders</h3><p>Tenant portal included — automated email reminders for rent and compliance.</p></div>
+    <span class="stag">Modules</span>
+    <h2>Everything included in Landlord Suite</h2>
+    <p class="sdesc">From portfolio command centre to tenant portal — automated cert, lease and rent reminders run in the background so you stay ahead of every obligation.</p>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Main</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">📊</span>Dashboard</h3><p>Your portfolio command centre — occupancy, rent collected, arrears, open maintenance and expiring certs at a glance.</p><div class="mod-opts"><strong>Highlights:</strong> Financial pulse, rent collection strip, smart alerts with one-click links, first-run checklist, tenant portal link.</div><p class="mod-auto">Automated: cert, lease, Section 13 and referencing alerts on every open.</p></article>
+        <article class="mod-card"><h3><span class="mod-ico">🏘️</span>Properties</h3><p>Full portfolio — lettings, HMOs and voids with rooms, photos, legal landlord details and compliance dates.</p><div class="mod-opts"><strong>Options:</strong> Postcode lookup, EPC, Gas Safety, EICR, HMO licence, room management, up to 5 photos, Ready to Rent status.</div><a href="/landlord/properties.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">👥</span>Tenants</h3><p>Tenant CRM from application to move-out — referencing, Right to Rent, guarantor and emergency contacts.</p><div class="mod-opts"><strong>Actions:</strong> Portal invite, email statement, archive, property matching from preferences.</div><a href="/landlord/tenants.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📄</span>Leases</h3><p>Create assured shorthold tenancies, generate PDF summary, email to tenant, track deposit protection, Section 13 and renewals.</p><div class="mod-opts"><strong>Options:</strong> AST / Periodic / Fixed Term, deposit scheme (TDS, DPS, MyDeposits), rent due day, break clause.</div><p class="mod-auto">Automated: rent records per month, lease expiry alerts, optional portal invite after create.</p></article>
+        <article class="mod-card"><h3><span class="mod-ico">🏷️</span>Sales &amp; Buy</h3><p>Track property deals from evaluation to completion on list or kanban board.</p><div class="mod-opts"><strong>Stages:</strong> Evaluating → Under Offer → Exchanged → Completed → Withdrawn.</div></article>
+      </div>
     </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Money</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">💷</span>Rent Tracker</h3><p>Month-by-month rent collection — paid, partial or overdue. Record payments, chase arrears, email receipts with your bank details.</p><div class="mod-opts"><strong>Options:</strong> Month navigator, KPIs, bulk mark paid, overdue chase panel.</div><p class="mod-auto">Automated: tenant rent reminders (3 days before, due day, 3 &amp; 7 days overdue) + daily arrears digest to landlord.</p><a href="/landlord/rent-tracker.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📒</span>Accounting</h3><p>UK tax-year income and expenses per property — with Section 24 mortgage interest relief. <em>Pro plan.</em></p><div class="mod-opts"><strong>Options:</strong> Tax years, expense categories, bank CSV import, tax report CSV, per-property yield.</div><p class="mod-auto">Automated: rent payments logged as income; inventory purchases can log as furniture expenses.</p><a href="/landlord/accounting.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Compliance</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">🛠️</span>Maintenance</h3><p>Log repairs, track contractors and close jobs — including requests from tenants via the portal.</p><div class="mod-opts"><strong>Options:</strong> Priority levels, access notice (Section 11), photos, cost tracking, tenant-submitted jobs.</div></article>
+        <article class="mod-card"><h3><span class="mod-ico">📁</span>Docs &amp; Certs</h3><p>Gas Safety (CP12), EPC, EICR, HMO licence, insurance and more — UK compliance matrix per property type.</p><div class="mod-opts"><strong>Options:</strong> Issue/expiry dates, share with tenant, renew, log maintenance job from cert.</div><p class="mod-auto">Automated: landlord email alerts at 60, 30, 14 and 7 days before expiry.</p><a href="/landlord/certificates.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📅</span>Viewings</h3><p>Book appointments, inspections, check-ins and check-outs. Record outcomes and onboard tenants in one flow.</p><div class="mod-opts"><strong>Outcomes:</strong> Let · Interested · Not Interested · No Show · Completed.</div><a href="/landlord/viewings.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📋</span>Inventory</h3><p>Room-by-room check-in inventory with photos and PDF — condition and purchase value tracked.</p><div class="mod-opts"><strong>Options:</strong> Starter kit (8 furnished items), check-in PDF per property.</div><p class="mod-auto">Automated: purchase price can log to Accounting.</p><a href="/landlord/inventory.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Team &amp; system</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">🧑‍💼</span>Staff</h3><p>Invite agents, accountants or maintenance staff with Admin, Manager, Staff, Editor or Viewer roles. <em>Pro plan.</em></p><a href="/staff.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📨</span>Messages</h3><p>Email tenants in bulk with templates — rent reminders, maintenance updates, viewing confirmations. <em>Pro plan.</em></p></article>
+        <article class="mod-card"><h3><span class="mod-ico">🎫</span>Support</h3><p>Raise tickets with ShahoSuite support — technical, billing, account and feature requests.</p><a href="/support.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">⚙️</span>Settings</h3><p>Business profile, bank details (used in rent emails and tenant portal), lease defaults and alert toggles.</p><a href="/settings.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📜</span>Audit Log</h3><p>Every action recorded — leases, rent marked paid, portal invites, certs renewed. <em>Enterprise plan.</em></p><a href="/audit-log.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="portal-box" id="tenant-portal">
+      <h3>Tenant Portal — included free (one link for all tenants)</h3>
+      <p>Share <strong>app.shahosuite.com/tenant/login</strong>. Tenants set a password from an invite email and access:</p>
+      <div class="portal-grid">
+        <div class="portal-tab"><strong>My Home</strong>Property, tenancy, deposit protection, landlord contact</div>
+        <div class="portal-tab"><strong>Rent</strong>Bank details, payment reference, rent history</div>
+        <div class="portal-tab"><strong>Maintenance</strong>Report issues with photo — creates a landlord job automatically</div>
+        <div class="portal-tab"><strong>Documents</strong>AST summary, Gas Safety, EPC, EICR, shared certs</div>
+      </div>
+    </div>
+
+    <div class="mod-group" style="margin-top:48px">
+      <div class="mod-group-head">Why ShahoSuite? — Automation</div>
+      <table class="auto-table">
+        <thead><tr><th>Automation</th><th>Who</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td>Certificate expiry alerts</td><td>Landlord</td><td>60 / 30 / 14 / 7 days before</td></tr>
+          <tr><td>Lease expiry alerts</td><td>Landlord</td><td>90 / 60 / 30 / 14 days before</td></tr>
+          <tr><td>Rent reminders</td><td>Tenant</td><td>3 days before, due day, 3 &amp; 7 days overdue</td></tr>
+          <tr><td>Arrears digest</td><td>Landlord</td><td>Daily when rent is overdue</td></tr>
+          <tr><td>Tenancy agreement email</td><td>Tenant</td><td>One click from Leases</td></tr>
+          <tr><td>Portal invite</td><td>Tenant</td><td>After lease create or from Tenants</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Plan tiers</div>
+      <table class="plan-table">
+        <thead><tr><th>Feature</th><th>Starter</th><th>Pro</th><th>Enterprise</th></tr></thead>
+        <tbody>
+          <tr><td>Dashboard, Properties, Tenants, Leases, Rent, Maintenance, Certs, Viewings, Inventory, Tenant Portal</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Accounting, Messages, Staff</td><td>—</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Audit Log</td><td>—</td><td>—</td><td>✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="legal-note"><strong>Legal note:</strong> Tenancy outputs are agreement summaries for record-keeping — not solicitor-drafted ASTs. Configure bank details once in Settings for rent reminders, chase emails and the tenant portal Rent tab.</p>
   </div>
 </section>
 
 <section class="section" style="background:#f8fafc;padding-top:56px;padding-bottom:56px">
   <div class="si">
-    <span class="stag" style="color:#10b981">Who it is for</span>
+    <span class="stag" style="color:#2563eb">Who it is for</span>
     <h2>Built for UK property operations</h2>
-    <p class="sdesc">If you manage rental property for income — this suite is for you.</p>
     <div class="who-grid">
       <div class="who-pill">Private landlords</div>
       <div class="who-pill">Letting agents</div>
@@ -173,18 +293,16 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 </section>
 
 <div class="bos-bar">
-  Landlord Suite runs on <a href="/">ShahoSuite BOS</a> — the same UK platform as Wholesale Suite. Run a cash and carry or grocery business? <a href="/wholesale-suite.html">See Wholesale Suite →</a>
+  Landlord Suite runs on <a href="/">ShahoSuite BOS</a> — the same UK CRM + ERP platform as Wholesale Suite. <a href="/wholesale-suite.html">See Wholesale Suite →</a>
 </div>
 
 <section class="cta-section">
-  <canvas id="cta-canvas"></canvas>
   <div class="cta-inner">
-    <div class="cta-badge"><span class="b-dot"></span> Limited applications</div>
     <h2 class="cta-title">Apply for Landlord Suite access</h2>
-    <p class="cta-desc">We review every application and respond within one working day. Approved clients receive demo access and onboarding from our UK team.</p>
-    <div class="cta-btns">
+    <p class="cta-desc">We review every application personally. No instant self-signup — approved clients receive a 14-day guided demo. Response within one business day.</p>
+    <div class="hero-actions">
       <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access →</a>
-      <a href="https://app.shahosuite.com/book/3/" class="btn-secondary">Request a demo</a>
+      <a href="mailto:admin@shahosuite.com" class="btn-secondary">Contact us</a>
     </div>
   </div>
 </section>
@@ -197,57 +315,21 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <a href="/landlord-suite.html">Landlord Suite</a>
     <a href="/pricing.html">Pricing</a>
     <a href="https://app.shahosuite.com/register">Apply for access</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
+    <a href="https://app.shahosuite.com/privacy">Privacy</a>
+    <a href="https://app.shahosuite.com/terms">Terms</a>
     <a href="/security.html">Security</a>
-    <a href="https://app.shahosuite.com/login">Log in</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
   </div>
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p>
 </footer>
 
 <script>
 (function(){
-  const canvas = document.getElementById('hero-canvas');
-  if(!canvas) return;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const small = window.matchMedia('(max-width: 560px)').matches;
-  const ctx = canvas.getContext('2d');
-  const COLORS = ['#7dd3fc','#38bdf8','#0ea5e9','#6ee7b7','#a5b4fc'];
-  const MAX_DIST = small ? 96 : 118;
-  let W, H, nodes = [];
-  const total = reduced ? 36 : (small ? 40 : 64);
-  function resize(){
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    nodes = [];
-    for(let i = 0; i < total; i++){
-      nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.12,vy:(Math.random()-0.5)*0.12,s:3.5+Math.random()*3.5,c:COLORS[i%COLORS.length],p:Math.random()*Math.PI*2});
-    }
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    const t = performance.now()*0.001;
-    nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<-12)n.x=W+12;if(n.x>W+12)n.x=-12;if(n.y<-12)n.y=H+12;if(n.y>H+12)n.y=-12;});
-    for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){
-      const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<MAX_DIST){ctx.strokeStyle=`rgba(14,165,233,${(1-d/MAX_DIST)*0.16})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke();}
-    }
-    nodes.forEach(n=>{const pulse=0.7+Math.sin(t*0.7+n.p)*0.22;ctx.globalAlpha=0.55;ctx.fillStyle=n.c;ctx.beginPath();ctx.arc(n.x,n.y,n.s*pulse*0.35,0,Math.PI*2);ctx.fill();});
-    ctx.globalAlpha=1;
-    if(!reduced) requestAnimationFrame(draw);
-  }
-  resize(); window.addEventListener('resize',resize);
-  if(reduced) draw(); else requestAnimationFrame(draw);
-})();
-(function(){
-  const c=document.getElementById('cta-canvas'); if(!c)return;
-  const ctx=c.getContext('2d'); let w,h,o=0;
-  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;}
-  function draw(){ctx.clearRect(0,0,w,h);o+=0.06;const g=70;ctx.strokeStyle='rgba(14,165,233,0.05)';ctx.lineWidth=1;
-    for(let x=-g;x<w+g;x+=g){ctx.beginPath();ctx.moveTo(x+(o%g),0);ctx.lineTo(x+(o%g),h);ctx.stroke();}
-    for(let y=-g;y<h+g;y+=g){ctx.beginPath();ctx.moveTo(0,y+(o%g));ctx.lineTo(w,y+(o%g));ctx.stroke();}
-    requestAnimationFrame(draw);}
-  resize();window.addEventListener('resize',resize);draw();
+  const c=document.getElementById('hero-canvas');if(!c)return;
+  const ctx=c.getContext('2d');let W,H,cells=[],t=0;const G=72;
+  function build(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;cells=[];for(let x=0;x<W;x+=G)for(let y=0;y<H;y+=G)cells.push({x,y,p:Math.random()*Math.PI*2,s:.05+Math.random()*.04});}
+  function draw(){ctx.clearRect(0,0,W,H);for(const cell of cells){const a=Math.max(0,Math.sin(t*cell.s+cell.p));if(a<=.06)continue;ctx.globalAlpha=a*.048;ctx.strokeStyle='#64748b';ctx.strokeRect(cell.x+8,cell.y+8,G-16,G-16);}ctx.globalAlpha=1;t+=.0028;requestAnimationFrame(draw);}
+  build();window.addEventListener('resize',build);draw();
 })();
 </script>
 </body>

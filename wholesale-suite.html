@@ -3,30 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wholesale Suite — Cash &amp; Carry &amp; Grocery BOS | ShahoSuite UK</title>
-<meta name="description" content="ShahoSuite Wholesale Suite is operational software for UK cash and carry, grocery wholesalers and B2B distributors — stock, orders, invoices, trade accounts, expiry tracking and booking on one BOS platform." />
+<title>Wholesale Suite — UK Cash &amp; Carry &amp; Grocery Software | ShahoSuite</title>
+<meta name="description" content="ShahoSuite Wholesale Suite — minimum clicks, smart automation. UK cash and carry, grocery and B2B wholesale: dashboard, CRM, products, POs, stock, orders, invoices, online shop and analytics on one BOS platform." />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Shaho Solutions Limited" />
 <meta name="geo.region" content="GB" />
 <link rel="canonical" href="https://www.shahosuite.com/wholesale-suite.html" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="ShahoSuite Wholesale Suite — UK Cash &amp; Carry Software" />
-<meta property="og:description" content="Run cash and carry, grocery and wholesale operations on ShahoSuite BOS. Apply for access — we respond within one working day." />
+<meta property="og:description" content="Customer → product → PO → stock → order → invoice → online shop — one intelligent UK platform. Apply for access." />
 <meta property="og:url" content="https://www.shahosuite.com/wholesale-suite.html" />
 <meta property="og:image" content="https://www.shahosuite.com/logo.png" />
 <meta property="og:locale" content="en_GB" />
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"SoftwareApplication",
-  "name":"ShahoSuite Wholesale Suite",
-  "applicationCategory":"BusinessApplication",
-  "operatingSystem":"Web",
-  "url":"https://www.shahosuite.com/wholesale-suite.html",
-  "description":"Operational software for UK cash and carry, grocery wholesalers and B2B distributors on the ShahoSuite Business Operating System.",
-  "isPartOf":{"@type":"SoftwareApplication","name":"ShahoSuite","url":"https://www.shahosuite.com"},
-  "provider":{"@type":"Organization","name":"Shaho Solutions Limited","identifier":"16017117"}
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ShahoSuite Wholesale Suite","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://www.shahosuite.com/wholesale-suite.html","description":"UK wholesale business operating system for cash and carry, grocery and B2B distribution.","isPartOf":{"@type":"SoftwareApplication","name":"ShahoSuite","url":"https://www.shahosuite.com"},"provider":{"@type":"Organization","name":"Shaho Solutions Limited","identifier":"16017117"}}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,58 +26,72 @@
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.6;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(15,23,42,0.08);box-shadow:0 1px 0 rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.04)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(15,23,42,.08);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo img{height:44px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:2px}
-.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all 0.15s;white-space:nowrap}
-.nav-link:hover,.nav-link.active{background:#fff7ed;color:#c2410c}
+.nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer}
+.nav-link:hover,.nav-link.active{background:#eff6ff;color:#1d4ed8}
+.nav-dropdown{position:relative}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 20px 50px rgba(15,23,42,.12);padding:16px 18px;grid-template-columns:1fr 1fr;gap:20px;z-index:300}
+.nav-dropdown:hover .nav-drop-panel,.nav-dropdown:focus-within .nav-drop-panel{display:grid}
+.drop-head{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #f1f5f9}
+.drop-head.ll{color:#059669}
+.drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0;transition:color .15s}
+.drop-col a:hover{color:#0f172a}
 .nav-btns{display:flex;gap:8px;align-items:center}
-.btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
-.btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
-.btn-signup{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:800;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #334155;transition:all 0.15s;white-space:nowrap}
-.btn-signup:hover{background:#1e293b;transform:translateY(-1px)}
-.hero{position:relative;overflow:hidden;padding:108px 28px 80px;text-align:center;background:linear-gradient(180deg,#fffbf5 0%,#fff7ed 40%,#ffffff 100%);margin-top:72px}
-.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 18% 20%,rgba(249,115,22,.14),transparent),radial-gradient(ellipse 44% 36% at 84% 24%,rgba(251,146,60,.12),transparent)}
-#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.52}
+.btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db}
+.btn-signup{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:800;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #334155;white-space:nowrap}
+.hero{position:relative;overflow:hidden;padding:108px 28px 72px;text-align:center;background:linear-gradient(180deg,#eff6ff 0%,#fff 55%);margin-top:72px}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 20% 20%,rgba(37,99,235,.1),transparent)}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.45}
 .hero-inner{position:relative;z-index:1;max-width:780px;margin:0 auto}
-.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#9a3412;background:rgba(255,255,255,0.9);border:1px solid rgba(249,115,22,0.2);margin-bottom:22px}
-.b-dot{width:8px;height:8px;border-radius:50%;background:#f97316;box-shadow:0 0 0 4px rgba(249,115,22,0.16)}
-h1{font-size:clamp(32px,5.5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;margin-bottom:18px;color:#0f172a;text-wrap:balance}
-.h1-grad{display:block;background:linear-gradient(115deg,#0f172a 4%,#ea580c 38%,#f97316 62%,#10b981 88%);background-clip:text;-webkit-background-clip:text;color:transparent}
-.hero-sub{font-size:17px;color:#475569;max-width:580px;margin:0 auto 32px;line-height:1.8}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:800;color:#1d4ed8;background:#fff;border:1px solid #bfdbfe;margin-bottom:22px}
+.b-dot{width:8px;height:8px;border-radius:50%;background:#2563eb}
+h1{font-size:clamp(32px,5.5vw,56px);font-weight:900;line-height:1.06;letter-spacing:-.04em;margin-bottom:16px}
+.h1-grad{background:linear-gradient(115deg,#1e3a8a,#2563eb,#6366f1);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero-sub{font-size:17px;color:#475569;max-width:600px;margin:0 auto 28px;line-height:1.75}
 .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-.btn-primary{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155;transition:transform .2s,box-shadow .2s}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 7px 0 #334155}
-.btn-secondary{display:inline-flex;align-items:center;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db;transition:transform .2s}
-.btn-secondary:hover{transform:translateY(-2px)}
+.btn-primary{display:inline-flex;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:2px solid #0f172a;box-shadow:0 5px 0 #334155}
+.btn-secondary{display:inline-flex;padding:14px 28px;border-radius:12px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 5px 0 #d1d5db}
+.value-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px;margin:0 auto;padding:0 28px 48px}
+.value-pill{padding:10px 16px;border-radius:999px;font-size:12.5px;font-weight:700;color:#334155;background:#f8fafc;border:1px solid #e2e8f0}
 .section{padding:72px 28px}
 .si{max-width:1100px;margin:0 auto}
-.stag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#ea580c;display:block}
-h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;color:#0f172a}
-.sdesc{font-size:14.5px;color:#64748b;max-width:620px;margin-bottom:28px;line-height:1.75}
-.outcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.outcome-card{background:linear-gradient(145deg,#fff,rgba(255,247,237,.9));border:1px solid rgba(251,191,36,.35);border-radius:18px;padding:24px;box-shadow:0 10px 28px rgba(15,23,42,.06)}
-.outcome-card h3{font-size:15px;font-weight:800;margin-bottom:8px;color:#0f172a}
-.outcome-card p{font-size:13.5px;color:#475569;line-height:1.65}
-.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
-.who-pill{padding:14px 18px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13.5px;font-weight:600;color:#334155;text-align:center}
+.stag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#2563eb;display:block}
+h2{font-size:clamp(22px,3.5vw,34px);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.sdesc{font-size:14.5px;color:#64748b;max-width:680px;margin-bottom:32px;line-height:1.75}
+.flow-bar{background:#0f172a;color:rgba(255,255,255,.85);padding:22px 28px;text-align:center;font-size:13.5px;line-height:1.65}
+.flow-bar strong{color:#fff}
+.mod-group{margin-bottom:40px}
+.mod-group-head{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#94a3b8;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #f1f5f9}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.mod-card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;transition:border-color .2s,box-shadow .2s}
+.mod-card:hover{border-color:#cbd5e1;box-shadow:0 8px 24px rgba(15,23,42,.06)}
+.mod-card h3{font-size:15px;font-weight:800;margin-bottom:6px;color:#0f172a;display:flex;align-items:center;gap:8px}
+.mod-ico{font-size:16px;line-height:1}
+.mod-card p{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:8px}
+.mod-opts{font-size:11.5px;color:#475569;line-height:1.55;padding-top:8px;border-top:1px solid #f1f5f9}
+.mod-opts strong{color:#334155;font-weight:700}
+.mod-card a.mod-more{font-size:11px;font-weight:800;color:#2563eb;margin-top:8px;display:inline-block}
+.highlight-box{background:linear-gradient(135deg,#eff6ff,#f0fdf4);border:1px solid #dbeafe;border-radius:18px;padding:28px;margin-top:8px}
+.highlight-box h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.highlight-box p,.highlight-box li{font-size:14px;color:#475569;line-height:1.7}
+.highlight-box ul{margin:12px 0 0 18px}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.who-pill{padding:14px;border-radius:14px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;font-weight:600;text-align:center;color:#334155}
 .bos-bar{background:#0f172a;color:rgba(255,255,255,.75);padding:20px 28px;text-align:center;font-size:13.5px}
-.bos-bar a{color:#fb923c;font-weight:700}
-.bos-bar a:hover{text-decoration:underline}
-.cta-section{position:relative;overflow:hidden;padding:80px 28px;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
-#cta-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.6}
-.cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
-.cta-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;border-radius:50px;font-size:11px;font-weight:800;color:#9a3412;background:#fff7ed;border:1px solid rgba(249,115,22,.25);margin-bottom:16px}
-.cta-title{font-size:clamp(24px,3.8vw,38px);font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.bos-bar a{color:#60a5fa;font-weight:700}
+.cta-section{padding:80px 28px;text-align:center;background:#f8fafc;border-top:1px solid #e5e7eb}
+.cta-inner{max-width:640px;margin:0 auto}
+.cta-title{font-size:clamp(24px,3.8vw,36px);font-weight:900;margin-bottom:12px}
 .cta-desc{font-size:16px;color:#475569;margin-bottom:28px;line-height:1.75}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;border-top:1px solid #e5e7eb;background:#fff}
 .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:10px}
-.footer-links a{color:#64748b;transition:color .2s;padding:2px 4px}
+.footer-links a{color:#64748b}
 .footer-links a:hover{color:#0f172a}
-@media(max-width:880px){.nav-links{display:none}}
-@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 64px}.hero-actions{flex-direction:column;align-items:center}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}}
+@media(max-width:880px){.nav-links{display:none}.nav-drop-panel{min-width:280px;grid-template-columns:1fr;left:0;transform:none}}
+@media(max-width:560px){.nav-inner{padding:0 12px;height:64px}.hero{margin-top:64px;padding:88px 20px 56px}.btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}}
 </style>
 </head>
 <body>
@@ -98,6 +102,38 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <div class="nav-links">
       <a href="/wholesale-suite.html" class="nav-link active">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
+        <div class="nav-drop-panel">
+          <div class="drop-col">
+            <span class="drop-head">Wholesale Suite</span>
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/customers.html">Customers</a>
+            <a href="/products.html">Products</a>
+            <a href="/suppliers.html">Suppliers</a>
+            <a href="/categories.html">Categories</a>
+            <a href="/orders.html">Orders</a>
+            <a href="/invoices.html">Invoices</a>
+            <a href="/credit-notes.html">Credit Notes</a>
+            <a href="/accounting.html">Accounting</a>
+            <a href="/analytics.html">Analytics</a>
+          </div>
+          <div class="drop-col">
+            <span class="drop-head">Wholesale · continued</span>
+            <a href="/booking.html">Booking</a>
+            <a href="/send-message.html">Send Message</a>
+            <a href="/support.html">Support</a>
+            <a href="/staff.html">Staff</a>
+            <a href="/settings.html">Settings</a>
+            <a href="/audit-log.html">Audit Log</a>
+            <span class="drop-head ll" style="margin-top:12px">Landlord Suite</span>
+            <a href="/landlord/properties.html">Properties</a>
+            <a href="/landlord/tenants.html">Tenants</a>
+            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
+            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
+          </div>
+        </div>
+      </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
       <a href="/#trust" class="nav-link">Trust</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
@@ -113,59 +149,124 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 <section class="hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-inner">
-    <div class="hero-badge"><span class="b-dot"></span> Part of ShahoSuite BOS — Wholesale operations</div>
-    <h1><span class="h1-grad">Wholesale Suite</span><br/>for cash &amp; carry and grocery</h1>
-    <p class="hero-sub">Operational software for UK wholesalers — stock, trade accounts, orders and invoices in one place. Built on the ShahoSuite Business Operating System, hosted on Azure UK.</p>
+    <div class="hero-badge"><span class="b-dot"></span> Suite 01 — Operations · ShahoSuite BOS</div>
+    <h1><span class="h1-grad">Wholesale Suite</span><br/>for UK cash &amp; carry &amp; grocery</h1>
+    <p class="hero-sub">Minimum clicks. Smart automation. Real autonomy. Run trade accounts, stock, orders, invoices and your B2B shop — without stitching Sage, Shopify and spreadsheets.</p>
     <div class="hero-actions">
       <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access →</a>
-      <a href="#outcomes" class="btn-secondary">See what you can run ↓</a>
+      <a href="#modules" class="btn-secondary">See all modules ↓</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="outcomes">
+<div class="value-row">
+  <span class="value-pill">⚡ Minimum clicks</span>
+  <span class="value-pill">🤖 Smart automation</span>
+  <span class="value-pill">🇬🇧 UK food wholesale</span>
+  <span class="value-pill">☁️ Azure UK hosted</span>
+</div>
+
+<div class="flow-bar">
+  <strong>One workflow:</strong> Customer → Product → Supplier → Purchase Order → Stock → Order → Invoice → Online Shop
+</div>
+
+<section class="section" id="modules">
   <div class="si">
-    <span class="stag">What you can run</span>
-    <h2>Everything a wholesale operation needs</h2>
-    <p class="sdesc">Outcome-focused — the day-to-day work of running cash and carry, grocery or B2B wholesale, without switching between spreadsheets and separate tools.</p>
-    <div class="outcome-grid">
-      <div class="outcome-card"><h3>Customers &amp; trade accounts</h3><p>Manage trade customers, account pricing and credit in one system.</p></div>
-      <div class="outcome-card"><h3>Stock, suppliers &amp; purchase orders</h3><p>Track inventory, supplier orders and expiry dates before stock goes to waste.</p></div>
-      <div class="outcome-card"><h3>Orders, invoices &amp; credit notes</h3><p>From order to invoice to credit note — linked and auditable.</p></div>
-      <div class="outcome-card"><h3>Accounting &amp; analytics</h3><p>See margins, sales performance and financial summaries on one dashboard.</p></div>
-      <div class="outcome-card"><h3>Booking &amp; messaging</h3><p>Appointments, SMS and email to customers — support built into the suite.</p></div>
-      <div class="outcome-card"><h3>Team access &amp; audit trail</h3><p>Staff permissions and a full log of who changed what.</p></div>
+    <span class="stag">Modules</span>
+    <h2>Everything included in Wholesale Suite</h2>
+    <p class="sdesc">Grouped by how your team works — from the morning dashboard to end-of-day invoicing. Intelligent defaults, automated links between modules, role-based access for warehouse, sales and admin.</p>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Main</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">📊</span>Dashboard</h3><p>Live business snapshot — revenue, orders, stock alerts and quick actions so the owner sees the day on one screen.</p><div class="mod-opts"><strong>Options:</strong> KPI cards, revenue chart, low-stock and expiry awareness, role-based quick links.</div><a href="/dashboard.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">👤</span>Customers</h3><p>Full B2B CRM with trade accounts, credit terms and spend history in one place.</p><div class="mod-opts"><strong>Options:</strong> Retail / Wholesale / Walk-in types, credit limit and balance, VAT details, portal invite link, tags and notes.</div><a href="/customers.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Inventory</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">📦</span>Products</h3><p>Product catalogue built for UK food wholesale — retail and trade pricing on the same item.</p><div class="mod-opts"><strong>Options:</strong> SKU, barcode, unit &amp; box selling, MOQ, expiry / best-before, allergens, tier pricing A/B/C, public shop on/off.</div><a href="/products.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">🏭</span>Suppliers</h3><p>Supplier directory linked to purchasing — who supplies what, with payment terms.</p><div class="mod-opts"><strong>Options:</strong> Logo and contacts, payment terms, link to POs and purchase history.</div><a href="/suppliers.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">🏷️</span>Categories</h3><p>Organise products for fast search in the office, warehouse and online shop.</p><div class="mod-opts"><strong>Options:</strong> Name, description, notes, product count per category.</div><a href="/categories.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📋</span>Purchase Orders</h3><p>Create and track POs from supplier to delivery in one workflow.</p><div class="mod-opts"><strong>Options:</strong> Line items, receive stock into inventory, status tracking, supplier filter.</div></article>
+        <article class="mod-card"><h3><span class="mod-ico">📥</span>Stock Movements</h3><p>Full stock in/out history for warehouse accuracy and audits.</p><div class="mod-opts"><strong>Options:</strong> Adjustments, PO receipts, returns, damage, transfers — logged with reason.</div></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Sales</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">🛒</span>Orders</h3><p>Sales orders from quote to fulfilment — customer and product data carried through automatically.</p><div class="mod-opts"><strong>Options:</strong> Retail or wholesale pricing by customer type, unit and box lines, status workflow.</div><a href="/orders.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">🧾</span>Invoices</h3><p>Professional UK invoices with VAT and your bank details on every document.</p><div class="mod-opts"><strong>Options:</strong> Create from order, PDF, email, payment status, partial payments, due dates.</div><a href="/invoices.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">↩️</span>Credit Notes</h3><p>Issue credits and refunds against invoices in a proper audit trail.</p><div class="mod-opts"><strong>Options:</strong> Link to invoice, amount and reason, professional format for records.</div><a href="/credit-notes.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Finance</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">💰</span>Accounting</h3><p>Accounts receivable overview — who owes what and when.</p><div class="mod-opts"><strong>Options:</strong> Income view, ageing, links to invoices and payments, VAT-aware totals.</div><a href="/accounting.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📈</span>Analytics</h3><p>Business trends for the director — no exporting to spreadsheets.</p><div class="mod-opts"><strong>Options:</strong> Revenue trends, customer and order insights, performance over time.</div><a href="/analytics.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">Communication</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">📅</span>Booking</h3><p>Appointments and calendar for deliveries, collections or customer visits.</p><div class="mod-opts"><strong>Options:</strong> Calendar view, public booking page, reminders where configured.</div><a href="/booking.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">🛍️</span>Online Shop</h3><p>Public B2B shop plus customer portal — trade buyers order online at the right price.</p><div class="mod-opts"><strong>Options:</strong> Guest retail, trade invite-only wholesale, box and unit ordering, cart and checkout, order tracking.</div></article>
+        <article class="mod-card"><h3><span class="mod-ico">📨</span>Send Message</h3><p>Email and SMS to customers for promotions, reminders and updates — including bulk marketing to all customers at once.</p><div class="mod-opts"><strong>Options:</strong> Bulk or selected customers, templates, campaign-style sends.</div><a href="/send-message.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">🎫</span>Support</h3><p>Raise tickets to ShahoSuite support when you need help with the platform.</p><div class="mod-opts"><strong>Options:</strong> New ticket, ticket history, superadmin routing.</div><a href="/support.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="mod-group">
+      <div class="mod-group-head">System</div>
+      <div class="mod-grid">
+        <article class="mod-card"><h3><span class="mod-ico">⚙️</span>Settings</h3><p>Business identity and legal details that feed invoices, shop and emails everywhere.</p><div class="mod-opts"><strong>Options:</strong> Logo, VAT number, bank details, invoice notes, working hours, email settings.</div><a href="/settings.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">🧑‍💼</span>Staff</h3><p>Team access with roles — warehouse, sales and admin see only what they need.</p><div class="mod-opts"><strong>Options:</strong> Admin, Manager, Editor, Viewer roles, invite by email, working hours.</div><a href="/staff.html" class="mod-more">Learn more →</a></article>
+        <article class="mod-card"><h3><span class="mod-ico">📜</span>Audit Log</h3><p>Complete who-did-what history for compliance and disputes.</p><div class="mod-opts"><strong>Options:</strong> Filter by module, user, date and action, export CSV.</div><a href="/audit-log.html" class="mod-more">Learn more →</a></article>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Built for UK food distributors</h3>
+      <p>Expiry and best-before on products, allergen fields, unit and box selling, wholesale vs retail prices on the same SKU, MOQ per product, and trade customer portal with invite-only wholesale login.</p>
+      <ul>
+        <li>No stitching Sage, Shopify and spreadsheets — one intelligent system</li>
+        <li>Automated links between orders, invoices, stock and accounting</li>
+        <li>From £50/month Director · £15/month per staff · Apply for 14-day guided demo</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section class="section" style="background:#f8fafc;padding-top:56px;padding-bottom:56px">
   <div class="si">
-    <span class="stag" style="color:#10b981">Who it is for</span>
+    <span class="stag" style="color:#059669">Who it is for</span>
     <h2>Built for how wholesale actually works</h2>
-    <p class="sdesc">If you move product in volume — this suite is for you.</p>
     <div class="who-grid">
       <div class="who-pill">Cash &amp; carry</div>
       <div class="who-pill">Grocery wholesalers</div>
       <div class="who-pill">B2B distributors</div>
-      <div class="who-pill">Product-led retailers</div>
+      <div class="who-pill">UK food &amp; drink trade</div>
     </div>
   </div>
 </section>
 
 <div class="bos-bar">
-  Wholesale Suite runs on <a href="/">ShahoSuite BOS</a> — the same UK platform as Landlord Suite. Need property management instead? <a href="/landlord-suite.html">See Landlord Suite →</a>
+  Wholesale Suite runs on <a href="/">ShahoSuite BOS</a> — the same UK CRM + ERP platform as Landlord Suite. <a href="/landlord-suite.html">See Landlord Suite →</a>
 </div>
 
 <section class="cta-section">
-  <canvas id="cta-canvas"></canvas>
   <div class="cta-inner">
-    <div class="cta-badge"><span class="b-dot"></span> Limited applications</div>
     <h2 class="cta-title">Apply for Wholesale Suite access</h2>
-    <p class="cta-desc">We review every application and respond within one working day. Approved clients receive demo access and onboarding from our UK team.</p>
-    <div class="cta-btns">
+    <p class="cta-desc">We review every application personally. No instant self-signup — approved clients receive a 14-day guided demo. Response within one business day.</p>
+    <div class="hero-actions">
       <a href="https://app.shahosuite.com/register" class="btn-primary">Apply for access →</a>
-      <a href="https://app.shahosuite.com/book/3/" class="btn-secondary">Request a demo</a>
+      <a href="mailto:admin@shahosuite.com" class="btn-secondary">Contact us</a>
     </div>
   </div>
 </section>
@@ -178,57 +279,21 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <a href="/landlord-suite.html">Landlord Suite</a>
     <a href="/pricing.html">Pricing</a>
     <a href="https://app.shahosuite.com/register">Apply for access</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms</a>
+    <a href="https://app.shahosuite.com/privacy">Privacy</a>
+    <a href="https://app.shahosuite.com/terms">Terms</a>
     <a href="/security.html">Security</a>
-    <a href="https://app.shahosuite.com/login">Log in</a>
+    <a href="mailto:admin@shahosuite.com">Contact</a>
   </div>
   <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p>
 </footer>
 
 <script>
 (function(){
-  const canvas = document.getElementById('hero-canvas');
-  if(!canvas) return;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const small = window.matchMedia('(max-width: 560px)').matches;
-  const ctx = canvas.getContext('2d');
-  const COLORS = ['#fdba74','#fb923c','#f97316','#fed7aa','#86efac'];
-  const MAX_DIST = small ? 96 : 118;
-  let W, H, nodes = [];
-  const total = reduced ? 36 : (small ? 40 : 64);
-  function resize(){
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    nodes = [];
-    for(let i = 0; i < total; i++){
-      nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.12,vy:(Math.random()-0.5)*0.12,s:3.5+Math.random()*3.5,c:COLORS[i%COLORS.length],p:Math.random()*Math.PI*2});
-    }
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    const t = performance.now()*0.001;
-    nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<-12)n.x=W+12;if(n.x>W+12)n.x=-12;if(n.y<-12)n.y=H+12;if(n.y>H+12)n.y=-12;});
-    for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){
-      const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<MAX_DIST){ctx.strokeStyle=`rgba(234,88,12,${(1-d/MAX_DIST)*0.16})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke();}
-    }
-    nodes.forEach(n=>{const pulse=0.7+Math.sin(t*0.7+n.p)*0.22;ctx.globalAlpha=0.55;ctx.fillStyle=n.c;ctx.beginPath();ctx.arc(n.x,n.y,n.s*pulse*0.35,0,Math.PI*2);ctx.fill();});
-    ctx.globalAlpha=1;
-    if(!reduced) requestAnimationFrame(draw);
-  }
-  resize(); window.addEventListener('resize',resize);
-  if(reduced) draw(); else requestAnimationFrame(draw);
-})();
-(function(){
-  const c=document.getElementById('cta-canvas'); if(!c)return;
-  const ctx=c.getContext('2d'); let w,h,o=0;
-  function resize(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;}
-  function draw(){ctx.clearRect(0,0,w,h);o+=0.06;const g=70;ctx.strokeStyle='rgba(234,88,12,0.05)';ctx.lineWidth=1;
-    for(let x=-g;x<w+g;x+=g){ctx.beginPath();ctx.moveTo(x+(o%g),0);ctx.lineTo(x+(o%g),h);ctx.stroke();}
-    for(let y=-g;y<h+g;y+=g){ctx.beginPath();ctx.moveTo(0,y+(o%g));ctx.lineTo(w,y+(o%g));ctx.stroke();}
-    requestAnimationFrame(draw);}
-  resize();window.addEventListener('resize',resize);draw();
+  const c=document.getElementById('hero-canvas');if(!c)return;
+  const ctx=c.getContext('2d');let W,H,cells=[],t=0;const G=72;
+  function build(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;cells=[];for(let x=0;x<W;x+=G)for(let y=0;y<H;y+=G)cells.push({x,y,p:Math.random()*Math.PI*2,s:.05+Math.random()*.04});}
+  function draw(){ctx.clearRect(0,0,W,H);for(const cell of cells){const a=Math.max(0,Math.sin(t*cell.s+cell.p));if(a<=.06)continue;ctx.globalAlpha=a*.048;ctx.strokeStyle='#64748b';ctx.strokeRect(cell.x+8,cell.y+8,G-16,G-16);}ctx.globalAlpha=1;t+=.0028;requestAnimationFrame(draw);}
+  build();window.addEventListener('resize',build);draw();
 })();
 </script>
 </body>
