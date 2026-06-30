@@ -126,7 +126,7 @@ h1{font-size:clamp(28px,5vw,50px);font-weight:900;line-height:1.14;letter-spacin
 .h1-unified{
   display:inline-block;
   opacity:0;
-  animation:h1-fade-in 2s ease forwards,h1-flow 16s ease-in-out 2s infinite;
+  animation:h1-fade-in 2s ease forwards,h1-flow 26s ease-in-out 2s infinite;
   background:linear-gradient(100deg,#f472b6 0%,#2563eb 30%,#14b8a6 62%,#f9a8d4 100%);
   background-size:240% 100%;
   -webkit-background-clip:text;background-clip:text;
@@ -146,7 +146,6 @@ h1{font-size:clamp(28px,5vw,50px);font-weight:900;line-height:1.14;letter-spacin
 @media (prefers-reduced-motion: reduce){
   .h1-unified{animation:none;opacity:1;transform:none;-webkit-text-fill-color:#3b82f6}
   .b-flag,.hero-badge,.intro-squares span{animation:none}
-  .suite-heading-title{animation:none;width:auto;border-right:none}
 }
 
 /* ══ SHARED ══ */
@@ -174,13 +173,7 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .intro-squares span:nth-child(8){width:22px;height:22px;right:24%;bottom:6%;animation-delay:5.2s}
 .suite-intro > *:not(.intro-squares){position:relative;z-index:1}
 .suite-heading-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#6366f1;display:block}
-.suite-heading-title{
-  font-size:clamp(20px,3.4vw,34px);font-weight:800;letter-spacing:-1.5px;margin:0 auto 12px;color:#0f172a;
-  max-width:none;line-height:1.25;white-space:nowrap;display:inline-block;overflow:hidden;width:0;
-  border-right:2px solid rgba(99,102,241,.6);animation:suite-type 2.6s steps(46,end) .3s forwards,suite-caret .9s step-end 4;
-}
-@keyframes suite-type{from{width:0}to{width:46ch}}
-@keyframes suite-caret{50%{border-right-color:transparent}}
+.suite-heading-title{font-size:clamp(20px,3.4vw,34px);font-weight:800;letter-spacing:-1.5px;margin:0 auto 12px;color:#0f172a;max-width:none;line-height:1.25;white-space:nowrap}
 @media(max-width:560px){.suite-heading-title{white-space:normal}.intro-squares span{display:none}}
 .suite-section .sdesc{text-align:center;margin:0 auto 0;max-width:620px}
 .suite-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -189,8 +182,8 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .suite-banner{padding:20px 26px 18px;color:#fff;position:relative;overflow:hidden}
 .suite-banner::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);animation:banner-shine 4s ease-in-out infinite}
 @keyframes banner-shine{0%,100%{left:-60%}50%{left:120%}}
-.suite-banner-wh{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 55%,#3b82f6 100%)}
-.suite-banner-ll{background:linear-gradient(135deg,#065f46 0%,#059669 55%,#10b981 100%)}
+.suite-banner-wh{background:linear-gradient(135deg,#172554 0%,#1e3a8a 52%,#2563eb 100%)}
+.suite-banner-ll{background:linear-gradient(135deg,#064e3b 0%,#065f46 52%,#059669 100%)}
 .suite-label{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;opacity:.88;display:block}
 .suite-banner-title{font-size:22px;font-weight:900;letter-spacing:-.5px;line-height:1.15}
 .suite-body{padding:22px 26px 28px;display:flex;flex-direction:column;flex:1}
@@ -215,10 +208,10 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .btn-explore::after{content:'';position:absolute;top:0;left:8%;right:8%;height:48%;z-index:1;border-radius:10px 10px 50% 50%;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,0));pointer-events:none}
 .btn-explore span{position:relative;z-index:2;text-shadow:0 1px 2px rgba(0,0,0,.18)}
 @keyframes btn-gloss-grad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.btn-explore-wh{--g1:#1e3a8a;--g2:#2563eb;--g3:#6366f1;box-shadow:0 6px 0 #1e3a8a,0 12px 28px rgba(37,99,235,.28),inset 0 -2px 0 rgba(0,0,0,.12)}
-.btn-explore-wh:hover{transform:translateY(-3px);box-shadow:0 9px 0 #1e3a8a,0 18px 32px rgba(37,99,235,.34),inset 0 -2px 0 rgba(0,0,0,.12)}
-.btn-explore-ll{--g1:#065f46;--g2:#059669;--g3:#34d399;box-shadow:0 6px 0 #065f46,0 12px 28px rgba(5,150,105,.28),inset 0 -2px 0 rgba(0,0,0,.12)}
-.btn-explore-ll:hover{transform:translateY(-3px);box-shadow:0 9px 0 #065f46,0 18px 32px rgba(5,150,105,.34),inset 0 -2px 0 rgba(0,0,0,.12)}
+.btn-explore-wh{--g1:#172554;--g2:#1e3a8a;--g3:#2563eb;box-shadow:0 5px 0 #172554,0 10px 24px rgba(30,58,138,.24),inset 0 -2px 0 rgba(0,0,0,.14)}
+.btn-explore-wh:hover{transform:translateY(-2px);box-shadow:0 7px 0 #172554,0 14px 28px rgba(30,58,138,.28),inset 0 -2px 0 rgba(0,0,0,.14)}
+.btn-explore-ll{--g1:#064e3b;--g2:#065f46;--g3:#059669;box-shadow:0 5px 0 #064e3b,0 10px 24px rgba(6,95,70,.24),inset 0 -2px 0 rgba(0,0,0,.14)}
+.btn-explore-ll:hover{transform:translateY(-2px);box-shadow:0 7px 0 #064e3b,0 14px 28px rgba(6,95,70,.28),inset 0 -2px 0 rgba(0,0,0,.14)}
 @media(prefers-reduced-motion:reduce){.btn-explore::before,.suite-banner::after{animation:none}}
 
 /* ══ TRUST ══ */
@@ -399,11 +392,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
     <p class="hero-sub">CRM, ERP &amp; Workflow Software for the UK Wholesale &amp; Property Businesses.</p>
     <p class="hero-benefit">For wholesale work (stock and orders) and property work (tenants and rent) in one platform.</p>
-
-    <div class="hero-actions">
-      <a href="https://app.shahosuite.com/register" class="hero-btn-primary">Apply for access →</a>
-      <a href="/pricing.html" class="hero-btn-secondary">See pricing</a>
-    </div>
 
   </div>
 </section>
