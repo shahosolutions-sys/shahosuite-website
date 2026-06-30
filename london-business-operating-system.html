@@ -31,7 +31,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer;text-decoration:none}
 .nav-link:hover{background:#f1f5f9;color:#0f172a}
 .nav-dropdown{position:relative}
-.nav-dropdown::after{content:'';position:absolute;left:0;right:0;top:100%;height:16px;background:transparent}
+.nav-dropdown::after{content:'';position:absolute;left:50%;transform:translateX(-50%);top:100%;width:520px;height:18px;background:transparent}
 .nav-drop-btn{display:inline-flex;align-items:center;gap:5px}
 .nav-drop-btn::after{content:'▾';font-size:10px;opacity:.55;transition:transform .2s}
 .nav-dropdown:hover .nav-drop-btn::after,.nav-dropdown:focus-within .nav-drop-btn::after{transform:rotate(180deg)}
@@ -49,6 +49,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 #hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.44}
 .hero::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 72% 58% at 50% -8%,var(--hero-glow,rgba(59,130,246,.11)),transparent 70%)}
 .hero-inner,.hero>.module-badge,.hero>h1,.hero>.hero-sub,.hero>.trust-row,.hero>.mockup-outer,.hero>.hero-ctas{position:relative;z-index:1}
+.subticker{background:#0f172a;height:38px;overflow:hidden;display:flex;align-items:center;margin-top:72px;position:relative}
+.subticker-wrap{flex:1;overflow:hidden;position:relative;height:100%;display:flex;align-items:center}
+.subticker-track{display:flex;align-items:center;white-space:nowrap;animation:subticker-roll 120s linear infinite;padding-left:10px}
+.subticker-track:hover{animation-play-state:paused}
+.subti{padding:0 20px;font-size:11.5px;color:rgba(255,255,255,.74);font-weight:600}
+.subti strong{color:#fff;font-weight:800}
+.subts{color:rgba(255,255,255,.24);font-size:14px}
+@keyframes subticker-roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.subticker + .breadcrumb{margin-top:0}
 </style>
 </head>
 <body>
@@ -97,6 +106,23 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
     </div>
   </div>
 </nav>
+
+<div class="subticker" aria-hidden="true">
+  <div class="subticker-wrap">
+    <div class="subticker-track">
+      <span class="subti">🇬🇧 <strong>UK CRM + ERP Operating System</strong></span><span class="subts">·</span>
+      <span class="subti">🛍️ <strong>Wholesale Suite</strong> — products, suppliers, orders, invoicing</span><span class="subts">·</span>
+      <span class="subti">🏘️ <strong>Landlord Suite</strong> — properties, tenants, rent, compliance</span><span class="subts">·</span>
+      <span class="subti">🔒 <strong>Apply for access</strong> — reviewed within one working day</span><span class="subts">·</span>
+      <span class="subti">⚡ <strong>Minimum clicks · clear workflows</strong></span><span class="subts">·</span>
+      <span class="subti">🇬🇧 <strong>UK CRM + ERP Operating System</strong></span><span class="subts">·</span>
+      <span class="subti">🛍️ <strong>Wholesale Suite</strong> — products, suppliers, orders, invoicing</span><span class="subts">·</span>
+      <span class="subti">🏘️ <strong>Landlord Suite</strong> — properties, tenants, rent, compliance</span><span class="subts">·</span>
+      <span class="subti">🔒 <strong>Apply for access</strong> — reviewed within one working day</span><span class="subts">·</span>
+      <span class="subti">⚡ <strong>Minimum clicks · clear workflows</strong></span><span class="subts">·</span>
+    </div>
+  </div>
+</div>
 <div class="main-wrap">
 <h1><span>The London Business Operating System</span></h1>
 <p><strong>Why ShahoSuite is the Leading CRM & Inventory Choice for 2026</strong></p>
