@@ -59,6 +59,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer;text-decoration:none}
 .nav-link:hover{background:#f1f5f9;color:#0f172a}
 .nav-dropdown{position:relative}
+.nav-dropdown::after{content:'';position:absolute;left:0;right:0;top:100%;height:16px;background:transparent}
 .nav-drop-btn{display:inline-flex;align-items:center;gap:5px}
 .nav-drop-btn::after{content:'▾';font-size:10px;opacity:.55;transition:transform .2s}
 .nav-dropdown:hover .nav-drop-btn::after,.nav-dropdown:focus-within .nav-drop-btn::after{transform:rotate(180deg)}
@@ -699,25 +700,6 @@ footer a:hover { color: #6366f1; }
           <li>Export &amp; compliance reporting</li>
         </ul>
         <a href="https://app.shahosuite.com/register" class="tier-btn">Apply for access →</a>
-      </div>
-    </div>
-
-    <!-- Example cost calculator -->
-    <div style="margin-top:24px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;">
-      <div>
-        <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Solo founder</div>
-        <div style="font-size:26px;font-weight:800;color:#6366f1;letter-spacing:-1px;">£50<span style="font-size:13px;color:#64748b;font-weight:500;">/mo</span></div>
-        <div style="font-size:11px;color:#64748b;">1 Director</div>
-      </div>
-      <div>
-        <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Small team</div>
-        <div style="font-size:26px;font-weight:800;color:#10b981;letter-spacing:-1px;">£95<span style="font-size:13px;color:#64748b;font-weight:500;">/mo</span></div>
-        <div style="font-size:11px;color:#64748b;">1 Director + 3 Staff</div>
-      </div>
-      <div>
-        <div style="font-size:11px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Growing team</div>
-        <div style="font-size:26px;font-weight:800;color:#f59e0b;letter-spacing:-1px;">£200<span style="font-size:13px;color:#64748b;font-weight:500;">/mo</span></div>
-        <div style="font-size:11px;color:#64748b;">1 Director + 10 Staff</div>
       </div>
     </div>
   </div>
