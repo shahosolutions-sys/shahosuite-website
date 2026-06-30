@@ -126,8 +126,8 @@ h1{font-size:clamp(28px,5vw,50px);font-weight:900;line-height:1.14;letter-spacin
 .h1-unified{
   display:inline-block;
   opacity:0;
-  animation:h1-fade-in 1.8s ease forwards,h1-flow 14s ease-in-out 1.8s infinite;
-  background:linear-gradient(100deg,#3b82f6 0%,#22d3ee 30%,#2dd4bf 52%,#a78bfa 76%,#f9a8d4 100%);
+  animation:h1-fade-in 2.8s ease forwards,h1-flow 16s ease-in-out 2.8s infinite;
+  background:linear-gradient(100deg,#2563eb 0%,#0ea5e9 26%,#14b8a6 54%,#f472b6 100%);
   background-size:240% 100%;
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
@@ -138,12 +138,10 @@ h1{font-size:clamp(28px,5vw,50px);font-weight:900;line-height:1.14;letter-spacin
 .hero-sub{font-size:clamp(14px,2.2vw,16px);color:#475569;max-width:680px;margin:0 auto;line-height:1.55}
 .hero-benefit{font-size:13px;color:#64748b;margin-top:10px;max-width:620px;margin-left:auto;margin-right:auto}
 .hero-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
-.hero-btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:16px 34px;border-radius:14px;font-size:16px;font-weight:800;color:#fff;background:linear-gradient(135deg,#1e3a8a,#2563eb);border:none;box-shadow:0 6px 0 #1e3a8a,0 14px 32px rgba(37,99,235,.3);transition:all .18s;text-decoration:none}
-.hero-btn-primary:hover{transform:translateY(-3px);box-shadow:0 9px 0 #1e3a8a,0 18px 36px rgba(37,99,235,.36)}
+.hero-btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:16px 34px;border-radius:14px;font-size:16px;font-weight:800;color:#fff;background:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #0f172a,0 10px 22px rgba(15,23,42,.24);transition:all .18s;text-decoration:none}
+.hero-btn-primary:hover{transform:translateY(-3px);box-shadow:0 9px 0 #0f172a,0 14px 28px rgba(15,23,42,.3)}
 .hero-btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:14px;font-size:15px;font-weight:800;background:#fff;color:#0f172a;border:2px solid #0f172a;box-shadow:0 6px 0 #0f172a,0 10px 22px rgba(15,23,42,.18);transition:all .18s;text-decoration:none}
 .hero-btn-secondary:hover{transform:translateY(-3px);box-shadow:0 9px 0 #0f172a,0 14px 26px rgba(15,23,42,.22)}
-.proof-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;padding:14px 20px;background:#f1f5f9;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;font-size:11px;font-weight:700;color:#64748b;letter-spacing:.04em;text-transform:uppercase}
-.proof-strip span{color:#334155}
 @media(max-width:640px){.hero{padding:56px 20px 40px}.hero-actions{flex-direction:column;align-items:center}.hero-btn-primary,.hero-btn-secondary{width:100%;max-width:300px}}
 @media (prefers-reduced-motion: reduce){.h1-unified{animation:none;opacity:1;transform:none;-webkit-text-fill-color:#3b82f6}.b-flag,.hero-badge,.intro-squares span{animation:none}}
 
@@ -160,16 +158,16 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .suite-section .si{position:relative;z-index:1}
 .suite-intro{position:relative;text-align:center;margin-bottom:40px;padding:34px 16px}
 .intro-squares{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.intro-squares span{position:absolute;display:block;border-radius:8px;background:rgba(139,92,246,.16);border:1px solid rgba(139,92,246,.22);opacity:0;animation:square-fade 2.5s ease forwards}
-@keyframes square-fade{from{opacity:0}to{opacity:1}}
-.intro-squares span:nth-child(1){width:46px;height:46px;left:6%;top:12%;animation-delay:.1s}
-.intro-squares span:nth-child(2){width:30px;height:30px;left:18%;top:62%;animation-delay:.5s}
-.intro-squares span:nth-child(3){width:60px;height:60px;left:84%;top:18%;animation-delay:.3s}
-.intro-squares span:nth-child(4){width:24px;height:24px;left:73%;top:70%;animation-delay:.8s}
-.intro-squares span:nth-child(5){width:38px;height:38px;left:46%;top:6%;animation-delay:.6s}
-.intro-squares span:nth-child(6){width:28px;height:28px;left:30%;top:30%;animation-delay:1s}
-.intro-squares span:nth-child(7){width:52px;height:52px;left:62%;top:48%;animation-delay:.4s}
-.intro-squares span:nth-child(8){width:22px;height:22px;left:90%;top:60%;animation-delay:1.2s}
+.intro-squares span{position:absolute;display:block;border-radius:8px;background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.12);opacity:0;animation:square-breathe 10s ease-in-out infinite}
+@keyframes square-breathe{0%,18%{opacity:0}38%,55%{opacity:.1}78%,100%{opacity:0}}
+.intro-squares span:nth-child(1){width:46px;height:46px;left:4%;top:8%;animation-delay:.1s}
+.intro-squares span:nth-child(2){width:30px;height:30px;left:11%;bottom:12%;animation-delay:1.3s}
+.intro-squares span:nth-child(3){width:60px;height:60px;right:4%;top:10%;animation-delay:.8s}
+.intro-squares span:nth-child(4){width:24px;height:24px;right:9%;bottom:10%;animation-delay:2s}
+.intro-squares span:nth-child(5){width:38px;height:38px;left:27%;top:2%;animation-delay:2.8s}
+.intro-squares span:nth-child(6){width:28px;height:28px;right:26%;top:2%;animation-delay:3.6s}
+.intro-squares span:nth-child(7){width:52px;height:52px;left:24%;bottom:4%;animation-delay:4.4s}
+.intro-squares span:nth-child(8){width:22px;height:22px;right:24%;bottom:6%;animation-delay:5.2s}
 .suite-intro > *:not(.intro-squares){position:relative;z-index:1}
 .suite-heading-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;color:#6366f1;display:block}
 .suite-heading-title{font-size:clamp(20px,3.4vw,34px);font-weight:800;letter-spacing:-1.5px;margin:0 auto 12px;color:#0f172a;max-width:none;line-height:1.25;white-space:nowrap}
@@ -390,7 +388,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     </h1>
 
     <p class="hero-sub">CRM, ERP &amp; Workflow Software for the UK Wholesale &amp; Property Businesses.</p>
-    <p class="hero-benefit">Stock, orders, tenants, rent — one platform, not five tools stitched together.</p>
+    <p class="hero-benefit">For wholesale work (stock and orders) and property work (tenants and rent) in one platform.</p>
 
     <div class="hero-actions">
       <a href="https://app.shahosuite.com/register" class="hero-btn-primary">Apply for access →</a>
@@ -399,10 +397,6 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
   </div>
 </section>
-
-<div class="proof-strip" aria-label="Company credentials">
-  <span>UK-built</span> · <span>Azure UK</span> · <span>Co. 16017117</span> · <span>Portsmouth</span>
-</div>
 
 <!-- ══ SUITE CARDS ══ -->
 <section class="section suite-section" id="suites">
