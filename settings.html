@@ -16,7 +16,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#0f172a;line-height:1.6}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 12px rgba(0,0,0,0.05)}
+.page-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid #e5e7eb;box-shadow:0 1px 12px rgba(0,0,0,0.05)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 28px;height:68px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:inline-flex;align-items:center; text-decoration:none;flex-shrink:0; transition:transform 0.15s,opacity 0.15s} .logo:hover{transform:translateY(-2px);opacity:0.9} .logo img{height:42px;width:auto;display:block}
 .logo:hover{transform:translateY(-2px)}
@@ -168,7 +168,7 @@ footer a:hover{color:#d946ef}
 </style>
 </head>
 <body>
-<nav>
+<nav class="page-nav">
   <div class="nav-inner">
     <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" width="168" height="44" style="height:42px;width:auto;display:block" /></a>
     <div class="nav-links">
