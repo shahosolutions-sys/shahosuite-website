@@ -54,17 +54,30 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .btn-login:hover  { border-color: #9ca3af; transform: translateY(-1px); }
 .btn-signup { padding: 8px 20px; border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; color: #fff; background: #0f172a; border: 1.5px solid #0f172a; box-shadow: 0 3px 0 #374151; transition: all 0.15s; }
 .btn-signup:hover { background: #1e293b; transform: translateY(-1px); }
-.nav-links{display:flex;align-items:center;gap:2px}
+
+.nav-links{display:flex;align-items:center;gap:2px;flex-shrink:1;min-width:0}
 .nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer;text-decoration:none}
 .nav-link:hover{background:#f1f5f9;color:#0f172a}
 .nav-dropdown{position:relative}
-.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 20px 50px rgba(15,23,42,.12);padding:16px 18px;grid-template-columns:1fr 1fr;gap:20px;z-index:300}
+.nav-drop-btn{display:inline-flex;align-items:center;gap:5px}
+.nav-drop-btn::after{content:'▾';font-size:10px;opacity:.55;transition:transform .2s}
+.nav-dropdown:hover .nav-drop-btn::after,.nav-dropdown:focus-within .nav-drop-btn::after{transform:rotate(180deg)}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 10px);right:0;left:auto;transform:none;min-width:560px;max-width:min(560px,calc(100vw - 24px));background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 28px 70px rgba(15,23,42,.16),0 0 0 1px rgba(255,255,255,.85) inset;padding:18px;grid-template-columns:1fr 1fr;gap:14px;z-index:500}
 .nav-dropdown:hover .nav-drop-panel,.nav-dropdown:focus-within .nav-drop-panel{display:grid}
-.drop-head{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #f1f5f9}
+.drop-suite{background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);border:1px solid #eef2f7;border-radius:16px;padding:14px 14px 12px}
+.drop-suite.drop-ll{background:linear-gradient(180deg,#f0fdf4 0%,#fff 100%);border-color:#dcfce7}
+.drop-head{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#2563eb;margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .drop-head.ll{color:#059669}
-.drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0;text-decoration:none}
-.drop-col a:hover{color:#0f172a}
-@media(max-width:880px){.nav-links{display:none}}
+.drop-head::before{content:'';width:7px;height:7px;border-radius:50%;background:#2563eb;flex-shrink:0}
+.drop-head.ll::before{background:#059669}
+.drop-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.drop-mod{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:10px;font-size:12px;font-weight:600;color:#475569;text-decoration:none;transition:background .15s,transform .15s,box-shadow .15s}
+.drop-mod:hover{background:#fff;color:#0f172a;box-shadow:0 2px 8px rgba(15,23,42,.07);transform:translateY(-1px)}
+.drop-mod-ico{font-size:13px;width:18px;text-align:center;flex-shrink:0;line-height:1}
+.drop-all{margin-top:8px;padding-top:8px;border-top:1px solid #e2e8f0;font-size:11px;font-weight:800;color:#2563eb;text-decoration:none;display:block}
+.drop-all.ll{color:#059669}
+.drop-all:hover{text-decoration:underline}
+@media(max-width:960px){.nav-links{display:none}}
 .apply-banner{background:linear-gradient(90deg,#eff6ff,#ecfdf5);border:1px solid #dbeafe;border-radius:16px;padding:18px 22px;margin-bottom:28px;text-align:center;font-size:14px;color:#334155;line-height:1.65}
 .apply-banner strong{color:#0f172a}
 .suite-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px}
@@ -154,7 +167,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 /* ══════════════════════════════
    HERO
 ══════════════════════════════ */
-.hero {
+:root{--hero-glow:rgba(59,130,246,.11);}
+.hero { position:relative;overflow:hidden;
   padding: 72px 28px 80px;
   text-align: center;
   background: #fff;
@@ -477,6 +491,10 @@ footer a:hover { color: #6366f1; }
   .modules-grid { grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); }
   .section-inner > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
 }
+
+#hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.44}
+.hero::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 72% 58% at 50% -8%,var(--hero-glow,rgba(59,130,246,.11)),transparent 70%)}
+.hero-inner,.hero>.module-badge,.hero>h1,.hero>.hero-sub,.hero>.trust-row,.hero>.mockup-outer,.hero>.hero-ctas{position:relative;z-index:1}
 </style>
 </head>
 <body>
@@ -489,28 +507,40 @@ footer a:hover { color: #6366f1; }
       <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
-        <div class="nav-drop-panel">
-          <div class="drop-col">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true" aria-expanded="false">Modules</button>
+        <div class="nav-drop-panel" role="menu">
+
+          <div class="drop-suite drop-wh">
             <span class="drop-head">Wholesale Suite</span>
-            <a href="/dashboard.html">Dashboard</a>
-            <a href="/customers.html">Customers</a>
-            <a href="/products.html">Products</a>
-            <a href="/orders.html">Orders</a>
-            <a href="/invoices.html">Invoices</a>
-            <a href="/wholesale-suite.html">All wholesale modules →</a>
+            <div class="drop-grid">
+              <a href="/dashboard.html" class="drop-mod"><span class="drop-mod-ico">📊</span>Dashboard</a>
+              <a href="/customers.html" class="drop-mod"><span class="drop-mod-ico">👥</span>Customers</a>
+              <a href="/products.html" class="drop-mod"><span class="drop-mod-ico">📦</span>Products</a>
+              <a href="/suppliers.html" class="drop-mod"><span class="drop-mod-ico">🏭</span>Suppliers</a>
+              <a href="/orders.html" class="drop-mod"><span class="drop-mod-ico">🛒</span>Orders</a>
+              <a href="/invoices.html" class="drop-mod"><span class="drop-mod-ico">🧾</span>Invoices</a>
+              <a href="/accounting.html" class="drop-mod"><span class="drop-mod-ico">📕</span>Accounting</a>
+              <a href="/analytics.html" class="drop-mod"><span class="drop-mod-ico">📈</span>Analytics</a>
+            </div>
+            <a href="/wholesale-suite.html" class="drop-all">All wholesale modules →</a>
           </div>
-          <div class="drop-col">
+          <div class="drop-suite drop-ll">
             <span class="drop-head ll">Landlord Suite</span>
-            <a href="/landlord/properties.html">Properties</a>
-            <a href="/landlord/tenants.html">Tenants</a>
-            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
-            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
-            <a href="/landlord-suite.html">All landlord modules →</a>
+            <div class="drop-grid">
+              <a href="/landlord/properties.html" class="drop-mod"><span class="drop-mod-ico">🏠</span>Properties</a>
+              <a href="/landlord/tenants.html" class="drop-mod"><span class="drop-mod-ico">🔑</span>Tenants</a>
+              <a href="/landlord/rent-tracker.html" class="drop-mod"><span class="drop-mod-ico">💷</span>Rent Tracker</a>
+              <a href="/landlord/certificates.html" class="drop-mod"><span class="drop-mod-ico">✅</span>Docs &amp; Certs</a>
+              <a href="/landlord/viewings.html" class="drop-mod"><span class="drop-mod-ico">👁️</span>Viewings</a>
+              <a href="/landlord/inventory.html" class="drop-mod"><span class="drop-mod-ico">📋</span>Inventory</a>
+              <a href="/landlord/accounting.html" class="drop-mod"><span class="drop-mod-ico">📕</span>Accounting</a>
+            </div>
+            <a href="/landlord-suite.html" class="drop-all ll">All landlord modules →</a>
           </div>
         </div>
       </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/articles.html" class="nav-link">Articles</a>
       <a href="/#trust" class="nav-link">Trust</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
@@ -556,6 +586,7 @@ footer a:hover { color: #6366f1; }
 
 <!-- HERO -->
 <section class="hero">
+  <canvas id="hero-canvas" data-variant="neutral" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div class="hero-badge">🇬🇧 Apply for access — Reviewed within 1 business day</div>
     <h1>Two suites.<br/><em class="price-highlight">One platform.</em><br/>Clear UK pricing.</h1>
@@ -798,19 +829,18 @@ footer a:hover { color: #6366f1; }
   </div>
 </section>
 
-<footer>
-  <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="/wholesale-suite.html">Wholesale Suite</a>
-    <a href="/landlord-suite.html">Landlord Suite</a>
-    <a href="https://app.shahosuite.com/register">Apply for access</a>
-    <a href="https://app.shahosuite.com/privacy">Privacy</a>
-    <a href="https://app.shahosuite.com/terms">Terms</a>
-    <a href="/security.html">Security</a>
-    <a href="mailto:admin@shahosuite.com">Contact</a>
-  </div>
-  <p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p>
-</footer>
+<footer><div class="footer-links">
+  <a href="/">Home</a>
+  <a href="/wholesale-suite.html">Wholesale Suite</a>
+  <a href="/landlord-suite.html">Landlord Suite</a>
+  <a href="/pricing.html">Pricing</a>
+  <a href="/articles.html">Articles</a>
+  <a href="https://app.shahosuite.com/register">Apply for access</a>
+  <a href="https://app.shahosuite.com/privacy">Privacy</a>
+  <a href="https://app.shahosuite.com/terms">Terms</a>
+  <a href="mailto:admin@shahosuite.com">Contact</a>
+</div><p>© 2026 Shaho Solutions Limited — Company No. 16017117 — Proprietary software — Portsmouth, UK</p></footer>
 
+<script src="/assets/hero-bg.js" defer></script>
 </body>
 </html>

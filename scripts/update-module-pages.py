@@ -20,17 +20,29 @@ LANDLORD_MODULES = [
 ]
 
 NAV_CSS = """
-.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links{display:flex;align-items:center;gap:2px;flex-shrink:1;min-width:0}
 .nav-link{padding:7px 13px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;transition:all .15s;white-space:nowrap;border:none;background:none;font-family:inherit;cursor:pointer;text-decoration:none}
 .nav-link:hover{background:#f1f5f9;color:#0f172a}
 .nav-dropdown{position:relative}
-.nav-drop-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:520px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 20px 50px rgba(15,23,42,.12);padding:16px 18px;grid-template-columns:1fr 1fr;gap:20px;z-index:300}
+.nav-drop-btn{display:inline-flex;align-items:center;gap:5px}
+.nav-drop-btn::after{content:'▾';font-size:10px;opacity:.55;transition:transform .2s}
+.nav-dropdown:hover .nav-drop-btn::after,.nav-dropdown:focus-within .nav-drop-btn::after{transform:rotate(180deg)}
+.nav-drop-panel{display:none;position:absolute;top:calc(100% + 10px);right:0;left:auto;transform:none;min-width:560px;max-width:min(560px,calc(100vw - 24px));background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 28px 70px rgba(15,23,42,.16),0 0 0 1px rgba(255,255,255,.85) inset;padding:18px;grid-template-columns:1fr 1fr;gap:14px;z-index:500}
 .nav-dropdown:hover .nav-drop-panel,.nav-dropdown:focus-within .nav-drop-panel{display:grid}
-.drop-head{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#2563eb;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #f1f5f9}
+.drop-suite{background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);border:1px solid #eef2f7;border-radius:16px;padding:14px 14px 12px}
+.drop-suite.drop-ll{background:linear-gradient(180deg,#f0fdf4 0%,#fff 100%);border-color:#dcfce7}
+.drop-head{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#2563eb;margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .drop-head.ll{color:#059669}
-.drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0;text-decoration:none}
-.drop-col a:hover{color:#0f172a}
-@media(max-width:880px){.nav-links{display:none}}
+.drop-head::before{content:'';width:7px;height:7px;border-radius:50%;background:#2563eb;flex-shrink:0}
+.drop-head.ll::before{background:#059669}
+.drop-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.drop-mod{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:10px;font-size:12px;font-weight:600;color:#475569;text-decoration:none;transition:background .15s,transform .15s,box-shadow .15s}
+.drop-mod:hover{background:#fff;color:#0f172a;box-shadow:0 2px 8px rgba(15,23,42,.07);transform:translateY(-1px)}
+.drop-mod-ico{font-size:13px;width:18px;text-align:center;flex-shrink:0;line-height:1}
+.drop-all{margin-top:8px;padding-top:8px;border-top:1px solid #e2e8f0;font-size:11px;font-weight:800;color:#2563eb;text-decoration:none;display:block}
+.drop-all.ll{color:#059669}
+.drop-all:hover{text-decoration:underline}
+@media(max-width:960px){.nav-links{display:none}}
 """
 
 WHOLESALE_NAV = """<nav>
@@ -40,31 +52,40 @@ WHOLESALE_NAV = """<nav>
       <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
-        <div class="nav-drop-panel">
-          <div class="drop-col">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true" aria-expanded="false">Modules</button>
+        <div class="nav-drop-panel" role="menu">
+
+          <div class="drop-suite drop-wh">
             <span class="drop-head">Wholesale Suite</span>
-            <a href="/dashboard.html">Dashboard</a>
-            <a href="/customers.html">Customers</a>
-            <a href="/products.html">Products</a>
-            <a href="/suppliers.html">Suppliers</a>
-            <a href="/orders.html">Orders</a>
-            <a href="/invoices.html">Invoices</a>
-            <a href="/accounting.html">Accounting</a>
-            <a href="/analytics.html">Analytics</a>
-            <a href="/wholesale-suite.html">All wholesale modules →</a>
+            <div class="drop-grid">
+              <a href="/dashboard.html" class="drop-mod"><span class="drop-mod-ico">📊</span>Dashboard</a>
+              <a href="/customers.html" class="drop-mod"><span class="drop-mod-ico">👥</span>Customers</a>
+              <a href="/products.html" class="drop-mod"><span class="drop-mod-ico">📦</span>Products</a>
+              <a href="/suppliers.html" class="drop-mod"><span class="drop-mod-ico">🏭</span>Suppliers</a>
+              <a href="/orders.html" class="drop-mod"><span class="drop-mod-ico">🛒</span>Orders</a>
+              <a href="/invoices.html" class="drop-mod"><span class="drop-mod-ico">🧾</span>Invoices</a>
+              <a href="/accounting.html" class="drop-mod"><span class="drop-mod-ico">📕</span>Accounting</a>
+              <a href="/analytics.html" class="drop-mod"><span class="drop-mod-ico">📈</span>Analytics</a>
+            </div>
+            <a href="/wholesale-suite.html" class="drop-all">All wholesale modules →</a>
           </div>
-          <div class="drop-col">
+          <div class="drop-suite drop-ll">
             <span class="drop-head ll">Landlord Suite</span>
-            <a href="/landlord/properties.html">Properties</a>
-            <a href="/landlord/tenants.html">Tenants</a>
-            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
-            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
-            <a href="/landlord-suite.html">All landlord modules →</a>
+            <div class="drop-grid">
+              <a href="/landlord/properties.html" class="drop-mod"><span class="drop-mod-ico">🏠</span>Properties</a>
+              <a href="/landlord/tenants.html" class="drop-mod"><span class="drop-mod-ico">🔑</span>Tenants</a>
+              <a href="/landlord/rent-tracker.html" class="drop-mod"><span class="drop-mod-ico">💷</span>Rent Tracker</a>
+              <a href="/landlord/certificates.html" class="drop-mod"><span class="drop-mod-ico">✅</span>Docs &amp; Certs</a>
+              <a href="/landlord/viewings.html" class="drop-mod"><span class="drop-mod-ico">👁️</span>Viewings</a>
+              <a href="/landlord/inventory.html" class="drop-mod"><span class="drop-mod-ico">📋</span>Inventory</a>
+              <a href="/landlord/accounting.html" class="drop-mod"><span class="drop-mod-ico">📕</span>Accounting</a>
+            </div>
+            <a href="/landlord-suite.html" class="drop-all ll">All landlord modules →</a>
           </div>
         </div>
       </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/articles.html" class="nav-link">Articles</a>
       <a href="/#trust" class="nav-link">Trust</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
@@ -75,36 +96,48 @@ WHOLESALE_NAV = """<nav>
   </div>
 </nav>"""
 
-LANDLORD_NAV = """<nav class="page-nav">
+LANDLORD_NAV = """<nav>
   <div class="nav-inner">
     <a href="/" class="logo"><img src="/logo.png" alt="ShahoSuite" width="168" height="44" style="height:42px;width:auto;display:block" /></a>
     <div class="nav-links">
       <a href="/wholesale-suite.html" class="nav-link">Wholesale Suite</a>
       <a href="/landlord-suite.html" class="nav-link">Landlord Suite</a>
       <div class="nav-dropdown">
-        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true">Modules ▾</button>
-        <div class="nav-drop-panel">
-          <div class="drop-col">
+        <button type="button" class="nav-link nav-drop-btn" aria-haspopup="true" aria-expanded="false">Modules</button>
+        <div class="nav-drop-panel" role="menu">
+
+          <div class="drop-suite drop-ll">
             <span class="drop-head ll">Landlord Suite</span>
-            <a href="/landlord/properties.html">Properties</a>
-            <a href="/landlord/tenants.html">Tenants</a>
-            <a href="/landlord/rent-tracker.html">Rent Tracker</a>
-            <a href="/landlord/accounting.html">Accounting</a>
-            <a href="/landlord/certificates.html">Docs &amp; Certs</a>
-            <a href="/landlord/viewings.html">Viewings</a>
-            <a href="/landlord/inventory.html">Inventory</a>
-            <a href="/landlord-suite.html">All landlord modules →</a>
+            <div class="drop-grid">
+              <a href="/landlord/properties.html" class="drop-mod"><span class="drop-mod-ico">🏠</span>Properties</a>
+              <a href="/landlord/tenants.html" class="drop-mod"><span class="drop-mod-ico">🔑</span>Tenants</a>
+              <a href="/landlord/rent-tracker.html" class="drop-mod"><span class="drop-mod-ico">💷</span>Rent Tracker</a>
+              <a href="/landlord/certificates.html" class="drop-mod"><span class="drop-mod-ico">✅</span>Docs &amp; Certs</a>
+              <a href="/landlord/viewings.html" class="drop-mod"><span class="drop-mod-ico">👁️</span>Viewings</a>
+              <a href="/landlord/inventory.html" class="drop-mod"><span class="drop-mod-ico">📋</span>Inventory</a>
+              <a href="/landlord/accounting.html" class="drop-mod"><span class="drop-mod-ico">📕</span>Accounting</a>
+            </div>
+            <a href="/landlord-suite.html" class="drop-all ll">All landlord modules →</a>
           </div>
-          <div class="drop-col">
+          <div class="drop-suite drop-wh">
             <span class="drop-head">Wholesale Suite</span>
-            <a href="/dashboard.html">Dashboard</a>
-            <a href="/customers.html">Customers</a>
-            <a href="/products.html">Products</a>
-            <a href="/wholesale-suite.html">All wholesale modules →</a>
+            <div class="drop-grid">
+              <a href="/dashboard.html" class="drop-mod"><span class="drop-mod-ico">📊</span>Dashboard</a>
+              <a href="/customers.html" class="drop-mod"><span class="drop-mod-ico">👥</span>Customers</a>
+              <a href="/products.html" class="drop-mod"><span class="drop-mod-ico">📦</span>Products</a>
+              <a href="/suppliers.html" class="drop-mod"><span class="drop-mod-ico">🏭</span>Suppliers</a>
+              <a href="/orders.html" class="drop-mod"><span class="drop-mod-ico">🛒</span>Orders</a>
+              <a href="/invoices.html" class="drop-mod"><span class="drop-mod-ico">🧾</span>Invoices</a>
+              <a href="/accounting.html" class="drop-mod"><span class="drop-mod-ico">📕</span>Accounting</a>
+              <a href="/analytics.html" class="drop-mod"><span class="drop-mod-ico">📈</span>Analytics</a>
+            </div>
+            <a href="/wholesale-suite.html" class="drop-all">All wholesale modules →</a>
           </div>
         </div>
       </div>
       <a href="/pricing.html" class="nav-link">Pricing</a>
+      <a href="/articles.html" class="nav-link">Articles</a>
+      <a href="/#trust" class="nav-link">Trust</a>
       <a href="mailto:admin@shahosuite.com" class="nav-link">Contact</a>
     </div>
     <div class="nav-btns">
