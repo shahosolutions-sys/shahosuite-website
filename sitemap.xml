@@ -3,78 +3,99 @@
 
   <url>
     <loc>https://www.shahosuite.com/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.shahosuite.com/wholesale-suite.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.shahosuite.com/landlord-suite.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.shahosuite.com/pricing.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
+    <loc>https://www.shahosuite.com/articles.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.shahosuite.com/london-business-operating-system.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.shahosuite.com/portsmouth-warehouses-grocery-operations.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.shahosuite.com/security.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.shahosuite.com/founder.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://www.shahosuite.com/gdpr.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Wholesale module pages -->
-  <url><loc>https://www.shahosuite.com/dashboard.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/customers.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/products.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/suppliers.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/categories.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/orders.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/invoices.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/credit-notes.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/accounting.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/analytics.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/booking.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/send-message.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/support.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.shahosuite.com/staff.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/settings.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.shahosuite.com/audit-log.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.shahosuite.com/dashboard.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/customers.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/products.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/suppliers.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/categories.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/orders.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/invoices.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/credit-notes.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/accounting.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/analytics.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/booking.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/send-message.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/support.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.shahosuite.com/staff.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/settings.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.shahosuite.com/audit-log.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Landlord module pages -->
-  <url><loc>https://www.shahosuite.com/landlord/properties.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/landlord/tenants.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/landlord/rent-tracker.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/landlord/accounting.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/landlord/certificates.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.shahosuite.com/landlord/viewings.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.shahosuite.com/landlord/inventory.html</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/properties.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/tenants.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/rent-tracker.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/accounting.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/certificates.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/viewings.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.shahosuite.com/landlord/inventory.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
 </urlset>
