@@ -51,7 +51,7 @@ a{color:inherit;text-decoration:none}
 .drop-head.ll{color:#059669}
 .drop-col a{display:block;font-size:12px;font-weight:600;color:#475569;padding:5px 0;transition:color .15s}
 .drop-col a:hover{color:#0f172a}
-@media(max-width:960px){.nav-links{display:none}}
+@media(max-width:960px){.nav-links{display:flex;overflow-x:auto;max-width:52vw;scrollbar-width:none;-ms-overflow-style:none}.nav-links::-webkit-scrollbar{display:none}.nav-link{padding:6px 10px;font-size:12px}}
 :root{--hero-glow:rgba(16,185,129,.11);}
 .hero{ position:relative;overflow:hidden;padding:140px 24px 80px;background:linear-gradient(160deg,#ecfdf5 0%,#ffffff 55%,#eff6ff 100%);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(16,185,129,.12),transparent 35%),radial-gradient(circle at 75% 25%,rgba(14,165,233,.10),transparent 30%),radial-gradient(circle at 50% 85%,rgba(236,72,153,.08),transparent 28%);opacity:.9;filter:blur(1px);animation:hero-shift 18s ease-in-out infinite}

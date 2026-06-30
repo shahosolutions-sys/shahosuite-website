@@ -130,8 +130,13 @@ h1{font-size:clamp(30px,5.2vw,56px);font-weight:900;line-height:1.08;letter-spac
 .h1-delay-1{animation-delay:.28s}
 .h1-delay-2{animation-delay:.48s}
 
-.hero-sub{font-size:clamp(14px,2.2vw,16px);color:#64748b;max-width:720px;margin:0 auto;line-height:1.5;white-space:nowrap}
-@media(max-width:640px){.hero-sub{white-space:normal}}
+.hero-sub{font-size:clamp(14px,2.2vw,16px);color:#64748b;max-width:760px;margin:0 auto;line-height:1.6}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero-btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;border-radius:12px;font-size:14px;font-weight:800;background:#0f172a;color:#fff;border:1px solid #0f172a;box-shadow:0 4px 0 #334155;transition:all .15s;text-decoration:none}
+.hero-btn-primary:hover{transform:translateY(-2px)}
+.hero-btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:12px 22px;border-radius:12px;font-size:14px;font-weight:700;background:#fff;color:#0f172a;border:1px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all .15s;text-decoration:none}
+.hero-btn-secondary:hover{transform:translateY(-2px)}
+@media(max-width:640px){.hero-actions{gap:10px}.hero-btn-primary,.hero-btn-secondary{width:100%;max-width:320px}}
 @media (prefers-reduced-motion: reduce){.h1-accent,.h1-black,.b-flag{animation:none;opacity:1;transform:none;filter:none;-webkit-text-fill-color:unset;color:#1d4ed8}}
 
 /* ══ SHARED ══ */
@@ -243,7 +248,9 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
 /* ══ RESPONSIVE ══ */
 @media(max-width:880px){
-  .nav-links{display:none}
+  .nav-links{display:flex;overflow-x:auto;max-width:52vw;scrollbar-width:none;-ms-overflow-style:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-link{padding:6px 10px;font-size:12px}
   .suite-grid{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
 }
@@ -357,7 +364,12 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <span class="h1-line h1-black h1-delay-2">Operating System Platform</span>
     </h1>
 
-    <p class="hero-sub">Minimum clicks · Smart automation · Real autonomy. One intelligent UK platform — built to grow your business.</p>
+    <p class="hero-sub">UK CRM + ERP platform for wholesale and landlord operations. Run sales, stock, tenants, rent, compliance and reporting from one system.</p>
+
+    <div class="hero-actions">
+      <a href="https://app.shahosuite.com/register" class="hero-btn-primary">Apply for access</a>
+      <a href="/pricing.html" class="hero-btn-secondary">See pricing</a>
+    </div>
 
   </div>
 </section>
