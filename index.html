@@ -257,6 +257,14 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .trust-apply-btn{display:inline-flex;padding:13px 36px;border-radius:10px;font-size:14px;font-weight:800;background:#fff;color:#0f172a;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 0 rgba(255,255,255,.25)}
 .trust-apply-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(255,255,255,.2)}
 
+/* ══ VIDEO ══ */
+.video-section{background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%);border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
+.video-wrap{max-width:920px;margin:24px auto 0;background:#0b1220;border:1px solid rgba(15,23,42,.16);border-radius:16px;overflow:hidden;box-shadow:0 20px 40px rgba(15,23,42,.15)}
+.video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.video-cta{margin-top:18px}
+.video-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-size:13.5px;font-weight:800;background:#0f172a;color:#fff;border:1px solid #0f172a;box-shadow:0 4px 0 #020617;transition:transform .18s,box-shadow .18s,background .18s}
+.video-cta-btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 #020617;background:#111827}
+
 /* ══ FAQ ══ */
 .faq-section{background:#fff;border-top:1px solid #e5e7eb}
 .faq-list{margin-top:28px;max-width:720px}
@@ -312,6 +320,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .nav-btns{gap:6px}
   .btn-login,.btn-signup{padding:7px 10px;font-size:11px}
   .trust-grid{grid-template-columns:1fr}
+  .video-wrap{margin-top:18px;border-radius:12px}
   .suite-body{padding:18px 18px 22px}
   .faq-q{padding:14px 0;font-size:13px}
 }
@@ -530,6 +539,21 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       <a href="https://app.shahosuite.com/register" class="trust-apply-btn">Apply for access →</a>
     </div>
 
+  </div>
+</section>
+
+<!-- ══ VIDEO ══ -->
+<section class="section video-section" id="video">
+  <div class="si">
+    <span class="stag" style="color:#ef4444;">INTRO VIDEO</span>
+    <h2>See ShahoSuite in one minute</h2>
+    <p class="sc-desc">Quick founder intro to our UK-built CRM + ERP platform for wholesale and landlord operations.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/pf8M2vP7qEQ" title="ShahoSuite Intro Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="video-cta">
+      <a class="video-cta-btn" href="https://www.youtube.com/watch?v=pf8M2vP7qEQ" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+    </div>
   </div>
 </section>
 
