@@ -116,6 +116,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-btns{display:flex;gap:8px;align-items:center}
 .btn-login{padding:8px 18px;border-radius:50px;font-size:13px;font-weight:700;color:#374151;background:#fff;border:1.5px solid #d1d5db;box-shadow:0 2px 0 #d1d5db;transition:all 0.15s}
 .btn-login:hover{border-color:#9ca3af;transform:translateY(-1px)}
+.btn-demo{padding:8px 16px;border-radius:50px;font-size:13px;font-weight:700;color:#0f172a;background:#fff;border:1.5px solid #0f172a;box-shadow:0 2px 0 #cbd5e1;transition:all 0.15s;white-space:nowrap;text-decoration:none}
+.btn-demo:hover{background:#f8fafc;transform:translateY(-1px);box-shadow:0 4px 0 #cbd5e1}
 .btn-signup{padding:8px 20px;border-radius:50px;font-size:13px;font-weight:800;color:#fff;background:#0f172a;border:1.5px solid #0f172a;box-shadow:0 3px 0 #334155;transition:all 0.15s;white-space:nowrap}
 .btn-signup:hover{background:#1e293b;transform:translateY(-1px);box-shadow:0 5px 0 #334155}
 
@@ -277,6 +279,11 @@ h2{font-size:clamp(22px,3.5vw,36px);font-weight:800;letter-spacing:-1.5px;margin
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-item.open .faq-a{max-height:220px}
 
+/* ══ DEMO CLOSE ══ */
+.demo-close-section{background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%);border-top:1px solid #e5e7eb;text-align:center}
+.demo-close-section h2{margin-bottom:10px}
+.demo-close-section .demo-close-text{font-size:15px;color:#475569;max-width:560px;margin:0 auto 22px;line-height:1.65}
+
 
 
 
@@ -318,7 +325,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
   .logo img{height:34px}
   .ticker{margin-top:60px;height:36px}
   .nav-btns{gap:6px}
-  .btn-login,.btn-signup{padding:7px 10px;font-size:11px}
+  .btn-login,.btn-demo,.btn-signup{padding:7px 10px;font-size:11px}
   .trust-grid{grid-template-columns:1fr}
   .video-wrap{margin-top:18px;border-radius:12px}
   .suite-body{padding:18px 18px 22px}
@@ -370,6 +377,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     </div>
     <div class="nav-btns">
       <a href="https://app.shahosuite.com/login"    class="btn-login">Log in</a>
+      <a href="https://app.shahosuite.com/book/46"  class="btn-demo">Book a demo</a>
       <a href="https://app.shahosuite.com/register" class="btn-signup">Apply for access</a>
     </div>
   </div>
@@ -422,6 +430,10 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
 
     <p class="hero-sub">CRM, ERP &amp; Workflow Software for the UK Wholesale &amp; Property Businesses.</p>
     <p class="hero-benefit">For wholesale work (stock and orders) and property work (tenants and rent) in one platform.</p>
+    <div class="hero-actions">
+      <a href="https://app.shahosuite.com/register" class="hero-btn-primary">Apply for access →</a>
+      <a href="https://app.shahosuite.com/book/46" class="hero-btn-secondary">Book a demo</a>
+    </div>
 
   </div>
 </section>
@@ -549,7 +561,7 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
     <h2>See ShahoSuite in one minute</h2>
     <p class="sc-desc">Quick founder intro to our UK-built CRM + ERP platform for wholesale and landlord operations.</p>
     <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/pf8M2vP7qEQ" title="ShahoSuite Intro Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe src="https://www.youtube-nocookie.com/embed/pf8M2vP7qEQ" title="ShahoSuite Intro Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="video-cta">
       <a class="video-cta-btn" href="https://www.youtube.com/watch?v=pf8M2vP7qEQ" target="_blank" rel="noopener">Watch on YouTube ↗</a>
@@ -595,6 +607,15 @@ footer{padding:32px 28px 24px;text-align:center;font-size:12px;color:#64748b;bor
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ══ BOOK A DEMO ══ -->
+<section class="section demo-close-section" id="book-demo">
+  <div class="si">
+    <h2>See ShahoSuite in action</h2>
+    <p class="demo-close-text">Book a free 30-minute walkthrough with the founder — no obligation, no pressure.</p>
+    <a href="https://app.shahosuite.com/book/46" class="hero-btn-secondary">Book a demo</a>
   </div>
 </section>
 
